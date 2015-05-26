@@ -12,7 +12,7 @@ This repo serves two purposes:
 Using the components
 --------------------
 
-Pull the components you want:
+Import the components you want:
 
 ```js
 import {Btn, Link} from 'loggins';
@@ -21,8 +21,8 @@ import {Btn, Link} from 'loggins';
 Then use them how you wish in your React project.
 
 
-Running the styleguide
----------------------
+Running the styleguide locally
+------------------------------
 
 ```bash
 $ npm start
@@ -32,8 +32,8 @@ $ open http://localhost:8080
 Any changes you make to any CSS or JS file will live-reload inside the browser you have open. Pretty slick.
 
 
-Exporting CSS
--------------
+Exporting all CSS
+-----------------
 
 ```bash
 $ npm run build
@@ -46,7 +46,7 @@ Inside `dist` will be `styles.css`, which will contain all the CSS from all the 
 Run the example
 ---------------
 
-Looking at the [basic example], you can see all we're doing is `import`ing the `Btn` component from the component library. Now run webpack in that folder:
+Looking at the [basic example](https://github.com/PactCoffee/loggins/blob/master/examples/basic.js), you can see all we're doing is `import`ing the `Btn` component from the component library. Now run webpack in that folder:
 
 ```bash
 $ cd examples
@@ -54,13 +54,3 @@ $ webpack
 ```
 
 You should see two files outputted inside the `dist` folder: `basic.js` and `style.css`. The CSS file is automatically generated from the components that are imported by the basic example file. The JS file is just a react component that you could render in a browser or whatever.
-
-
-Grab all the CSS for use in another project
--------------------------------------------
-
-```bash
-$ npm run build
-```
-
-All the CSS used by the components will be found in `./dist/style.css`
