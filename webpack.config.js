@@ -1,18 +1,19 @@
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var ReactToHtmlPlugin = require('react-to-html-webpack-plugin');
 
 var path = require('path');
-var jade = require('jade');
-var fs = require('fs');
 
 module.exports = {
-  entry: './styleguide/index.js',
+  entry: [
+      'webpack-dev-server/client?http://localhost:8080',
+      'webpack/hot/only-dev-server',
+      './styleguide/index'
+    ],
 
   output: {
-    filename: 'index.js',
+    filename: 'bundle.js',
     path: path.resolve('./dist'),
-    libraryTarget: 'umd'
+    publicPath: '/dist/'
   },
 
   module: {
@@ -41,8 +42,7 @@ module.exports = {
     new ExtractTextPlugin('style.css', {
       allChunks: true
     }),
-    new ReactToHtmlPlugin('index.html', 'index.js', {
-      template: jade.compile(fs.readFileSync(__dirname + '/styleguide/index.jade'))
-    })
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
   ]
 };
