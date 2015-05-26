@@ -23,7 +23,8 @@ module.exports = {
       exclude: /node_modules/
     }, {
       test: /\.css$/,
-      loader: ExtractTextPlugin.extract('style-loader', 'css-loader?module&importLoaders=1&localIdentName=[name]-[local]!postcss-loader')
+      loader: 'style-loader!css-loader?module&importLoaders=1&localIdentName=[name]-[local]!postcss-loader'
+      // loader: ExtractTextPlugin.extract('style-loader', 'css-loader?module&importLoaders=1&localIdentName=[name]-[local]!postcss-loader')
     }]
   },
 
@@ -40,9 +41,9 @@ module.exports = {
   },
 
   plugins: [
-    new ExtractTextPlugin('style.css', {
-      allChunks: true
-    }),
+    // new ExtractTextPlugin('style.css', {
+    //   allChunks: true
+    // }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
   ]
