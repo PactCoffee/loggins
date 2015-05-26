@@ -8,6 +8,7 @@ This repo serves two purposes:
 1. A central module for all our components, that we can use across different projects
 2. A styleguide to describe where and how the components should be used
 
+
 Using the components
 --------------------
 
@@ -24,9 +25,22 @@ Running the styleguide
 ---------------------
 
 ```bash
-$ npm run styleguide
+$ npm start
 $ open http://localhost:8080
 ```
+
+Any changes you make to any CSS or JS file will live-reload inside the browser you have open. Pretty slick.
+
+
+Exporting CSS
+-------------
+
+```bash
+$ npm run build
+$ cd dist
+```
+
+Inside `dist` will be `styles.css`, which will contain all the CSS from all the components.
 
 
 Run the example
@@ -40,6 +54,7 @@ $ webpack
 ```
 
 You should see two files outputted inside the `dist` folder: `basic.js` and `style.css`. The CSS file is automatically generated from the components that are imported by the basic example file. The JS file is just a react component that you could render in a browser or whatever.
+
 
 Grab all the CSS for use in another project
 -------------------------------------------

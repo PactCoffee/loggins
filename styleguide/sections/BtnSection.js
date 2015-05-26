@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 import Section from './Section';
-import {Btn} from 'components';
+import Btn from 'components/Btn/Btn';
 
 export default class BtnSection extends Component {
   render() {

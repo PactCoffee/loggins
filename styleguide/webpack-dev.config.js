@@ -5,7 +5,9 @@ var path = require('path');
 
 module.exports = {
   entry: [
-      './components/index'
+      'webpack-dev-server/client?http://localhost:8080',
+      'webpack/hot/only-dev-server',
+      './index'
     ],
 
   output: {
@@ -21,7 +23,8 @@ module.exports = {
       exclude: /node_modules/
     }, {
       test: /\.css$/,
-      loader: ExtractTextPlugin.extract('style-loader', 'css-loader?module&importLoaders=1&localIdentName=[name]-[local]!postcss-loader')
+      loader: 'style-loader!css-loader?module&importLoaders=1&localIdentName=[name]-[local]!postcss-loader'
+      // loader: ExtractTextPlugin.extract('style-loader', 'css-loader?module&importLoaders=1&localIdentName=[name]-[local]!postcss-loader')
     }]
   },
 
@@ -33,14 +36,14 @@ module.exports = {
     extensions: ['', '.js', '.jsx'],
     modulesDirectories: ['node_modules', 'components'],
     alias: {
-      components: path.join(__dirname, 'components')
+      components: path.join(__dirname, '../components')
     }
   },
 
   plugins: [
-    new ExtractTextPlugin('style.css', {
-      allChunks: true
-    }),
+    // new ExtractTextPlugin('style.css', {
+    //   allChunks: true
+    // }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
   ]
