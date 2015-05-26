@@ -24,6 +24,7 @@
     "node-libs-browser": "^0.5.2",
     "postcss-loader": "^0.4.3",
     "react": "^0.13.3",
+    "react-hot-loader": "^1.2.7",
     "react-to-html-webpack-plugin": "^2.1.0",
     "style-loader": "^0.12.3",
     "webpack": "^1.9.10",

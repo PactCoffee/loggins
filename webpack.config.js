@@ -19,7 +19,7 @@ module.exports = {
   module: {
     loaders: [{
       test: /\.js$/,
-      loader: 'babel-loader',
+      loaders: ['react-hot', 'babel-loader'],
       exclude: /node_modules/
     }, {
       test: /\.css$/,
@@ -32,6 +32,7 @@ module.exports = {
   ],
 
   resolve: {
+    extensions: ['', '.js', '.jsx'],
     modulesDirectories: ['node_modules', 'components'],
     alias: {
       components: path.join(__dirname, 'components')
