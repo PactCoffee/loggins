@@ -1,0 +1,8 @@
+.Btn-root {
+  font-size: 1em;
+  padding: 1em;
+  border: none;
+  border-radius: 4px;
+  background: orange;
+  color: white;
+}
