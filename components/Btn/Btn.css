@@ -5,17 +5,48 @@
   border: none;
   border-radius: 4px;
   color: white;
-  background: #999;
+  background: var(--color-text);
+  transition: background 120ms ease;
+  appearance: none;
+  cursor: pointer;
+}
+.root:hover {
+  background: color(rgb(120,120,120) l(+ 2%));
+}
+.root:focus {
+  box-shadow: 0 0 0 3px #1529FB;
+  outline: 0;
+}
+.root:active {
+
 }
 
 .primary {
   background: var(--color-primary);
 }
+.primary:hover {
+  background: color(var(--color-primary) l(+ 2%));
+}
+.primary:active {
+  background: color(var(--color-primary) l(- 2%));
+}
 
 .secondary {
   background: var(--color-secondary);
 }
+.secondary:hover {
+  background: color(var(--color-secondary) l(+ 5%));
+}
+.secondary:active {
+  background: color(var(--color-secondary) l(- 5%));
+}
 
 .warning {
   background: var(--color-error);
+}
+.warning:hover {
+  background: color(var(--color-error) l(+ 5%));
+}
+.warning:active {
+  background: color(var(--color-error) l(- 5%));
 }

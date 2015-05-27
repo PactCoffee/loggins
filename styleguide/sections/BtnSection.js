@@ -8,10 +8,10 @@ export default class BtnSection extends Component {
     return (
       <Section name="Buttons">
 
-        <Btn>Default</Btn>
         <Btn primary>Primary</Btn>
         <Btn secondary>Secondary</Btn>
         <Btn warning>Warning</Btn>
+        <Btn>Default</Btn>
 
       </Section>
     );
