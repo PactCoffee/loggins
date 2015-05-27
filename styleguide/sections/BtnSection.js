@@ -11,7 +11,7 @@ export default class BtnSection extends Component {
         <Btn primary>Primary</Btn>
         <Btn secondary>Secondary</Btn>
         <Btn warning>Warning</Btn>
-        <Btn>Default</Btn>
+        <Btn>Standard</Btn>
 
       </Section>
     );

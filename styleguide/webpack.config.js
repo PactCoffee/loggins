@@ -1,6 +1,6 @@
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var varMap = require('webpack-postcss-tools').makeVarMap('../variables/index.css');
+var varMap = require('webpack-postcss-tools').makeVarMap('../globals/index.css');
 var path = require('path');
 
 module.exports = {
