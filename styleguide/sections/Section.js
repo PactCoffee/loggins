@@ -1,10 +1,12 @@
 import React, {Component, PropTypes} from 'react';
 
+import styles from '../styleguide.css';
+
 export default class Section extends Component {
   render() {
     return (
-      <section>
-        <h1>{this.props.name}</h1>
+      <section className={styles.section}>
+        <h1 className={styles.title}>{this.props.name}</h1>
         {this.props.children}
       </section>
     );

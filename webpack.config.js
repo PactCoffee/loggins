@@ -26,14 +26,16 @@ module.exports = {
   },
 
   postcss: [
-    require('autoprefixer-core')
+    require('autoprefixer-core'),
+    require('postcss-simple-vars')
   ],
 
   resolve: {
     extensions: ['', '.js', '.jsx'],
     modulesDirectories: ['node_modules', 'components'],
     alias: {
-      components: path.join(__dirname, 'components')
+      components: path.join(__dirname, 'components'),
+      lib: path.join(__dirname, 'lib')
     }
   },
 

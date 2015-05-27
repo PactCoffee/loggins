@@ -3,6 +3,15 @@ loggins
 
 > Pact's component library for any web-related projects
 
+
+Todo
+====
+
+- [ ] Combine webpack configs into common
+- [ ] Get unit testing up and running
+- [ ] Write readme for adding components to the library
+
+
 This repo serves two purposes:
 
 1. A central module for all our components, that we can use across different projects

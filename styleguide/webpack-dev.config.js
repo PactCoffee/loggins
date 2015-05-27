@@ -1,14 +1,16 @@
 var webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-
+var webpackPostcssTools = require('webpack-postcss-tools');
 var path = require('path');
+
+var varMap = webpackPostcssTools.makeVarMap('../variables/index.css');
+console.log(varMap);
 
 module.exports = {
   entry: [
-      'webpack-dev-server/client?http://localhost:8080',
-      'webpack/hot/only-dev-server',
-      './index'
-    ],
+    'webpack-dev-server/client?http://localhost:8080',
+    'webpack/hot/only-dev-server',
+    './index'
+  ],
 
   output: {
     filename: 'bundle.js',
@@ -24,26 +26,26 @@ module.exports = {
     }, {
       test: /\.css$/,
       loader: 'style-loader!css-loader?module&importLoaders=1&localIdentName=[name]-[local]!postcss-loader'
-      // loader: ExtractTextPlugin.extract('style-loader', 'css-loader?module&importLoaders=1&localIdentName=[name]-[local]!postcss-loader')
     }]
   },
 
   postcss: [
-    require('autoprefixer-core')
+    require('autoprefixer-core'),
+    require('postcss-custom-properties')({
+      variables: varMap.vars
+    })
   ],
 
   resolve: {
     extensions: ['', '.js', '.jsx'],
     modulesDirectories: ['node_modules', 'components'],
     alias: {
-      components: path.join(__dirname, '../components')
+      components: path.join(__dirname, '../components'),
+      lib: path.join(__dirname, '../lib')
     }
   },
 
   plugins: [
-    // new ExtractTextPlugin('style.css', {
-    //   allChunks: true
-    // }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
   ]

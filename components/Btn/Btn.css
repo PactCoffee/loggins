@@ -3,6 +3,18 @@
   padding: 1em;
   border: none;
   border-radius: 4px;
-  background: orange;
   color: white;
+  background: #999;
+}
+
+.primary {
+  background: var(--color-primary);
+}
+
+.secondary {
+  background: var(--color-secondary);
+}
+
+.warning {
+  background: var(--color-error);
 }
