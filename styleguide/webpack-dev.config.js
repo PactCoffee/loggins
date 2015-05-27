@@ -1,23 +1,15 @@
-var webpack = require('webpack');
-var webpackPostcssTools = require('webpack-postcss-tools');
 var path = require('path');
+var webpack = require('webpack');
+var assign = require('object-assign');
 
-var varMap = webpackPostcssTools.makeVarMap('../variables/index.css');
-console.log(varMap);
+var config = require('./webpack.config');
 
-module.exports = {
-  entry: [
-    'webpack-dev-server/client?http://localhost:8080',
-    'webpack/hot/only-dev-server',
-    './index'
-  ],
-
+module.exports = assign({}, config, {
   output: {
     filename: 'bundle.js',
     path: path.resolve('./dist'),
     publicPath: '/dist/'
   },
-
   module: {
     loaders: [{
       test: /\.js$/,
@@ -29,24 +21,8 @@ module.exports = {
     }]
   },
 
-  postcss: [
-    require('autoprefixer-core'),
-    require('postcss-custom-properties')({
-      variables: varMap.vars
-    })
-  ],
-
-  resolve: {
-    extensions: ['', '.js', '.jsx'],
-    modulesDirectories: ['node_modules', 'components'],
-    alias: {
-      components: path.join(__dirname, '../components'),
-      lib: path.join(__dirname, '../lib')
-    }
-  },
-
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
   ]
-};
+});

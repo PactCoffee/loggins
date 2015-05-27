@@ -7,7 +7,7 @@ loggins
 Todo
 ====
 
-- [ ] Combine webpack configs into common
+- [ ] Pull in fonts properly
 - [ ] Get unit testing up and running
 - [ ] Write readme for adding components to the library
 

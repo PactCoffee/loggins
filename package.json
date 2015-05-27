@@ -4,7 +4,7 @@
   "description": "Pact's component library",
   "main": "components/index.js",
   "scripts": {
-    "build": "webpack",
+    "build": "cd styleguide && webpack",
     "start": "cd styleguide && node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,6 +22,9 @@
     "extract-text-webpack-plugin": "^0.8.1",
     "jade": "^1.10.0",
     "node-libs-browser": "^0.5.2",
+    "object-assign": "^2.0.0",
+    "postcss-color-function": "^1.2.0",
+    "postcss-custom-properties": "^3.3.0",
     "postcss-loader": "^0.4.3",
     "postcss-simple-vars": "^0.3.0",
     "react": "^0.13.3",
@@ -30,10 +33,7 @@
     "react-to-html-webpack-plugin": "^2.1.0",
     "style-loader": "^0.12.3",
     "webpack": "^1.9.10",
-    "webpack-dev-server": "^1.9.0"
-  },
-  "dependencies": {
-    "postcss-custom-properties": "^3.3.0",
+    "webpack-dev-server": "^1.9.0",
     "webpack-postcss-tools": "^1.1.1"
   }
 }
