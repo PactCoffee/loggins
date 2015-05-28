@@ -12,9 +12,9 @@ export default class BtnSection extends Component {
     return (
       <Section name={this.linkName}>
 
-        <Btn primary>Primary</Btn>
-        <Btn secondary>Secondary</Btn>
-        <Btn warning>Warning</Btn>
+        <Btn primary>Primary</Btn>&nbsp;
+        <Btn secondary>Secondary</Btn>&nbsp;
+        <Btn warning>Warning</Btn>&nbsp;
         <Btn>Standard</Btn>
 
       </Section>

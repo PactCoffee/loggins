@@ -36,5 +36,8 @@
     "webpack": "^1.9.10",
     "webpack-dev-server": "^1.9.0",
     "webpack-postcss-tools": "^1.1.1"
+  },
+  "dependencies": {
+    "normalize.css": "^3.0.3"
   }
 }

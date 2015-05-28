@@ -1,3 +1,9 @@
 :root {
   --font-brandon: 'Brandon Grotesque';
 }
+
+.subheading {
+  font-family: var(--font-brandon);
+  text-transform: uppercase;
+  font-weight: 600;
+}

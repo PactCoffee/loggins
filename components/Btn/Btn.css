@@ -2,6 +2,7 @@
 @import '../../globals/modifiers.css';
 
 .root {
+  display: inline-block;
   font-family: var(--font-brandon);
   font-size: 1em;
   font-weight: 500;

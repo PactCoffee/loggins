@@ -39,6 +39,7 @@ module.exports = {
     modulesDirectories: ['node_modules', 'components'],
     alias: {
       components: path.join(__dirname, '../components'),
+      globals: path.join(__dirname, '../globals'),
       lib: path.join(__dirname, '../lib')
     }
   },

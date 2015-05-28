@@ -1,4 +1,5 @@
 import React from 'react';
+import Container from 'components/Container/Container';
 import Colours from './sections/Colours';
 import Grids from './sections/Grids';
 import Buttons from './sections/Buttons';
@@ -26,15 +27,17 @@ import styles from './styleguide.css';
 export default class Styleguide extends React.Component {
   render() {
     return (
-      <div className={styles.container}>
-        <h1 className={styles.heading}>Pact Styleguide &amp; Component Library</h1>
-        <p>I need to write some kind of description here.</p>
+      <Container>
+        <div className={styles.container}>
+          <h1 className={styles.heading}>Pact Styleguide &amp; Component Library</h1>
+          <p>I need to write some kind of description here.</p>
 
-        <Grids/>
-        <Colours/>
-        <Buttons/>
-        <Forms/>
-      </div>
+          <Grids/>
+          <Colours/>
+          <Buttons/>
+          <Forms/>
+        </div>
+      </Container>
     );
   }
 }

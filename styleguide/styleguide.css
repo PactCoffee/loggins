@@ -1,13 +1,12 @@
 .container {
-  font: 1em/1.5 "Helvetica Neue", sans-serif;
   max-width: 55em;
-  margin: 1em auto 5em;
-  background: white;
+  margin: 0 auto;
   color: #333;
 }
 
 .heading {
   font-size: 3rem;
+  margin: 0;
 }
 
 .section {}
@@ -26,12 +25,15 @@
   margin: 0.25em;
 }
 .swatch span {
+  extends: subheading from 'globals/typography.css';
+  font-size: 0.7em;
   position: absolute;
-  bottom: 0;
+  bottom: 35%;
   width: 100%;
   display: block;
   text-align: center;
-  background: rgba(255,255,255,0.5);
+  background: rgba(0,0,0,0.2);
+  color: white;
 }
 
 .green {
