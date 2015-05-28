@@ -17,7 +17,7 @@ export default class FormSection extends Component {
 
   render() {
     return (
-      <Section name={this.linkName}>
+      <Section name="Forms">
 
         <p>An EmailMultiInput:</p>
 

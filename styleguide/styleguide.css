@@ -9,10 +9,24 @@
   margin: 0;
 }
 
-.section {}
+.section {
+  position: relative;
+}
 
 .title {
   font-size: 2em;
+  border-bottom: 1px solid var(--color-grey-light);
+}
+
+.sectionLink {
+  font-size: 40%;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--color-grey-light);
+  margin-left: 0.5em;
+  position: absolute;
+  right: 0;
+  top: 2em;
 }
 
 .swatch {

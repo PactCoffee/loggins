@@ -29,8 +29,9 @@ export default class Styleguide extends React.Component {
     return (
       <Container>
         <div className={styles.container}>
-          <h1 className={styles.heading}>Pact Styleguide &amp; Component Library</h1>
-          <p>I need to write some kind of description here.</p>
+          <h1 className={styles.heading}>Loggins</h1>
+          <em>Pact's styleguide and component/pattern library</em>
+          <p>Make sure to hit the "view source" links on each section to see how to use the component described within.</p>
 
           <Grids/>
           <Colours/>
