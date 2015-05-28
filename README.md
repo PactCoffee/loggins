@@ -8,18 +8,19 @@ Todo
 ====
 
 - [ ] Pull in fonts properly
+= [ ] Add navigation
 - [ ] Get unit testing up and running
 - [ ] Write readme for adding components to the library
 
 
 This repo serves two purposes:
 
-1. A central module for all our components, that we can use across different projects
+1. A central module for reusable react components, and common styles that we can use across a variety of different projects
 2. A styleguide to describe where and how the components should be used
 
 
-Using the components
---------------------
+Using the components in your project
+------------------------------------
 
 Import the components you want:
 
@@ -27,7 +28,7 @@ Import the components you want:
 import {Btn, Link} from 'loggins';
 ```
 
-Then use them how you wish in your React project.
+Then use them how you wish in your React project. Webpack is required as we're doing fancy stuff with it — check out the [example](https://github.com/PactCoffee/loggins/blob/master/examples/) to get an idea of how to use it.
 
 
 Running the styleguide locally

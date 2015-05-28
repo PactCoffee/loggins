@@ -10,9 +10,81 @@
   font-size: 3rem;
 }
 
-.section {
-}
+.section {}
 
 .title {
   font-size: 2em;
+}
+
+.swatch {
+  position: relative;
+  display: inline-block;
+  width: 6em;
+  height: 4em;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.15);
+  border-radius: 4px;
+  margin: 0.25em;
+}
+.swatch span {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: block;
+  text-align: center;
+  background: rgba(255,255,255,0.5);
+}
+
+.green {
+  background: var(--color-green);
+}
+.red {
+  background: var(--color-red);
+}
+.orange {
+  background: var(--color-orange);
+}
+.grey {
+  background: var(--color-grey);
+}
+.greyLight {
+  background: var(--color-grey-light);
+}
+.brown {
+  background: var(--color-brown);
+}
+.brownDark {
+  background: var(--color-brown-dark);
+}
+.white {
+  background: var(--color-white);
+}
+.whiteDark {
+  background: var(--color-white-dark);
+}
+
+.lost {
+  lost-utility: clearfix;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.lost :global > div {
+  height: 4em;
+  line-height: 4em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  background: rgba(255,255,255,0.2);
+  color: var(--color-white);
+}
+
+.quarter {
+  lost-column: 1/4 0;
+}
+
+.third {
+  lost-column: 1/3 0;
+}
+
+.half {
+  lost-column: 1/2 0;
 }

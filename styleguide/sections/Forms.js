@@ -1,21 +1,23 @@
-import React from 'react';
+import React, {Component} from 'react';
 
 import Section from './Section';
 import EmailMultiInput from 'components/EmailMultiInput/EmailMultiInput';
 
-export default React.createClass({
+export default class FormSection extends Component {
 
-  getInitialState() {
-    return {emails: []};
-  },
+  constructor(props) {
+    super(props);
+    this.state = {emails: []};
+    this.emailsChanged = this.emailsChanged.bind(this);
+  }
 
   emailsChanged(emails) {
     this.setState({emails: emails});
-  },
+  }
 
   render() {
     return (
-      <Section name="Forms">
+      <Section name={this.linkName}>
 
         <p>An EmailMultiInput:</p>
 
@@ -23,4 +25,4 @@ export default React.createClass({
       </Section>
     );
   }
-});
+}

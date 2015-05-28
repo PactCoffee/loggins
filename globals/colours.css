@@ -1,4 +1,6 @@
 :root {
+  --color-white:      rgb(255,255,255);
+  --color-white-dark: rgb(250,250,250);
   --color-green:      rgb(41,174,155);
   --color-red:        rgb(252,99,99);
   --color-orange:     rgb(255,148,28);

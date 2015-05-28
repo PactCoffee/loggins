@@ -21,6 +21,7 @@
     "css-loader": "^0.14.3",
     "extract-text-webpack-plugin": "^0.8.1",
     "jade": "^1.10.0",
+    "lost": "^6.2.0",
     "node-libs-browser": "^0.5.2",
     "object-assign": "^2.0.0",
     "postcss-color-function": "^1.2.0",

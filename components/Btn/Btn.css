@@ -8,11 +8,10 @@
   padding: 0.5em 1em;
   border: none;
   border-radius: 4px;
-  color: white;
+  color: rgba(255, 255, 255, 0.9);
   background: var(--color-text);
   appearance: none;
   cursor: pointer;
-  text-shadow: 0 1px 1px rgba(0,0,0,0.1);
 }
 .root:hover {
   background: color(rgb(120,120,120) l(+ 1%));

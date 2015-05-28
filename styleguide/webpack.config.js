@@ -30,7 +30,8 @@ module.exports = {
     require('postcss-custom-properties')({
       variables: varMap.vars
     }),
-    require('postcss-color-function')()
+    require('postcss-color-function')(),
+    require('lost')
   ],
 
   resolve: {
