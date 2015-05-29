@@ -7,7 +7,7 @@ export default class GridSection extends Component {
   render() {
     return (
       <Section name="Grids" href="https://github.com/PactCoffee/loggins/blob/master/styleguide/sections/Grids.js">
-        <p>We use <a href="https://github.com/corysimmons/lost">lost</a> for grids. This means we can do whatever columns we like whenever we like:</p>
+        <p>We use <a href="https://github.com/corysimmons/lost">lost</a> for grids. This means we can do whatever the shit we want with columns:</p>
 
         <div className={`${styles.lost} ${styles.red}`}>
           <div className={styles.quarter}>1/4</div>

@@ -1,5 +1,6 @@
-/* Hack to get modifiers in the output */
+/* Hack to get globals in the output */
 @import '../../globals/modifiers.css';
+@import '../../globals/typography.css';
 
 .root {
   display: inline-block;

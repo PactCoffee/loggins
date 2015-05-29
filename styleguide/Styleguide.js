@@ -4,6 +4,7 @@ import Colours from './sections/Colours';
 import Grids from './sections/Grids';
 import Buttons from './sections/Buttons';
 import Forms from './sections/Forms';
+import Type from './sections/Type';
 
 import styles from './styleguide.css';
 
@@ -11,7 +12,8 @@ import styles from './styleguide.css';
  * Potential layout
  * ================
  *
- * - Brand colours
+ * - Brand colours ✔
+ * - Grids ✔
  * - Typography
  * - Forms
  *   - Buttons
@@ -21,7 +23,6 @@ import styles from './styleguide.css';
  *   - Banners
  * - Modals
  * - Icons
- * - Grids (describe usage rather than prescribe)
  */
 
 export default class Styleguide extends React.Component {
@@ -33,8 +34,9 @@ export default class Styleguide extends React.Component {
           <em>Pact's styleguide and component/pattern library</em>
           <p>Make sure to hit the "view source" links on each section to see how to use the component described within.</p>
 
-          <Grids/>
           <Colours/>
+          <Type/>
+          <Grids/>
           <Buttons/>
           <Forms/>
         </div>
