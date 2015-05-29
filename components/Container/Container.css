@@ -3,5 +3,6 @@
 .root {
   font: 1.125em/1.5 var(--font-brandon);
   background: var(--color-white-dark);
+  color: var(--color-text);
   padding: 1em;
 }

@@ -1,0 +1,26 @@
+.root {
+  display: block;
+  text-align: center;
+  position: relative;
+  line-height: 1em;
+  color: var(--color-grey-light);
+}
+
+.root:before, .root:after {
+  width: 40%;
+  top: 50%;
+  top: calc(50% - 1px);
+  content: '';
+  display: block;
+  height: 0.05em;
+  position: absolute;
+  background: var(--color-grey-light);
+}
+.root:after {
+  left: 60%
+}
+
+.inner {
+  display: inline-block;
+  max-width: 19%;
+}

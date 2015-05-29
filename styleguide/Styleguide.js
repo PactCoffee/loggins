@@ -32,7 +32,7 @@ export default class Styleguide extends React.Component {
         <div className={styles.container}>
           <h1 className={styles.heading}>Loggins</h1>
           <em>Pact's styleguide and component/pattern library</em>
-          <p>Make sure to hit the "view source" links on each section to see how to use the component described within.</p>
+          <p>Make sure to hit the "view source" links on each section to see how to use the components described within.</p>
 
           <Colours/>
           <Type/>

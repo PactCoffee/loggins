@@ -1,7 +1,6 @@
 .container {
   max-width: 55em;
   margin: 0 auto;
-  color: #333;
 }
 
 .heading {
@@ -28,6 +27,9 @@
   position: absolute;
   right: 0;
   top: 2em;
+}
+.sectionLink:hover {
+  color: var(--color-grey);
 }
 
 .swatch {

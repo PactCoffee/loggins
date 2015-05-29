@@ -24,6 +24,7 @@
     "lost": "^6.2.0",
     "node-libs-browser": "^0.5.2",
     "object-assign": "^2.0.0",
+    "postcss-calc": "^4.0.1",
     "postcss-color-function": "^1.2.0",
     "postcss-custom-properties": "^3.3.0",
     "postcss-loader": "^0.4.3",
