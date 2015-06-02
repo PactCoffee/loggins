@@ -19,3 +19,7 @@
   fill: transparent;
   stroke: currentColor;
 }
+
+.thumb {
+  fill: currentColor;
+}

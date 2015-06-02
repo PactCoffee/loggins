@@ -25,5 +25,6 @@ export default {
   clock: cleanupSvg(require('./svg/clock.svg')),
   coffee: cleanupSvg(require('./svg/coffee.svg')),
   heart: cleanupSvg(require('./svg/heart.svg')),
+  thumb: cleanupSvg(require('./svg/thumb.svg')),
   cog: cleanupSvg(require('./svg/cog.svg'))
 };
