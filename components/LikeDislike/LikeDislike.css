@@ -1,0 +1,50 @@
+.root {
+  border: 1px solid var(--color-grey-light);
+  display: inline-block;
+  border-radius: 2em;
+  overflow: hidden;
+  transition: all 100ms ease;
+  margin: 0;
+  vertical-align: middle;
+}
+
+.liked, .disliked {
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+}
+
+.liked {
+  border-color: var(--color-primary);
+}
+.disliked {
+  border-color: var(--color-error);
+}
+
+.like, .dislike { /* The radio buttons */
+  display: none;
+}
+
+.like + label, .dislike + label {
+  transition: all 100ms ease;
+  display: inline-block;
+  padding: 0.5em 0.75em;
+  cursor: pointer;
+}
+
+
+.like + label {
+  border-right: 0;
+}
+.like:checked + label {
+  color: var(--color-white);
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.dislike + label {
+  border-left: 0;
+}
+.dislike:checked + label {
+  color: var(--color-white);
+  background: var(--color-error);
+  border-color: var(--color-error);
+}
