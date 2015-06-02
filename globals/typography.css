@@ -3,28 +3,31 @@
   --font-lunchbox: 'Lunchbox Slab';
 }
 
-:global .heading {
+.heading {
   font-family: var(--font-lunchbox);
 }
 
-:global .heading--primary {
+.primary {
+  extends: heading;
   font-weight: light;
   font-size: 2em;
 }
 
-:global .heading--hero {
+.hero {
+  extends: heading;
   text-transform: uppercase;
   font-size: 2.944444444em;
   font-weight: bold;
 }
 
-:global .heading--sub {
+.sub {
+  extends: heading;
   text-transform: uppercase;
   font-size: 1.277777778em;
   font-weight: bold;
 }
 
-:global .title {
+.title {
   font-family: var(--font-brandon);
   text-transform: uppercase;
   font-size: 1em;

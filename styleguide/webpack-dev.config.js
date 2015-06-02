@@ -12,12 +12,15 @@ module.exports = assign({}, config, {
   },
   module: {
     loaders: [{
+      test: /\.svg$/,
+      loader: 'raw-loader!svgo-loader?useConfig=svgoConfig'
+    }, {
       test: /\.js$/,
       loaders: ['react-hot', 'babel-loader'],
       exclude: /node_modules/
     }, {
       test: /\.css$/,
-      loader: 'style-loader!css-loader?module&importLoaders=1&localIdentName=[name]-[local]!postcss-loader'
+      loader: 'style-loader!css-loader?module&importLoaders=1&localIdentName=[hash:base64:4]!postcss-loader'
     }]
   },
 

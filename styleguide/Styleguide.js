@@ -5,8 +5,11 @@ import Grids from './sections/Grids';
 import Buttons from './sections/Buttons';
 import Forms from './sections/Forms';
 import Type from './sections/Type';
+import Panels from './sections/Panels';
 
 import styles from './styleguide.css';
+
+import Icon from 'components/Icon/Icon';
 
 /**
  * Potential layout
@@ -39,6 +42,7 @@ export default class Styleguide extends React.Component {
           <Grids/>
           <Buttons/>
           <Forms/>
+          <Panels/>
         </div>
       </Container>
     );

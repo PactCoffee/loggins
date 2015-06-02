@@ -8,7 +8,7 @@ Todo
 ====
 
 - [ ] Pull in fonts properly
-= [ ] Add navigation
+= [ ] Add navigation & routing
 - [ ] Get unit testing up and running
 - [ ] Write readme for adding components to the library
 

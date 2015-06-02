@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>coffee</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="coffee" sketch:type="MSArtboardGroup" stroke="#636363" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15.1792533,10.6999106 C15.1859452,10.5595798 15.1893344,10.4182558 15.1893344,10.2760363 C15.1893344,9.83457495 15.156679,9.40174599 15.0939558,8.98052074 L1.59487134,8.98052074 C1.53214815,9.40174745 1.4994928,9.83457787 1.4994928,10.2760363 C1.4994928,14.5526152 4.56407136,18.0194793 8.34441358,18.0194793 C10.921471,18.0194793 13.1658966,16.408392 14.3336094,14.027971 C14.620015,14.5404676 15.0918189,14.9303713 15.6830291,15.0777765 C16.8755943,15.3751165 18.102405,14.5731531 18.4231947,13.2865357 C18.743983,11.999924 18.0372739,10.715874 16.8447087,10.4185341 C16.2610116,10.2730021 15.6691108,10.390817 15.1792533,10.6999106 Z" id="Shape-Copy-3" sketch:type="MSShapeGroup"></path>
+            <path d="M6.67414099,6.78239953 C6.67414099,6.78239953 6.10128424,5.95689246 7.03056547,4.73915104 C7.95984552,3.52140963 7.89829339,2.86006014 6.63950044,1.98052074" id="Shape-Copy" sketch:type="MSShapeGroup"></path>
+            <path d="M10.674141,6.78239953 C10.674141,6.78239953 10.1012842,5.95689246 11.0305655,4.73915104 C11.9598455,3.52140963 11.8982934,2.86006014 10.6395004,1.98052074" id="Shape-Copy-2" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

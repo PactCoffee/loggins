@@ -1,6 +1,6 @@
 .container {
-  max-width: 55em;
   margin: 0 auto;
+  max-width: 55em;
 }
 
 .heading {
@@ -19,39 +19,39 @@
 }
 
 .sectionLink {
+  right: 0;
+  top: 2em;
   font-size: 40%;
+  margin-left: 0.5em;
+  position: absolute;
   text-decoration: none;
   text-transform: uppercase;
   color: var(--color-grey-light);
-  margin-left: 0.5em;
-  position: absolute;
-  right: 0;
-  top: 2em;
 }
 .sectionLink:hover {
   color: var(--color-grey);
 }
 
 .swatch {
-  position: relative;
-  display: inline-block;
   width: 6em;
   height: 4em;
-  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05);
-  border-radius: 4px;
   margin: 0.25em;
+  position: relative;
+  border-radius: 4px;
+  display: inline-block;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05);
 }
 .swatch span {
+  width: 100%;
+  top: 1.65rem;
+  color: white;
+  height: 1.5em;
+  display: block;
   font-size: 0.7em;
   position: absolute;
-  top: 1.65rem;
-  width: 100%;
-  height: 1.5em;
   line-height: 1.6em;
-  display: block;
   text-align: center;
   background: rgba(0,0,0,0.2);
-  color: white;
 }
 
 .green {
@@ -83,18 +83,22 @@
 }
 
 .lost {
-  lost-utility: clearfix;
   text-align: center;
   margin-bottom: 1em;
+  lost-utility: clearfix;
   color: var(--color-white);
 }
 
 .lost :global > div {
   height: 4em;
-  line-height: 4em;
   margin-top: 1em;
+  line-height: 4em;
   margin-bottom: 1em;
   background: rgba(255,255,255,0.2);
+}
+
+.grid {
+  lost-utility: clearfix;
 }
 
 .quarter {
@@ -108,3 +112,8 @@
 .half {
   lost-column: 1/2 0;
 }
+
+.threequarter {
+  lost-column: 3/4 0;
+}
+

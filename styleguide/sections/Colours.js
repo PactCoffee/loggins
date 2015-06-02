@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import Section from './Section';
+
 import styles from '../styleguide.css';
+import * as t from 'globals/typography.css';
 
 export default class ColourSection extends Component {
   render() {
@@ -21,7 +23,7 @@ export default class ColourSection extends Component {
       <Section name="Colours">
         {
           colours.map(colour =>
-            <div className={styles.swatch + ' title ' + styles[colour]}>
+            <div className={[styles.swatch, styles[colour], t.title].join(' ')}>
               <span>{colour}</span>
             </div>
           )

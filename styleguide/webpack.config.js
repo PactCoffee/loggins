@@ -16,13 +16,21 @@ module.exports = {
   },
   module: {
     loaders: [{
+      test: /\.svg$/,
+      loader: 'raw-loader!svgo-loader?useConfig=svgoConfig'
+    }, {
       test: /\.js$/,
       loaders: ['react-hot', 'babel-loader'],
       exclude: /node_modules/
     }, {
       test: /\.css$/,
-      loader: ExtractTextPlugin.extract('style-loader', 'css-loader?module&importLoaders=1&localIdentName=[name]-[local]!postcss-loader')
+      loader: ExtractTextPlugin.extract('style-loader', 'css-loader?module&importLoaders=1&localIdentName=[name]-[local]-[hash:base64:5]!postcss-loader')
     }]
+  },
+
+
+  svgoConfig: {
+    plugins: []
   },
 
   postcss: [

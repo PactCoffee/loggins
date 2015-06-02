@@ -1,7 +1,3 @@
-/* Hack to get globals in the output */
-@import '../../globals/modifiers.css';
-@import '../../globals/typography.css';
-
 .root {
   display: inline-block;
   font-family: var(--font-brandon);
