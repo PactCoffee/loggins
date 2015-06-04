@@ -17,7 +17,7 @@ module.exports = assign({}, config, {
     }, {
       test: /\.js$/,
       loaders: ['react-hot', 'babel-loader'],
-      exclude: /node_modules/
+      exclude: [path.join(__dirname, '../', 'node_modules')]
     }, {
       test: /\.css$/,
       loader: 'style-loader!css-loader?module&importLoaders=1&localIdentName=[hash:base64:4]!postcss-loader'
@@ -26,6 +26,9 @@ module.exports = assign({}, config, {
 
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('development')
+    })
   ]
 });

@@ -21,7 +21,7 @@ module.exports = {
     }, {
       test: /\.js$/,
       loaders: ['react-hot', 'babel-loader'],
-      exclude: /node_modules/
+      exclude: [path.join(__dirname, '../', 'node_modules')]
     }, {
       test: /\.css$/,
       loader: ExtractTextPlugin.extract('style-loader', 'css-loader?module&importLoaders=1&localIdentName=[name]-[local]-[hash:base64:5]!postcss-loader')
@@ -58,6 +58,9 @@ module.exports = {
       allChunks: true
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('development')
+    })
   ]
 };
