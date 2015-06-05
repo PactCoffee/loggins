@@ -1,0 +1,27 @@
+.root {
+  position: relative;
+}
+
+.input {
+  extends: legacy_textarea from '../../globals/reset.css';
+  border: 1px dashed color(var(--color-white) lightness(-20%));
+  font-size: 1em;
+  border-radius: 4px;
+  text-align: center;
+  color: color(var(--color-white) lightness(-50%));
+  resize: none;
+  margin-bottom: 0;
+  margin: 0 auto;
+  padding: 0.75em;
+  font-style: italic;
+  line-height: 1;
+}
+
+.fake {
+  min-height: inherit;
+  width: auto;
+  max-width: 100%;
+  display: inline-block;
+  position: absolute;
+  visibility: hidden;
+}
