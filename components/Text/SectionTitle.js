@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 
 import styles from './SectionTitle.css';
-import * as t from 'globals/typography.css';
+import * as t from '../../globals/typography.css';
 
 export default class SectionTitle extends Component {
   render() {

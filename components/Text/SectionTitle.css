@@ -3,24 +3,25 @@
   text-align: center;
   position: relative;
   line-height: 1em;
-  color: var(--color-grey);
+  color: var(--color-grey-light);
+  margin: 3em 0;
 }
 
 .root:before, .root:after {
-  width: 40%;
+  width: 30%;
   top: 50%;
   top: calc(50% - 1px);
   content: '';
   display: block;
   height: 0.05em;
   position: absolute;
-  background: var(--color-grey);
+  background: var(--color-grey-light);
 }
 .root:after {
-  left: 60%
+  left: 70%
 }
 
 .inner {
   display: inline-block;
-  max-width: 19%;
+  max-width: 29%;
 }

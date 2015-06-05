@@ -1,5 +1,5 @@
 .root {
-  border: 1px solid var(--color-grey-light);
+  border: 1px solid var(--color-grey-lighter);
   display: inline-block;
   border-radius: 2em;
   overflow: hidden;
