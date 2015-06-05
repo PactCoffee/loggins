@@ -64,3 +64,11 @@ $ webpack
 ```
 
 You should see two files outputted inside the `dist` folder: `basic.js` and `style.css`. The CSS file is automatically generated from the components that are imported by the basic example file. The JS file is just a react component that you could render in a browser or whatever.
+
+
+Usage notes
+-----------
+
+- `import`ing components and using `extends` with the CSS must be done with relative paths.
+- Livereload works for pretty much everyting _apart from_ when you add/edit/delete CSS variables
+- If you need to un-do legacy styles, add an addittional rule to `globals/reset.css`, so we can easily remove them later

@@ -9,7 +9,7 @@
 
 .primary {
   extends: heading;
-  font-weight: light;
+  font-weight: lighter;
   font-size: 2em;
 }
 
