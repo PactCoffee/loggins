@@ -23,9 +23,9 @@ export default class BtnSection extends Component {
     return (
       <Section name="Buttons" href="https://github.com/PactCoffee/loggins/blob/master/styleguide%2Fsections%2FButtons.js">
 
-        <Btn primary>Primary</Btn>&nbsp;
-        <Btn secondary>Secondary</Btn>&nbsp;
-        <Btn warning>Warning</Btn>&nbsp;
+        <Btn type="primary">Primary</Btn>&nbsp;
+        <Btn type="secondary">Secondary</Btn>&nbsp;
+        <Btn type="warning">Warning</Btn>&nbsp;
         <Btn>Standard</Btn>&nbsp;
 
         <Btn>
