@@ -1,18 +1,22 @@
 :root {
-  --color-white:      rgb(255,255,255);
-  --color-white-dark: rgb(250,250,250);
-  --color-green:      rgb(41,174,155);
-  --color-red:        rgb(252,99,99);
-  --color-orange:     rgb(255,148,28);
-  --color-grey:       rgb(99,99,99);
-  --color-grey-light: rgb(197,197,197);
-  --color-brown:      rgb(156,120,102);
-  --color-brown-dark: rgb(96,79,76);
+  --color-white:        rgb(255,255,255);
+  --color-white-dark:   rgb(250,250,250);
+  --color-green:        rgb(41,174,155);
+  --color-red:          rgb(252,99,99);
+  --color-orange:       rgb(255,148,28);
+  --color-grey:         rgb(99,99,99);
+  --color-grey-light:   rgb(138,138,138);
+  --color-grey-lighter: rgb(197,197,197);
+  --color-brown:        rgb(156,120,102);
+  --color-brown-dark:   rgb(96,79,76);
 
-  --color-primary: var(--color-green);
+  --color-primary:   var(--color-green);
   --color-secondary: var(--color-orange);
-  --color-error: var(--color-red);
-  --color-alert: var(--color-orange);
-  --color-text: var(--color-grey);
-  --color-muted: var(--color-grey-light);
+  --color-error:     var(--color-red);
+  --color-alert:     var(--color-orange);
+  --color-text:      var(--color-grey);
+  --color-muted:     var(--color-grey-lighter);
+
+  --color-twitter:    rgb(42,169,224);
+  --color-facebook:   rgb(60,90,153);
 }

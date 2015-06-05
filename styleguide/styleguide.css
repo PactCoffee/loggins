@@ -15,7 +15,7 @@
 
 .title {
   font-size: 2em;
-  border-bottom: 1px solid var(--color-grey-light);
+  border-bottom: 1px solid var(--color-grey-lighter);
 }
 
 .sectionLink {
@@ -26,7 +26,7 @@
   position: absolute;
   text-decoration: none;
   text-transform: uppercase;
-  color: var(--color-grey-light);
+  color: var(--color-grey-lighter);
 }
 .sectionLink:hover {
   color: var(--color-grey);
@@ -67,7 +67,7 @@
   background: var(--color-grey);
 }
 .greyLight {
-  background: var(--color-grey-light);
+  background: var(--color-grey-lighter);
 }
 .brown {
   background: var(--color-brown);
