@@ -1,10 +1,18 @@
 import React, {Component} from 'react';
+import invariant from 'react/lib/invariant';
 
 import styles from './Icon.css';
 import icons from './icons';
 
 
 export default class Icon extends Component {
+  constructor(props) {
+    super(props);
+    invariant(
+      icons[props.name],
+      `Icon(): No icon exists for "${props.name}"`
+    );
+  }
   render() {
     const css = [
       styles.root,

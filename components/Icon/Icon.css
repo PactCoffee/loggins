@@ -12,6 +12,8 @@
   line-height: inherit;
 }
 
+/* Types */
+
 .clock,
 .coffee,
 .cog,
@@ -22,4 +24,11 @@
 
 .thumb {
   fill: currentColor;
+}
+
+.twitter {
+  fill: var(--color-twitter);
+}
+.facebook {
+  fill: var(--color-facebook);
 }
