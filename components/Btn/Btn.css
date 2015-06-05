@@ -14,15 +14,12 @@
 .root:hover {
   background: color(rgb(120,120,120) l(+ 1%));
 }
-.root:focus {
-  box-shadow: 0 0 0 3px #1529FB;
-  outline: 0;
-}
 .root:active {
   background: color(rgb(120,120,120) l(- 5%));
   box-shadow: inset 0 0 2px rgba(0,0,0,0.3);
 }
 
+/* Types */
 .primary {
   background: var(--color-primary);
 }
@@ -52,3 +49,14 @@
 .warning:active {
   background: color(var(--color-error) l(- 5%));
 }
+
+/* Variants */
+.cta {
+  font-family: var(--font-brandon);
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 1em 1.5em;
+}
+
+.hollow {}
+.condensed {}
