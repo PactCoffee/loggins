@@ -50,6 +50,16 @@
   background: color(var(--color-error) l(- 5%));
 }
 
+.clear {
+  background: transparent;
+}
+.clear:hover {
+  background: color(var(--color-white) l(-10%));
+}
+.clear:active {
+  background: color(var(--color-white) l(-15%));
+}
+
 /* Variants */
 .cta {
   font-family: var(--font-brandon);

@@ -6,7 +6,8 @@ import invariant from 'react/lib/invariant';
 const types = {
   primary: styles.primary,
   secondary: styles.secondary,
-  warning: styles.warning
+  warning: styles.warning,
+  clear: styles.clear
 };
 
 const variants = {
@@ -16,10 +17,12 @@ const variants = {
 export default class Btn extends Component {
   constructor(props) {
     super(props);
-    invariant(
-      types[props.type],
-      `Btn: No type exists for "${props.type}". Choose from: ${Object.keys(types).join(', ')}`
-    );
+    if (props.type) {
+      invariant(
+        types[props.type],
+        `Btn: No type exists for "${props.type}". Choose from: ${Object.keys(types).join(', ')}`
+      );
+    }
     if (props.variant) {
       invariant(
         variants[props.variant],
@@ -43,6 +46,6 @@ export default class Btn extends Component {
 
 Btn.propTypes = {
   children: PropTypes.any,
-  type: PropTypes.string.isRequired,
+  type: PropTypes.string,
   variant: PropTypes.string
 };
