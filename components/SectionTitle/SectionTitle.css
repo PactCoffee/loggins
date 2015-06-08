@@ -8,17 +8,17 @@
 }
 
 .root:before, .root:after {
-  width: 30%;
+  width: 35%;
   top: 50%;
   top: calc(50% - 1px);
   content: '';
   display: block;
   height: 0.05em;
   position: absolute;
-  background: var(--color-grey-light);
+  background: var(--color-grey-lighter);
 }
 .root:after {
-  left: 70%
+  left: 65%
 }
 
 .inner {
