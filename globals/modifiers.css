@@ -4,6 +4,11 @@
   --size-large: 1.5rem;
 }
 
+/* Display */
+.di {display:  inline;}
+.dib {display: inline-block;}
+.db {display:  block;}
+
 /* Padding */
 .pts {padding-top:    var(--size-small);}
 .ptm {padding-top:    var(--size-medium);}
@@ -70,3 +75,4 @@
 /* Font styles */
 .bold { font-weight: bold;}
 .light {font-weight: lighter;}
+.italic {font-style: italic;}

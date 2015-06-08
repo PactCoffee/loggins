@@ -5,23 +5,25 @@
 .input {
   extends: legacy_textarea from '../../globals/reset.css';
   border: 1px dashed color(var(--color-white) lightness(-20%));
-  font-size: 1em;
+  color: color(var(--color-white) lightness(-50%));
+  word-wrap: break-word;
   border-radius: 4px;
   text-align: center;
-  color: color(var(--color-white) lightness(-50%));
-  resize: none;
-  margin-bottom: 0;
-  margin: 0 auto;
-  padding: 0.75em;
   font-style: italic;
+  margin-bottom: 0;
+  padding: 0.75em;
+  font-size: 1em;
+  margin: 0 auto;
   line-height: 1;
+  resize: none;
 }
 
 .fake {
-  min-height: inherit;
-  width: auto;
-  max-width: 100%;
   display: inline-block;
+  min-height: inherit;
   position: absolute;
   visibility: hidden;
+  max-width: 100%;
+  width: auto;
+  left: 0;
 }

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 import Section from './Section';
-import SectionTitle from 'components/Text/SectionTitle';
+import SectionTitle from 'components/SectionTitle/SectionTitle';
 
 import * as t from 'globals/typography.css';
 
