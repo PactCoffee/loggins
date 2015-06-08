@@ -5,7 +5,7 @@ var path = require('path');
 
 module.exports = {
   entry: [
-    'webpack-dev-server/client?http://localhost:8080',
+    'webpack-dev-server/client?http://localhost:8181',
     'webpack/hot/only-dev-server',
     './index'
   ],
@@ -27,7 +27,6 @@ module.exports = {
       loader: ExtractTextPlugin.extract('style-loader', 'css-loader?module&importLoaders=1&localIdentName=[name]-[local]-[hash:base64:5]!postcss-loader')
     }]
   },
-
 
   svgoConfig: {
     plugins: []

@@ -22,8 +22,8 @@ export default class ColourSection extends Component {
     return (
       <Section name="Colours">
         {
-          colours.map(colour =>
-            <div className={[styles.swatch, styles[colour], t.title].join(' ')}>
+          colours.map((colour, i) =>
+            <div key={i} className={[styles.swatch, styles[colour], t.title].join(' ')}>
               <span>{colour}</span>
             </div>
           )
