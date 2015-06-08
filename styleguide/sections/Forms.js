@@ -8,12 +8,20 @@ export default class FormSection extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {emails: []};
+    this.state = {
+      emails: [],
+      value: 'highlight me by clicking'
+    };
     this.emailsChanged = this.emailsChanged.bind(this);
+    this.handleCopy = this.handleCopy.bind(this);
   }
 
   emailsChanged(emails) {
     this.setState({emails: emails});
+  }
+
+  handleCopy() {
+    alert(`You copied!`);
   }
 
   render() {
@@ -25,8 +33,8 @@ export default class FormSection extends Component {
         <EmailMultiInput emails={this.state.emails} placeholder="Emails" onChange={this.emailsChanged} />
 
         <h3>SelectableInput</h3>
-        <p>A read-only textarea who's contents are selected on click. It's size is dictated by it's contents using a hidden div.</p>
-        <SelectableInput value="this text will get highlighted on click, making it fast to copy"/>
+        <p>A read-only textarea who's contents are selected on click. It's size is dictated by it's contents using a hidden div. Will fire it's <code>onAction</code> prop when the user copies any of the text within the textarea.</p>
+        <SelectableInput value={this.state.value} onAction={this.handleCopy}/>
       </Section>
     );
   }

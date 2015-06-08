@@ -15,10 +15,24 @@ export default class SelectableInput extends Component {
 
   componentDidMount() {
     this.setDimensions();
+
+    if (this.props.onAction) {
+      React
+        .findDOMNode(this.refs.selectable)
+        .addEventListener('copy', this.props.onAction);
+    }
   }
 
   componentWillRecieveProps() {
     this.setDimensions();
+  }
+
+  componentWillUnmount() {
+    if (this.props.onAction) {
+      React
+        .findDOMNode(this.refs.selectable)
+        .removeEventListener('copy', this.props.onAction);
+    }
   }
 
   setDimensions() {
@@ -60,5 +74,6 @@ export default class SelectableInput extends Component {
 }
 
 SelectableInput.propTypes = {
-  value: PropTypes.string.isRequired
+  value: PropTypes.string.isRequired,
+  onAction: PropTypes.func
 };
