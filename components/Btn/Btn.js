@@ -39,7 +39,7 @@ export default class Btn extends Component {
     ].join(' ');
 
     return (
-      <button className={classNames}>{this.props.children}</button>
+      <button {...this.props} className={classNames}>{this.props.children}</button>
     );
   }
 }

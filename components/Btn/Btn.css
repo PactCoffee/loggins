@@ -52,6 +52,9 @@
 
 .clear {
   background: transparent;
+  color: var(--color-primary);
+  font-weight: normal;
+  font-style: italic;
 }
 .clear:hover {
   background: color(var(--color-white) l(-10%));
