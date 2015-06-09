@@ -1,0 +1,62 @@
+.container {
+  box-shadow: inset 0 0 0 1px var(--color-grey-lighter);
+  background: var(--color-white);
+  transition: all 300ms ease;
+  display: inline-block;
+  position: relative;
+  border-radius: 4px;
+  margin: 1.5em 0;
+}
+
+.label {
+  color: var(--color-grey-light);
+  transition: all 300ms ease;
+  pointer-events: none;
+  position: absolute;
+  padding: 0.75em;
+  display: block;
+  left: 0;
+}
+
+.input {
+  extends: legacy_textarea textarea from 'globals/reset.css';
+  width: 100%;
+  display: block;
+  padding: 0.75em;
+  border: none;
+}
+
+.input:focus {
+  outline: 0;
+}
+.message {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  padding: 0em 0.5em;
+  min-height: 0;
+  transition: all 200ms ease;
+  background: var(--color-error);
+  color: white;
+}
+.messageError {
+  min-height: 1.5em;
+  border-radius: 0 0 4px 4px;
+}
+
+.containerActive {}
+
+.containerError {
+  box-shadow: inset 0 0 0 1px var(--color-error);
+  border-radius: 4px 4px 0 0;
+}
+.containerActive .label {
+  transform: scale(0.8) translate(-0.75em, -2.8em);
+  color: var(--color-grey-light);
+  border-radius: 0 0 4px 4px;
+}
+
+.containerError .label,
+.containerError .input {
+  color: var(--color-error);
+}
