@@ -44,7 +44,7 @@ export default class FormInput extends Component {
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
           onChange={this.props.onChange}
-          defaultValue={this.props.value}
+          value={this.props.value}
         />
         <span className={messageCSS}>
           {this.props.error}
