@@ -39,7 +39,13 @@ export default class Btn extends Component {
     ].join(' ');
 
     return (
-      <button {...this.props} className={classNames}>{this.props.children}</button>
+      <button {...this.props} className={classNames}>
+        {this.props.isLoading ?
+          'Saving...'
+          :
+          this.props.children
+        }
+      </button>
     );
   }
 }
@@ -47,5 +53,6 @@ export default class Btn extends Component {
 Btn.propTypes = {
   children: PropTypes.any,
   type: PropTypes.string,
-  variant: PropTypes.string
+  variant: PropTypes.string,
+  isLoading: PropTypes.bool
 };
