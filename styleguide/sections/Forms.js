@@ -51,8 +51,14 @@ export default class FormSection extends Component {
 
         <FormInput onChange={this.handleTextChange} value={this.state.text} error={this.state.error} label="First name"/>
 
+        <h3>progress</h3>
+        <p>hueChange false</p>
+        <Progress min="0" max="100" value="10"/>
+        <p>isError</p>
         <Progress min="0" max="100" value="10" hueChange/>
+        <p>isWarning</p>
         <Progress min="0" max="100" value="50" hueChange/>
+        <p>isSuccess</p>
         <Progress min="0" max="100" value="80" hueChange/>
       </Section>
     );
