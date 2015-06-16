@@ -20,7 +20,7 @@ module.exports = assign({}, config, {
       exclude: [path.join(__dirname, '../', 'node_modules')]
     }, {
       test: /\.css$/,
-      loader: 'style-loader!css-loader?module&importLoaders=1&localIdentName=[hash:base64:4]!postcss-loader'
+      loader: 'style-loader!css-loader?module&importLoaders=1&localIdentName=[name]-[local]!postcss-loader'
     }]
   },
 
