@@ -10,37 +10,39 @@ export default class Progress extends Component {
 
   getStyles(width) {
     if (!this.props.hueChange) {
-      return;
+      return null;
     }
 
     let type;
-    switch(true) {
+    switch (true) {
       case width > (100 / 3) * 2:
-        type = styles.isSuccess
+        type = styles.isSuccess;
         break;
       case width > 100 / 3:
-        type = styles.isWarning
+        type = styles.isWarning;
         break;
       case width > 0:
-        type = styles.isError
+        type = styles.isError;
         break;
-    };
+      default:
+        type = null;
+    }
     return type;
   }
 
   render() {
-    const width = (this.props.value / (this.props.max - this.props.min) ) * 100;
-
+    const width = (this.props.value / (this.props.max - this.props.min)) * 100;
 
     return (
       <div className={styles.root}>
-        <div className={[styles.bar, this.getStyles(width)].join(' ')} style={{width: `${width}%` }}/>
+        <div
+          className={[styles.bar, this.getStyles(width)].join(' ')}
+          style={{width: `${width}%`}}
+          />
       </div>
     );
   }
 }
-
-
 
 Progress.propTypes = {
   min: PropTypes.number.isRequired,
