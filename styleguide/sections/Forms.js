@@ -4,6 +4,8 @@ import Section from './Section';
 import EmailMultiInput from 'components/EmailMultiInput/EmailMultiInput';
 import SelectableInput from 'components/SelectableInput/SelectableInput';
 import FormInput from 'components/FormInput/FormInput';
+import Progress from 'components/Progress/Progress';
+
 
 export default class FormSection extends Component {
 
@@ -49,6 +51,9 @@ export default class FormSection extends Component {
 
         <FormInput onChange={this.handleTextChange} value={this.state.text} error={this.state.error} label="First name"/>
 
+        <Progress min="0" max="100" value="10" hueChange/>
+        <Progress min="0" max="100" value="50" hueChange/>
+        <Progress min="0" max="100" value="80" hueChange/>
       </Section>
     );
   }

@@ -1,0 +1,27 @@
+.root {
+  width: 100%;
+  height: 0.5em;
+  background: var(--color-grey-lighter);
+  overflow: hidden;
+  border-radius: 1em;
+}
+
+.bar {
+  position: relative;
+  height: 100%;
+  background: var(--color-grey);
+}
+
+.isWarning{
+  background: var(--color-orange);
+}
+
+.isError {
+  background: var(--color-red);
+}
+
+.isSuccess {
+  background: var(--color-green);
+}
+
+
