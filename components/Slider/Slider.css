@@ -8,16 +8,37 @@
   width: 100%;
 }
 
+.root:focus {
+  outline: none;
+}
+
 .root::-webkit-slider-thumb {
   appearance: none;
-  background-color: var(--color-green);
+  background-color: var(--color-white-dark);
+  border: 1px solid var(--color-grey-lighter);
   width: 1em;
   height: 1em;
   border-radius: 1em;
   cursor: pointer;
+  position: relative;
 }
-.root:focus {
-  outline: none;
+
+.root::-webkit-slider-thumb::after {
+  width: 0.1em;
+  height: 0.35em;
+  background: transparent;
+
+  /*width: 0;
+  height: 0;
+  border-bottom: 10px solid transparent;
+  border-top: 10px solid transparent;*/
+  border-left: 1px solid rgb(212,212,212);
+  border-right: 1px solid rgb(212,212,212);
+
+  position: absolute;
+  content: "";
+  top: 0.25em;
+  left: 0.35em;
 }
 
 
