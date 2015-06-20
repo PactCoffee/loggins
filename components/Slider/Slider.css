@@ -1,0 +1,23 @@
+.root {
+  appearance: none;
+  background-color: var(--color-grey-lighter);
+  border: 1px solid var(--color-grey-lighter);
+  height: 0.5em;
+  border-radius: 1em;
+  cursor: pointer;
+  width: 100%;
+}
+
+.root::-webkit-slider-thumb {
+  appearance: none;
+  background-color: var(--color-green);
+  width: 1em;
+  height: 1em;
+  border-radius: 1em;
+  cursor: pointer;
+}
+.root:focus {
+  outline: none;
+}
+
+

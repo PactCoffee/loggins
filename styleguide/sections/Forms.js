@@ -5,6 +5,7 @@ import EmailMultiInput from 'components/EmailMultiInput/EmailMultiInput';
 import SelectableInput from 'components/SelectableInput/SelectableInput';
 import FormInput from 'components/FormInput/FormInput';
 import Progress from 'components/Progress/Progress';
+import Slider from 'components/Slider/Slider';
 
 
 export default class FormSection extends Component {
@@ -60,6 +61,9 @@ export default class FormSection extends Component {
         <Progress min="0" max="100" value="50" hueChange/>
         <p>isSuccess</p>
         <Progress min="0" max="100" value="80" hueChange/>
+
+        <h3>Slider</h3>
+        <Slider min="1" max="10" step="1" />
       </Section>
     );
   }
