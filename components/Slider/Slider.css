@@ -15,6 +15,7 @@
 .root::-webkit-slider-thumb {
   appearance: none;
   background-color: var(--color-white-dark);
+  background-color: -webkit-radial-gradient(center, ellipse cover, var(--color-white-dark) 0%,var(--color-grey-lighter) 100%);
   border: 1px solid var(--color-grey-lighter);
   width: 1em;
   height: 1em;
@@ -24,18 +25,15 @@
 }
 
 .root::-webkit-slider-thumb::after {
-  width: 0.1em;
-  height: 0.35em;
+  position: absolute;
   background: transparent;
 
-  /*width: 0;
-  height: 0;
-  border-bottom: 10px solid transparent;
-  border-top: 10px solid transparent;*/
-  border-left: 1px solid rgb(212,212,212);
-  border-right: 1px solid rgb(212,212,212);
+  width: 0.15em;
+  height: 0.35em;
 
-  position: absolute;
+  border-left: 1px solid rgb(210,210,210);
+  border-right: 1px solid rgb(210,210,210);
+
   content: "";
   top: 0.25em;
   left: 0.35em;
