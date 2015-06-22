@@ -5,6 +5,7 @@ import EmailMultiInput from 'components/EmailMultiInput/EmailMultiInput';
 import SelectableInput from 'components/SelectableInput/SelectableInput';
 import FormInput from 'components/FormInput/FormInput';
 import Progress from 'components/Progress/Progress';
+import Slider from 'components/Slider/Slider';
 
 
 export default class FormSection extends Component {
@@ -15,12 +16,35 @@ export default class FormSection extends Component {
     this.handleEmailChange = this.handleEmailChange.bind(this);
     this.handleCopy = this.handleCopy.bind(this);
     this.handleTextChange = this.handleTextChange.bind(this);
+    this.handleSliderChange = this.handleSliderChange.bind(this);
+    this.getGrindType = this.getGrindType.bind(this);
 
     this.state = {
       emails: [],
       text: ''
     };
   }
+
+  handleSliderChange(e) {
+    this.setState({
+      sliderValue: this.getGrindType(e.target.value)
+    });
+  }
+
+  getGrindType(value) {
+    let grind;
+    switch (parseInt(value)) {
+      case 0:   grind = "Wholebean";  break;
+      case 3:   grind = "Espresso";   break;
+      case 4:   grind = "Stovetop";   break;
+      case 5:   grind = "Aeropress";  break;
+      case 6:   grind = "V60";        break;
+      case 7:   grind = "Cafetiere";  break;
+      default:  grind = value;        break;
+    }
+    return grind;
+  }
+
 
   handleTextChange(e) {
     this.setState({
@@ -60,6 +84,10 @@ export default class FormSection extends Component {
         <Progress min="0" max="100" value="50" hueChange/>
         <p>isSuccess</p>
         <Progress min="0" max="100" value="80" hueChange/>
+
+        <h3>Slider</h3>
+        <p>Value is: {this.state.sliderValue}</p>
+        <Slider min="0" max="10" step="1" onInput={this.handleSliderChange} />
       </Section>
     );
   }

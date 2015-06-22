@@ -1,0 +1,42 @@
+.root {
+  appearance: none;
+  background-color: var(--color-grey-lighter);
+  border: 1px solid var(--color-grey-lighter);
+  height: 0.5em;
+  border-radius: 1em;
+  cursor: pointer;
+  width: 100%;
+}
+
+.root:focus {
+  outline: none;
+}
+
+.root::-webkit-slider-thumb {
+  appearance: none;
+  background-color: var(--color-white-dark);
+  background-color: -webkit-radial-gradient(center, ellipse cover, var(--color-white-dark) 0%,var(--color-grey-lighter) 100%);
+  border: 1px solid var(--color-grey-lighter);
+  width: 1em;
+  height: 1em;
+  border-radius: 1em;
+  cursor: pointer;
+  position: relative;
+}
+
+.root::-webkit-slider-thumb::after {
+  position: absolute;
+  background: transparent;
+
+  width: 0.15em;
+  height: 0.35em;
+
+  border-left: 1px solid rgb(210,210,210);
+  border-right: 1px solid rgb(210,210,210);
+
+  content: "";
+  top: 0.25em;
+  left: 0.35em;
+}
+
+
