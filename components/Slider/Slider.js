@@ -11,10 +11,10 @@ export default class Slider extends Component {
     return (
       <input
         className={styles.root}
-        type="range"
-        min = { this.props.min }
-        max = { this.props.max }
-        step = { this.props.step }
+        type = "range"
+        min = {this.props.min}
+        max = {this.props.max}
+        step = {this.props.step}
         onInput={this.props.onInput} />
     );
   }
@@ -24,5 +24,5 @@ Slider.propTypes = {
   min: PropTypes.number,
   max: PropTypes.number,
   step: PropTypes.number,
-  onInput: PropTypes.func.isRequired,
+  onInput: PropTypes.func
 };

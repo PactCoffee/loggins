@@ -27,7 +27,6 @@ export default class FormSection extends Component {
 
   handleSliderChange(e) {
     this.setState({
-      // sliderValue: e.target.value
       sliderValue: this.getGrindType(e.target.value)
     });
   }
