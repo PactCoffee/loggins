@@ -6,6 +6,7 @@ import * as m from 'globals/modifiers.css';
 import List from 'components/List/List';
 import Panel from 'components/Panel/Panel';
 import Icon from 'components/Icon/Icon';
+import CoffeeInfo from 'components/CoffeeInfo/CoffeeInfo';
 
 export default class Panels extends Component {
   render() {
@@ -46,6 +47,11 @@ export default class Panels extends Component {
           </div>
 
         </div>
+
+        <div className={m.mtl}>
+          <CoffeeInfo/>
+        </div>
+
       </Section>
     );
   }
