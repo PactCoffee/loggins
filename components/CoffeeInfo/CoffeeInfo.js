@@ -54,7 +54,7 @@ CoffeeInfo.propTypes = {
   farm: PropTypes.string.isRequired,
   varietal: PropTypes.string.isRequired,
   process: PropTypes.string.isRequired,
-  mugUrl: PropTypes.string,
+  mugUrl: PropTypes.string.isRequired,
   lightBg: PropTypes.bool
 };
 
