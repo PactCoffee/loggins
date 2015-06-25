@@ -9,29 +9,37 @@ export default class CoffeeInfo extends Component {
   render() {
     return (
       <div className={styles.root}>
-        <div className={[styles.row, styles.grid].join(' ')}>
+        <h1 className={[t.primary, m.larger, m.alignc, m.mts, m.mbs].join(' ')}>{this.props.coffee}</h1>
+        <p className={[m.italic, m.alignc, m.mts, m.mbl].join(' ')}>
+          {this.props.tastingNote}
+        </p>
+
+        <div className={[styles.row, styles.grid, m.mtl, m.mbl].join(' ')}>
           <div className={styles.half}>
             <p className={[t.title, m.small].join(' ')}>Origin</p>
-            <p className={m.italic}>Columbia</p>
+            <p className={m.italic}>{this.props.origin}</p>
           </div>
-          <div className={[styles.half, styles.quadrant].join(' ')}>
+
+          <div className={styles.half}>
             <p className={[t.title, m.small, m.alignr].join(' ')}>Farm</p>
-            <p className={[m.italic, m.alignr].join(' ')}>Eduardo de Leon Mazariegos</p>
+            <p className={[m.italic, m.alignr].join(' ')}>{this.props.farm}</p>
           </div>
         </div>
+
         <div className={[styles.row, styles.grid].join(' ')}>
           <div className={styles.half}>
             <p className={[t.title, m.small].join(' ')}>Varietal</p>
-            <p className={m.italic}>Bourbon</p>
+            <p className={m.italic}>{this.props.varietal}</p>
           </div>
+
           <div className={styles.half}>
             <p className={[t.title, m.small, m.alignr].join(' ')}>Process</p>
-            <p className={[m.italic, m.alignr].join(' ')}>Washed</p>
+            <p className={[m.italic, m.alignr].join(' ')}>{this.props.process}</p>
           </div>
         </div>
 
         <div className={styles.coffee}>
-          <img className="image" src="https://lh5.googleusercontent.com/i5cHrkGFcf-zi3YVMNjlba9kn8fQIVASSayyuHpdGXOPQq7YwcOaySzos-ybnsyO6d-LedDoulsAAGQ=w2438-h1190" />
+          <img className="image" src={this.props.mugUrl} />
         </div>
 
       </div>
@@ -40,9 +48,13 @@ export default class CoffeeInfo extends Component {
 }
 
 CoffeeInfo.propTypes = {
-  // min: PropTypes.number.isRequired,
-  // max: PropTypes.number.isRequired,
-  // value: PropTypes.number.isRequied,
-  // hueChange: PropTypes.bool
+  coffee: PropTypes.string.isRequired,
+  tastingNote: PropTypes.string.isRequired,
+  origin: PropTypes.string.isRequired,
+  farm: PropTypes.string.isRequired,
+  varietal: PropTypes.string.isRequired,
+  process: PropTypes.string.isRequired,
+  mugUrl: PropTypes.string,
+  lightBg: PropTypes.bool
 };
 

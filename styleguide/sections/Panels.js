@@ -49,7 +49,15 @@ export default class Panels extends Component {
         </div>
 
         <div className={m.mtl}>
-          <CoffeeInfo/>
+          <CoffeeInfo
+            coffee="Finca Ltd Sex"
+            tastingNote="Tastes of love, cherries and biscuits."
+            origin="Columbia"
+            farm="Bad Ass Farm"
+            varietal="Bourbon"
+            process="Washed"
+            mugUrl="http://loremflickr.com/350/500/roastedcoffee"
+          />
         </div>
 
       </Section>
