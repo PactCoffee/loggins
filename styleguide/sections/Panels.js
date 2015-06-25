@@ -56,7 +56,7 @@ export default class Panels extends Component {
             farm="Bad Ass Farm"
             varietal="Bourbon"
             process="Washed"
-            mugUrl="http://loremflickr.com/350/500/roastedcoffee"
+            mugUrl="https://lh3.googleusercontent.com/DVMhMC6ysxzhmlWmL45VlCnuFPiSw4izlquYBI1h0tDAkUobF8DGGDhFAYqSxtAqka9Hz6gXC09mys8=w2438-h1144"
           />
         </div>
 
