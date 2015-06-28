@@ -6,6 +6,7 @@
   position: relative;
   border-radius: 4px;
   margin: 1.5em 0;
+  width: 12em;
 }
 
 .label {
@@ -16,10 +17,11 @@
   padding: 0.75em;
   display: block;
   left: 0;
+  top: -0.25em;
 }
 
 .input {
-  extends: legacy_textarea textarea from '../../globals/reset.css';
+  composes: legacy_textarea textarea from '../../globals/reset.css';
   width: 100%;
   display: block;
   padding: 0.5em;

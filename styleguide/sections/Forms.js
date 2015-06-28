@@ -20,6 +20,7 @@ export default class FormSection extends Component {
     this.state = {
       emails: [],
       text: '',
+      lolText: '',
       progressVal: 50
     };
   }
@@ -33,9 +34,11 @@ export default class FormSection extends Component {
   }
 
   handleTextChange(e) {
+    const val = e.target.value;
     this.setState({
-      text: e.target.value,
-      error: e.target.value > 5 ? 'Yep, you broke it':''
+      text: val,
+      error: val.length > 5 ? 'Yep, you broke it':'',
+      lolText: [].slice.call(val).sort().join('').toUpperCase()
     });
   }
 
@@ -60,7 +63,12 @@ export default class FormSection extends Component {
         <SelectableInput value="Highlight me by clicking. If you copy text, you'll be alerted" onAction={this.handleCopy}/>
 
         <h3>FormInput</h3>
+        <p>Just a cute little animating input. Gracefully handles having a value passed in as well:</p>
         <FormInput onChange={this.handleTextChange} value={this.state.text} error={this.state.error} label="First name"/>
+        &nbsp;
+        <FormInput onChange={this.handleTextChange} value={this.state.lolText} error={this.state.error} label="Upcase &amp; sorted"/>
+        <p>Will also show an error if it's passed in:</p>
+        <FormInput onChange={this.handleTextChange} value={this.state.text} error="Something bad happened" label="Error example"/>
 
         <h3>Progress</h3>
         <p><code>hueChange</code> makes the bar change colour according to it's value:</p>
