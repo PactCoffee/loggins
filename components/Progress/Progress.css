@@ -9,18 +9,20 @@
 .bar {
   position: relative;
   height: 100%;
+  max-width: 100%;
   background: var(--color-grey);
+  transition: all 100ms linear;
 }
 
-.isWarning{
+.low {
   background: var(--color-orange);
 }
 
-.isError {
+.medium {
   background: var(--color-red);
 }
 
-.isSuccess {
+.high {
   background: var(--color-green);
 }
 
