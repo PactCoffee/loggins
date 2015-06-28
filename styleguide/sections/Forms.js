@@ -12,20 +12,30 @@ export default class FormSection extends Component {
   constructor(props) {
     super(props);
 
+    this.handleProgressChange = this.handleProgressChange.bind(this);
     this.handleEmailChange = this.handleEmailChange.bind(this);
-    this.handleCopy = this.handleCopy.bind(this);
     this.handleTextChange = this.handleTextChange.bind(this);
+    this.handleCopy = this.handleCopy.bind(this);
 
     this.state = {
       emails: [],
-      text: ''
+      text: '',
+      progressVal: 50
     };
+  }
+
+  handleProgressChange() {
+    const min = 0;
+    const max = 100;
+    this.setState({
+      progressVal: Math.floor(Math.random() * (max - min)) + min
+    });
   }
 
   handleTextChange(e) {
     this.setState({
       text: e.target.value,
-      error: e.target.value > 5 ? 'Yep, you fucked up':''
+      error: e.target.value > 5 ? 'Yep, you broke it':''
     });
   }
 
@@ -49,17 +59,24 @@ export default class FormSection extends Component {
         <p>A read-only textarea who's contents are selected on click. It's size is dictated by it's contents using a hidden div. Will fire it's <code>onAction</code> prop when the user copies any of the text within the textarea.</p>
         <SelectableInput value="Highlight me by clicking. If you copy text, you'll be alerted" onAction={this.handleCopy}/>
 
+        <h3>FormInput</h3>
         <FormInput onChange={this.handleTextChange} value={this.state.text} error={this.state.error} label="First name"/>
 
-        <h3>progress</h3>
-        <p>hueChange false</p>
-        <Progress min="0" max="100" value="10"/>
-        <p>isError</p>
-        <Progress min="0" max="100" value="10" hueChange/>
-        <p>isWarning</p>
+        <h3>Progress</h3>
+        <p><code>hueChange</code> makes the bar change colour according to it's value:</p>
+        <Progress min="0" max="100" value="25" hueChange/>
+        <br/>
         <Progress min="0" max="100" value="50" hueChange/>
-        <p>isSuccess</p>
-        <Progress min="0" max="100" value="80" hueChange/>
+        <br/>
+        <Progress min="0" max="100" value="75" hueChange/>
+        <p>Without <code>hueChange:</code></p>
+        <Progress min="0" max="100" value="75"/>
+        <br/>
+        <Progress min="0" max="100" value="50"/>
+        <br/>
+        <Progress min="0" max="100" value="25"/>
+        <p>Changing the value will animate the bar. <button onClick={this.handleProgressChange}>Change value</button></p>
+        <Progress min="0" max="100" hueChange value={this.state.progressVal}/>
       </Section>
     );
   }
