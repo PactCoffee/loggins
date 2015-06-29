@@ -15,6 +15,11 @@ module.exports = {
     publicPath: '/dist/'
   },
   module: {
+    preLoaders: [{
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: 'eslint'
+    }],
     loaders: [{
       test: /\.svg$/,
       loader: 'raw-loader!svgo-loader?useConfig=svgoConfig'

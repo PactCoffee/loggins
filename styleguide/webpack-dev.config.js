@@ -11,6 +11,11 @@ module.exports = assign({}, config, {
     publicPath: '/dist/'
   },
   module: {
+    preLoaders: [{
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: 'eslint'
+    }],
     loaders: [{
       test: /\.svg$/,
       loader: 'raw-loader!svgo-loader?useConfig=svgoConfig'
@@ -25,6 +30,11 @@ module.exports = assign({}, config, {
   },
 
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('development')
+      }
+    }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
     new webpack.DefinePlugin({

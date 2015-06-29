@@ -40,13 +40,13 @@ export default class FormInput extends Component {
 
     const outerCSS = [
       css.container,
-      this.props.error ? css.containerError:null,
-      this.state.active ? css.containerActive:null
+      this.props.error ? css.containerError : null,
+      this.state.active ? css.containerActive : null
     ].join(' ');
 
     const messageCSS = [
       css.message,
-      this.props.error ? css.messageError:null
+      this.props.error ? css.messageError : null
     ].join(' ');
 
     return (

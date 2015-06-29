@@ -35,7 +35,7 @@ export default class Btn extends Component {
     const classNames = [
       styles.root,
       types[this.props.type],
-      this.props.variant ? variants[this.props.variant]:null
+      this.props.variant ? variants[this.props.variant] : null
     ].join(' ');
 
     return (

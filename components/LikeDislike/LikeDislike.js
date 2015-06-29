@@ -35,8 +35,8 @@ export default class LikeDislike extends Component {
   render() {
     const outerStyles = [
       styles.root,
-      this.state.liked ? styles.liked:null,
-      this.state.disliked ? styles.disliked:null
+      this.state.liked ? styles.liked : null,
+      this.state.disliked ? styles.disliked : null
     ].join(' ');
 
     return (

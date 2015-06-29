@@ -37,7 +37,7 @@ export default class FormSection extends Component {
     const val = e.target.value;
     this.setState({
       text: val,
-      error: val.length > 5 ? 'Yep, you broke it':'',
+      error: val.length > 5 ? 'Yep, you broke it' : '',
       lolText: [].slice.call(val).sort().join('').toUpperCase()
     });
   }
