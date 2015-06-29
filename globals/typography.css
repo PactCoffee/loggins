@@ -8,20 +8,20 @@
 }
 
 .primary {
-  extends: heading;
+  composes: heading;
   font-weight: lighter;
   font-size: 2em;
 }
 
 .hero {
-  extends: heading;
+  composes: heading;
   text-transform: uppercase;
   font-size: 2.944444444em;
   font-weight: bold;
 }
 
 .sub {
-  extends: heading;
+  composes: heading;
   text-transform: uppercase;
   font-size: 1.277777778em;
   font-weight: bold;

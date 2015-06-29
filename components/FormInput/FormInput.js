@@ -10,28 +10,43 @@ export default class FormInput extends Component {
     this.handleBlur = this.handleBlur.bind(this);
 
     this.state = {
-      active: !!props.value
+      active: !!props.value,
+      isFocused: false
     };
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (!this.state.isFocused) {
+      this.setState({
+        active: nextProps.value.length
+      });
+    }
+  }
+
   handleFocus() {
-    this.setState({active: true});
+    this.setState({
+      isFocused: true,
+      active: true
+    });
   }
   handleBlur() {
-    this.setState({active: !!this.props.value});
+    this.setState({
+      isFocused: false,
+      active: !!this.props.value
+    });
   }
 
   render() {
 
     const outerCSS = [
       css.container,
-      this.props.error ? css.containerError:null,
-      this.state.active ? css.containerActive:null
+      this.props.error ? css.containerError : null,
+      this.state.active ? css.containerActive : null
     ].join(' ');
 
     const messageCSS = [
       css.message,
-      this.props.error ? css.messageError:null
+      this.props.error ? css.messageError : null
     ].join(' ');
 
     return (

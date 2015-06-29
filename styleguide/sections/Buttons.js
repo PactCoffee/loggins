@@ -41,9 +41,9 @@ export default class BtnSection extends Component {
 
         <LikeDislike onChange={this.likeChanged}/>
         &nbsp;
-        {this.state.liked === true ? 'Liked': null}
-        {this.state.liked === false ? 'Disliked': null}
-        {this.state.liked === null ? 'No preference': null}
+        {this.state.liked === true ? 'Liked' : null}
+        {this.state.liked === false ? 'Disliked' : null}
+        {this.state.liked === null ? 'No preference' : null}
 
       </Section>
     );

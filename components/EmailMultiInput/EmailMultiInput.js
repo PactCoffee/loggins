@@ -1,7 +1,6 @@
 import React from 'react';
 import TagInput from 'react-tagsinput';
 import {backspace, tab, enter, del, comma} from 'lib/keyCodes';
-import styles from './EmailMultiInput.css';
 
 const MATCHER = /[^\s@,]+@[^\s,@]+\.[^\s@,]+/;
 

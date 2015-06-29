@@ -9,8 +9,6 @@ import Panels from './sections/Panels';
 
 import styles from './styleguide.css';
 
-import Icon from 'components/Icon/Icon';
-
 /**
  * Potential layout
  * ================
