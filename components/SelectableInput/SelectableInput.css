@@ -3,7 +3,7 @@
 }
 
 .input {
-  extends: textarea legacy_textarea from '../../globals/reset.css';
+  composes: textarea legacy_textarea from '../../globals/reset.css';
   border: 1px dashed color(var(--color-white) lightness(-20%));
   color: color(var(--color-white) lightness(-50%));
   word-wrap: break-word;

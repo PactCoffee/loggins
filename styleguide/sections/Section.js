@@ -10,7 +10,7 @@ export default class Section extends Component {
           {this.props.name}
           {this.props.href ?
             <a className={styles.sectionLink} target="_blank" href={this.props.href}>View source</a>
-            :null
+            : null
           }
         </h1>
         {this.props.children}

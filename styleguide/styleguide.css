@@ -89,7 +89,7 @@
   color: var(--color-white);
 }
 
-.lost :global > div {
+.lost div {
   height: 4em;
   margin-top: 1em;
   line-height: 4em;

@@ -16,13 +16,13 @@ export default class Progress extends Component {
     let type;
     switch (true) {
       case width > (100 / 3) * 2:
-        type = styles.isSuccess;
+        type = styles.high;
         break;
       case width > 100 / 3:
-        type = styles.isWarning;
+        type = styles.medium;
         break;
       case width > 0:
-        type = styles.isError;
+        type = styles.low;
         break;
       default:
         type = null;

@@ -11,12 +11,19 @@ module.exports = assign({}, config, {
     publicPath: '/dist/'
   },
   module: {
+    preLoaders: [{
+      test: /\.js$/,
+      loader: 'eslint',
+      include: [path.join(__dirname, '../')],
+      exclude: [path.join(__dirname, '../', 'node_modules')]
+    }],
     loaders: [{
       test: /\.svg$/,
       loader: 'raw-loader!svgo-loader?useConfig=svgoConfig'
     }, {
       test: /\.js$/,
       loaders: ['react-hot', 'babel-loader'],
+      include: [path.join(__dirname, '../')],
       exclude: [path.join(__dirname, '../', 'node_modules')]
     }, {
       test: /\.css$/,
@@ -25,10 +32,12 @@ module.exports = assign({}, config, {
   },
 
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('development')
-    })
+      'process.env': {
+        NODE_ENV: JSON.stringify('development')
+      }
+    }),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
   ]
 });
