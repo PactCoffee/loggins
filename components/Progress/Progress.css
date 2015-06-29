@@ -15,11 +15,11 @@
 }
 
 .low {
-  background: var(--color-orange);
+  background: var(--color-red);
 }
 
 .medium {
-  background: var(--color-red);
+  background: var(--color-orange);
 }
 
 .high {
