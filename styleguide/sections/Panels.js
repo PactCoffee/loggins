@@ -6,6 +6,7 @@ import * as m from 'globals/modifiers.css';
 import List from 'components/List/List';
 import Panel from 'components/Panel/Panel';
 import Icon from 'components/Icon/Icon';
+import CoffeeInfo from 'components/CoffeeInfo/CoffeeInfo';
 
 export default class Panels extends Component {
   render() {
@@ -46,6 +47,19 @@ export default class Panels extends Component {
           </div>
 
         </div>
+
+        <div className={m.mtl}>
+          <CoffeeInfo
+            coffee="Finca Ltd Sex"
+            tastingNote="Tastes of love, cherries and biscuits."
+            origin="Columbia"
+            farm="Bad Ass Farm"
+            varietal="Bourbon"
+            process="Washed"
+            mugUrl="https://lh3.googleusercontent.com/DVMhMC6ysxzhmlWmL45VlCnuFPiSw4izlquYBI1h0tDAkUobF8DGGDhFAYqSxtAqka9Hz6gXC09mys8=w2438-h1144"
+          />
+        </div>
+
       </Section>
     );
   }

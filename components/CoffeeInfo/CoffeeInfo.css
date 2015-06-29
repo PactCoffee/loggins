@@ -1,0 +1,30 @@
+.root {
+  position: relative;
+}
+
+.coffee {
+  position: absolute;
+  top: 125px;
+  left: 25%;
+  width: 50%;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  max-height: 250px;
+}
+
+.row {
+  border-top: solid 1px var(--color-green);
+  border-bottom: solid 1px var(--color-green);
+  margin-bottom: -1px;
+}
+
+.grid {
+  lost-utility: clearfix;
+}
+
+.half {
+  lost-column: 1/2 0;
+}

@@ -68,6 +68,8 @@
 .rotate180 {transform: rotate(180deg);}
 
 /* Font size */
+.smaller {font-size: 0.5em;          }
+.small {font-size: 0.8em;          }
 .medium {font-size: 1em;          }
 .large { font-size: 1.277777778em;}
 .larger {font-size: 2.944444444em;}
