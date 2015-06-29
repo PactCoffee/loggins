@@ -17,8 +17,9 @@ module.exports = {
   module: {
     preLoaders: [{
       test: /\.js$/,
-      exclude: /node_modules/,
-      loader: 'eslint'
+      loader: 'eslint',
+      include: [__dirname],
+      exclude: [path.join(__dirname, '../', 'node_modules')]
     }],
     loaders: [{
       test: /\.svg$/,
@@ -58,13 +59,15 @@ module.exports = {
   },
 
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('development')
+      }
+    }),
     new ExtractTextPlugin('style.css', {
       allChunks: true
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('development')
-    })
   ]
 };

@@ -13,8 +13,9 @@ module.exports = assign({}, config, {
   module: {
     preLoaders: [{
       test: /\.js$/,
-      exclude: /node_modules/,
-      loader: 'eslint'
+      loader: 'eslint',
+      include: [path.join(__dirname, '../')],
+      exclude: [path.join(__dirname, '../', 'node_modules')]
     }],
     loaders: [{
       test: /\.svg$/,
@@ -22,6 +23,7 @@ module.exports = assign({}, config, {
     }, {
       test: /\.js$/,
       loaders: ['react-hot', 'babel-loader'],
+      include: [path.join(__dirname, '../')],
       exclude: [path.join(__dirname, '../', 'node_modules')]
     }, {
       test: /\.css$/,
@@ -36,9 +38,6 @@ module.exports = assign({}, config, {
       }
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('development')
-    })
+    new webpack.NoErrorsPlugin()
   ]
 });
