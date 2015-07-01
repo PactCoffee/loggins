@@ -1,0 +1,19 @@
+.root {
+  display: inline-block;
+}
+.root svg {
+  max-width: 100%;
+}
+
+.small svg {
+  width: 5em;
+}
+.medium svg {
+  width: 10em;
+}
+.large svg {
+  width: 15em;
+}
+
+.vertical svg {}
+.horizontal svg {}
