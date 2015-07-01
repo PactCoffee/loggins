@@ -11,12 +11,12 @@ export default class FormInput extends Component {
 
     this.state = {
       active: !!props.value,
-      isFocused: false
+      focus: false
     };
   }
 
   componentWillReceiveProps(nextProps) {
-    if (!this.state.isFocused) {
+    if (!this.state.focus) {
       this.setState({
         active: nextProps.value.length
       });
@@ -25,13 +25,13 @@ export default class FormInput extends Component {
 
   handleFocus() {
     this.setState({
-      isFocused: true,
+      focus: true,
       active: true
     });
   }
   handleBlur() {
     this.setState({
-      isFocused: false,
+      focus: false,
       active: !!this.props.value
     });
   }
@@ -41,7 +41,8 @@ export default class FormInput extends Component {
     const outerCSS = [
       css.container,
       this.props.error ? css.containerError : null,
-      this.state.active ? css.containerActive : null
+      this.state.active ? css.containerActive : null,
+      this.state.focus ? css.containerFocus : null
     ].join(' ');
 
     const messageCSS = [
@@ -60,6 +61,7 @@ export default class FormInput extends Component {
           onBlur={this.handleBlur}
           onChange={this.props.onChange}
           value={this.props.value}
+          type={this.props.type}
         />
         <span className={messageCSS}>
           {this.props.error}
@@ -72,10 +74,9 @@ export default class FormInput extends Component {
 FormInput.propTypes = {
 
   value: PropTypes.string.isRequired,
-
   onChange: PropTypes.func.isRequired,
-
   label: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
 
   // If set, will display underneath the input
   error: PropTypes.string
