@@ -9,6 +9,7 @@
   --color-grey-lighter: rgb(197,197,197);
   --color-brown:        rgb(156,120,102);
   --color-brown-dark:   rgb(96,79,76);
+  --color-blue:         rgb(41,179,225);
 
   --color-primary:   var(--color-green);
   --color-secondary: var(--color-orange);

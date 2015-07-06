@@ -4,3 +4,18 @@
   background: var(--color-white);
   box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
 }
+
+.success {
+  background: color(var(--color-green) l(+ 5%));
+  color: var(--color-white);
+}
+
+.error {
+  background: color(var(--color-red) l(+ 5%));
+  color: var(--color-white);
+}
+
+.info {
+  background: color(var(--color-blue) l(+ 5%));
+  color: var(--color-white);
+}

@@ -44,7 +44,29 @@ export default class Panels extends Component {
               </List>
             </Panel>
           </div>
+        </div>
 
+        <div className={[styles.grid, m.mtm].join(' ')}>
+
+          <div className={styles.half}>
+            <Panel type="error">
+              What the hell did you do!?!
+            </Panel>
+          </div>
+
+          <div className={styles.half}>
+            <Panel type="info">
+              Oh so informative am I.
+            </Panel>
+          </div>
+        </div>
+
+        <div className={[styles.grid, m.mtm].join(' ')}>
+          <div className={styles.half}>
+            <Panel type="success">
+              You gone done good, didn't you.
+            </Panel>
+          </div>
         </div>
       </Section>
     );
