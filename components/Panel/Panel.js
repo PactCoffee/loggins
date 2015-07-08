@@ -2,10 +2,22 @@ import React, {Component, PropTypes} from 'react';
 
 import styles from './Panel.css';
 
+
+const types = {
+  info: styles.info,
+  success: styles.success,
+  error: styles.error
+};
+
 export default class Panel extends Component {
   render() {
+    const classNames = [
+      styles.root,
+      types[this.props.type]
+    ].join(' ');
+
     return (
-      <div className={styles.root}>
+      <div className={classNames}>
         {this.props.children}
       </div>
     );
@@ -13,5 +25,6 @@ export default class Panel extends Component {
 }
 
 Panel.propTypes = {
-  children: PropTypes.any
+  children: PropTypes.any,
+  type: PropTypes.string
 };

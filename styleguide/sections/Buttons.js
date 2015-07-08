@@ -39,6 +39,11 @@ export default class BtnSection extends Component {
         <br/>
         <br/>
 
+        <Btn fullWidth>Full width</Btn>&nbsp;
+
+        <br/>
+        <br/>
+
         <LikeDislike onChange={this.likeChanged}/>
         &nbsp;
         {this.state.liked === true ? 'Liked' : null}

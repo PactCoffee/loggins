@@ -73,3 +73,8 @@
 
 .hollow {}
 .condensed {}
+
+.fullWidth {
+  width: 100%;
+  text-align: center;
+}
