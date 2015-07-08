@@ -74,7 +74,7 @@
 .hollow {}
 .condensed {}
 
-.expanded {
+.fullWidth {
   width: 100%;
   text-align: center;
 }

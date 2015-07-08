@@ -36,7 +36,7 @@ export default class Btn extends Component {
       styles.root,
       types[this.props.type],
       this.props.variant ? variants[this.props.variant] : null,
-      this.props.fullWidth ? styles.expanded : null
+      this.props.fullWidth ? styles.fullWidth : null
     ].join(' ');
 
     return (
