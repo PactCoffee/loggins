@@ -73,3 +73,8 @@
 
 .hollow {}
 .condensed {}
+
+.expanded {
+  width: 100%;
+  text-align: center;
+}

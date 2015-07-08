@@ -35,7 +35,8 @@ export default class Btn extends Component {
     const classNames = [
       styles.root,
       types[this.props.type],
-      this.props.variant ? variants[this.props.variant] : null
+      this.props.variant ? variants[this.props.variant] : null,
+      this.props.fullWidth ? styles.expanded : null
     ].join(' ');
 
     return (
@@ -54,5 +55,6 @@ Btn.propTypes = {
   children: PropTypes.any,
   type: PropTypes.string,
   variant: PropTypes.string,
-  isLoading: PropTypes.bool
+  isLoading: PropTypes.bool,
+  fullWidth: PropTypes.bool
 };
