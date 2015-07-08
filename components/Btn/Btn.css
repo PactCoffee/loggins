@@ -74,16 +74,31 @@
   font-weight: 600;
   padding: 1em 1.5em;
 }
+
 .hollow {
   background: transparent;
   border: 2px solid var(--color-text);
   color: var(--color-text);
 }
+.hollow:hover {
+  background: var(--color-text);
+  color: var(--color-white);
+}
+.hollow:active {
+  background: color(var(--color-text) l(- 5%));
+}
+
 .secondary.hollow {
   border: 2px solid var(--color-secondary);
   color: var(--color-secondary);
 }
-.condensed {}
+.secondary.hollow:hover {
+  background: var(--color-secondary);
+  color: var(--color-white);
+}
+.secondary.hollow:active {
+  background: color(var(--color-secondary) l(- 5%));
+}
 
 .fullWidth {
   width: 100%;
