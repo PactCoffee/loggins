@@ -58,9 +58,6 @@ Btn.propTypes = {
   type: PropTypes.string,
   variant: PropTypes.string,
   isLoading: PropTypes.bool,
-<<<<<<< HEAD
-  fullWidth: PropTypes.bool
-=======
+  fullWidth: PropTypes.bool,
   className: PropTypes.string
->>>>>>> Btn className passthrough & hollow styles
 };
