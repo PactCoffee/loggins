@@ -16,6 +16,6 @@
 }
 
 .info {
-  background: color(var(--color-blue) l(+ 5%));
+  background: color(var(--color-blue-dark) l(+ 5%));
   color: var(--color-white);
 }
