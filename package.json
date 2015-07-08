@@ -23,7 +23,7 @@
     "eslint": "^0.23.0",
     "eslint-loader": "^0.14.1",
     "extract-text-webpack-plugin": "^0.8.1",
-    "lost": "^6.2.0",
+    "lost": "^6.3.0",
     "node-libs-browser": "^0.5.2",
     "postcss-calc": "^4.0.1",
     "postcss-color-function": "^1.2.0",
