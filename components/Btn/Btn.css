@@ -20,6 +20,7 @@
 }
 .root:disabled {
   opacity: 0.5;
+  pointer-events: none;
 }
 
 /* Types */
@@ -73,8 +74,15 @@
   font-weight: 600;
   padding: 1em 1.5em;
 }
-
-.hollow {}
+.hollow {
+  background: transparent;
+  border: 2px solid var(--color-text);
+  color: var(--color-text);
+}
+.secondary.hollow {
+  border: 2px solid var(--color-secondary);
+  color: var(--color-secondary);
+}
 .condensed {}
 
 .fullWidth {
