@@ -1,1 +1,1 @@
-web: cd styleguide && node server.js
+web: npm start
