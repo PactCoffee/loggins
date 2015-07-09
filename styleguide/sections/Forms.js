@@ -5,6 +5,7 @@ import React, {Component} from 'react';
 import Section from './Section';
 import EmailMultiInput from 'components/EmailMultiInput/EmailMultiInput';
 import SelectableInput from 'components/SelectableInput/SelectableInput';
+import LikeDislike from 'components/LikeDislike/LikeDislike';
 import FormInput from 'components/FormInput/FormInput';
 import Progress from 'components/Progress/Progress';
 import Checkbox from 'components/Checkbox/Checkbox';
@@ -19,6 +20,7 @@ export default class FormSection extends Component {
     this.handleEmailChange = this.handleEmailChange.bind(this);
     this.handleTextChange = this.handleTextChange.bind(this);
     this.handleCheckbox = this.handleCheckbox.bind(this);
+    this.likeChanged = this.likeChanged.bind(this);
     this.handleCopy = this.handleCopy.bind(this);
 
     this.state = {
@@ -26,6 +28,7 @@ export default class FormSection extends Component {
       text: '',
       lolText: '',
       progressVal: 50,
+      liked: null,
       checked: false
     };
   }
@@ -55,6 +58,10 @@ export default class FormSection extends Component {
     alert(`You copied!`);
   }
 
+  likeChanged(didLike) {
+    this.setState({liked: didLike});
+  }
+
   handleCheckbox(val) {
     this.setState({checkbox: val});
   }
@@ -65,6 +72,17 @@ export default class FormSection extends Component {
 
         <h3>Checkbox</h3>
         <p><Checkbox label="Checkbox" onChange={this.handleCheckbox}/> value is {this.state.checkbox ? 'checked' : 'not checked'}.</p>
+
+        <h3>LikeDislike</h3>
+        <p>
+          Preference:&nbsp;
+          <strong>
+            {this.state.liked === true ? 'Liked' : null}
+            {this.state.liked === false ? 'Disliked' : null}
+            {this.state.liked === null ? 'None' : null}
+          </strong>
+        </p>
+        <LikeDislike onChange={this.likeChanged}/>
 
         <h3>EmailMultiInput</h3>
         <p>Enter multiple email addresses with a tagging interface.</p>
