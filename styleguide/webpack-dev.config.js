@@ -11,13 +11,18 @@ module.exports = assign({}, config, {
     publicPath: '/dist/'
   },
   module: {
+
     preLoaders: [{
       test: /\.js$/,
       loader: 'eslint',
       include: [path.join(__dirname, '../')],
       exclude: [path.join(__dirname, '../', 'node_modules')]
     }],
+
     loaders: [{
+      test: /\.(woff|woff2)$/,
+      loader: 'url-loader'
+    }, {
       test: /\.svg$/,
       loader: 'raw-loader!svgo-loader?useConfig=svgoConfig'
     }, {
