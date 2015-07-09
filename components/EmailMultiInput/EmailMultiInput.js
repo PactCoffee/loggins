@@ -2,6 +2,8 @@ import React from 'react';
 import TagInput from 'react-tagsinput';
 import {backspace, tab, enter, del, comma} from 'lib/keyCodes';
 
+import s from './EmailMultiInput.css';
+
 const MATCHER = /[^\s@,]+@[^\s,@]+\.[^\s@,]+/;
 
 export default React.createClass({
@@ -47,7 +49,7 @@ export default React.createClass({
 
   render() {
     return (
-      <div onClick={this.handleContainerClick}>
+      <div className={s.root} onClick={this.handleContainerClick}>
         <TagInput
           ref="input"
           value={this.props.emails}
