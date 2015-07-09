@@ -1,0 +1,74 @@
+:root {
+  --baseCheckboxSize: 1.1em;
+}
+
+.root {
+  position: relative;
+}
+.root:hover .label {
+  color: var(--color-primary);
+}
+.root:hover .label:before {
+  border-color: var(--color-primary);
+}
+
+/* Make the input invisible but still clickable */
+.input {
+  cursor: pointer;
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  outline: 0;
+  height: calc(var(--baseCheckboxSize) + 0.1em);
+  width: calc(var(--baseCheckboxSize) + 0.1em);
+}
+
+.label {
+  transition: 200ms ease;
+  display: inline-block;
+  position: relative;
+  padding-left: 2rem;
+  user-select: none;
+  cursor: pointer;
+}
+
+/* The actual box */
+.root .label:before {
+  top: 0;
+  left: 0;
+  content: '';
+  position: absolute;
+  border-radius: 2px;
+  display: inline-block;
+  width: var(--baseCheckboxSize);
+  height: var(--baseCheckboxSize);
+  border: 1px solid var(--color-grey-lighter);
+  box-shadow: 1px 1px 0 rgba(255,255,255,0.5);
+  transition: all 150ms linear;
+  background: var(--color-white);
+}
+
+/* The tick icon*/
+.tick {
+  position: absolute;
+  z-index: 2;
+  left: 0.05em;
+  color: var(--color-white);
+  pointer-events: none;
+  transition: all 200ms var(--easeoutback);
+  opacity: 0;
+  transform: scale(0.5) rotate(100deg);
+}
+
+/* When checked */
+.root.isChecked .tick {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+.root.isChecked .label:before {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+

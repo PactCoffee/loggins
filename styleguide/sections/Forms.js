@@ -1,3 +1,5 @@
+/* eslint  no-alert: 0*/
+
 import React, {Component} from 'react';
 
 import Section from './Section';
@@ -5,6 +7,7 @@ import EmailMultiInput from 'components/EmailMultiInput/EmailMultiInput';
 import SelectableInput from 'components/SelectableInput/SelectableInput';
 import FormInput from 'components/FormInput/FormInput';
 import Progress from 'components/Progress/Progress';
+import Checkbox from 'components/Checkbox/Checkbox';
 
 
 export default class FormSection extends Component {
@@ -15,13 +18,15 @@ export default class FormSection extends Component {
     this.handleProgressChange = this.handleProgressChange.bind(this);
     this.handleEmailChange = this.handleEmailChange.bind(this);
     this.handleTextChange = this.handleTextChange.bind(this);
+    this.handleCheckbox = this.handleCheckbox.bind(this);
     this.handleCopy = this.handleCopy.bind(this);
 
     this.state = {
       emails: [],
       text: '',
       lolText: '',
-      progressVal: 50
+      progressVal: 50,
+      checked: false
     };
   }
 
@@ -50,9 +55,16 @@ export default class FormSection extends Component {
     alert(`You copied!`);
   }
 
+  handleCheckbox(val) {
+    this.setState({checkbox: val});
+  }
+
   render() {
     return (
       <Section name="Forms" href="https://github.com/PactCoffee/loggins/blob/master/styleguide/sections/Forms.js">
+
+        <h3>Checkbox</h3>
+        <p><Checkbox label="Checkbox" onChange={this.handleCheckbox}/> value is {this.state.checkbox ? 'checked' : 'not checked'}.</p>
 
         <h3>EmailMultiInput</h3>
         <p>Enter multiple email addresses with a tagging interface.</p>
