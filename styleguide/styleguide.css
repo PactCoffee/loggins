@@ -7,6 +7,8 @@
 }
 
 .heading {
+  font-family: var(--font-lunchbox);
+  text-align: center;
   font-size: 6em;
   font-weight: 100;
   margin: 0 0 1rem;

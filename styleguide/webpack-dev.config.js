@@ -7,15 +7,15 @@ var config = require('./webpack.config');
 module.exports = assign({}, config, {
   output: {
     filename: 'bundle.js',
-    path: path.resolve('./dist'),
-    publicPath: '/dist/'
+    path: path.resolve('./public'),
+    publicPath: '/'
   },
   module: {
 
     preLoaders: [{
       test: /\.js$/,
       loader: 'eslint',
-      include: [path.join(__dirname, '../')],
+      include: [__dirname],
       exclude: [path.join(__dirname, '../', 'node_modules')]
     }],
 

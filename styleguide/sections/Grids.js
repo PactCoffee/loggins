@@ -33,7 +33,7 @@ export default class GridSection extends Component {
           <div className={styles.quarter}>1/4</div>
         </div>
 
-        <p>These styles used above are not accessible from loggins, they're just used to display what's possible.</p>
+        <p>These styles used above are not accessible from loggins, they're just used to display what's possible with the lost grid library.</p>
 
       </Section>
     );
