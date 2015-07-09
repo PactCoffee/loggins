@@ -6,6 +6,10 @@
   transition: all 100ms ease;
   margin: 0;
   vertical-align: middle;
+  user-select: none;
+}
+.root:hover {
+  border-color: var(--color-grey-light);
 }
 
 .liked, .disliked {
