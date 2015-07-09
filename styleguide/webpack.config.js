@@ -69,6 +69,9 @@ module.exports = {
     new ExtractTextPlugin('bundle.css', {
       allChunks: true
     }),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.DedupePlugin()
   ]
 };
