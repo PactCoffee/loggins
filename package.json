@@ -6,7 +6,7 @@
   "scripts": {
     "build": "cd styleguide && webpack --progress",
     "dev": "cd styleguide && node devServer.js",
-    "prestart": "npm run build",
+    "postinstall": "npm run build",
     "start": "cd styleguide && node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
