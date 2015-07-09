@@ -36,7 +36,7 @@ export default class BtnSection extends Component {
 
         <p>With icon(s):</p>
 
-        <Btn>
+        <Btn className={m.mbs}>
           <Icon name="heart"/>
           &nbsp;
           Avec icon
@@ -44,7 +44,7 @@ export default class BtnSection extends Component {
           <Icon name="coffee"/>
         </Btn>
 
-        <Btn className={m.mas} fullWidth>Full width</Btn>
+        <Btn fullWidth>Full width</Btn>
 
         <p>
           A LikeDislike component that should probably be elsewhere. Preference:&nbsp;
