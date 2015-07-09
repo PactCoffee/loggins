@@ -28,5 +28,8 @@ export default {
   thumb: cleanupSvg(require('./svg/thumb.svg')),
   twitter: cleanupSvg(require('./svg/twitter.svg')),
   facebook: cleanupSvg(require('./svg/facebook.svg')),
+  more: cleanupSvg(require('./svg/more.svg')),
+  pin: cleanupSvg(require('./svg/pin.svg')),
+  triangle: cleanupSvg(require('./svg/triangle.svg')),
   cog: cleanupSvg(require('./svg/cog.svg'))
 };

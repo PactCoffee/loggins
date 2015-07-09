@@ -1,7 +1,10 @@
 :root {
-  --size-small: 0.5rem;
+  --size-small:  0.5rem;
   --size-medium: 1rem;
-  --size-large: 1.5rem;
+  --size-large:  1.5rem;
+  --size-larger: 2rem;
+
+  --radius-medium: 8px;
 }
 
 /* Display */
@@ -73,11 +76,23 @@
 .rotate180 {transform: rotate(180deg);}
 
 /* Font size */
-.medium {font-size: 1em;          }
-.large { font-size: 1.277777778em;}
-.larger {font-size: 2.944444444em;}
+.smaller {font-size: 0.5em;        }
+.small {font-size:   0.8em;        }
+.medium {font-size:  1em;          }
+.large { font-size:  1.277777778em;}
+.larger {font-size:  2.944444444em;}
 
 /* Font styles */
 .bold { font-weight: bold;}
 .light {font-weight: lighter;}
 .italic {font-style: italic;}
+
+/* Box shadow */
+.bs {box-shadow: 1px 1px 3px rgba(0,0,0,0.15);}
+
+/* Border radius */
+.br0 {border-radius: 0px;}
+.br {border-radius:  8px;}
+
+/* Grid helpers */
+.cf {lost-utility: clearfix;}

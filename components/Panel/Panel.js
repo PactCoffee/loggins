@@ -13,7 +13,8 @@ export default class Panel extends Component {
   render() {
     const classNames = [
       styles.root,
-      types[this.props.type]
+      types[this.props.type],
+      this.props.className
     ].join(' ');
 
     return (
@@ -26,5 +27,6 @@ export default class Panel extends Component {
 
 Panel.propTypes = {
   children: PropTypes.any,
-  type: PropTypes.string
+  type: PropTypes.string,
+  className: PropTypes.string
 };

@@ -11,7 +11,8 @@ const types = {
 };
 
 const variants = {
-  cta: styles.cta
+  cta: styles.cta,
+  hollow: styles.hollow
 };
 
 export default class Btn extends Component {
@@ -36,7 +37,8 @@ export default class Btn extends Component {
       styles.root,
       types[this.props.type],
       this.props.variant ? variants[this.props.variant] : null,
-      this.props.fullWidth ? styles.fullWidth : null
+      this.props.fullWidth ? styles.fullWidth : null,
+      this.props.className
     ].join(' ');
 
     return (
@@ -56,5 +58,6 @@ Btn.propTypes = {
   type: PropTypes.string,
   variant: PropTypes.string,
   isLoading: PropTypes.bool,
-  fullWidth: PropTypes.bool
+  fullWidth: PropTypes.bool,
+  className: PropTypes.string
 };

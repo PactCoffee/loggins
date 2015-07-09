@@ -1,8 +1,7 @@
 .root {
+  composes: bs br from '../../globals/modifiers.css';
   padding: 1em;
-  border-radius: 8px;
   background: var(--color-white);
-  box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
 }
 
 .success {
