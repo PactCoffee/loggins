@@ -1,0 +1,29 @@
+.nav {
+
+}
+.nav ul {
+  list-style: none;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0;
+}
+.nav li {
+  display: inline-block;
+}
+.nav a {
+  display: block;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.8em;
+  padding: 0.5em;
+  color: var(--color-primary);
+  cursor: pointer;
+}
+.nav a:hover {
+  background: var(--color-whit);
+}
+.nav :global a.active {
+  color: var(--color-secondary);
+}
