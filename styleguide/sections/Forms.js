@@ -6,6 +6,7 @@ import Section from './Section';
 import EmailMultiInput from 'components/EmailMultiInput/EmailMultiInput';
 import SelectableInput from 'components/SelectableInput/SelectableInput';
 import LikeDislike from 'components/LikeDislike/LikeDislike';
+import RadioGroup from 'components/RadioGroup/RadioGroup';
 import FormInput from 'components/FormInput/FormInput';
 import Progress from 'components/Progress/Progress';
 import Checkbox from 'components/Checkbox/Checkbox';
@@ -21,6 +22,7 @@ export default class FormSection extends Component {
     this.handleTextChange = this.handleTextChange.bind(this);
     this.handleCheckbox = this.handleCheckbox.bind(this);
     this.likeChanged = this.likeChanged.bind(this);
+    this.handleRadio = this.handleRadio.bind(this);
     this.handleCopy = this.handleCopy.bind(this);
 
     this.state = {
@@ -29,7 +31,8 @@ export default class FormSection extends Component {
       lolText: '',
       progressVal: 50,
       liked: null,
-      checked: false
+      checked: false,
+      radioVal: null
     };
   }
 
@@ -66,9 +69,29 @@ export default class FormSection extends Component {
     this.setState({checkbox: val});
   }
 
+  handleRadio(val) {
+    this.setState({
+      radioVal: val
+    });
+  }
+
   render() {
     return (
       <Section name="Forms" href="https://github.com/PactCoffee/loggins/blob/master/styleguide/sections/Forms.js">
+
+        <h3>Radio buttons</h3>
+        <RadioGroup name="example"
+                    onChange={this.handleRadio}
+                    selectedValue={this.state.radioVal}>
+          {Radio => (
+            <span>
+              <Radio value="Apple"/>
+              <br/>
+              <Radio value="Orange"/>
+            </span>
+          )}
+        </RadioGroup>
+        <p>You selected {this.state.radioVal}</p>
 
         <h3>Checkbox</h3>
         <p><Checkbox label="Checkbox" onChange={this.handleCheckbox}/> value is {this.state.checkbox ? 'checked' : 'not checked'}.</p>
