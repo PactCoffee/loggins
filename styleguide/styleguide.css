@@ -1,5 +1,5 @@
-@import './FontPack/brandon.css';
-@import './FontPack/lunchboxslab.css';
+@import '@pactcoffee/fontpack/brandon.css';
+@import '@pactcoffee/fontpack/lunchboxslab.css';
 
 .container {
   margin: 0 auto;

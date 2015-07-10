@@ -8,7 +8,7 @@ module.exports = assign({}, config, {
   output: {
     filename: 'bundle.js',
     path: path.resolve('./public'),
-    publicPath: '/'
+    publicPath: '/public/'
   },
   module: {
 
