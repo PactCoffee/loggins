@@ -1,6 +1,6 @@
 :root {
-  --font-brandon:  brandon-grotesque, "Brandon Grotesque", Helvetica Neue, Helvetica, Arial, sans-serif;
-  --font-lunchbox: 'lunchbox', 'Lunchbox Slab';
+  --font-brandon: 'BrandonGrotesque', brandon-grotesque, "Brandon Grotesque", Helvetica Neue, Helvetica, Arial, sans-serif;
+  --font-lunchbox: 'LunchboxSlab', 'lunchbox', 'Lunchbox Slab';
 }
 
 .heading {

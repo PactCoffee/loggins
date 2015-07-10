@@ -1,9 +1,14 @@
+@import '@pactcoffee/fontpack/brandon.css';
+@import '@pactcoffee/fontpack/lunchboxslab.css';
+
 .container {
   margin: 0 auto;
   max-width: 55em;
 }
 
 .heading {
+  font-family: var(--font-lunchbox);
+  text-align: center;
   font-size: 6em;
   font-weight: 100;
   margin: 0 0 1rem;

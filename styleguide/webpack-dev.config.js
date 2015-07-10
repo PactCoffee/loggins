@@ -5,19 +5,29 @@ var assign = require('object-assign');
 var config = require('./webpack.config');
 
 module.exports = assign({}, config, {
+  entry: [
+    'webpack-dev-server/client?http://localhost:8181',
+    'webpack/hot/only-dev-server',
+    './index'
+  ],
   output: {
     filename: 'bundle.js',
-    path: path.resolve('./dist'),
-    publicPath: '/dist/'
+    path: path.resolve('./public'),
+    publicPath: '/public/'
   },
   module: {
+
     preLoaders: [{
       test: /\.js$/,
       loader: 'eslint',
-      include: [path.join(__dirname, '../')],
+      include: [__dirname],
       exclude: [path.join(__dirname, '../', 'node_modules')]
     }],
+
     loaders: [{
+      test: /\.(woff|woff2)$/,
+      loader: 'url-loader'
+    }, {
       test: /\.svg$/,
       loader: 'raw-loader!svgo-loader?useConfig=svgoConfig'
     }, {
