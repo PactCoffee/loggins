@@ -1,30 +1,9 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import Container from 'components/Container/Container';
-import Colours from './sections/Colours';
-import Grids from './sections/Grids';
-import Buttons from './sections/Buttons';
-import Forms from './sections/Forms';
-import Type from './sections/Type';
-import Panels from './sections/Panels';
+
+import Nav from './components/Nav';
 
 import styles from './styleguide.css';
-
-/**
- * Potential layout
- * ================
- *
- * - Brand colours ✔
- * - Grids ✔
- * - Typography
- * - Forms
- *   - Buttons
- *   - Inputs
- * - Feedback
- *   - Alerts
- *   - Banners
- * - Modals
- * - Icons
- */
 
 export default class Styleguide extends React.Component {
   render() {
@@ -35,14 +14,16 @@ export default class Styleguide extends React.Component {
           <em>Pact's styleguide and component/pattern library</em>
           <p>Make sure to hit the "view source" links on each section to see how to use the components described within.</p>
 
-          <Colours/>
-          <Type/>
-          <Grids/>
-          <Buttons/>
-          <Forms/>
-          <Panels/>
+          <Nav/>
+
+          {this.props.children}
+
         </div>
       </Container>
     );
   }
 }
+
+Styleguide.propTypes = {
+  children: PropTypes.any
+};
