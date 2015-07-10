@@ -5,6 +5,11 @@ var assign = require('object-assign');
 var config = require('./webpack.config');
 
 module.exports = assign({}, config, {
+  entry: [
+    'webpack-dev-server/client?http://localhost:8181',
+    'webpack/hot/only-dev-server',
+    './index'
+  ],
   output: {
     filename: 'bundle.js',
     path: path.resolve('./public'),

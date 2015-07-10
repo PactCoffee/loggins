@@ -5,8 +5,6 @@ var path = require('path');
 
 module.exports = {
   entry: [
-    'webpack-dev-server/client?http://localhost:8181',
-    'webpack/hot/only-dev-server',
     './index'
   ],
   output: {
