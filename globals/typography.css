@@ -1,7 +1,16 @@
+/*
+ * @font-face declarations are not included by default. This is on purpose.
+ *
+ * You may want to load your fonts in async using JS, or base64-inline the fonts
+ * inside another CSS file — or both.
+ * By not including fonts as default, it keeps your options open for your
+ * projects.
+ */
 :root {
   --font-brandon: 'BrandonGrotesque', brandon-grotesque, "Brandon Grotesque", Helvetica Neue, Helvetica, Arial, sans-serif;
   --font-lunchbox: 'LunchboxSlab', 'lunchbox', 'Lunchbox Slab';
 }
+
 
 .heading {
   font-family: var(--font-lunchbox);
@@ -9,7 +18,7 @@
 
 .primary {
   composes: heading;
-  font-weight: lighter;
+  font-weight: light;
   font-size: 2em;
 }
 
@@ -17,7 +26,7 @@
   composes: heading;
   text-transform: uppercase;
   font-size: 2.944444444em;
-  font-weight: bold;
+  font-weight: normal;
 }
 
 .sub {
@@ -31,5 +40,5 @@
   font-family: var(--font-brandon);
   text-transform: uppercase;
   font-size: 1em;
-  font-weight: 600;
+  font-weight: 700;
 }

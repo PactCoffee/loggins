@@ -19,7 +19,7 @@
   "private": true,
   "author": "",
   "dependencies": {
-    "@pactcoffee/fontpack": "^1.0.0",
+    "@pactcoffee/fontpack": "^2.0.0",
     "autoprefixer-core": "^5.2.0",
     "babel-core": "^5.4.7",
     "babel-eslint": "^3.1.19",
