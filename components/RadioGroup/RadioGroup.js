@@ -5,6 +5,8 @@ import s from './Radio.css';
 
 export default class RadioGroup extends Component {
   shouldComponentUpdate() {
+    // Stop react from ripping out the DOM in the radio children.
+    // https://github.com/chenglou/react-radio-group/issues/12
     return false;
   }
   render() {

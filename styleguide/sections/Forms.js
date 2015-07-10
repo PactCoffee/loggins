@@ -10,6 +10,7 @@ import RadioGroup from 'components/RadioGroup/RadioGroup';
 import FormInput from 'components/FormInput/FormInput';
 import Progress from 'components/Progress/Progress';
 import Checkbox from 'components/Checkbox/Checkbox';
+import Toggle from 'components/Toggle/Toggle';
 
 
 export default class FormSection extends Component {
@@ -21,6 +22,7 @@ export default class FormSection extends Component {
     this.handleEmailChange = this.handleEmailChange.bind(this);
     this.handleTextChange = this.handleTextChange.bind(this);
     this.handleCheckbox = this.handleCheckbox.bind(this);
+    this.handleToggle = this.handleToggle.bind(this);
     this.likeChanged = this.likeChanged.bind(this);
     this.handleRadio = this.handleRadio.bind(this);
     this.handleCopy = this.handleCopy.bind(this);
@@ -29,10 +31,11 @@ export default class FormSection extends Component {
       emails: [],
       text: '',
       lolText: '',
-      progressVal: 50,
+      toggleVal: false,
+      radioVal: 'Orange',
       liked: null,
       checked: false,
-      radioVal: 'Orange'
+      progressVal: 50
     };
   }
 
@@ -69,6 +72,10 @@ export default class FormSection extends Component {
     this.setState({checkbox: val});
   }
 
+  handleToggle(val) {
+    this.setState({toggleVal: val});
+  }
+
   handleRadio(val) {
     this.setState({
       radioVal: val
@@ -78,6 +85,12 @@ export default class FormSection extends Component {
   render() {
     return (
       <Section name="Forms" href="https://github.com/PactCoffee/loggins/blob/master/styleguide/sections/Forms.js">
+
+        <h3>Toggle</h3>
+        <Toggle value={this.state.toggleVal} onChange={this.handleToggle}/>
+        <br/>
+        Is mothercluckers the best chicken in the universe? <strong>{this.state.toggleVal ? 'Absolutely.' : `I don't know. Probably.`}</strong>
+
 
         <h3>Radio buttons</h3>
         <RadioGroup name="example"
