@@ -1,4 +1,12 @@
 import React from 'react';
-import Styleguide from './Styleguide';
+import {Router} from 'react-router';
+import {history} from 'react-router/lib/BrowserHistory';
 
-React.render(<Styleguide />, document.getElementById('outlet'));
+import routes from './routes';
+
+React.render(
+  <Router
+    history={history}
+    children={routes}
+  />,
+  document.getElementById('outlet'));
