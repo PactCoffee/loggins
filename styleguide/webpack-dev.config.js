@@ -6,7 +6,7 @@ var config = require('./webpack.config');
 
 module.exports = assign({}, config, {
   entry: [
-    'webpack-dev-server/client?http://localhost:8181',
+    'webpack-dev-server/client?http://localhost:8080',
     'webpack/hot/only-dev-server',
     './index'
   ],

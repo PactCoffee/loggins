@@ -32,7 +32,7 @@ export default class FormSection extends Component {
       progressVal: 50,
       liked: null,
       checked: false,
-      radioVal: null
+      radioVal: 'Orange'
     };
   }
 
@@ -88,6 +88,8 @@ export default class FormSection extends Component {
               <Radio value="Apple"/>
               <br/>
               <Radio value="Orange"/>
+              <br/>
+              <Radio value="Banana"/>
             </span>
           )}
         </RadioGroup>

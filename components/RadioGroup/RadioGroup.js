@@ -1,9 +1,12 @@
-import React, {PropTypes} from 'react';
+import React, {Component, PropTypes} from 'react';
 
 import radioFactory from './radioFactory';
-import s from './RadioGroup.css';
+import s from './Radio.css';
 
-export default class RadioGroup {
+export default class RadioGroup extends Component {
+  shouldComponentUpdate() {
+    return false;
+  }
   render() {
     let {name, selectedValue, onChange, children} = this.props;
     return (
