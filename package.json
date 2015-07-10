@@ -4,11 +4,13 @@
   "description": "Pact's component library",
   "main": "components/index.js",
   "scripts": {
-    "build": "cd styleguide && webpack --progress",
-    "dev": "cd styleguide && node devServer.js",
+    "build": "npm run clean && cd styleguide && webpack --progress",
+    "dev": "npm run clean && cd styleguide && node devServer.js",
     "postinstall": "npm run build",
     "start": "cd styleguide && node server.js",
+    "clean": "cd styleguide && rm -rf public",
     "test": "echo \"Error: no test specified\" && exit 1"
+
   },
   "repository": {
     "type": "git",
