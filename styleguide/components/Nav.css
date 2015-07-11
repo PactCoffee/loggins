@@ -1,5 +1,11 @@
 .nav {
-
+  background: var(--color-white);
+  position: fixed;
+  z-index: 999999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  composes: bs from '../../globals/modifiers.css';
 }
 .nav ul {
   list-style: none;
@@ -18,12 +24,13 @@
   font-weight: bold;
   font-size: 0.8em;
   padding: 0.5em;
-  color: var(--color-primary);
+  color: var(--color-grey-light);
   cursor: pointer;
 }
 .nav a:hover {
-  background: var(--color-whit);
+  color: var(--color-brown-dark);
 }
 .nav :global a.active {
-  color: var(--color-secondary);
+  color: var(--color-brown-dark);
+  box-shadow: inset 0 -3px 0 var(--color-brown);
 }
