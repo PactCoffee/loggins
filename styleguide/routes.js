@@ -11,7 +11,7 @@ import Colours from './sections/Colours';
 import Buttons from './sections/Buttons';
 
 export default (
-  <Route path="/" component={Styleguide}>
+  <Route ignoreScrollBehavior={true} path="/" component={Styleguide}>
     <Route path="type" component={Type}/>
     <Route path="grids" component={Grids}/>
     <Route path="forms" component={Forms}/>
