@@ -2,7 +2,7 @@
 
 import React, {Component} from 'react';
 
-import Section from './Section';
+import Section from '../components/Section';
 import EmailMultiInput from 'components/EmailMultiInput/EmailMultiInput';
 import SelectableInput from 'components/SelectableInput/SelectableInput';
 import LikeDislike from 'components/LikeDislike/LikeDislike';
