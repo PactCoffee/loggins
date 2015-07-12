@@ -162,30 +162,30 @@
 }
 
 :global .transLeft-enter {
-  transition: all 200ms var(--easeoutquad);
+  transition: all 200ms var(--easeoutcubic);
   transform: translateX(100%);
 }
 :global .transLeft-enter-active {
-  transition: all 200ms var(--easeoutquad);
+  transition: all 200ms var(--easeoutcubic);
   transform: translateX(0);
 }
 :global .transLeft-leave {
-  transition: all 200ms var(--easeoutquad);
+  transition: all 200ms var(--easeoutcubic);
 }
 :global .transLeft-leave-active {
   transform: translateX(-100%);
 }
 
 :global .transRight-enter {
-  transition: all 200ms var(--easeoutquad);
+  transition: all 200ms var(--easeoutcubic);
   transform: translateX(-100%);
 }
 :global .transRight-enter-active {
-  transition: all 200ms var(--easeoutquad);
+  transition: all 200ms var(--easeoutcubic);
   transform: translateX(0);
 }
 :global .transRight-leave {
-  transition: all 200ms var(--easeoutquad);
+  transition: all 200ms var(--easeoutcubic);
 }
 :global .transRight-leave-active {
   transform: translateX(100%);
