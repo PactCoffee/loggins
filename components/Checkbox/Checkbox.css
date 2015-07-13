@@ -55,16 +55,17 @@
   position: absolute;
   z-index: 2;
   left: 0.05em;
-  color: var(--color-white);
+  color: var(--color-grey);
   pointer-events: none;
   transition: all 200ms var(--easeoutback);
   opacity: 0;
-  transform: scale(0.5) rotate(100deg);
+  transform: scale(0.8) rotate(120deg);
 }
 
 /* When checked */
 .root.isChecked .tick {
   opacity: 1;
+  color: var(--color-white);
   transform: scale(1) rotate(0deg);
 }
 .root.isChecked .label:before {
