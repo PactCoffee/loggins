@@ -5,7 +5,7 @@ import styles from './Container.css';
 export default class Container extends Component {
   render() {
     return (
-      <div className={styles.root}>
+      <div className={[styles.root, this.props.className].join(' ')}>
         {this.props.children}
       </div>
     );
@@ -13,5 +13,6 @@ export default class Container extends Component {
 }
 
 Container.propTypes = {
-  children: React.PropTypes.any
+  children: React.PropTypes.any,
+  className: React.PropTypes.string
 };
