@@ -96,13 +96,13 @@ export default class FormSection extends Component {
         <RadioGroup name="example"
                     onChange={this.handleRadio}
                     selectedValue={this.state.radioVal}>
-          {Radio => (
+          {radio => (
             <span>
-              <Radio value="Apple"/>
+              {radio({value: 'Apple'})}
               <br/>
-              <Radio value="Orange"/>
+              {radio({value: 'Orange'})}
               <br/>
-              <Radio value="Banana"/>
+              {radio({value: 'Banana'})}
             </span>
           )}
         </RadioGroup>
