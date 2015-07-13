@@ -1,0 +1,127 @@
+.root {
+  position: relative;
+  width: 100%;
+  background: var(--color-white);
+}
+
+:global .DayPicker {
+  display: block;
+  width: 100%;
+}
+
+:global .DayPicker-Month {
+  display: table;
+  border-collapse: collapse;
+  border-spacing: 0;
+  user-select: none;
+  width: 100%;
+}
+
+:global .DayPicker-NavBar {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  padding: 0 0.5rem;
+}
+
+:global .DayPicker-NavButton {
+  position: absolute;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: red;
+  cursor: pointer;
+}
+
+:global .DayPicker-NavButton--prev {
+  left: 1rem;
+}
+
+:global .DayPicker-NavButton--next {
+  right: 1rem;
+}
+
+
+:global .DayPicker-Caption {
+  display: table-caption;
+  height: 1.5rem;
+  text-align: center;
+  font-weight: bold;
+  text-align: center;
+}
+
+:global .DayPicker-Weekdays {
+  display: table-header-group;
+}
+:global .DayPicker-Weekdays > div {
+  display: table;
+  width: 100%;
+  font-weight: bold;
+}
+
+:global .DayPicker-Weekday {
+  display: table-cell;
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 0.875em;
+  text-align: center;
+}
+
+:global .DayPicker-Body {
+  display: table;
+  width: 100%;
+}
+
+:global .DayPicker-Week {
+  display: table-row;
+}
+
+:global .DayPicker-Day {
+  border: 1px solid var(--color-grey-lighter);
+  vertical-align: middle;
+  display: table-cell;
+  text-align: center;
+  cursor: pointer;
+  padding: 0.75em;
+}
+
+
+:global .DayPicker--interactionDisabled :global .DayPicker-Day {
+}
+
+:global .DayPicker-Day--disabled {
+  cursor: default;
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+:global .DayPicker-Day--today {
+  position: relative;
+  color: var(--color-blue);
+  padding-top: 0.4em;
+  font-weight: bold;
+}
+:global .DayPicker-Day--today:after {
+  content: 'Today';
+  position: absolute;
+  left: 0;
+  bottom: 0.4em;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 60%;
+}
+
+
+:global .DayPicker-Day--selected {
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-weight: bold;
+}
+
+:global .DayPicker-Day--outside {
+  background: var(--color-grey-lighter);
+}
+
+:global .DayPicker-Day--selected:not(:global .DayPicker-Day--disabled):not(:global .DayPicker-Day--outside) {
+}
