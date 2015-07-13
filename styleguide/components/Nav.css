@@ -37,6 +37,7 @@
 
 .nav .home :global a.active {
   box-shadow: none;
+  color: var(--color-grey);
 }
 
 .isFixed {
