@@ -39,7 +39,7 @@ export default class extends Component {
     return (
       <nav className={css}>
         <ul>
-          <li className={styles.home}><Link to="/">🏠</Link></li>
+          <li className={styles.home}><Link to="/">Home</Link></li>
           <li><Link to="colours">Colours</Link></li>
           <li><Link to="type">Type</Link></li>
           <li><Link to="grids">Grids</Link></li>
