@@ -24,14 +24,15 @@ export default class Logo {
     const {type, size} = this.props;
 
     const svg = type === 'vertical' ? vertical : horizontal;
-    const sizeClasses = [
+    const cssClasses = [
       styles.root,
       styles[size],
-      styles[type]
+      styles[type],
+      this.props.className
     ];
 
     return (
-      <span className={sizeClasses.join(' ')}
+      <span className={cssClasses.join(' ')}
         dangerouslySetInnerHTML={{__html: svg}}
       />
     );
@@ -40,5 +41,6 @@ export default class Logo {
 
 Logo.propTypes = {
   size: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired
+  type: PropTypes.string.isRequired,
+  className: PropTypes.string
 };
