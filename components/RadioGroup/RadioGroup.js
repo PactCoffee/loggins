@@ -1,19 +1,32 @@
-import React, {Component, PropTypes} from 'react';
+import React, {PropTypes} from 'react';
 
-import radioFactory from './radioFactory';
+import Radio from './Radio';
 import s from './Radio.css';
 
-export default class RadioGroup extends Component {
-  shouldComponentUpdate() {
-    // Stop react from ripping out the DOM in the radio children.
-    // https://github.com/chenglou/react-radio-group/issues/12
-    return false;
-  }
+/*
+ * Example usage:
+ * <RadioGroup name="example"
+ *             onChange={this.handleRadio}
+ *             selectedValue={this.state.radioVal}>
+ *   {radio => (
+ *     <span>
+ *       {radio({value: 'Apple'})}
+ *       <br/>
+ *       {radio({value: 'Orange'})}
+ *       <br/>
+ *       {radio({value: 'Banana'})}
+ *     </span>
+ *   )}
+ * </RadioGroup>
+ */
+
+export default class RadioGroup {
   render() {
     let {name, selectedValue, onChange, children} = this.props;
     return (
       <div className={s.group}>
-        {children && children(radioFactory(name, selectedValue, onChange))}
+        {children && children(props => <Radio {...{name, selectedValue, onChange}} {...props} />
+        )}
       </div>
     );
   }
