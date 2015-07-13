@@ -132,27 +132,27 @@ export default class FormSection extends Component {
 
         <h3>FormInput</h3>
         <p>Just a cute little animating input. Gracefully handles having a value passed in as well:</p>
-        <FormInput onChange={this.handleTextChange} value={this.state.text} error={this.state.error} label="First name"/>
+        <FormInput type="text" onChange={this.handleTextChange} value={this.state.text} error={this.state.error} label="First name"/>
         &nbsp;
-        <FormInput onChange={this.handleTextChange} value={this.state.lolText} error={this.state.error} label="Upcase &amp; sorted"/>
+        <FormInput type="text" onChange={this.handleTextChange} value={this.state.lolText} error={this.state.error} label="Upcase &amp; sorted"/>
         <p>Will also show an error if it's passed in:</p>
-        <FormInput onChange={this.handleTextChange} value={this.state.text} error="Something bad happened" label="Error example"/>
+        <FormInput type="text" onChange={this.handleTextChange} value={this.state.text} error="Something bad happened" label="Error example"/>
 
         <h3>Progress</h3>
         <p><code>hueChange</code> makes the bar change colour according to it's value:</p>
-        <Progress min="0" max="100" value="25" hueChange/>
+        <Progress min={0} max={100} value={25} hueChange/>
         <br/>
-        <Progress min="0" max="100" value="50" hueChange/>
+        <Progress min={0} max={100} value={50} hueChange/>
         <br/>
-        <Progress min="0" max="100" value="75" hueChange/>
+        <Progress min={0} max={100} value={75} hueChange/>
         <p>Without <code>hueChange:</code></p>
-        <Progress min="0" max="100" value="75"/>
+        <Progress min={0} max={100} value={75}/>
         <br/>
-        <Progress min="0" max="100" value="50"/>
+        <Progress min={0} max={100} value={50}/>
         <br/>
-        <Progress min="0" max="100" value="25"/>
+        <Progress min={0} max={100} value={25}/>
         <p>Changing the value will animate the bar. <button onClick={this.handleProgressChange}>Change value</button></p>
-        <Progress min="0" max="100" hueChange value={this.state.progressVal}/>
+        <Progress min={0} max={100} hueChange value={this.state.progressVal}/>
       </Section>
     );
   }
