@@ -43,6 +43,7 @@
   width: 3rem;
   height: 3rem;
   cursor: pointer;
+  background-image: url('./chevron.svg');
   background-repeat: no-repeat;
   background-size: 50%;
   background-position: 50% 50%;
@@ -58,12 +59,10 @@
 
 :global .DayPicker-NavButton--prev {
   left: 1rem;
-  background-image: url('./chevron.svg');
 }
 
 :global .DayPicker-NavButton--next {
   right: 1rem;
-  background-image: url('./chevron.svg');
   transform: rotate(180deg);
 }
 
