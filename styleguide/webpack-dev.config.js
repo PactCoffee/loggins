@@ -29,6 +29,7 @@ module.exports = assign({}, config, {
       loader: 'url-loader'
     }, {
       test: /\.svg$/,
+      exclude: /icons\/.+\.svg$/, // exclude all icons inside /icons folder
       loader: 'url-loader!svgo-loader?useConfig=svgoConfig'
     }, {
       test: /icons\/.+\.svg$/,

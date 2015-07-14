@@ -18,10 +18,10 @@
 }
 
 .vertical {
-  background-image: url('./VerticalLogo.svg');
+  background-image: url('!!url!svgo!./VerticalLogo.svg');
 }
 .horizontal {
-  background-image: url('./HorizontalLogo.svg');
+  background-image: url('!!url!svgo!./HorizontalLogo.svg');
 }
 
 .vertical.small {
