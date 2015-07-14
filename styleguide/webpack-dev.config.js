@@ -29,6 +29,9 @@ module.exports = assign({}, config, {
       loader: 'url-loader'
     }, {
       test: /\.svg$/,
+      loader: 'url-loader!svgo-loader?useConfig=svgoConfig'
+    }, {
+      test: /icons\/.+\.svg$/,
       loader: 'raw-loader!svgo-loader?useConfig=svgoConfig'
     }, {
       test: /\.js$/,
