@@ -97,6 +97,7 @@ export default class FormSection extends Component {
 
         <h3>DatePicker</h3>
         <DatePicker value={this.state.date} onChange={this.handleDate}/>
+        <p>Selected date: {new Date(this.state.date).toDateString()}</p>
 
         <h3>Toggle</h3>
         <Toggle value={this.state.toggleVal} onChange={this.handleToggle}/>
