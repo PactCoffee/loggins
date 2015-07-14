@@ -1,6 +1,7 @@
 .root {
   position: relative;
   max-width: 22rem;
+  user-select: none;
 }
 
 :global .DayPicker {
