@@ -75,13 +75,6 @@ export default class DatePicker extends Component {
                    modifiers={modifiers}
                    renderDay={this.renderDay}
                    onDayClick={this.handleDayClick}/>
-        <p>Ships {moment(this.props.value).set({
-            hour: 19,
-            minute: 0,
-            second: 0,
-            millisecond: 0
-          }).fromNow()}
-        </p>
       </div>
     );
   }
