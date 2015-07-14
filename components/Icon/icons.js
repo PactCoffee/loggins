@@ -30,6 +30,7 @@ export default {
   heart: cleanupSvg(require('./svg/heart.svg')),
   thumb: cleanupSvg(require('./svg/thumb.svg')),
   coffee: cleanupSvg(require('./svg/coffee.svg')),
+  chevron: cleanupSvg(require('./svg/chevron.svg')),
   twitter: cleanupSvg(require('./svg/twitter.svg')),
   facebook: cleanupSvg(require('./svg/facebook.svg')),
   triangle: cleanupSvg(require('./svg/triangle.svg'))

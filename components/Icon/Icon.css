@@ -18,6 +18,7 @@
 .coffee,
 .cog,
 .tick,
+.chevron,
 .heart {
   fill: transparent;
   stroke: currentColor;
