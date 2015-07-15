@@ -54,9 +54,10 @@ export default class Btn extends Component {
 }
 
 Btn.propTypes = {
+  type: PropTypes.oneOf(['primary', 'secondary', 'warning', 'clear']),
+  variant: PropTypes.oneOf(['cta', 'hollow']),
+
   children: PropTypes.any,
-  type: PropTypes.string,
-  variant: PropTypes.string,
   isLoading: PropTypes.bool,
   fullWidth: PropTypes.bool,
   className: PropTypes.string
