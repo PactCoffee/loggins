@@ -10,6 +10,7 @@
   background: var(--color-text);
   appearance: none;
   cursor: pointer;
+  user-select: none;
 }
 .root:hover {
   background: color(rgb(120,120,120) l(+ 1%));
