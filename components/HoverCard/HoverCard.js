@@ -1,6 +1,7 @@
 import React, {Component, PropTypes, findDOMNode} from 'react';
 
 import {ownerDocument, calcOverlayPosition} from './positionUtils';
+import {mountable} from '../../lib/customPropTypes';
 import s from './HoverCard.css';
 
 export default class HoverCard extends Component {
@@ -101,15 +102,6 @@ export default class HoverCard extends Component {
           {this.props.children}
         </div>
       </div>
-    );
-  }
-}
-
-function mountable(props, propName, componentName) {
-  if (typeof props[propName] !== 'object' ||
-    typeof props[propName].render !== 'function' && props[propName].nodeType !== 1) {
-    return new Error(
-      `Invalid prop of "${propName}" of value '${props[propName]}' supplied to '${componentName}. Expected a DOM element or an object that has a 'render' method`
     );
   }
 }

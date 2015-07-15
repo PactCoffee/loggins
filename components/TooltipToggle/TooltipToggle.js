@@ -1,6 +1,7 @@
 import React, {Component, cloneElement, PropTypes} from 'react';
 import {debounce} from 'lodash';
 
+import {mountable} from '../../lib/customPropTypes';
 import HoverCard from '../HoverCard/HoverCard';
 
 export default class TooltipToggle extends Component {
@@ -57,7 +58,7 @@ export default class TooltipToggle extends Component {
 TooltipToggle.propTypes = {
   content: PropTypes.node.isRequired,
   children: PropTypes.element.isRequired,
-  container: PropTypes.element.isRequired,
+  container: mountable,
   placement: PropTypes.oneOf(['top', 'left', 'bottom', 'right'])
 };
 
