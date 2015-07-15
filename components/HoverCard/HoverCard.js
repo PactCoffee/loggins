@@ -75,7 +75,12 @@ export default class HoverCard extends Component {
       arrowOffsetTop
     } = this.state;
 
-    const {variant, placement, caret} = this.props;
+    const {
+      variant,
+      placement,
+      caret,
+    } = this.props;
+
     const css = [
       s.root,
       s[variant],
