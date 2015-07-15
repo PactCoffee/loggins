@@ -6,7 +6,6 @@ import s from './HoverCard.css';
 export default class HoverCard extends Component {
 
   // TODO
-  // - Position relative to anchor
   // - Listen for ESC
   // - Listen for clicks/taps outside of itself
   // - Detect if it's outside the viewport
@@ -52,6 +51,10 @@ export default class HoverCard extends Component {
     let target = findDOMNode(this.props.anchor);
     let container = findDOMNode(this.props.container) || ownerDocument(this).body;
 
+    // Store the val of calcOverlayPosition
+    // Perform logic to make sure the HoverCard is contained within the window
+    // If not, try alternative placements until it fits
+
     this.setState(
       calcOverlayPosition(
         this.props.placement,
@@ -64,20 +67,39 @@ export default class HoverCard extends Component {
   }
 
   render() {
+    const {
+      positionLeft,
+      positionTop,
+      arrowOffsetLeft,
+      arrowOffsetTop
+    } = this.state;
+
+    const {variant, placement, caret} = this.props;
     const css = [
       s.root,
-      s[this.props.variant],
-      s[this.props.placement]
+      s[variant],
+      s[placement]
     ].join(' ');
 
-    const style = {
-      left: this.state.positionLeft,
-      top: this.state.positionTop
+    const outerStyle = {
+      left: positionLeft,
+      top: positionTop
+    };
+
+    const caretStyle = {
+      left: arrowOffsetLeft,
+      top: arrowOffsetTop
     };
 
     return (
-      <div style={style} className={css}>
-        {this.props.children}
+      <div style={outerStyle} className={css}>
+        {caret ?
+          <div style={caretStyle} className={s.caret}/>
+          : null
+        }
+        <div className={s.inner}>
+          {this.props.children}
+        </div>
       </div>
     );
   }
@@ -104,7 +126,7 @@ HoverCard.propTypes = {
   anchorPadding: PropTypes.number,
 
   // Where to be positioned relative to the anchor
-  placement: PropTypes.oneOf(['top', 'left', 'bottom', 'right']).isRequired,
+  placement: PropTypes.oneOf(['top', 'left', 'bottom', 'right']),
 
   // Variant that maps to a CSS classname
   variant: PropTypes.oneOf(['tooltip', 'dropdown']).isRequired,
@@ -113,10 +135,12 @@ HoverCard.propTypes = {
   caret: PropTypes.bool,
 
   // Make the card change it's `placement` to fit inside the window
-  reposition: PropTypes.bool,
-
-  // Where to put the caret if enabled
-  caretPosition: PropTypes.oneOf(['top', 'left', 'bottom', 'right']),
+  // reposition: PropTypes.bool,
 
   children: PropTypes.any.isRequired
+};
+
+HoverCard.defaultProps = {
+  anchorPadding: 10,
+  caret: true
 };

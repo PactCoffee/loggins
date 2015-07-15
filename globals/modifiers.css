@@ -93,6 +93,7 @@
 /* Border radius */
 .br0 {border-radius: 0px;}
 .br {border-radius:  8px;}
+.brs {border-radius: 4px;}
 
 /* Grid helpers */
 .cf {lost-utility: clearfix;}

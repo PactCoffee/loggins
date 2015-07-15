@@ -1,16 +1,106 @@
+/* TODO: split this up to make it easier to read */
+:root {
+  --caretSize: 10px;
+}
+
 .root {
   position: absolute;
-  display: inline-block;
-  background: var(--color-primary);
-  color: var(--color-white);
+  display: block;
+  max-width: 10em;
 }
 
-.top {}
-.left {}
+.top {
+  margin-top: -var(--caretSize);
+}
+.left {
+  margin-left: -var(--caretSize);
+}
 .bottom {
-  /*transform: translate(-50%, 100%);*/
+  margin-top: var(--caretSize);
 }
-.right {}
+.right {
+  margin-left: var(--caretSize);
+}
 
-.toolip {}
-.dropdown {}
+/* Caret positioning */
+.caret {
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-color: transparent;
+  border-style: solid;
+}
+.caret:after {
+  content: '';
+  display: block;
+  position: absolute;
+  border-color: transparent;
+  border-style: solid;
+}
+
+.top .caret {
+  bottom: 0;
+}
+.top .caret:after {
+  top: 0;
+  margin-left: calc(-var(--caretSize) - (var(--caretSize) / 2) + 2px);
+  margin-top: 2px;
+  border-top-color: var(--color-white);
+  border-width: var(--caretSize);
+}
+
+.left .caret {
+  right: 0;
+}
+.left .caret:after {
+  right: 0;
+  margin-top: calc(-var(--caretSize) - (var(--caretSize) / 2) + 2px);
+  margin-right: calc(-var(--caretSize) * 2 - 2px);
+  border-left-color: var(--color-white);
+  border-width: var(--caretSize);
+}
+
+.right .caret {
+  left: 0;
+}
+.right .caret:after {
+  right: 0;
+  margin-top: calc(-var(--caretSize) - (var(--caretSize) / 2) + 2px);
+  margin-right: 2px;
+  border-right-color: var(--color-white);
+  border-width: var(--caretSize);
+}
+
+.bottom .caret {
+  top: 0;
+}
+.bottom .caret:after {
+  top: 0;
+  margin-left: calc(-var(--caretSize) - (var(--caretSize) / 2) + 2px);
+  margin-top: calc(-var(--caretSize) * 2 - 2px);
+  border-bottom-color: var(--color-white);
+  border-width: var(--caretSize);
+}
+
+/* Variants */
+.tooltip {
+  background: var(--color-grey);
+  color: var(--color-white);
+  composes: brs from '../../globals/modifiers.css';
+  min-width: 3em;
+  text-align: center;
+}
+.tooltip .inner {
+  padding: 0.25em 0.5em;
+}
+.tooltip.top    .caret:after {border-top-color:    var(--color-grey);}
+.tooltip.left   .caret:after {border-left-color:   var(--color-grey);}
+.tooltip.right  .caret:after {border-right-color:  var(--color-grey);}
+.tooltip.bottom .caret:after {border-bottom-color: var(--color-grey);}
+
+.dropdown {
+  background: var(--color-white);
+  color: var(--color-text);
+  composes: bs brs from '../../globals/modifiers.css';
+}

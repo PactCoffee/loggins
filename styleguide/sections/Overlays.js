@@ -41,18 +41,59 @@ export default class Overlays extends Component {
              onMouseOver={this.handleHover}
              onMouseLeave={this.handleBlur}
              variant="tooltip">
-            Hover for tooltip!
+            WWWWWOWWWWW
           </strong>
         </div>
         {this.state.showCard ?
-          <HoverCard container={this}
-                     anchor={this.refs.anchor}
-                     placement="bottom"
-                     variant="tooltip">
-            Some stuff inside hovercard!
-          </HoverCard>
+          <span>
+            <HoverCard container={this}
+                       anchor={this.refs.anchor}
+                       placement="left"
+                       variant="tooltip">
+              left
+            </HoverCard>
+            <HoverCard container={this}
+                       anchor={this.refs.anchor}
+                       placement="top"
+                       variant="tooltip">
+              Top placement tooltip
+            </HoverCard>
+            <HoverCard container={this}
+                       anchor={this.refs.anchor}
+                       placement="right"
+                       variant="tooltip">
+              right
+            </HoverCard>
+            <HoverCard container={this}
+                       anchor={this.refs.anchor}
+                       placement="bottom"
+                       variant="tooltip">
+              bottom
+            </HoverCard>
+          </span>
           : null
         }
+
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
 
       </Section>
     );
