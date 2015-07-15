@@ -1,0 +1,16 @@
+.root {
+  position: absolute;
+  display: inline-block;
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.top {}
+.left {}
+.bottom {
+  /*transform: translate(-50%, 100%);*/
+}
+.right {}
+
+.toolip {}
+.dropdown {}
