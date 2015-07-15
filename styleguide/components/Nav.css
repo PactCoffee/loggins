@@ -5,7 +5,7 @@
   width: 100%;
   padding: 0;
   position: absolute;;
-  z-index: 99999;
+  z-index: 60;
 }
 .nav ul {
   list-style: none;

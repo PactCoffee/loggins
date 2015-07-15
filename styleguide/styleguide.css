@@ -14,7 +14,7 @@
 
 .heading {
   position: relative;
-  z-index: 999999;
+  z-index: 70;
   background: var(--color-white);
   font-weight: 100;
   padding: 0.5em;
