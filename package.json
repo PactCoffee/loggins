@@ -30,6 +30,7 @@
     "express": "^4.13.1",
     "extract-text-webpack-plugin": "^0.8.1",
     "file-loader": "^0.8.4",
+    "lodash": "^3.10.0",
     "lost": "^6.3.0",
     "moment": "^2.10.3",
     "node-libs-browser": "^0.5.2",

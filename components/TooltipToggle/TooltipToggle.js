@@ -1,4 +1,5 @@
 import React, {Component, cloneElement, PropTypes} from 'react';
+import {debounce} from 'lodash';
 
 import HoverCard from '../HoverCard/HoverCard';
 
@@ -6,8 +7,8 @@ export default class TooltipToggle extends Component {
   constructor(props, context) {
     super(props, context);
 
-    this.handleHover = this.handleHover.bind(this);
-    this.handleBlur = this.handleBlur.bind(this);
+    this.handleHover = debounce(this.handleHover.bind(this), 100);
+    this.handleBlur = debounce(this.handleBlur.bind(this), 100);
 
     this.state = {
       show: false
