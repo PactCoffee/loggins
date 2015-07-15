@@ -6,7 +6,6 @@
 .root {
   position: absolute;
   display: block;
-  max-width: 10em;
 }
 
 .top {
@@ -87,12 +86,13 @@
 .tooltip {
   background: var(--color-grey);
   color: var(--color-white);
-  composes: brs from '../../globals/modifiers.css';
+  composes: brs bs from '../../globals/modifiers.css';
   min-width: 3em;
   text-align: center;
+  line-height: 1.2;
 }
 .tooltip .inner {
-  padding: 0.25em 0.5em;
+  padding: 0.5em;
 }
 .tooltip.top    .caret:after {border-top-color:    var(--color-grey);}
 .tooltip.left   .caret:after {border-left-color:   var(--color-grey);}
