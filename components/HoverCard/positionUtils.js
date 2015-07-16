@@ -1,16 +1,16 @@
 /* Pretty much ripped from react-bootstrap */
 import React from 'react';
 
-function ownerDocument(componentOrElement) {
+export function ownerDocument(componentOrElement) {
   let elem = React.findDOMNode(componentOrElement);
   return (elem && elem.ownerDocument) || document;
 }
 
-function getComputedStyles(elem) {
+export function getComputedStyles(elem) {
   return ownerDocument(elem).defaultView.getComputedStyle(elem, null);
 }
 
-function getOffset(DOMNode) {
+export function getOffset(DOMNode) {
   let docElem = ownerDocument(DOMNode).documentElement;
   let box = {
     top: 0,
@@ -29,7 +29,7 @@ function getOffset(DOMNode) {
   };
 }
 
-function offsetParentFunc(elem) {
+export function offsetParentFunc(elem) {
   let docElem = ownerDocument(elem).documentElement;
   let offsetParent = elem.offsetParent || docElem;
 
@@ -41,7 +41,7 @@ function offsetParentFunc(elem) {
   return offsetParent || docElem;
 }
 
-function getRelativePosition(elem, offsetParent) {
+export function getRelativePosition(elem, offsetParent) {
   let offset;
   let parentOffset = {
     top: 0,
@@ -87,7 +87,7 @@ export function getContainerDimensions(containerNode) {
   };
 }
 
-function getTopDelta(top, overlayHeight, container, padding) {
+export function getTopDelta(top, overlayHeight, container, padding) {
   const containerDimensions = getContainerDimensions(container);
   const containerScroll = containerDimensions.scroll;
   const containerHeight = containerDimensions.height;
@@ -107,7 +107,7 @@ function getTopDelta(top, overlayHeight, container, padding) {
   return topDelta;
 }
 
-function getLeftDelta(left, overlayWidth, container, padding) {
+export function getLeftDelta(left, overlayWidth, container, padding) {
   const containerDimensions = getContainerDimensions(container);
   const containerWidth = containerDimensions.width;
 

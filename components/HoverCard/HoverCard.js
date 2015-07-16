@@ -2,13 +2,12 @@ import React, {Component, PropTypes, findDOMNode} from 'react';
 
 import {ownerDocument, calcOverlayPosition} from './positionUtils';
 import {mountable} from '../../lib/customPropTypes';
+import Portal from '../Portal/Portal';
 import s from './HoverCard.css';
 
 export default class HoverCard extends Component {
 
   // TODO
-  // - Listen for ESC
-  // - Listen for clicks/taps outside of itself
   // - Detect if it's outside the viewport
 
   constructor(props, context) {
@@ -59,7 +58,7 @@ export default class HoverCard extends Component {
     this.setState(
       calcOverlayPosition(
         this.props.placement,
-        findDOMNode(this),
+        findDOMNode(this.refs.self),
         target,
         container,
         this.props.anchorPadding
@@ -98,15 +97,17 @@ export default class HoverCard extends Component {
     };
 
     return (
-      <div style={outerStyle} className={css}>
-        {caret ?
-          <div style={caretStyle} className={s.caret}/>
-          : null
-        }
-        <div className={s.inner}>
-          {this.props.children}
+      <Portal container={this.props.container}>
+        <div ref="self" style={outerStyle} className={css}>
+          {caret ?
+            <div style={caretStyle} className={s.caret}/>
+            : null
+          }
+          <div className={s.inner}>
+            {this.props.children}
+          </div>
         </div>
-      </div>
+      </Portal>
     );
   }
 }
@@ -114,7 +115,7 @@ export default class HoverCard extends Component {
 HoverCard.propTypes = {
 
   // The Component the HoverCard will be offset from
-  container: mountable,
+  container: PropTypes.any,
 
   // React Component to position the HoverCard relative to
   anchor: mountable,

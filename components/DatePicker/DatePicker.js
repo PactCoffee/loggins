@@ -26,6 +26,8 @@ const localeUtils = {
   getFirstDayOfWeek: () => 1
 }
 
+// TODO: move this logic elsewhere so it can be consumed by multiple parts of
+// the app
 function cantShip(day) {
   const now = moment();
   const then = moment(day);
@@ -89,6 +91,9 @@ export default class DatePicker extends Component {
 }
 
 DatePicker.propTypes = {
-  value: PropTypes.number.isRequired,
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ]),
   onChange: PropTypes.func.isRequired
 };

@@ -22,6 +22,8 @@ export default React.createClass({
       'is-open': this.props.isOpen
     });
 
+    // TODO: share code with Dropdown for non-this clicks
+
     return (
       <div onClick={this.backgroundClick} className={`Modal ${this.props.className} ${classes}`}>
         {this.props.onRequestClose ?
@@ -29,7 +31,7 @@ export default React.createClass({
             className="Modal-close button button--mimic-link ss-delete"
             onClick={this.props.onRequestClose}
           />
-          :null
+          : null
         }
         <div className="Modal-window">
           <div className="Modal-window-inner">

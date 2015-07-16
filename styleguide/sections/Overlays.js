@@ -67,7 +67,7 @@ export default class Overlays extends Component {
           Very similar to TooltipToggle, but the children prop is the content you want inside the dropdown, and you pass in a trigger to open and close the dropdown.
         </p>
         <div style={{textAlign: 'center'}}>
-          <Dropdown container={this} trigger={
+          <Dropdown trigger={
             <Btn className={m.mbs}>Toggle dropdown <Icon name="triangle"/></Btn>
           }>
             Some content inside the dropdown
@@ -100,12 +100,15 @@ export default class Overlays extends Component {
 
         <h3>Date picker</h3>
         <p>Used in combo with dropdown:</p>
-        <Dropdown container={this} datepicker placement="top" trigger={
+        <Dropdown datepicker placement="top" trigger={
           <Btn className={m.mbl} type="primary">Choose date <Icon className={m.rotate180} name="triangle"/></Btn>
         }>
           <DatePicker value={this.state.date} onChange={this.handleDate}/>
         </Dropdown>
 
+        <p>
+          All of the above components will render via a portal to the document body by default. An optional <code>container</code> can be passed in, which is a node to mount the component into.
+        </p>
 
       </Section>
     );

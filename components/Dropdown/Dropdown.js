@@ -1,8 +1,6 @@
 import React, {findDOMNode, Component, cloneElement, PropTypes} from 'react';
 
-import {mountable} from '../../lib/customPropTypes';
 import HoverCard from '../HoverCard/HoverCard';
-import s from '../HoverCard/HoverCard.css';
 import keyCodes from '../../lib/keyCodes';
 
 const ESC = keyCodes.esc;
@@ -88,7 +86,7 @@ export default class Dropdown extends Component {
 Dropdown.propTypes = {
   trigger: PropTypes.element.isRequired,
   children: PropTypes.node.isRequired,
-  container: mountable,
+  container: PropTypes.any,
   placement: PropTypes.oneOf(['top', 'left', 'bottom', 'right']),
   datepicker: PropTypes.bool
 };
