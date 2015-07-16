@@ -5,6 +5,7 @@ import Section from '../components/Section';
 import TooltipToggle from 'components/TooltipToggle/TooltipToggle';
 import DatePicker from 'components/DatePicker/DatePicker';
 import Dropdown from 'components/Dropdown/Dropdown';
+import * as m from 'globals/modifiers.css';
 import Icon from 'components/Icon/Icon';
 import Btn from 'components/Btn/Btn';
 
@@ -59,8 +60,8 @@ export default class Overlays extends Component {
 
         <h3>Date picker</h3>
         <p>Used in combo with dropdown:</p>
-        <Dropdown container={this} datepicker trigger={
-          <Btn type="clear">Choose date <Icon name="triangle"/></Btn>
+        <Dropdown container={this} datepicker placement="top" trigger={
+          <Btn type="clear">Choose date <Icon className={m.rotate180} name="triangle"/></Btn>
         }>
           <DatePicker value={this.state.date} onChange={this.handleDate}/>
         </Dropdown>

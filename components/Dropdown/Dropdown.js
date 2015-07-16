@@ -29,10 +29,12 @@ export default class Dropdown extends Component {
   componentDidMount() {
     window.addEventListener('keydown', this.keyListener);
     window.addEventListener('click', this.clickListener);
+    window.addEventListener('touchend', this.clickListener);
   }
   componentWillUnmount() {
     window.removeEventListener('keydown', this.keyListener);
     window.removeEventListener('click', this.clickListener);
+    window.removeEventListener('touchend', this.clickListener);
   }
 
   clickListener(e) {
