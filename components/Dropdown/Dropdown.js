@@ -1,4 +1,4 @@
-import React, {Component, cloneElement, PropTypes} from 'react';
+import React, {findDOMNode, Component, cloneElement, PropTypes} from 'react';
 
 import {mountable} from '../../lib/customPropTypes';
 import HoverCard from '../HoverCard/HoverCard';
@@ -15,24 +15,40 @@ export default class Dropdown extends Component {
 
   constructor(props, context) {
     super(props, context);
+
+    this.hide = this.hide.bind(this);
     this.toggleShow = this.toggleShow.bind(this);
-    this.listener = this.listener.bind(this);
+    this.keyListener = this.keyListener.bind(this);
+    this.clickListener = this.clickListener.bind(this);
+
     this.state = {
       show: false
     };
   }
 
   componentDidMount() {
-    window.addEventListener('keydown', this.listener);
+    window.addEventListener('keydown', this.keyListener);
+    window.addEventListener('click', this.clickListener);
   }
   componentWillUnmount() {
-    window.addEventListener('keydown', this.listener);
+    window.removeEventListener('keydown', this.keyListener);
+    window.removeEventListener('click', this.clickListener);
   }
 
-  listener(e) {
-    if (e.keyCode && e.keyCode === ESC) {
-      this.setState({show: false});
+  clickListener(e) {
+    if (!findDOMNode(this).contains(e.target)) {
+      this.hide();
     }
+  }
+
+  keyListener(e) {
+    if (e.keyCode && e.keyCode === ESC) {
+      this.hide();
+    }
+  }
+
+  hide() {
+    this.setState({show: false});
   }
 
   toggleShow() {
@@ -62,11 +78,6 @@ export default class Dropdown extends Component {
         }
 
         {clonedTrigger}
-
-        {this.state.show ?
-          <div className={s.dropdownOverlay} onClick={this.toggleShow}/>
-          : null
-        }
       </span>
     );
   }
