@@ -126,7 +126,7 @@ HoverCard.propTypes = {
   placement: PropTypes.oneOf(['top', 'left', 'bottom', 'right']),
 
   // Variant that maps to a CSS classname
-  variant: PropTypes.oneOf(['tooltip', 'dropdown']).isRequired,
+  variant: PropTypes.oneOf(['tooltip', 'dropdown', 'datepicker']).isRequired,
 
   // Show a caret or not
   caret: PropTypes.bool,
