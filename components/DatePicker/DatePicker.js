@@ -3,6 +3,7 @@
 import React, {Component, PropTypes} from 'react';
 import {isSameDay} from 'react-day-picker/lib/Utils';
 import DayPicker from 'react-day-picker';
+import {memoize} from 'lodash';
 import moment from 'moment';
 
 import s from './DatePicker.css';
@@ -63,8 +64,8 @@ export default class DatePicker extends Component {
   render() {
     const selectedDay = new Date(this.props.value);
     const modifiers = {
-      disabled: (day) => cantShip(day),
-      selected: (day) => isSameDay(selectedDay, day),
+      disabled: memoize(cantShip),
+      selected: memoize(isSameDay.bind(this, selectedDay))
     };
 
     return (
