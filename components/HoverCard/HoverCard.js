@@ -14,6 +14,7 @@ export default class HoverCard extends Component {
     super(props, context);
 
     this.state = {
+      placement: this.props.placement,
       positionLeft: null,
       positionTop: null,
       arrowOffsetLeft: null,
@@ -48,26 +49,44 @@ export default class HoverCard extends Component {
       return;
     }
 
+    const {placement} = this.props;
     let target = findDOMNode(this.props.anchor);
     let container = findDOMNode(this.props.container) || ownerDocument(this).body;
 
-    // Store the val of calcOverlayPosition
-    // Perform logic to make sure the HoverCard is contained within the window
-    // If not, try alternative placements until it fits
 
-    this.setState(
-      calcOverlayPosition(
-        this.props.placement,
-        findDOMNode(this.refs.self),
-        target,
-        container,
-        this.props.anchorPadding
-      )
-    );
+    // Starting with the props.placement, try out each placement to find one
+    // where the
+    let idealPosition;
+    let idealPlacement;
+    let placements = ['top', 'left', 'bottom', 'right']
+      .sort(function(a, b) {
+        if (b === placement) return 1;
+        return 0;
+      });
+
+    for (let i = 0; i < placements.length; i++) {
+      idealPlacement = placements[i];
+      idealPosition = calcOverlayPosition(
+          idealPlacement,
+          findDOMNode(this.refs.self),
+          target,
+          container,
+          this.props.anchorPadding
+        );
+      if (idealPosition.positionLeft > -1 && idealPosition.positionTop > -1) {
+        break;
+      }
+    }
+
+    this.setState({
+      placement: idealPlacement,
+      ...idealPosition
+    });
   }
 
   render() {
     const {
+      placement,
       positionLeft,
       positionTop,
       arrowOffsetLeft,
@@ -76,8 +95,7 @@ export default class HoverCard extends Component {
 
     const {
       variant,
-      placement,
-      caret,
+      caret
     } = this.props;
 
     const css = [
