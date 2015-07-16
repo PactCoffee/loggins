@@ -33,7 +33,7 @@ export default class Overlays extends Component {
 
         <h3>TooltipToggle</h3>
         <p>
-          Try hovering over {tooltip}. The child passed into TooltipToggle must be a react element. For this example, a strong is passed in.
+          Try hovering over {tooltip}. The child passed into TooltipToggle must be a react element (i.e. can't just be a string).
         </p>
         <p>
           A TooltipToggle has four possible placements:&nbsp;
@@ -55,16 +55,12 @@ export default class Overlays extends Component {
         </p>
 
         <p>
-          Make sure the container has enough padding underneath, as the tooltip will move vertically to stay within the confines of the container.
+          Remember though, that touch-screen devices can't hover (and tooltips are a terrible pattern for mobile), so use them sparingly.
         </p>
 
-        <h3>Date picker</h3>
-        <p>Used in combo with dropdown:</p>
-        <Dropdown container={this} datepicker placement="top" trigger={
-          <Btn type="clear">Choose date <Icon className={m.rotate180} name="triangle"/></Btn>
-        }>
-          <DatePicker value={this.state.date} onChange={this.handleDate}/>
-        </Dropdown>
+        <p>
+          Make sure the container has enough padding underneath, as the tooltip will move vertically to stay within the confines of the container.
+        </p>
 
         <h3>Dropdown</h3>
         <p>
@@ -100,8 +96,16 @@ export default class Overlays extends Component {
           }>
             Top!
           </Dropdown>
-
         </div>
+
+        <h3>Date picker</h3>
+        <p>Used in combo with dropdown:</p>
+        <Dropdown container={this} datepicker placement="top" trigger={
+          <Btn className={m.mbl} type="primary">Choose date <Icon className={m.rotate180} name="triangle"/></Btn>
+        }>
+          <DatePicker value={this.state.date} onChange={this.handleDate}/>
+        </Dropdown>
+
 
       </Section>
     );
