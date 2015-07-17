@@ -66,11 +66,21 @@ export default class Dropdown extends Component {
 }
 
 Dropdown.propTypes = {
+
+  // The component to attach the toggle onClick to
   trigger: PropTypes.element.isRequired,
-  children: PropTypes.node.isRequired,
+
+  // A container to render the inner HoverCard into (will use body if not passed)
   container: PropTypes.any,
+
+  // Which side of the trigger we want the dropdown to render. The HoverCard
+  // within will attempt alternative placements if the one designated doesnt fit
   placement: PropTypes.oneOf(['top', 'left', 'bottom', 'right']),
-  datepicker: PropTypes.bool
+
+  // If this dropdown contains a datepicker or not
+  datepicker: PropTypes.bool,
+
+  children: PropTypes.node.isRequired
 };
 
 Dropdown.defaultProps = {
