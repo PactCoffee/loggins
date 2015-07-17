@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import Section from '../components/Section';
+import Section from './Section';
 import SectionTitle from 'components/SectionTitle/SectionTitle';
 
 import * as t from 'globals/typography.css';

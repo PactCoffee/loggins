@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import Section from '../components/Section';
+import Section from './Section';
 import styles from '../styleguide.css';
 
 export default class GridSection extends Component {

@@ -1,42 +1,21 @@
-@import '@pactcoffee/fontpack/brandonThin.css'; /* 100 */
-@import '@pactcoffee/fontpack/brandonReg.css';  /* 400 */
-@import '@pactcoffee/fontpack/brandonBold.css'; /* 700 */
-
-@import '@pactcoffee/fontpack/lunchboxLight.css'; /* light   */
-@import '@pactcoffee/fontpack/lunchboxReg.css';   /* regular */
+@import '@pactcoffee/fontpack/brandon.css';
+@import '@pactcoffee/fontpack/lunchboxslab.css';
 
 .container {
-  margin: 2em auto 0;
+  margin: 0 auto;
   max-width: 55em;
-  padding: 1em;
-  position: relative;
 }
 
 .heading {
-  position: relative;
-  z-index: 999999;
-  background: var(--color-white);
-  font-weight: 100;
-  padding: 0.5em;
-  lost-utility: clearfix;
-}
-.heading .logo {
-  lost-column: 1/2;
-  text-align: left;
-}
-.heading h1 {
   font-family: var(--font-lunchbox);
-  font-weight: lighter;
-  text-transform: uppercase;
-  lost-column: 1/2;
-  margin: 0;
-  text-align: right;
-  font-size: 1.25em;
+  text-align: center;
+  font-size: 6em;
+  font-weight: 100;
+  margin: 0 0 1rem;
 }
 
 .section {
   position: relative;
-  margin-top: 1em;
 }
 
 .title {
@@ -143,50 +122,3 @@
   lost-column: 3/4 0;
 }
 
-
-/* Animating */
-.animator {
-  display: block;
-  position: relative;
-  top: 0;
-  height: 100%;
-  width: 100%;
-}
-.animator > div,
-.animator > section {
-  position: absolute;
-  width: 100%;
-  left: 0;
-  top: 0;
-  padding: 1em;
-}
-
-:global .transLeft-enter {
-  transition: all 200ms var(--easeoutcubic);
-  transform: translateX(100%);
-}
-:global .transLeft-enter-active {
-  transition: all 200ms var(--easeoutcubic);
-  transform: translateX(0);
-}
-:global .transLeft-leave {
-  transition: all 200ms var(--easeoutcubic);
-}
-:global .transLeft-leave-active {
-  transform: translateX(-100%);
-}
-
-:global .transRight-enter {
-  transition: all 200ms var(--easeoutcubic);
-  transform: translateX(-100%);
-}
-:global .transRight-enter-active {
-  transition: all 200ms var(--easeoutcubic);
-  transform: translateX(0);
-}
-:global .transRight-leave {
-  transition: all 200ms var(--easeoutcubic);
-}
-:global .transRight-leave-active {
-  transform: translateX(100%);
-}

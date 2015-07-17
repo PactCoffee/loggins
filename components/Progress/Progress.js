@@ -47,7 +47,7 @@ export default class Progress extends Component {
 Progress.propTypes = {
   min: PropTypes.number.isRequired,
   max: PropTypes.number.isRequired,
-  value: PropTypes.number.isRequired,
+  value: PropTypes.number.isRequied,
   hueChange: PropTypes.bool
 };
 

@@ -7,7 +7,7 @@ loggins
 Todo
 ====
 
-- [x] Pull in fonts properly
+- [ ] Pull in fonts properly
 - [ ] Add navigation & routing
 - [ ] Get unit testing up and running
 - [ ] Write readme for adding components to the library
@@ -35,26 +35,22 @@ Running the styleguide locally
 ------------------------------
 
 ```bash
-$ npm run dev
+$ npm start
 $ open http://localhost:8080
 ```
 
 Any changes you make to any CSS or JS file will live-reload inside the browser you have open. Pretty slick.
 
-When running locally you'll get a 404 for the `bundle.css` file. Don't worry this is fine. Your styles are loaded in via webpack's style-loader.
 
-
-Running in production
----------------------------------
+Exporting all CSS
+-----------------
 
 ```bash
-$ npm start
+$ npm run build
+$ cd dist
 ```
 
-Deployment
-----------
-
-All pushes to master will trigger a rebuild on herkoku on https://loggins.herokuapp.com
+Inside `dist` will be `styles.css`, which will contain all the CSS from all the components.
 
 
 Run the example

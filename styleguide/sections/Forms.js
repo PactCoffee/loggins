@@ -1,16 +1,10 @@
-/* eslint  no-alert: 0*/
-
 import React, {Component} from 'react';
 
-import Section from '../components/Section';
+import Section from './Section';
 import EmailMultiInput from 'components/EmailMultiInput/EmailMultiInput';
 import SelectableInput from 'components/SelectableInput/SelectableInput';
-import LikeDislike from 'components/LikeDislike/LikeDislike';
-import RadioGroup from 'components/RadioGroup/RadioGroup';
 import FormInput from 'components/FormInput/FormInput';
 import Progress from 'components/Progress/Progress';
-import Checkbox from 'components/Checkbox/Checkbox';
-import Toggle from 'components/Toggle/Toggle';
 
 
 export default class FormSection extends Component {
@@ -21,20 +15,12 @@ export default class FormSection extends Component {
     this.handleProgressChange = this.handleProgressChange.bind(this);
     this.handleEmailChange = this.handleEmailChange.bind(this);
     this.handleTextChange = this.handleTextChange.bind(this);
-    this.handleCheckbox = this.handleCheckbox.bind(this);
-    this.handleToggle = this.handleToggle.bind(this);
-    this.likeChanged = this.likeChanged.bind(this);
-    this.handleRadio = this.handleRadio.bind(this);
     this.handleCopy = this.handleCopy.bind(this);
 
     this.state = {
       emails: [],
       text: '',
       lolText: '',
-      toggleVal: false,
-      radioVal: 'Orange',
-      liked: null,
-      checked: false,
       progressVal: 50
     };
   }
@@ -64,63 +50,9 @@ export default class FormSection extends Component {
     alert(`You copied!`);
   }
 
-  likeChanged(didLike) {
-    this.setState({liked: didLike});
-  }
-
-  handleCheckbox(val) {
-    this.setState({checkbox: val});
-  }
-
-  handleToggle(val) {
-    this.setState({toggleVal: val});
-  }
-
-  handleRadio(val) {
-    this.setState({
-      radioVal: val
-    });
-  }
-
   render() {
     return (
       <Section name="Forms" href="https://github.com/PactCoffee/loggins/blob/master/styleguide/sections/Forms.js">
-
-        <h3>Toggle</h3>
-        <Toggle value={this.state.toggleVal} onChange={this.handleToggle}/>
-        <br/>
-        Is mothercluckers the best chicken in the universe? <strong>{this.state.toggleVal ? 'Absolutely.' : `I don't know. Probably.`}</strong>
-
-
-        <h3>Radio buttons</h3>
-        <RadioGroup name="example"
-                    onChange={this.handleRadio}
-                    selectedValue={this.state.radioVal}>
-          {radio => (
-            <span>
-              {radio({value: 'Apple'})}
-              <br/>
-              {radio({value: 'Orange'})}
-              <br/>
-              {radio({value: 'Banana'})}
-            </span>
-          )}
-        </RadioGroup>
-        <p>You selected {this.state.radioVal}</p>
-
-        <h3>Checkbox</h3>
-        <p><Checkbox label="Checkbox" onChange={this.handleCheckbox}/> value is {this.state.checkbox ? 'checked' : 'not checked'}.</p>
-
-        <h3>LikeDislike</h3>
-        <p>
-          Preference:&nbsp;
-          <strong>
-            {this.state.liked === true ? 'Liked' : null}
-            {this.state.liked === false ? 'Disliked' : null}
-            {this.state.liked === null ? 'None' : null}
-          </strong>
-        </p>
-        <LikeDislike onChange={this.likeChanged}/>
 
         <h3>EmailMultiInput</h3>
         <p>Enter multiple email addresses with a tagging interface.</p>
@@ -132,27 +64,27 @@ export default class FormSection extends Component {
 
         <h3>FormInput</h3>
         <p>Just a cute little animating input. Gracefully handles having a value passed in as well:</p>
-        <FormInput type="text" onChange={this.handleTextChange} value={this.state.text} error={this.state.error} label="First name"/>
+        <FormInput onChange={this.handleTextChange} value={this.state.text} error={this.state.error} label="First name"/>
         &nbsp;
-        <FormInput type="text" onChange={this.handleTextChange} value={this.state.lolText} error={this.state.error} label="Upcase &amp; sorted"/>
+        <FormInput onChange={this.handleTextChange} value={this.state.lolText} error={this.state.error} label="Upcase &amp; sorted"/>
         <p>Will also show an error if it's passed in:</p>
-        <FormInput type="text" onChange={this.handleTextChange} value={this.state.text} error="Something bad happened" label="Error example"/>
+        <FormInput onChange={this.handleTextChange} value={this.state.text} error="Something bad happened" label="Error example"/>
 
         <h3>Progress</h3>
         <p><code>hueChange</code> makes the bar change colour according to it's value:</p>
-        <Progress min={0} max={100} value={25} hueChange/>
+        <Progress min="0" max="100" value="25" hueChange/>
         <br/>
-        <Progress min={0} max={100} value={50} hueChange/>
+        <Progress min="0" max="100" value="50" hueChange/>
         <br/>
-        <Progress min={0} max={100} value={75} hueChange/>
+        <Progress min="0" max="100" value="75" hueChange/>
         <p>Without <code>hueChange:</code></p>
-        <Progress min={0} max={100} value={75}/>
+        <Progress min="0" max="100" value="75"/>
         <br/>
-        <Progress min={0} max={100} value={50}/>
+        <Progress min="0" max="100" value="50"/>
         <br/>
-        <Progress min={0} max={100} value={25}/>
+        <Progress min="0" max="100" value="25"/>
         <p>Changing the value will animate the bar. <button onClick={this.handleProgressChange}>Change value</button></p>
-        <Progress min={0} max={100} hueChange value={this.state.progressVal}/>
+        <Progress min="0" max="100" hueChange value={this.state.progressVal}/>
       </Section>
     );
   }

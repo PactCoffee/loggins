@@ -17,11 +17,6 @@ export default class LikeDislike extends Component {
   }
 
   like() {
-
-    if (this.state.liked) {
-      return this.clear();
-    }
-
     this.setState({
       liked: true,
       disliked: false
@@ -30,24 +25,11 @@ export default class LikeDislike extends Component {
   }
 
   dislike() {
-
-    if (this.state.disliked) {
-      return this.clear();
-    }
-
     this.setState({
       liked: false,
       disliked: true
     });
     this.props.onChange(false);
-  }
-
-  clear() {
-    this.setState({
-      liked: false,
-      disliked: false
-    });
-    this.props.onChange(null);
   }
 
   render() {
@@ -61,17 +43,6 @@ export default class LikeDislike extends Component {
       <form className={outerStyles}>
 
         <input
-          id={`dislike-${this.id}`}
-          className={styles.dislike}
-          onChange={this.dislike}
-          checked={this.state.disliked}
-          type="radio"
-        />
-        <label htmlFor={`dislike-${this.id}`}>
-          <Icon className={m.rotate180} name="thumb"/>
-        </label>
-
-        <input
           id={`like-${this.id}`}
           className={styles.like}
           onChange={this.like}
@@ -80,6 +51,17 @@ export default class LikeDislike extends Component {
         />
         <label htmlFor={`like-${this.id}`}>
           <Icon name="thumb"/>
+        </label>
+
+        <input
+          id={`dislike-${this.id}`}
+          className={styles.dislike}
+          onChange={this.dislike}
+          checked={this.state.disliked}
+          type="radio"
+        />
+        <label htmlFor={`dislike-${this.id}`}>
+          <Icon className={m.rotate180} name="thumb"/>
         </label>
       </form>
     );

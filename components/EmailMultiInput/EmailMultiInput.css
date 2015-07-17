@@ -1,5 +1,3 @@
-.root {} /* A dummy classname just to pull in all the globals below */
-
 :global .react-tagsinput {
   border: 1px solid #ccc;
   background: #fff;

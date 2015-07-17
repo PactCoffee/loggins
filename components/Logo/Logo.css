@@ -1,12 +1,3 @@
-:root {
-  --baseLogoSize: 4em;
-
-  --mediumLogoSize: calc(2 * var(--baseLogoSize));
-  --largeLogoSize: calc(3 * var(--baseLogoSize));
-
-  --horizontalRatio: 2.083333333;
-  --verticalRatio: 0.756756757;
-};
 .root {
   display: inline-block;
 }
@@ -14,28 +5,15 @@
   max-width: 100%;
 }
 
-.vertical.small svg {
-  height: var(--baseLogoSize);
-  width: calc(var(--baseLogoSize) / var(--verticalRatio));
+.small svg {
+  width: 6.25em;
 }
-.vertical.medium svg {
-  height: var(--mediumLogoSize);
-  width: calc(var(--mediumLogoSize) / var(--verticalRatio));
+.medium svg {
+  width: 12em;
 }
-.vertical.large svg {
-  height: var(--largeLogoSize);
-  width: calc(var(--largeLogoSize) / var(--verticalRatio));
+.large svg {
+  width: 18em;
 }
 
-.horizontal.small svg {
-  width: var(--baseLogoSize);
-  height: calc(var(--baseLogoSize) / var(--horizontalRatio));
-}
-.horizontal.medium svg {
-  width: var(--mediumLogoSize);
-  height: calc(var(--mediumLogoSize) / var(--horizontalRatio));
-}
-.horizontal.large svg {
-  width: var(--largeLogoSize);
-  height: calc(var(--largeLogoSize) / var(--horizontalRatio));
-}
+.vertical svg {}
+.horizontal svg {}
