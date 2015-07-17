@@ -4,11 +4,13 @@
   "description": "Pact's component library",
   "main": "components/index.js",
   "scripts": {
-    "build": "cd styleguide && webpack --progress",
-    "dev": "cd styleguide && node devServer.js",
+    "build": "npm run clean && cd styleguide && webpack --progress",
+    "dev": "npm run clean && cd styleguide && node devServer.js",
     "postinstall": "npm run build",
     "start": "cd styleguide && node server.js",
+    "clean": "cd styleguide && rm -rf public",
     "test": "echo \"Error: no test specified\" && exit 1"
+
   },
   "repository": {
     "type": "git",
@@ -17,7 +19,7 @@
   "private": true,
   "author": "",
   "dependencies": {
-    "@pactcoffee/fontpack": "^1.0.0",
+    "@pactcoffee/fontpack": "^2.0.0",
     "autoprefixer-core": "^5.2.0",
     "babel-core": "^5.4.7",
     "babel-eslint": "^3.1.19",
@@ -40,6 +42,7 @@
     "postcss-loader": "^0.4.3",
     "postcss-simple-vars": "^0.3.0",
     "raw-loader": "^0.5.1",
+    "react-router": "^0.13.3",
     "react-hot-loader": "1.2.7",
     "react-tagsinput": "^1.3.3",
     "react-to-html-webpack-plugin": "^2.1.0",

@@ -22,14 +22,15 @@ function cleanupSvg(svg) {
 }
 
 export default {
+  cog: cleanupSvg(require('./svg/cog.svg')),
+  pin: cleanupSvg(require('./svg/pin.svg')),
+  tick: cleanupSvg(require('./svg/tick.svg')),
+  more: cleanupSvg(require('./svg/more.svg')),
   clock: cleanupSvg(require('./svg/clock.svg')),
-  coffee: cleanupSvg(require('./svg/coffee.svg')),
   heart: cleanupSvg(require('./svg/heart.svg')),
   thumb: cleanupSvg(require('./svg/thumb.svg')),
+  coffee: cleanupSvg(require('./svg/coffee.svg')),
   twitter: cleanupSvg(require('./svg/twitter.svg')),
   facebook: cleanupSvg(require('./svg/facebook.svg')),
-  more: cleanupSvg(require('./svg/more.svg')),
-  pin: cleanupSvg(require('./svg/pin.svg')),
-  triangle: cleanupSvg(require('./svg/triangle.svg')),
-  cog: cleanupSvg(require('./svg/cog.svg'))
+  triangle: cleanupSvg(require('./svg/triangle.svg'))
 };

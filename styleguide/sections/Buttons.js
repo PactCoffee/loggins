@@ -1,22 +1,13 @@
 import React, {Component} from 'react';
 
-import Section from './Section';
+import Section from '../components/Section';
 import Btn from 'components/Btn/Btn';
 import Icon from 'components/Icon/Icon';
-import LikeDislike from 'components/LikeDislike/LikeDislike';
 import * as m from 'globals/modifiers.css';
 
 export default class BtnSection extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      liked: null
-    };
-    this.likeChanged = this.likeChanged.bind(this);
-  }
-
-  likeChanged(didLike) {
-    this.setState({liked: didLike});
   }
 
   render() {
@@ -36,7 +27,7 @@ export default class BtnSection extends Component {
 
         <p>With icon(s):</p>
 
-        <Btn>
+        <Btn className={m.mbs}>
           <Icon name="heart"/>
           &nbsp;
           Avec icon
@@ -44,17 +35,7 @@ export default class BtnSection extends Component {
           <Icon name="coffee"/>
         </Btn>
 
-        <Btn className={m.mas} fullWidth>Full width</Btn>
-
-        <p>
-          A LikeDislike component that should probably be elsewhere. Preference:&nbsp;
-          <strong>
-            {this.state.liked === true ? 'Liked' : null}
-            {this.state.liked === false ? 'Disliked' : null}
-            {this.state.liked === null ? 'None' : null}
-          </strong>
-        </p>
-        <LikeDislike onChange={this.likeChanged}/>
+        <Btn fullWidth>Full width</Btn>
 
       </Section>
     );

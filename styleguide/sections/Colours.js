@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Section from './Section';
+import Section from '../components/Section';
 
 import styles from '../styleguide.css';
 import * as t from 'globals/typography.css';

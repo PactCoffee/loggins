@@ -42,10 +42,10 @@ module.exports = {
 
   postcss: [
     require('autoprefixer-core'),
-    require('postcss-calc'),
     require('postcss-custom-properties')({
       variables: varMap.vars
     }),
+    require('postcss-calc'),
     require('postcss-color-function')(),
     require('lost')
   ],

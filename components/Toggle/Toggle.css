@@ -1,0 +1,83 @@
+.root {
+  display: inline-block;
+}
+
+.label {
+  position: relative;
+  display: inline-block;
+  content: 'No';
+  text-transform: uppercase;
+  color: var(--color-white);
+  font-weight: bold;
+  font-size: 0.65em;
+  background: var(--color-red);
+  height: 1.75rem;
+  width: 4rem;
+  line-height: 1.9rem;
+  border-radius: 500rem;
+  transition: all 200ms var(--easeoutcubic);
+  overflow: hidden;
+}
+
+.label:before {
+  position: absolute;
+  left: 0.6rem;
+  content: 'Yes';
+  text-transform: uppercase;
+  color: var(--color-white);
+  line-height: 1.9rem;
+  transition: all 200ms var(--easeoutcubic);
+  transform: translateX(-150%) scale(0.5);
+  opacity: 0;
+}
+
+.label:after {
+  position: absolute;
+  right: 0.6rem;
+  content: 'No';
+  text-transform: uppercase;
+  color: var(--color-white);
+  line-height: 1.9rem;
+  transition: all 200ms var(--easeoutcubic);
+}
+
+.circle {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  height: 1.75rem;
+  width: 1.75rem;
+  border-radius: 500rem;
+  background: var(--color-white);
+  transform: scale(0.85);
+  cursor: pointer;
+  transition: all 200ms var(--easeoutcubic);
+}
+
+.input {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  height: 1.75rem;
+  width: 4rem;
+  background: green;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.label.isOn {
+  background: var(--color-green);
+}
+.label.isOn:before {
+  transform: translateX(0);
+  opacity: 1;
+}
+.label.isOn:after {
+  transform: translateX(150%) scale(0.5);
+  opacity: 0;
+}
+.label.isOn .circle {
+  left: 2.25rem;
+}
