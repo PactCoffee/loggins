@@ -1,9 +1,6 @@
 import React, {findDOMNode, Component, cloneElement, PropTypes} from 'react';
 
 import HoverCard from '../HoverCard/HoverCard';
-import keyCodes from '../../lib/keyCodes';
-
-const ESC = keyCodes.esc;
 
 export default class Dropdown extends Component {
 
@@ -16,35 +13,11 @@ export default class Dropdown extends Component {
 
     this.hide = this.hide.bind(this);
     this.toggleShow = this.toggleShow.bind(this);
-    this.keyListener = this.keyListener.bind(this);
-    this.clickListener = this.clickListener.bind(this);
+    this.handleCloseRequest = this.handleCloseRequest.bind(this);
 
     this.state = {
       show: false
     };
-  }
-
-  componentDidMount() {
-    window.addEventListener('keydown', this.keyListener);
-    window.addEventListener('click', this.clickListener);
-    window.addEventListener('touchend', this.clickListener);
-  }
-  componentWillUnmount() {
-    window.removeEventListener('keydown', this.keyListener);
-    window.removeEventListener('click', this.clickListener);
-    window.removeEventListener('touchend', this.clickListener);
-  }
-
-  clickListener(e) {
-    if (!findDOMNode(this).contains(e.target)) {
-      this.hide();
-    }
-  }
-
-  keyListener(e) {
-    if (e.keyCode && e.keyCode === ESC) {
-      this.hide();
-    }
   }
 
   hide() {
@@ -53,6 +26,13 @@ export default class Dropdown extends Component {
 
   toggleShow() {
     this.setState(state => ({show: !state.show}));
+  }
+
+  handleCloseRequest(e) {
+    if (e.keyCode ||
+        (e.target && !findDOMNode(this.refs.trigger).contains(e.target))) {
+      this.hide();
+    }
   }
 
   render() {
@@ -71,6 +51,8 @@ export default class Dropdown extends Component {
                      anchorPadding={20}
                      placement={placement}
                      ref="hovercard"
+                     onRequestClose={this.handleCloseRequest}
+                     escListen={true}
                      caret={true}>
             {children}
           </HoverCard>

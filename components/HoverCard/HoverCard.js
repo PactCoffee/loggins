@@ -2,16 +2,19 @@ import React, {Component, PropTypes, findDOMNode} from 'react';
 
 import {ownerDocument, calcOverlayPosition} from './positionUtils';
 import {mountable} from '../../lib/customPropTypes';
+import keyCodes from '../../lib/keyCodes';
 import Portal from '../Portal/Portal';
 import s from './HoverCard.css';
 
-export default class HoverCard extends Component {
+const ESC = keyCodes.esc;
 
-  // TODO
-  // - Detect if it's outside the viewport
+export default class HoverCard extends Component {
 
   constructor(props, context) {
     super(props, context);
+
+    this.clickListener = this.clickListener.bind(this);
+    this.keyListener = this.keyListener.bind(this);
 
     this.state = {
       placement: this.props.placement,
@@ -26,15 +29,35 @@ export default class HoverCard extends Component {
     this._needsFlush = true;
   }
 
+  componentDidMount() {
+    this._maybeUpdatePosition();
+    window.addEventListener('keydown', this.keyListener);
+    window.addEventListener('click', this.clickListener);
+    window.addEventListener('touchend', this.clickListener);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('keydown', this.keyListener);
+    window.removeEventListener('click', this.clickListener);
+    window.removeEventListener('touchend', this.clickListener);
+  }
   componentWillReceiveProps() {
     this._needsFlush = true;
   }
 
-  componentDidMount() {
-    this._maybeUpdatePosition();
-  }
   componentDidUpdate() {
     this._maybeUpdatePosition();
+  }
+
+  clickListener(e) {
+    if (!findDOMNode(this.refs.self).contains(e.target)) {
+      this.props.onRequestClose(e);
+    }
+  }
+
+  keyListener(e) {
+    if (e.keyCode && e.keyCode === ESC && this.props.escListen) {
+      this.props.onRequestClose(e);
+    }
   }
 
   _maybeUpdatePosition() {
@@ -148,7 +171,8 @@ export default class HoverCard extends Component {
 
 HoverCard.propTypes = {
 
-  // The Component the HoverCard will be offset from
+  // The Component the HoverCard will be offset from. If not passed, will use
+  // the document body
   container: PropTypes.any,
 
   // React Component to position the HoverCard relative to
@@ -166,13 +190,18 @@ HoverCard.propTypes = {
   // Show a caret or not
   caret: PropTypes.bool,
 
-  // Make the card change it's `placement` to fit inside the window
-  // reposition: PropTypes.bool,
+  // Callback to call when clicking outside of this HoverCard
+  onRequestClose: PropTypes.func,
+
+  // Call onRequestClose when the user hits escape
+  escListen: PropTypes.bool,
 
   children: PropTypes.any.isRequired
 };
 
 HoverCard.defaultProps = {
   anchorPadding: 10,
+  onRequestClose: () => {},
+  escListen: false,
   caret: true
 };
