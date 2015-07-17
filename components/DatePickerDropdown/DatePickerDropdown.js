@@ -1,14 +1,16 @@
 import React, {findDOMNode, Component, cloneElement, PropTypes} from 'react';
 
 import HoverCard from '../HoverCard/HoverCard';
+import DatePicker from '../DatePicker/DatePicker';
 
-export default class Dropdown extends Component {
-  constructor(props, context) {
-    super(props, context);
+export default class DatePickerDropdown extends Component {
+  constructor(props) {
+    super(props);
 
     this.hide = this.hide.bind(this);
     this.toggleShow = this.toggleShow.bind(this);
     this.handleCloseRequest = this.handleCloseRequest.bind(this);
+    this.handleDateChange = this.handleDateChange.bind(this);
 
     this.state = {
       show: false
@@ -30,9 +32,13 @@ export default class Dropdown extends Component {
     }
   }
 
+  handleDateChange(ms) {
+    this.props.onChange(ms);
+    this.hide();
+  }
+
   render() {
-    const {container, placement, children, trigger} = this.props;
-    const clonedTrigger = cloneElement(trigger, {
+    const clonedTrigger = cloneElement(this.props.trigger, {
       onClick: this.toggleShow,
       ref: 'trigger'
     });
@@ -40,16 +46,16 @@ export default class Dropdown extends Component {
     return (
       <span>
         {this.state.show ?
-          <HoverCard container={container}
-                     variant={'dropdown'}
+          <HoverCard variant="datepicker"
                      anchor={this.refs.trigger}
                      anchorPadding={20}
-                     placement={placement}
+                     placement="bottom"
                      ref="hovercard"
                      onRequestClose={this.handleCloseRequest}
                      escListen={true}
                      caret={true}>
-            {children}
+            <DatePicker value={this.props.value}
+                        onChange={this.handleDateChange}/>
           </HoverCard>
           : null
         }
@@ -60,22 +66,11 @@ export default class Dropdown extends Component {
   }
 }
 
-Dropdown.propTypes = {
-
-  // The component to attach the toggle onClick to
+DatePickerDropdown.propTypes = {
   trigger: PropTypes.element.isRequired,
-
-  // A container to render the inner HoverCard into (will use body if not passed)
-  container: PropTypes.any,
-
-  // Which side of the trigger we want the dropdown to render. The HoverCard
-  // within will attempt alternative placements if the one designated doesnt fit
-  placement: PropTypes.oneOf(['top', 'left', 'bottom', 'right']),
-
-  children: PropTypes.node.isRequired
+  onChange: PropTypes.func.isRequired,
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ])
 };
-
-Dropdown.defaultProps = {
-  placement: 'bottom'
-};
-
