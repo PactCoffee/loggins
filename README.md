@@ -7,8 +7,6 @@ loggins
 Todo
 ====
 
-- [x] Pull in fonts properly
-- [ ] Add navigation & routing
 - [ ] Get unit testing up and running
 - [ ] Write readme for adding components to the library
 
@@ -33,6 +31,10 @@ Then use them how you wish in your React project. Webpack is required as we're d
 
 Running the styleguide locally
 ------------------------------
+
+This repo pulls in FontPack, our package of fonts. This is a private module on npm, meaning there's privileged access. **You need to set `NPM_TOKEN` as an environmental variable on your system to be able to access FontPack and therefore `npm install` without issue**.
+
+[Checkout this quick readme](https://gist.github.com/iest/58692bf1001b0424c257) on how to set up env vars on your system.
 
 ```bash
 $ npm run dev
