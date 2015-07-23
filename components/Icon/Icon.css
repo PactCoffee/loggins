@@ -25,6 +25,8 @@
   stroke: currentColor;
 }
 
+.pactV,
+.pactH,
 .pin,
 .thumb {
   fill: currentColor;
