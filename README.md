@@ -7,11 +7,6 @@ loggins
 Todo
 ====
 
-<<<<<<< HEAD
-=======
-- [x] Pull in fonts properly
-- [x] Add navigation & routing
->>>>>>> Update readme
 - [ ] Get unit testing up and running
 - [ ] Write readme for adding components to the library
 
