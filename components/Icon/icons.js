@@ -22,15 +22,16 @@ function cleanupSvg(svg) {
 }
 
 export default {
-  cog: cleanupSvg(require('./svg/cog.svg')),
-  pin: cleanupSvg(require('./svg/pin.svg')),
-  tick: cleanupSvg(require('./svg/tick.svg')),
-  more: cleanupSvg(require('./svg/more.svg')),
-  clock: cleanupSvg(require('./svg/clock.svg')),
-  heart: cleanupSvg(require('./svg/heart.svg')),
-  thumb: cleanupSvg(require('./svg/thumb.svg')),
-  coffee: cleanupSvg(require('./svg/coffee.svg')),
-  twitter: cleanupSvg(require('./svg/twitter.svg')),
-  facebook: cleanupSvg(require('./svg/facebook.svg')),
-  triangle: cleanupSvg(require('./svg/triangle.svg'))
+  cog: cleanupSvg(require('./icons/cog.svg')),
+  pin: cleanupSvg(require('./icons/pin.svg')),
+  tick: cleanupSvg(require('./icons/tick.svg')),
+  more: cleanupSvg(require('./icons/more.svg')),
+  clock: cleanupSvg(require('./icons/clock.svg')),
+  heart: cleanupSvg(require('./icons/heart.svg')),
+  thumb: cleanupSvg(require('./icons/thumb.svg')),
+  coffee: cleanupSvg(require('./icons/coffee.svg')),
+  chevron: cleanupSvg(require('./icons/chevron.svg')),
+  twitter: cleanupSvg(require('./icons/twitter.svg')),
+  facebook: cleanupSvg(require('./icons/facebook.svg')),
+  triangle: cleanupSvg(require('./icons/triangle.svg'))
 };

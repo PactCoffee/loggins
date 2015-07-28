@@ -14,7 +14,7 @@
 
 .heading {
   position: relative;
-  z-index: 999999;
+  z-index: 70;
   background: var(--color-white);
   font-weight: 100;
   padding: 0.5em;
@@ -158,7 +158,6 @@
   width: 100%;
   left: 0;
   top: 0;
-  padding: 1em;
 }
 
 :global .transLeft-enter {

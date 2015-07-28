@@ -6,6 +6,7 @@ import Section from '../components/Section';
 import EmailMultiInput from 'components/EmailMultiInput/EmailMultiInput';
 import SelectableInput from 'components/SelectableInput/SelectableInput';
 import LikeDislike from 'components/LikeDislike/LikeDislike';
+import DatePicker from 'components/DatePicker/DatePicker';
 import RadioGroup from 'components/RadioGroup/RadioGroup';
 import FormInput from 'components/FormInput/FormInput';
 import Progress from 'components/Progress/Progress';
@@ -26,6 +27,7 @@ export default class FormSection extends Component {
     this.likeChanged = this.likeChanged.bind(this);
     this.handleRadio = this.handleRadio.bind(this);
     this.handleCopy = this.handleCopy.bind(this);
+    this.handleDate = this.handleDate.bind(this);
 
     this.state = {
       emails: [],
@@ -35,7 +37,8 @@ export default class FormSection extends Component {
       radioVal: 'Orange',
       liked: null,
       checked: false,
-      progressVal: 50
+      progressVal: 50,
+      date: new Date().getTime()
     };
   }
 
@@ -82,9 +85,19 @@ export default class FormSection extends Component {
     });
   }
 
+  handleDate(milliseconds) {
+    this.setState({
+      date: milliseconds
+    });
+  }
+
   render() {
     return (
       <Section name="Forms" href="https://github.com/PactCoffee/loggins/blob/master/styleguide/sections/Forms.js">
+
+        <h3>DatePicker</h3>
+        <DatePicker value={this.state.date} onChange={this.handleDate}/>
+        <p>Selected date: {new Date(this.state.date).toDateString()}</p>
 
         <h3>Toggle</h3>
         <Toggle value={this.state.toggleVal} onChange={this.handleToggle}/>

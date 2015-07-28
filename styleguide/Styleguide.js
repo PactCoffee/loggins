@@ -14,6 +14,7 @@ const ROUTES = [
   'grids',
   'buttons',
   'forms',
+  'overlays',
   'panels'
 ];
 let oldRouteName = '';

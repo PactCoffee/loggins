@@ -18,6 +18,8 @@
 .coffee,
 .cog,
 .tick,
+.chevron,
+.triangle,
 .heart {
   fill: transparent;
   stroke: currentColor;

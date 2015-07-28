@@ -5,7 +5,7 @@
   width: 100%;
   padding: 0;
   position: absolute;;
-  z-index: 99999;
+  z-index: 60;
 }
 .nav ul {
   list-style: none;
@@ -13,6 +13,10 @@
   text-align: center;
   margin: 0 auto;
   padding: 0;
+  white-space: nowrap;
+  overflow: auto;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
 }
 .nav li {
   display: inline-block;

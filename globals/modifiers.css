@@ -73,7 +73,9 @@
 .alignr {text-align: right;}
 
 /* Transforms */
+.rotate90 {transform: rotate(90deg);}
 .rotate180 {transform: rotate(180deg);}
+.rotate270 {transform: rotate(270deg);}
 
 /* Font size */
 .smaller {font-size: 0.5em;        }
@@ -93,6 +95,7 @@
 /* Border radius */
 .br0 {border-radius: 0px;}
 .br {border-radius:  8px;}
+.brs {border-radius: 4px;}
 
 /* Grid helpers */
 .cf {lost-utility: clearfix;}

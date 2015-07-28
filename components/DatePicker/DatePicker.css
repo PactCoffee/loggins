@@ -1,0 +1,199 @@
+.root {
+  position: relative;
+  max-width: 22rem;
+  user-select: none;
+}
+
+:global .DayPicker {
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: 0.75em 0;
+  display: block;
+  border-radius: 4px;
+}
+@media screen and (min-width: 25em) {
+  :global .DayPicker {
+    padding: 0.75em;
+  }
+}
+
+:global .DayPicker-Month {
+  position: relative;
+  display: table;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-spacing: 0;
+  user-select: none;
+  width: 100%;
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-size: 1rem;
+}
+
+:global .DayPicker-NavBar {
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+
+:global .DayPicker-NavButton {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  background-image: url('./chevron.svg');
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: 50% 50%;
+  cursor: pointer;
+  border-radius: 4px;
+}
+:global .DayPicker-NavButton:hover {
+  background-color: color(var(--color-white) a(0.2));
+}
+:global .DayPicker-NavButton:active {
+  background-color: color(var(--color-grey) a(0.2));
+}
+
+:global .DayPicker-NavButton--prev {
+  left: 1rem;
+}
+
+:global .DayPicker-NavButton--next {
+  right: 1rem;
+  transform: rotate(180deg);
+}
+
+/* Month name */
+:global .DayPicker-Caption {
+  display: table-caption;
+  text-align: center;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.8rem;
+  border-bottom: 2px solid color(#FFF a(30%));
+  padding-bottom: 0.25em;
+}
+
+:global .DayPicker-Weekdays {
+  display: table-header-group;
+}
+:global .DayPicker-Weekdays > div {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  font-weight: bold;
+}
+
+:global .DayPicker-Weekday {
+  display: table-cell;
+  text-align: center;
+  padding: 0.75rem 0.5rem 0.25rem;
+  text-align: center;
+}
+
+:global .DayPicker-Body {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+:global .DayPicker-Week {
+  display: table-row;
+}
+
+:global .DayPicker-Day {
+  position: relative;
+  vertical-align: middle;
+  display: table-cell;
+  text-align: center;
+  cursor: pointer;
+  padding: 0.35em 0.45em;
+  font-size: 1.5rem;
+}
+:global .DayPicker-Day:hover:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 2rem;
+  height: 2rem;
+  line-height: 0;
+  background: color(var(--color-white) a(0.2));
+  border-radius: 500em;
+}
+
+:global .DayPicker--interactionDisabled :global .DayPicker-Day {
+}
+
+:global .DayPicker-Day--disabled,
+:global .DayPicker-Day--disabled:hover {
+  cursor: default;
+  opacity: 0.5;
+  background: transparent;
+}
+:global .DayPicker-Day--disabled:hover:before {
+  display: none;
+}
+
+:global .DayPicker-Day--today {
+  position: relative;
+  font-weight: 900;
+}
+/* Little dot thing */
+:global .DayPicker-Day--today:after {
+  content: '';
+  position: absolute;
+  top: 0.1em;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0.2em;
+  background: var(--color-white);
+  border-radius: 100%;
+  height: 0.25em;
+  width: 0.25em;
+  opacity: 0.5;
+}
+
+:global .DayPicker-Day--today:global.DayPicker-Day--selected:after {
+  /*top: 0.5em;
+  background: var(--color-primary);
+  opacity: 1;*/
+}
+
+
+:global .DayPicker-Day--selected,
+:global .DayPicker-Day--selected:hover {
+  color: var(--color-primary);
+  position: relative;
+  cursor: default;
+}
+:global .DayPicker-Day--selected span {
+  position: relative;
+}
+:global .DayPicker-Day--selected:before,
+:global .DayPicker-Day--selected:hover:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 2rem;
+  height: 2rem;
+  line-height: 0;
+  background: var(--color-white);
+  border-radius: 500em;
+}
+
+:global .DayPicker-Day--outside,
+:global .DayPicker-Day--outside:hover {
+  opacity: 0.5;
+}
+
+:global .DayPicker-Day--selected:not(:global .DayPicker-Day--disabled):not(:global .DayPicker-Day--outside) {
+}

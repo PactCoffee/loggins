@@ -2,8 +2,6 @@ import React, {PropTypes} from 'react';
 import invariant from 'react/lib/invariant';
 
 import styles from './Logo.css';
-import vertical from './VerticalLogo.svg';
-import horizontal from './HorizontalLogo.svg';
 
 export default class Logo {
   constructor(props) {
@@ -22,19 +20,16 @@ export default class Logo {
 
   render() {
     const {type, size} = this.props;
-
-    const svg = type === 'vertical' ? vertical : horizontal;
     const cssClasses = [
-      styles.root,
+      styles.logo,
       styles[size],
-      styles[type],
-      this.props.className
+      styles[type]
     ];
 
     return (
-      <span className={cssClasses.join(' ')}
-        dangerouslySetInnerHTML={{__html: svg}}
-      />
+      <div className={[styles.root, this.props.className].join(' ')}>
+        <span className={cssClasses.join(' ')}/>
+      </div>
     );
   }
 }
