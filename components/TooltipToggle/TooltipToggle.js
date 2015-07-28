@@ -31,7 +31,7 @@ export default class TooltipToggle extends Component {
     const {container, content, placement, children} = this.props;
     const trigger = cloneElement(React.Children.only(children), {
       onMouseOver: this.handleHover,
-      onFoucus: this.handleHover,
+      onFocus: this.handleHover,
       onMouseOut: this.handleBlur,
       onBlur: this.handleBlur,
       ref: 'anchor'
