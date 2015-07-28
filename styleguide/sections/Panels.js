@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import Section from './Section';
+import Section from '../components/Section';
 import styles from '../styleguide.css';
 import * as m from 'globals/modifiers.css';
 import List from 'components/List/List';
