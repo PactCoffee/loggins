@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import Section from './Section';
+import Section from '../components/Section';
 import Btn from 'components/Btn/Btn';
 import Icon from 'components/Icon/Icon';
 import * as m from 'globals/modifiers.css';

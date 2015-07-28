@@ -10,32 +10,42 @@
 .root {
   display: inline-block;
 }
-.root svg {
-  max-width: 100%;
+
+.logo {
+  display: block;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
-.vertical.small svg {
+.vertical {
+  background-image: url('!!url!svgo!./VerticalLogo.svg');
+}
+.horizontal {
+  background-image: url('!!url!svgo!./HorizontalLogo.svg');
+}
+
+.vertical.small {
   height: var(--baseLogoSize);
   width: calc(var(--baseLogoSize) / var(--verticalRatio));
 }
-.vertical.medium svg {
+.vertical.medium {
   height: var(--mediumLogoSize);
   width: calc(var(--mediumLogoSize) / var(--verticalRatio));
 }
-.vertical.large svg {
+.vertical.large {
   height: var(--largeLogoSize);
   width: calc(var(--largeLogoSize) / var(--verticalRatio));
 }
 
-.horizontal.small svg {
+.horizontal.small {
   width: var(--baseLogoSize);
   height: calc(var(--baseLogoSize) / var(--horizontalRatio));
 }
-.horizontal.medium svg {
+.horizontal.medium {
   width: var(--mediumLogoSize);
   height: calc(var(--mediumLogoSize) / var(--horizontalRatio));
 }
-.horizontal.large svg {
+.horizontal.large {
   width: var(--largeLogoSize);
   height: calc(var(--largeLogoSize) / var(--horizontalRatio));
 }
