@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import Section from '../components/Section';
 
 import TooltipToggle from 'components/TooltipToggle/TooltipToggle';
-import DatePicker from 'components/DatePicker/DatePicker';
+import DatePickerDropdown from 'components/DatePickerDropdown/DatePickerDropdown';
 import Dropdown from 'components/Dropdown/Dropdown';
 import * as m from 'globals/modifiers.css';
 import Icon from 'components/Icon/Icon';
@@ -98,13 +98,8 @@ export default class Overlays extends Component {
           </Dropdown>
         </div>
 
-        <h3>Date picker</h3>
-        <p>Used in combo with dropdown:</p>
-        <Dropdown datepicker placement="top" trigger={
-          <Btn className={m.mbl} type="primary">Choose date <Icon className={m.rotate180} name="triangle"/></Btn>
-        }>
-          <DatePicker value={this.state.date} onChange={this.handleDate}/>
-        </Dropdown>
+        <h3>DatePickerDropdown</h3>
+        <DatePickerDropdown onChange={()=> {}} trigger={<Btn>Dropdown!</Btn>}/>
 
         <p>
           All of the above components will render via a portal to the document body by default. An optional <code>container</code> can be passed in, which is a node to mount the component into.
