@@ -24,6 +24,10 @@ module.exports = {
       loader: 'url-loader'
     }, {
       test: /\.svg$/,
+      exclude: /icons\/.+\.svg$/, // exclude all icons inside /icons folder
+      loader: 'url-loader!svgo-loader?useConfig=svgoConfig'
+    }, {
+      test: /icons\/.+\.svg$/,
       loader: 'raw-loader!svgo-loader?useConfig=svgoConfig'
     }, {
       test: /\.js$/,
