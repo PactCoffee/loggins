@@ -64,7 +64,7 @@ export default class DatePicker extends Component {
     );
   }
   render() {
-    const selectedDay = new Date(this.props.value);
+    const selectedDay = new Date(parseInt(this.props.value, 10));
     const modifiers = {
       disabled: memoize(cantShip),
       selected: memoize(isSameDay.bind(this, selectedDay))

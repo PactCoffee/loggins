@@ -16,6 +16,13 @@
   --color-blue:         rgb(41,179,225);
   --color-blue-dark:    rgb(128,176,211);
 
+  --color-teal:         rgb(95,183,177);
+  --color-maroon:       rgb(127,57,46);
+  --color-taupe:        rgb(177,137,121);
+  --color-yellow:       rgb(253,180,82);
+  --color-mauve:        rgb(97,40,79);
+  --color-copper:       rgb(179,91,60);
+
   --color-primary:   var(--color-green);
   --color-secondary: var(--color-orange);
   --color-error:     var(--color-red);

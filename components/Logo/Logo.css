@@ -1,10 +1,10 @@
 :root {
-  --baseLogoSize: 4em;
+  --baseLogoSize: 5em;
 
-  --mediumLogoSize: calc(2 * var(--baseLogoSize));
-  --largeLogoSize: calc(3 * var(--baseLogoSize));
+  --mediumLogoSize: calc(1.5 * var(--baseLogoSize));
+  --largeLogoSize: calc(2 * var(--baseLogoSize));
 
-  --horizontalRatio: 2.083333333;
+  --horizontalRatio: 2.272727273;
   --verticalRatio: 0.756756757;
 };
 .root {

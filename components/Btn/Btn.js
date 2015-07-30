@@ -1,44 +1,17 @@
 import styles from './Btn.css';
 
 import React, {Component, PropTypes} from 'react';
-import invariant from 'react/lib/invariant';
-
-const types = {
-  primary: styles.primary,
-  secondary: styles.secondary,
-  warning: styles.warning,
-  clear: styles.clear
-};
-
-const variants = {
-  cta: styles.cta,
-  hollow: styles.hollow
-};
 
 export default class Btn extends Component {
-  constructor(props) {
-    super(props);
-    if (props.type) {
-      invariant(
-        types[props.type],
-        `Btn: No type exists for "${props.type}". Choose from: ${Object.keys(types).join(', ')}`
-      );
-    }
-    if (props.variant) {
-      invariant(
-        variants[props.variant],
-        `Btn: No variant exists for "${props.variant}". Choose from: ${Object.keys(variants).join(', ')}`
-      );
-    }
-  }
-
   render() {
+    const {type, variant, fullWidth, className} = this.props;
     const classNames = [
       styles.root,
-      types[this.props.type],
-      this.props.variant ? variants[this.props.variant] : null,
-      this.props.fullWidth ? styles.fullWidth : null,
-      this.props.className
+      styles[type],
+      styles[variant],
+      variant ? styles[variant] : null,
+      fullWidth ? styles.fullWidth : null,
+      className
     ].join(' ');
 
     return (
@@ -54,7 +27,7 @@ export default class Btn extends Component {
 }
 
 Btn.propTypes = {
-  type: PropTypes.oneOf(['primary', 'secondary', 'warning', 'clear']),
+  type: PropTypes.oneOf(['primary', 'secondary', 'warning', 'clear', 'white']),
   variant: PropTypes.oneOf(['cta', 'hollow']),
 
   children: PropTypes.any,

@@ -29,6 +29,8 @@ export default {
   clock: cleanupSvg(require('./icons/clock.svg')),
   heart: cleanupSvg(require('./icons/heart.svg')),
   thumb: cleanupSvg(require('./icons/thumb.svg')),
+  pactV: cleanupSvg(require('./icons/pactV.svg')),
+  pactH: cleanupSvg(require('./icons/pactH.svg')),
   coffee: cleanupSvg(require('./icons/coffee.svg')),
   chevron: cleanupSvg(require('./icons/chevron.svg')),
   twitter: cleanupSvg(require('./icons/twitter.svg')),
