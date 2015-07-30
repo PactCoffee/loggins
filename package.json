@@ -1,5 +1,5 @@
 {
-  "name": "loggins",
+  "name": "@pactcoffee/loggins",
   "version": "2.0.0",
   "description": "Pact's component library",
   "main": "components/index.js",
@@ -14,8 +14,6 @@
     "type": "git",
     "url": "https://github.com/PactCoffee/loggins.git"
   },
-  "private": true,
-  "author": "",
   "dependencies": {
     "@pactcoffee/fontpack": "^2.0.0",
     "autoprefixer-core": "^5.2.0",
