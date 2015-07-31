@@ -12,6 +12,7 @@ import FormInput from 'components/FormInput/FormInput';
 import Progress from 'components/Progress/Progress';
 import Checkbox from 'components/Checkbox/Checkbox';
 import Toggle from 'components/Toggle/Toggle';
+import Slider from 'components/Slider/Slider';
 
 
 export default class FormSection extends Component {
@@ -26,6 +27,7 @@ export default class FormSection extends Component {
     this.handleToggle = this.handleToggle.bind(this);
     this.likeChanged = this.likeChanged.bind(this);
     this.handleRadio = this.handleRadio.bind(this);
+    this.handleSlide = this.handleSlide.bind(this);
     this.handleCopy = this.handleCopy.bind(this);
     this.handleDate = this.handleDate.bind(this);
 
@@ -38,7 +40,8 @@ export default class FormSection extends Component {
       liked: null,
       checked: false,
       progressVal: 50,
-      date: new Date().getTime()
+      date: new Date().getTime(),
+      slideVal: 50
     };
   }
 
@@ -91,9 +94,22 @@ export default class FormSection extends Component {
     });
   }
 
+  handleSlide(slideVal) {
+    this.setState({slideVal});
+  }
+
   render() {
     return (
       <Section name="Forms" href="https://github.com/PactCoffee/loggins/blob/master/styleguide/sections/Forms.js">
+
+        <h3>Slider</h3>
+        <strong>Basic version:</strong>
+        <Slider onChange={this.handleSlide} value={this.state.slideVal}/>
+        <p>Value: {this.state.slideVal}</p>
+
+        <strong>With steps:</strong>
+        <Slider step={10} onChange={this.handleSlide} value={this.state.slideVal}/>
+        <p>Value: {this.state.slideVal}</p>
 
         <h3>DatePicker</h3>
         <DatePicker value={this.state.date} onChange={this.handleDate}/>
