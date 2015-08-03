@@ -28,7 +28,13 @@
 .pactH,
 .stamp,
 .pin,
-.thumb {
+.thumb,
+.drip,
+.aeropress,
+.cafatiere,
+.wholebean,
+.espresso,
+.stovetop {
   fill: currentColor;
 }
 
