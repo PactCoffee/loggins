@@ -3,6 +3,7 @@
 import React, {Component} from 'react';
 
 import Section from '../components/Section';
+
 import EmailMultiInput from 'components/EmailMultiInput/EmailMultiInput';
 import SelectableInput from 'components/SelectableInput/SelectableInput';
 import LikeDislike from 'components/LikeDislike/LikeDislike';
@@ -13,6 +14,9 @@ import Progress from 'components/Progress/Progress';
 import Checkbox from 'components/Checkbox/Checkbox';
 import Toggle from 'components/Toggle/Toggle';
 import Slider from 'components/Slider/Slider';
+import Icon from 'components/Icon/Icon';
+
+import * as m from 'globals/modifiers.css';
 
 
 export default class FormSection extends Component {
@@ -136,6 +140,42 @@ export default class FormSection extends Component {
           )}
         </RadioGroup>
         <p>You selected {this.state.radioVal}</p>
+
+        <h3>Tab buttons</h3>
+        <p>Exactly the same component as RadioGroup, but with in a tab style.</p>
+        <RadioGroup name="example"
+                    tabbed
+                    onChange={this.handleRadio}
+                    selectedValue={this.state.radioVal}>
+          {radio => (
+            <span>
+              {radio({value: 'Loves', children:
+                <span>
+                  <span className={[m.db, m.alignc, m.large].join(' ')}>
+                    <Icon name="heart"/>
+                  </span>
+                  Love
+                </span>
+              })}
+              {radio({value: 'Pact', children:
+                <span>
+                  <span className={[m.db, m.alignc, m.large].join(' ')}>
+                    <Icon name="stamp"/>
+                  </span>
+                  Fresh
+                </span>
+              })}
+              {radio({value: 'Coffee', children:
+                <span>
+                  <span className={[m.db, m.alignc, m.large].join(' ')}>
+                    <Icon name="coffee"/>
+                  </span>
+                  Coffee
+                </span>
+              })}
+            </span>
+          )}
+        </RadioGroup>
 
         <h3>Checkbox</h3>
         <p><Checkbox label="Checkbox" onChange={this.handleCheckbox}/> value is {this.state.checkbox ? 'checked' : 'not checked'}.</p>
