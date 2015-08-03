@@ -83,6 +83,7 @@ export default class FormSection extends Component {
   }
 
   handleRadio(val) {
+    console.log(`Radio set to ${val}`);
     this.setState({
       radioVal: val
     });
@@ -107,8 +108,8 @@ export default class FormSection extends Component {
         <Slider onChange={this.handleSlide} value={this.state.slideVal}/>
         <p>Value: {this.state.slideVal}</p>
 
-        <strong>With steps:</strong>
-        <Slider step={10} onChange={this.handleSlide} value={this.state.slideVal}/>
+        <strong>With steps &amp; ticks:</strong>
+        <Slider ticks={10} step={10} onChange={this.handleSlide} value={this.state.slideVal}/>
         <p>Value: {this.state.slideVal}</p>
 
         <h3>DatePicker</h3>
