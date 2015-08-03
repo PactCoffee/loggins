@@ -3,8 +3,8 @@ import React, {PropTypes} from 'react';
 import s from './Radio.css';
 
 export default class Radio {
-  constructor() {
-    this.id = `radioChild.${new Date().getTime()}`;
+  constructor(props) {
+    this.id = `radioChild.${props.value.replace(' ', '-')}`;
   }
   render() {
     const isChecked = this.props.value === this.props.selectedValue;

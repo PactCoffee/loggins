@@ -25,7 +25,8 @@ export default class RadioGroup {
     let {name, selectedValue, onChange, children} = this.props;
     return (
       <div className={s.group}>
-        {children && children(props => <Radio {...{name, selectedValue, onChange}} {...props} />
+        {children && children(props =>
+          <Radio {...{name, selectedValue, onChange}} {...props} />
         )}
       </div>
     );
