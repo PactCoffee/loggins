@@ -7,10 +7,10 @@ export default class Radio {
     this.id = `radioChild.${props.value.replace(' ', '-')}.${new Date().getTime()}`;
   }
   render() {
-    const {tabbed} = this.props;
+    const {tabbed, className} = this.props;
     const isChecked = this.props.value === this.props.selectedValue;
     return (
-      <span className={s.child}>
+      <span className={[s.child, className].join(' ')}>
         <input id={this.id}
                type="radio"
                className={tabbed ? s.tab : s.radio}
@@ -42,5 +42,6 @@ Radio.propTypes = {
     PropTypes.number
   ]),
   name: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired
+  onChange: PropTypes.func.isRequired,
+  className: PropTypes.string
 };

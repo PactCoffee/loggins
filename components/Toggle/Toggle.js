@@ -13,7 +13,7 @@ export default class Toggle extends Component {
   render() {
     const isOn = this.props.value === true;
     return (
-      <span className={s.root}>
+      <span className={[s.root, this.props.className].join(' ')}>
         <label className={[s.label, isOn ? s.isOn : null].join(' ')}>
           <input
             type="checkbox"
@@ -30,5 +30,6 @@ export default class Toggle extends Component {
 
 Toggle.propTypes = {
   value: PropTypes.bool.isRequired,
-  onChange: PropTypes.func.isRequired
+  onChange: PropTypes.func.isRequired,
+  className: PropTypes.string
 };

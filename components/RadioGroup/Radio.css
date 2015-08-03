@@ -79,11 +79,12 @@
 
 .tabLabel {
   composes: root from '../Panel/Panel.css';
+  width: 100%;
   padding: 0.5em;
   cursor: pointer;
   border-radius: 0;
   display: inline-block;
-  border-right: 1px solid var(--color-grey-lightest);
+  /*border-right: 1px solid var(--color-grey-lightest);*/
 }
 .tabLabel:hover {
   background: color(var(--color-primary) l(97%));
@@ -92,12 +93,12 @@
   background: color(var(--color-primary) l(90%));
 }
 
-.child:first-child .tabLabel {
-  border-radius: 4px 0 0 4px;
+.child:first-child label {
+  /*border-radius: 4px 0 0 4px;*/
 }
-.child:last-child .tabLabel {
-  border-radius: 0 4px 4px 0;
-  border-right: none;
+.child:last-child label {
+  /*border-radius: 0 4px 4px 0;*/
+  /*border-right: none;*/
 
 }
 
