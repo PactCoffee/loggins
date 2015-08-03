@@ -194,7 +194,7 @@
     "spaced-line-comment": 2,         // http://eslint.org/docs/rules/spaced-line-comment
 
   // ONES BELOW HERE are NOT in the Air Bnb standards, so they should be removed if they seem unnecessary
-  "no-array-constructor": 2,
+  "no-array-constructor": 0,
   "no-bitwise": 0,
   "no-catch-shadow": 2,
   "no-comma-dangle": 2,
