@@ -12,6 +12,11 @@
 .dib {display: inline-block;}
 .db {display:  block;}
 
+/* Floats */
+.cf {lost-utility: clearfix;}
+.fl {float: left;}
+.fr {float: right;}
+
 /* Padding */
 .pts {padding-top:    var(--size-small);}
 .ptm {padding-top:    var(--size-medium);}
