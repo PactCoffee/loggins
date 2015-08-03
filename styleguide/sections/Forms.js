@@ -83,7 +83,6 @@ export default class FormSection extends Component {
   }
 
   handleRadio(val) {
-    console.log(`Radio set to ${val}`);
     this.setState({
       radioVal: val
     });
