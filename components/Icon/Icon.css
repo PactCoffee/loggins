@@ -13,7 +13,6 @@
 }
 
 /* Types */
-
 .clock,
 .coffee,
 .cog,
@@ -27,6 +26,7 @@
 
 .pactV,
 .pactH,
+.stamp,
 .pin,
 .thumb {
   fill: currentColor;

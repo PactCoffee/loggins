@@ -31,6 +31,7 @@ export default {
   thumb: cleanupSvg(require('./icons/thumb.svg')),
   pactV: cleanupSvg(require('./icons/pactV.svg')),
   pactH: cleanupSvg(require('./icons/pactH.svg')),
+  stamp: cleanupSvg(require('./icons/stamp.svg')),
   coffee: cleanupSvg(require('./icons/coffee.svg')),
   chevron: cleanupSvg(require('./icons/chevron.svg')),
   twitter: cleanupSvg(require('./icons/twitter.svg')),
