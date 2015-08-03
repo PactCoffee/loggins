@@ -4,22 +4,26 @@ import s from './Radio.css';
 
 export default class Radio {
   constructor(props) {
-    this.id = `radioChild.${props.value.replace(' ', '-')}`;
+    this.id = `radioChild.${props.value.replace(' ', '-')}.${new Date().getTime()}`;
   }
   render() {
+    const {tabbed} = this.props;
     const isChecked = this.props.value === this.props.selectedValue;
-    const css = [s.label, isChecked ? s.checked : null].join(' ');
     return (
       <span className={s.child}>
-        <input {...this.props}
-               id={this.id}
+        <input id={this.id}
                type="radio"
-               className={s.radio}
+               className={tabbed ? s.tab : s.radio}
                checked={isChecked}
                name={this.props.name}
                onChange={() => this.props.onChange(this.props.value)} />
-        <label htmlFor={this.id} className={css}>
-          {this.props.value}
+        <label htmlFor={this.id}
+               className={tabbed ? s.tabLabel : s.radioLabel}>
+          {tabbed ?
+            this.props.children
+            :
+            this.props.value
+          }
         </label>
       </span>
     );
@@ -27,6 +31,8 @@ export default class Radio {
 }
 
 Radio.propTypes = {
+  tabbed: PropTypes.bool,
+  children: PropTypes.any,
   selectedValue: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number
