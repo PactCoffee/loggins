@@ -31,13 +31,38 @@
   transform: translateY(-25%) scale(1.2);
 }
 
-.bar {
+/* Globals as the classnames are appended with a number */
+:global .SliderBar {
   height: 100%;
   border-radius: 2em;
 }
-.bar-0 {
+:global .SliderBar-0 {
   background: var(--color-primary);
 }
-.bar-1 {
+:global .SliderBar-1 {
   background: var(--color-grey-lightest);
+}
+
+.tickContainer {
+  padding: 0 0.5em;
+  height: 1em;
+  width: 100%;
+}
+.ticks {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+.tick {
+  position: absolute;
+  font-size: 70%;
+  color: var(--color-muted);
+  width: 1.5em;
+  margin-left: -0.75em;
+  text-align: center;
+}
+@media screen and (max-width: 29em) {
+  .tick:nth-child(2n) {
+    display: none;
+  }
 }
