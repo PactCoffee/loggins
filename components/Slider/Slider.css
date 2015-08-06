@@ -61,8 +61,3 @@
   margin-left: -0.75em;
   text-align: center;
 }
-@media screen and (max-width: 29em) {
-  .tick:nth-child(2n) {
-    display: none;
-  }
-}
