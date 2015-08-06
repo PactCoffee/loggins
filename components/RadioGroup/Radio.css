@@ -9,6 +9,7 @@
   position: relative;
 }
 
+/* Radio */
 .radio {
   opacity: 0;
   position: absolute;
@@ -18,7 +19,7 @@
   height: var(--baseRadioSize);
 }
 
-.label {
+.radioLabel {
   display: inline-block;
   position: relative;
   padding-left: calc(var(--baseRadioSize) + 0.5em);
@@ -26,13 +27,13 @@
   transition: all 200ms var(--easeinoutback);
   user-select: none;
 }
-.label:hover {
+.radioLabel:hover {
   color: var(--color-primary);
 }
-.label:hover:before {
+.radioLabel:hover:before {
   border-color: var(--color-primary);
 }
-.label:before {
+.radioLabel:before {
   position: absolute;
   left: 0;
   top: 0.15em;
@@ -47,7 +48,7 @@
   line-height: 0;
 }
 
-.label:after {
+.radioLabel:after {
   content: '';
   position: absolute;
   left: 0;
@@ -63,10 +64,35 @@
   opacity: 0;
 }
 
-.radio:checked + .label:before {
+.radio:checked + .radioLabel:before {
   border-color: var(--color-primary);
 }
-.radio:checked + .label:after {
+.radio:checked + .radioLabel:after {
   transform: scale(0.6);
   opacity: 1;
+}
+
+/* Tab */
+.tab {
+  display: none;
+}
+
+.tabLabel {
+  composes: root from '../Panel/Panel.css';
+  width: 100%;
+  padding: 0.5em;
+  cursor: pointer;
+  border-radius: 0;
+  display: inline-block;
+}
+.tabLabel:hover {
+  background: color(var(--color-primary) l(97%));
+}
+.tabLabel:active {
+  background: color(var(--color-primary) l(90%));
+}
+
+.tab:checked + .tabLabel {
+  background: var(--color-primary);
+  color: var(--color-white);
 }

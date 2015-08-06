@@ -22,6 +22,10 @@ function cleanupSvg(svg) {
 }
 
 export default {
+  pactV: cleanupSvg(require('./icons/pactV.svg')),
+  pactH: cleanupSvg(require('./icons/pactH.svg')),
+  stamp: cleanupSvg(require('./icons/stamp.svg')),
+
   cog: cleanupSvg(require('./icons/cog.svg')),
   pin: cleanupSvg(require('./icons/pin.svg')),
   tick: cleanupSvg(require('./icons/tick.svg')),
@@ -29,11 +33,17 @@ export default {
   clock: cleanupSvg(require('./icons/clock.svg')),
   heart: cleanupSvg(require('./icons/heart.svg')),
   thumb: cleanupSvg(require('./icons/thumb.svg')),
-  pactV: cleanupSvg(require('./icons/pactV.svg')),
-  pactH: cleanupSvg(require('./icons/pactH.svg')),
   coffee: cleanupSvg(require('./icons/coffee.svg')),
   chevron: cleanupSvg(require('./icons/chevron.svg')),
   twitter: cleanupSvg(require('./icons/twitter.svg')),
   facebook: cleanupSvg(require('./icons/facebook.svg')),
-  triangle: cleanupSvg(require('./icons/triangle.svg'))
+  triangle: cleanupSvg(require('./icons/triangle.svg')),
+
+  drip: cleanupSvg(require('./icons/drip.svg')),
+  aeropress: cleanupSvg(require('./icons/aeropress.svg')),
+  cafatiere: cleanupSvg(require('./icons/cafatiere.svg')),
+  wholebean: cleanupSvg(require('./icons/wholebean.svg')),
+  espresso: cleanupSvg(require('./icons/espresso.svg')),
+  stovetop: cleanupSvg(require('./icons/stovetop.svg'))
+
 };

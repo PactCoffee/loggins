@@ -3,6 +3,7 @@
 import React, {Component} from 'react';
 
 import Section from '../components/Section';
+
 import EmailMultiInput from 'components/EmailMultiInput/EmailMultiInput';
 import SelectableInput from 'components/SelectableInput/SelectableInput';
 import LikeDislike from 'components/LikeDislike/LikeDislike';
@@ -12,6 +13,10 @@ import FormInput from 'components/FormInput/FormInput';
 import Progress from 'components/Progress/Progress';
 import Checkbox from 'components/Checkbox/Checkbox';
 import Toggle from 'components/Toggle/Toggle';
+import Slider from 'components/Slider/Slider';
+import Icon from 'components/Icon/Icon';
+
+import * as m from 'globals/modifiers.css';
 
 
 export default class FormSection extends Component {
@@ -26,6 +31,7 @@ export default class FormSection extends Component {
     this.handleToggle = this.handleToggle.bind(this);
     this.likeChanged = this.likeChanged.bind(this);
     this.handleRadio = this.handleRadio.bind(this);
+    this.handleSlide = this.handleSlide.bind(this);
     this.handleCopy = this.handleCopy.bind(this);
     this.handleDate = this.handleDate.bind(this);
 
@@ -38,7 +44,8 @@ export default class FormSection extends Component {
       liked: null,
       checked: false,
       progressVal: 50,
-      date: new Date().getTime()
+      date: new Date().getTime(),
+      slideVal: 50
     };
   }
 
@@ -91,9 +98,22 @@ export default class FormSection extends Component {
     });
   }
 
+  handleSlide(slideVal) {
+    this.setState({slideVal});
+  }
+
   render() {
     return (
       <Section name="Forms" href="https://github.com/PactCoffee/loggins/blob/master/styleguide/sections/Forms.js">
+
+        <h3>Slider</h3>
+        <strong>Basic version:</strong>
+        <Slider onChange={this.handleSlide} value={this.state.slideVal}/>
+        <p>Value: {this.state.slideVal}</p>
+
+        <strong>With steps &amp; ticks:</strong>
+        <Slider ticks={10} step={10} onChange={this.handleSlide} value={this.state.slideVal}/>
+        <p>Value: {this.state.slideVal}</p>
 
         <h3>DatePicker</h3>
         <DatePicker value={this.state.date} onChange={this.handleDate}/>
@@ -120,6 +140,42 @@ export default class FormSection extends Component {
           )}
         </RadioGroup>
         <p>You selected {this.state.radioVal}</p>
+
+        <h3>Tab buttons</h3>
+        <p>Exactly the same component as RadioGroup, but with in a tab style.</p>
+        <RadioGroup name="example"
+                    tabbed
+                    onChange={this.handleRadio}
+                    selectedValue={this.state.radioVal}>
+          {radio => (
+            <span>
+              {radio({value: 'Loves', children:
+                <span>
+                  <span className={[m.db, m.alignc, m.large].join(' ')}>
+                    <Icon name="heart"/>
+                  </span>
+                  Love
+                </span>
+              })}
+              {radio({value: 'Pact', children:
+                <span>
+                  <span className={[m.db, m.alignc, m.large].join(' ')}>
+                    <Icon name="stamp"/>
+                  </span>
+                  Fresh
+                </span>
+              })}
+              {radio({value: 'Coffee', children:
+                <span>
+                  <span className={[m.db, m.alignc, m.large].join(' ')}>
+                    <Icon name="coffee"/>
+                  </span>
+                  Coffee
+                </span>
+              })}
+            </span>
+          )}
+        </RadioGroup>
 
         <h3>Checkbox</h3>
         <p><Checkbox label="Checkbox" onChange={this.handleCheckbox}/> value is {this.state.checkbox ? 'checked' : 'not checked'}.</p>
