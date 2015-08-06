@@ -89,7 +89,7 @@
 
 .hollow {
   background: transparent;
-  border: 0.1em solid var(--color-text);
+  box-shadow: inset 0 0 0 0.1em var(--color-text);
   color: var(--color-text);
 }
 .hollow:hover {
@@ -101,7 +101,7 @@
 }
 
 .primary.hollow {
-  border: 0.1em solid var(--color-primary);
+  box-shadow: inset 0 0 0 0.1em var(--color-primary);
   color: var(--color-primary);
 }
 .primary.hollow:hover {
@@ -113,7 +113,7 @@
 }
 
 .secondary.hollow {
-  border: 0.1em solid var(--color-secondary);
+  box-shadow: inset 0 0 0 0.1em var(--color-secondary);
   color: var(--color-secondary);
 }
 .secondary.hollow:hover {
