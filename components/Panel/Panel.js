@@ -18,7 +18,7 @@ export default class Panel extends Component {
     ].join(' ');
 
     return (
-      <div className={classNames}>
+      <div style={this.props.style} className={classNames}>
         {this.props.children}
       </div>
     );
