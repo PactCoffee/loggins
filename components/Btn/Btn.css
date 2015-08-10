@@ -57,15 +57,17 @@
 
 .clear {
   background: transparent;
-  color: var(--color-primary);
+  color: var(--color-brown-dark);
   font-weight: normal;
   font-style: italic;
 }
 .clear:hover {
-  background: color(var(--color-white) l(-10%));
+  background: transparent;
+  color: var(--color-brown);
 }
 .clear:active {
-  background: color(var(--color-white) l(-15%));
+  background: transparent;
+  color: var(--color-black);
 }
 
 .white {
