@@ -5,6 +5,12 @@
   --size-large:  1.5rem;
   --size-larger: 2rem;
 
+  --font-smaller: 0.5em;
+  --font-small:   0.8em;
+  --font-medium:  1em;
+  --font-large:   1.277777778em;
+  --font-larger:  2.944444444em;
+
   --radius-medium: 8px;
 }
 
@@ -17,6 +23,12 @@
 .cf {lost-utility: clearfix;}
 .fl {float: left;}
 .fr {float: right;}
+
+/* Position */
+.pr {position: relative;}
+.pa {position: absolute;}
+.pf {position: fixed;}
+.ps {position: static;}
 
 /* Padding */
 .pts {padding-top:    var(--size-small);}
@@ -84,11 +96,11 @@
 .rotate270 {transform: rotate(270deg);}
 
 /* Font size */
-.smaller {font-size: 0.5em;        }
-.small {font-size:   0.8em;        }
-.medium {font-size:  1em;          }
-.large { font-size:  1.277777778em;}
-.larger {font-size:  2.944444444em;}
+.smaller {font-size: var(--font-smaller);}
+.small {font-size:   var(--font-small);}
+.medium {font-size:  var(--font-medium);}
+.large { font-size:  var(--font-large);}
+.larger {font-size:  var(--font-larger);}
 
 /* Font styles */
 .bold { font-weight: bold;}
