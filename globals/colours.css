@@ -1,5 +1,6 @@
 :root {
   --color-white:        rgb(255,255,255);
+  --color-offwhite:     rgb(251,251,251);
   --color-white-dark:   rgb(240,240,240);
   --color-grey-lightest:rgb(225,225,225);
   --color-grey-lighter: rgb(197,197,197);
@@ -23,6 +24,7 @@
   --color-yellow:       rgb(253,180,82);
   --color-mauve:        rgb(97,40,79);
   --color-copper:       rgb(179,91,60);
+  --color-pact:         rgb(240, 168, 75);
 
   --color-primary:   var(--color-green);
   --color-secondary: var(--color-orange);
