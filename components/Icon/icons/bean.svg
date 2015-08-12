@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12072) - http://www.bohemiancoding.com/sketch -->
+    <title>bean</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="bean" sketch:type="MSArtboardGroup" stroke="#000000">
+            <path d="M11.2697018,19 C15.1356951,19 18.2697018,14.9705627 18.2697018,10 C18.2697018,5.09505289 15.217892,1.10654797 11.4224168,1.00209943 C11.371643,1.00070218 11.2435802,1.0445924 11.1996545,1.12044043 C10.7785199,1.8476281 8.68651077,5.75870541 11.2657458,10.0429056 C14.1140034,14.7739618 11.2697018,19 11.2697018,19 L11.2697018,19 Z" id="right" sketch:type="MSShapeGroup"></path>
+            <path d="M9,1.00206705 C5.13400675,1.00206705 2,5.0315043 2,10.0020671 C2,14.9070142 5.0518098,18.8955191 8.84728504,18.9999676 C8.89805879,19.0013649 9.02612163,18.9574747 9.07004734,18.8816266 C9.49118193,18.154439 11.583191,14.2433616 9.003956,9.95916142 C6.15569837,5.22810521 9,1.00206705 9,1.00206705 Z" id="left" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

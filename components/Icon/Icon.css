@@ -12,18 +12,26 @@
   line-height: inherit;
 }
 
-/* Types */
+.pactH {
+  height: 1.1em;
+  width: calc(1.1em * 2.272727273);
+}
+
+/* Stroked */
 .clock,
 .coffee,
 .cog,
 .tick,
 .chevron,
+.bean,
 .triangle,
+.cross,
 .heart {
   fill: transparent;
   stroke: currentColor;
 }
 
+/* Filled */
 .pactV,
 .pactH,
 .stamp,
