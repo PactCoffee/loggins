@@ -107,8 +107,7 @@
   color: var(--color-primary);
 }
 .primary.hollow:hover {
-  background: var(--color-primary);
-  color: var(--color-white);
+  background: color(var(--color-primary) a(20%));
 }
 .primary.hollow:active {
   background: color(var(--color-primary) l(- 5%));
