@@ -11,6 +11,7 @@
   appearance: none;
   cursor: pointer;
   user-select: none;
+  text-decoration: none;
 }
 .root:hover {
   background: color(rgb(120,120,120) l(+ 1%));
