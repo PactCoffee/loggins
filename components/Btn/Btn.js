@@ -4,7 +4,16 @@ import React, {Component, PropTypes} from 'react';
 
 export default class Btn extends Component {
   render() {
-    const {type, variant, fullWidth, className} = this.props;
+    const {
+      href,
+      type,
+      variant,
+      fullWidth,
+      className,
+      isLoading,
+      children
+    } = this.props;
+
     const classNames = [
       styles.root,
       styles[type],
@@ -15,11 +24,14 @@ export default class Btn extends Component {
     ].join(' ');
 
     return (
+      href ?
+      <a {...this.props} className={classNames}>{children}</a>
+      :
       <button {...this.props} className={classNames}>
-        {this.props.isLoading ?
+        {isLoading ?
           'Saving...'
           :
-          this.props.children
+          children
         }
       </button>
     );
@@ -29,6 +41,8 @@ export default class Btn extends Component {
 Btn.propTypes = {
   type: PropTypes.oneOf(['primary', 'secondary', 'warning', 'clear', 'white']),
   variant: PropTypes.oneOf(['cta', 'hollow']),
+
+  href: PropTypes.string,
 
   children: PropTypes.any,
   isLoading: PropTypes.bool,
