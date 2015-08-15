@@ -107,6 +107,9 @@
 .light {font-weight: lighter;}
 .italic {font-style: italic;}
 
+/* Text styles */
+.upcase {text-transform: uppercase;}
+
 /* Box shadow */
 .bs {box-shadow: 1px 1px 3px rgba(0,0,0,0.15)}
 
