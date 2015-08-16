@@ -32,6 +32,7 @@ export default {
   bean: cleanupSvg(require('./icons/bean.svg')),
   tick: cleanupSvg(require('./icons/tick.svg')),
   more: cleanupSvg(require('./icons/more.svg')),
+  pause: cleanupSvg(require('./icons/pause.svg')),
   clock: cleanupSvg(require('./icons/clock.svg')),
   heart: cleanupSvg(require('./icons/heart.svg')),
   thumb: cleanupSvg(require('./icons/thumb.svg')),
