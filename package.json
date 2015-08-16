@@ -1,6 +1,6 @@
 {
   "name": "@pactcoffee/loggins",
-  "version": "2.5.1",
+  "version": "2.5.2",
   "description": "Pact's component library",
   "main": "components/index.js",
   "scripts": {
