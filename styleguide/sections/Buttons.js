@@ -25,6 +25,10 @@ export default class BtnSection extends Component {
         <Btn className={[m.mbs, m.mrs].join(' ')} variant="hollow">Hollow</Btn>
         <Btn className={[m.mbs, m.mrs].join(' ')} type="secondary" variant="hollow">Secondary</Btn>
 
+        <p>Loading:</p>
+        <Btn className={[m.mbs, m.mrs].join(' ')} isLoading="doing stuff...">Unseen button children</Btn>
+        <Btn className={[m.mbs, m.mrs].join(' ')} isLoading="saving..">Unseen button children</Btn>
+
         <p>With icon(s):</p>
 
         <Btn className={m.mbs}>
