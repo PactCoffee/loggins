@@ -17,7 +17,7 @@ export default class Btn extends Component {
     return (
       <button {...this.props} className={classNames}>
         {this.props.isLoading ?
-          'Saving...'
+          {this.props.isLoading}
           :
           this.props.children
         }
@@ -31,7 +31,7 @@ Btn.propTypes = {
   variant: PropTypes.oneOf(['cta', 'hollow']),
 
   children: PropTypes.any,
-  isLoading: PropTypes.bool,
+  isLoading: PropTypes.string,
   fullWidth: PropTypes.bool,
   className: PropTypes.string
 };
