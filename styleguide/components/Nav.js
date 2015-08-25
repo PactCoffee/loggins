@@ -47,6 +47,7 @@ export default class extends Component {
           <li><Link to="forms">Forms</Link></li>
           <li><Link to="overlays">Overlays</Link></li>
           <li><Link to="panels">Panels</Link></li>
+          <li><Link to="icons">Icons</Link></li>
         </ul>
       </nav>
     );

@@ -7,8 +7,8 @@
  * projects.
  */
 :root {
-  --font-brandon: 'BrandonGrotesque', brandon-grotesque, "Brandon Grotesque", Helvetica Neue, Helvetica, Arial, sans-serif;
-  --font-lunchbox: 'LunchboxSlab', 'lunchbox', 'Lunchbox Slab';
+  --font-brandon: 'BrandonGrotesque', Helvetica Neue, Helvetica, Arial, sans-serif;
+  --font-lunchbox: 'LunchboxSlab';
 }
 
 

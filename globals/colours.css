@@ -1,10 +1,12 @@
 :root {
   --color-white:        rgb(255,255,255);
+  --color-offwhite:     rgb(251,251,251);
   --color-white-dark:   rgb(240,240,240);
   --color-grey-lightest:rgb(225,225,225);
   --color-grey-lighter: rgb(197,197,197);
   --color-grey-light:   rgb(138,138,138);
   --color-grey:         rgb(99,99,99);
+  --color-black:        rgb(20,20, 20);
 
   --color-green:        rgb(41,174,155);
   --color-red:          rgb(252,99,99);
@@ -13,9 +15,12 @@
   --color-brown:        rgb(156,120,102);
   --color-brown-dark:   rgb(96,79,76);
 
+  --color-blue-muted:   rgb(225,235,242);
   --color-blue-harsh:   rgb(21,125,249);
   --color-blue:         rgb(41,179,225);
   --color-blue-dark:    rgb(128,176,211);
+  --color-blue-darker:  rgb(53,79,96);
+  --color-steel:        rgb(105,125,139);
 
   --color-teal:         rgb(95,183,177);
   --color-maroon:       rgb(127,57,46);
@@ -23,6 +28,7 @@
   --color-yellow:       rgb(253,180,82);
   --color-mauve:        rgb(97,40,79);
   --color-copper:       rgb(179,91,60);
+  --color-pact:         rgb(240, 168, 75);
 
   --color-primary:   var(--color-green);
   --color-secondary: var(--color-orange);

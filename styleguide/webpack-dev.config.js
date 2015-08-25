@@ -25,7 +25,7 @@ module.exports = assign({}, config, {
     }],
 
     loaders: [{
-      test: /\.(woff|woff2)$/,
+      test: /\.(woff|woff2|gif|png|jpe?g)$/,
       loader: 'url-loader'
     }, {
       test: /\.svg$/,

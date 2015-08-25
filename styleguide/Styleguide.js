@@ -1,9 +1,10 @@
 import React, {PropTypes} from 'react';
 import RTG from 'react/lib/ReactCSSTransitionGroup';
 
-import Nav from './components/Nav';
 import Container from 'components/Container/Container';
 import Logo from 'components/Logo/Logo';
+import Nav from './components/Nav';
+import Home from './sections/Home';
 
 import styles from './styleguide.css';
 
@@ -15,7 +16,8 @@ const ROUTES = [
   'buttons',
   'forms',
   'overlays',
-  'panels'
+  'panels',
+  'icons'
 ];
 let oldRouteName = '';
 let newRouteName = '';
@@ -27,6 +29,7 @@ export default class Styleguide extends React.Component {
     }
   }
   componentWillReceiveProps(nextProps) {
+    // Some complicated stuff just so we know which transition to use
     if (!this.props.children && !nextProps.children) {
       oldRouteName = 'home';
       return;
@@ -66,7 +69,7 @@ export default class Styleguide extends React.Component {
         <div className={styles.heading}>
             <Logo className={styles.logo} size="small" type="horizontal"/>
             <h1>
-              Loggins
+              <a href="https://github.com/PactCoffee/loggins">Loggins</a>
             </h1>
         </div>
 
@@ -80,8 +83,7 @@ export default class Styleguide extends React.Component {
               </div>
              :
               <div key="home">
-                <em>Pact's styleguide and component/pattern library</em>
-                <p>Make sure to hit the "view source" links on each section to see how to use the components described within.</p>
+                <Home/>
               </div>
             }
           </RTG>

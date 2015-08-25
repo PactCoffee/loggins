@@ -4,6 +4,7 @@ import {Route} from 'react-router';
 import Styleguide from './Styleguide';
 
 import Type from './sections/Type';
+import Icons from './sections/Icons';
 import Grids from './sections/Grids';
 import Forms from './sections/Forms';
 import Panels from './sections/Panels';
@@ -20,5 +21,6 @@ export default (
     <Route path="panels" component={Panels}/>
     <Route path="colours" component={Colours}/>
     <Route path="buttons" component={Buttons}/>
+    <Route path="icons" component={Icons}/>
   </Route>
 );

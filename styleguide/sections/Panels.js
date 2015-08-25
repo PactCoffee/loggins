@@ -10,7 +10,7 @@ import Icon from 'components/Icon/Icon';
 export default class Panels extends Component {
   render() {
     return (
-      <Section name="Panels">
+      <Section name="Panels" href="https://github.com/PactCoffee/loggins/blob/master/styleguide%2Fsections%2FPanels.js">
         <Panel>
           <p>This is a panel</p>
         </Panel>
