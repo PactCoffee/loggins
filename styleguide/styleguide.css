@@ -80,33 +80,40 @@
   background: rgba(0,0,0,0.2);
 }
 
-.green {
-  background: var(--color-green);
-}
-.red {
-  background: var(--color-red);
-}
-.orange {
-  background: var(--color-orange);
-}
-.grey {
-  background: var(--color-grey);
-}
-.greyLight {
-  background: var(--color-grey-lighter);
-}
-.brown {
-  background: var(--color-brown);
-}
-.brownDark {
-  background: var(--color-brown-dark);
-}
-.white {
-  background: var(--color-white);
-}
-.whiteDark {
-  background: var(--color-white-dark);
-}
+.white {background-color: var(--color-white);}
+.offwhite {background-color: var(--color-offwhite);}
+.white-dark {background-color: var(--color-white-dark);}
+.grey-lightest {background-color: var(--color-grey-lightest);}
+.grey-lighter {background-color: var(--color-grey-lighter);}
+.grey-light {background-color: var(--color-grey-light);}
+.grey {background-color: var(--color-grey);}
+.black {background-color: var(--color-black);}
+.green {background-color: var(--color-green);}
+.red {background-color: var(--color-red);}
+.orange {background-color: var(--color-orange);}
+.brown {background-color: var(--color-brown);}
+.brown-dark {background-color: var(--color-brown-dark);}
+.blue-muted {background-color: var(--color-blue-muted);}
+.blue-harsh {background-color: var(--color-blue-harsh);}
+.blue {background-color: var(--color-blue);}
+.blue-dark {background-color: var(--color-blue-dark);}
+.blue-darker {background-color: var(--color-blue-darker);}
+.steel {background-color: var(--color-steel);}
+.teal {background-color: var(--color-teal);}
+.maroon {background-color: var(--color-maroon);}
+.taupe {background-color: var(--color-taupe);}
+.yellow {background-color: var(--color-yellow);}
+.mauve {background-color: var(--color-mauve);}
+.copper {background-color: var(--color-copper);}
+.pact {background-color: var(--color-pact);}
+.primary {background-color: var(--color-primary);}
+.secondary {background-color: var(--color-secondary);}
+.error {background-color: var(--color-error);}
+.alert {background-color: var(--color-alert);}
+.text {background-color: var(--color-text);}
+.muted {background-color: var(--color-muted);}
+.twitter {background-color: var(--color-twitter);}
+.facebook {background-color: var(--color-facebook);}
 
 .lost {
   text-align: center;
