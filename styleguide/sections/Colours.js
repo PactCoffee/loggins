@@ -16,7 +16,7 @@ class Swatch {
   }
 }
 Swatch.propTypes = {
-  color: React.PropTypes.string.isRequired,
+  colour: React.PropTypes.string.isRequired,
   i: React.PropTypes.number.isRequired
 };
 

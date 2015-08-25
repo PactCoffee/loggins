@@ -33,6 +33,9 @@
   text-align: right;
   font-size: 1.25em;
 }
+.heading a {
+  color: var(--color-grey);
+}
 
 .section {
   position: relative;
