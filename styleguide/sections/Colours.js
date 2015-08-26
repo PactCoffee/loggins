@@ -1,30 +1,59 @@
 /*eslint react/no-multi-comp:0*/
-import React, {Component} from 'react';
+import React, {Component, findDOMNode} from 'react';
 import Section from '../components/Section';
 
 import styles from '../styleguide.css';
 import * as t from 'globals/typography.css';
 
-class Swatch {
+class Swatch extends Component {
+  constructor(props) {
+    super(props);
+    this.onClick = this.onClick.bind(this);
+    this.onBlur = this.onBlur.bind(this);
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      showInput: false
+    };
+  }
+  toggle(cb) {
+    this.setState({
+      showInput: !this.state.showInput
+    }, cb);
+  }
+  onBlur() {
+    if (this.state.showInput) this.toggle();
+  }
+  onClick() {
+    if (!this.state.showInput) {
+      this.toggle(() =>
+        findDOMNode(this.refs.val).setSelectionRange(0, 9999)
+      );
+    }
+  }
   render() {
-    const {i, colour} = this.props;
+    const {colour} = this.props;
+    const {showInput} = this.state;
     return (
-      <div key={i} className={[styles.swatch, styles[colour], t.title].join(' ')}>
-        <span>{colour}</span>
-      </div>
+      <button onBlur={this.onBlur} onClick={this.onClick} className={[styles.swatch, styles[colour], t.title].join(' ')}>
+        {showInput ?
+          <input ref="val" readOnly value={`var(--color-${colour})`}/>
+          :
+          <span>{colour}</span>
+        }
+      </button>
     );
   }
 }
 Swatch.propTypes = {
-  colour: React.PropTypes.string.isRequired,
-  i: React.PropTypes.number.isRequired
+  colour: React.PropTypes.string.isRequired
 };
 
-export default class ColourSection extends Component {
+export default class Colours extends Component {
   render() {
     return (
       <Section name="Colours">
-        <p>The main palette we use:</p>
+        <em>Click a swatch to show the variable name. You'll have to manually copy the text.</em>
+        <h2>Primary palette</h2>
         {['primary',
           'secondary',
           'error',
@@ -33,7 +62,7 @@ export default class ColourSection extends Component {
           'muted'].map((c, i) => <Swatch key={i} colour={c}/>)
         }
 
-        <p>9 shades of grey:</p>
+        <h2>9 shades of grey</h2>
         {['white',
           'offwhite',
           'white-dark',
@@ -44,7 +73,7 @@ export default class ColourSection extends Component {
           'black'].map((c, i) => <Swatch key={i} colour={c}/>)
         }
 
-        <p>Even more colours</p>
+        <h2>Even moar colours</h2>
         {['green',
           'red',
           'orange',
@@ -52,8 +81,7 @@ export default class ColourSection extends Component {
           'brown-dark'].map((c, i) => <Swatch key={i} colour={c}/>)
         }
 
-        <p>Various blues:</p>
-
+        <h2>Various blues</h2>
         {['blue-muted',
           'blue-harsh',
           'blue',
@@ -62,7 +90,7 @@ export default class ColourSection extends Component {
           'steel'].map((c, i) => <Swatch key={i} colour={c}/>)
         }
 
-        <p>Official™ Pact colour scheme:</p>
+        <h2>Official™ Pact colour scheme</h2>
         {['teal',
           'maroon',
           'taupe',
@@ -72,7 +100,7 @@ export default class ColourSection extends Component {
           'pact'].map((c, i) => <Swatch key={i} colour={c}/>)
         }
 
-        <p>Third parties:</p>
+        <h2>Third parties</h2>
         {['twitter', 'facebook'].map((c, i) => <Swatch key={i} colour={c}/>)}
       </Section>
     );
