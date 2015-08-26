@@ -164,6 +164,9 @@
   lost-column: 3/4 0;
 }
 
+.tab {
+  lost-column: 1/3 3 0;
+}
 
 /* Animating */
 .animator {

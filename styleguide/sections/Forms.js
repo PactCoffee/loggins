@@ -17,6 +17,7 @@ import Slider from 'components/Slider/Slider';
 import Icon from 'components/Icon/Icon';
 
 import * as m from 'globals/modifiers.css';
+import styles from '../styleguide.css';
 
 
 export default class FormSection extends Component {
@@ -106,24 +107,10 @@ export default class FormSection extends Component {
     return (
       <Section name="Forms" href="https://github.com/PactCoffee/loggins/blob/master/styleguide/sections/Forms.js">
 
-        <h3>Slider</h3>
-        <strong>Basic version:</strong>
-        <Slider onChange={this.handleSlide} value={this.state.slideVal}/>
-        <p>Value: {this.state.slideVal}</p>
-
-        <strong>With steps &amp; ticks:</strong>
-        <Slider ticks={10} step={10} onChange={this.handleSlide} value={this.state.slideVal}/>
-        <p>Value: {this.state.slideVal}</p>
-
-        <h3>DatePicker</h3>
-        <DatePicker value={this.state.date} onChange={this.handleDate}/>
-        <p>Selected date: {new Date(this.state.date).toDateString()}</p>
-
         <h3>Toggle</h3>
         <Toggle value={this.state.toggleVal} onChange={this.handleToggle}/>
         <br/>
         Is mothercluckers the best chicken in the universe? <strong>{this.state.toggleVal ? 'Absolutely.' : `I don't know. Probably.`}</strong>
-
 
         <h3>Radio buttons</h3>
         <RadioGroup name="example"
@@ -142,36 +129,47 @@ export default class FormSection extends Component {
         <p>You selected {this.state.radioVal}</p>
 
         <h3>Tab buttons</h3>
-        <p>Exactly the same component as RadioGroup, but with in a tab style.</p>
+        <p>
+          Exactly the same component as RadioGroup, but with in a tab style. Unopinionated about border-radius and width.
+        </p>
         <RadioGroup name="example"
                     tabbed
                     onChange={this.handleRadio}
                     selectedValue={this.state.radioVal}>
           {radio => (
             <span>
-              {radio({value: 'Loves', children:
-                <span>
-                  <span className={[m.db, m.alignc, m.large].join(' ')}>
-                    <Icon name="heart"/>
+              {radio({
+                value: 'Loves',
+                className: styles.tab,
+                children:
+                  <span className={[m.db, m.alignc].join(' ')}>
+                    <span className={[m.db, m.alignc, m.large].join(' ')}>
+                      <Icon name="heart"/>
+                    </span>
+                    Love
                   </span>
-                  Love
-                </span>
               })}
-              {radio({value: 'Pact', children:
-                <span>
-                  <span className={[m.db, m.alignc, m.large].join(' ')}>
-                    <Icon name="stamp"/>
+              {radio({
+                value: 'Pact',
+                className: styles.tab,
+                children:
+                  <span className={[m.db, m.alignc].join(' ')}>
+                    <span className={[m.db, m.alignc, m.large].join(' ')}>
+                      <Icon name="stamp"/>
+                    </span>
+                    Fresh
                   </span>
-                  Fresh
-                </span>
               })}
-              {radio({value: 'Coffee', children:
-                <span>
-                  <span className={[m.db, m.alignc, m.large].join(' ')}>
-                    <Icon name="coffee"/>
+              {radio({
+                value: 'Coffee',
+                className: styles.tab,
+                children:
+                  <span className={[m.db, m.alignc].join(' ')}>
+                    <span className={[m.db, m.alignc, m.large].join(' ')}>
+                      <Icon name="coffee"/>
+                    </span>
+                    Coffee
                   </span>
-                  Coffee
-                </span>
               })}
             </span>
           )}
@@ -179,6 +177,19 @@ export default class FormSection extends Component {
 
         <h3>Checkbox</h3>
         <p><Checkbox label="Checkbox" onChange={this.handleCheckbox}/> value is {this.state.checkbox ? 'checked' : 'not checked'}.</p>
+
+        <h3>Slider</h3>
+        <strong>Basic version:</strong>
+        <Slider onChange={this.handleSlide} value={this.state.slideVal}/>
+        <p>Value: {this.state.slideVal}</p>
+
+        <strong>With steps &amp; ticks:</strong>
+        <Slider ticks={10} step={10} onChange={this.handleSlide} value={this.state.slideVal}/>
+        <p>Value: {this.state.slideVal}</p>
+
+        <h3>DatePicker</h3>
+        <DatePicker value={this.state.date} onChange={this.handleDate}/>
+        <p>Selected date: {new Date(this.state.date).toDateString()}</p>
 
         <h3>LikeDislike</h3>
         <p>
