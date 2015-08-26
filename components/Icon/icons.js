@@ -44,6 +44,7 @@ export default {
   triangle: cleanupSvg(require('./icons/triangle.svg')),
 
   drip: cleanupSvg(require('./icons/drip.svg')),
+  dripper: cleanupSvg(require('./icons/dripper.svg')),
   espresso: cleanupSvg(require('./icons/espresso.svg')),
   stovetop: cleanupSvg(require('./icons/stovetop.svg')),
   aeropress: cleanupSvg(require('./icons/aeropress.svg')),
