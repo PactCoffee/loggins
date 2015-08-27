@@ -10,7 +10,7 @@ export default class Btn extends Component {
       variant,
       fullWidth,
       className,
-      isLoading,
+      disabled,
       children
     } = this.props;
 
@@ -25,14 +25,10 @@ export default class Btn extends Component {
 
     return (
       href ?
-      <a {...this.props} className={classNames}>{children}</a>
+      <a disabled={disabled} href={href} className={classNames}>{children}</a>
       :
-      <button {...this.props} className={classNames}>
-        {isLoading ?
-          'Saving...'
-          :
-          children
-        }
+      <button disabled={disabled} className={classNames}>
+        {children}
       </button>
     );
   }
@@ -43,9 +39,9 @@ Btn.propTypes = {
   variant: PropTypes.oneOf(['cta', 'hollow']),
 
   href: PropTypes.string,
+  disabled: PropTypes.bool,
 
   children: PropTypes.any,
-  isLoading: PropTypes.bool,
   fullWidth: PropTypes.bool,
   className: PropTypes.string
 };
