@@ -38,6 +38,7 @@
     "extract-text-webpack-plugin": "^0.8.1",
     "file-loader": "^0.8.4",
     "lost": "^6.3.0",
+    "matthewmueller-react-remarkable": "^1.1.2",
     "node-libs-browser": "^0.5.2",
     "normalize.css": "^3.0.3",
     "object-assign": "^2.0.0",
