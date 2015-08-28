@@ -6,7 +6,7 @@ import classNames from '../Btn/Btn.css';
 
 describe('Btn', () => {
 
-  it('Should output a button', () => {
+  it('Should render a button', () => {
     const node = findDOMNode(renderIntoDocument(<Btn>btn</Btn>));
     assert.equal(node.nodeName, 'BUTTON');
   });
@@ -32,7 +32,7 @@ describe('Btn', () => {
     assert.equal(node.getAttribute('data-someRandoAttribute'), null);
   });
 
-  it('Corrently applies the className for the type', () => {
+  it('Correctly applies the className for the type', () => {
     ['primary', 'secondary', 'warning', 'clear', 'white'].forEach(type => {
       const node = findDOMNode(renderIntoDocument(
         <Btn type={type}/>
@@ -41,7 +41,7 @@ describe('Btn', () => {
     });
   });
 
-  it('Corrently applies the className for the variant', () => {
+  it('Correctly applies the className for the variant', () => {
     ['cta', 'hollow'].forEach(variant => {
       const node = findDOMNode(renderIntoDocument(
         <Btn variant={variant}/>

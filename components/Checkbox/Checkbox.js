@@ -22,6 +22,7 @@ export default class Checkbox extends Component {
   render() {
     const checkboxClasses = [
       s.root,
+      this.props.className,
       this.state.checked ? s.isChecked : null
     ].join(' ');
 
@@ -46,5 +47,6 @@ Checkbox.propTypes = {
   onChange: PropTypes.func,
   checked: PropTypes.bool,
   name: PropTypes.string,
-  label: PropTypes.string
+  label: PropTypes.string,
+  className: PropTypes.string
 };

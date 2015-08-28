@@ -21,7 +21,7 @@ const getIconNode = (wrapper) => findDOMNode(
 
 describe('Checkbox', () => {
 
-  it('Should output an input, label, and icon within a wrapper', () => {
+  it('Should render an input, label, and icon within a wrapper', () => {
     const instance = renderIntoDocument(
       <Checkbox/>
     );
@@ -73,6 +73,13 @@ describe('Checkbox', () => {
   it('Accepts a name attribute and applies it to the input', () => {
     const instance = renderIntoDocument(<Checkbox name="herp"/>);
     assert.equal(getInputNode(instance).name, 'herp');
+  });
+
+  it('Passes through the className', () => {
+    const instance = renderIntoDocument(
+      <Checkbox className="TEEESTTT"/>
+    );
+    assert.ok(findDOMNode(instance).className.match(/TEEESTTT/));
   });
 
 });
