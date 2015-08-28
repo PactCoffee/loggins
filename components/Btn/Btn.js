@@ -11,6 +11,7 @@ export default class Btn extends Component {
       fullWidth,
       className,
       disabled,
+      onClick,
       children
     } = this.props;
 
@@ -25,9 +26,9 @@ export default class Btn extends Component {
 
     return (
       href ?
-      <a disabled={disabled} href={href} className={classNames}>{children}</a>
+      <a href={href} className={classNames}>{children}</a>
       :
-      <button disabled={disabled} className={classNames}>
+      <button onClick={onClick} disabled={disabled} className={classNames}>
         {children}
       </button>
     );
@@ -38,6 +39,7 @@ Btn.propTypes = {
   type: PropTypes.oneOf(['primary', 'secondary', 'warning', 'clear', 'white']),
   variant: PropTypes.oneOf(['cta', 'hollow']),
 
+  onClick: PropTypes.func,
   href: PropTypes.string,
   disabled: PropTypes.bool,
 

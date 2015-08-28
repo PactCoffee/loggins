@@ -4,7 +4,7 @@ require('babel/register');
 var webpack = require('webpack');
 var path = require('path');
 
-var isCI = process.env.CONTINUOUS_INTEGRATION === 'true';
+var isCI = process.env.CI === 'true';
 var devBrowser = process.env.PHANTOM ? 'PhantomJS' : 'Chrome';
 
 module.exports = function(config) {
@@ -74,7 +74,7 @@ module.exports = function(config) {
           exclude: /node_modules/
         }, {
           test: /\.css$/,
-          loader: `css-loader/locals?modules`
+          loader: 'css-loader/locals?modules'
         }, {
           test: /\.(gif|png|jpe?g)$/,
           loaders: [
@@ -116,4 +116,9 @@ module.exports = function(config) {
       devTool: 'inline-source-map'
     }
   });
+
+  if (isCI) {
+    config.sngleRun = true;
+    config.reporters = ['dots'];
+  }
 };
