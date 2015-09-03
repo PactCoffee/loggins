@@ -2,7 +2,6 @@ import React, {Component, PropTypes} from 'react';
 
 import styles from './Panel.css';
 
-
 const types = {
   info: styles.info,
   success: styles.success,
@@ -27,6 +26,7 @@ export default class Panel extends Component {
 
 Panel.propTypes = {
   children: PropTypes.any,
+  style: PropTypes.any,
   type: PropTypes.string,
   className: PropTypes.string
 };

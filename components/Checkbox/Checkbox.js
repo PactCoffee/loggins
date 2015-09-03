@@ -6,7 +6,7 @@ import s from './Checkbox.css';
 export default class Checkbox extends Component {
   constructor(props) {
     super(props);
-    this.id = `check-${new Date().getTime()}`;
+    this.id = `check-${Math.random() * new Date().getTime()}`;
     this.toggleChecked = this.toggleChecked.bind(this);
     this.state = {
       checked: props.checked || false
@@ -22,6 +22,7 @@ export default class Checkbox extends Component {
   render() {
     const checkboxClasses = [
       s.root,
+      this.props.className,
       this.state.checked ? s.isChecked : null
     ].join(' ');
 
@@ -31,7 +32,7 @@ export default class Checkbox extends Component {
           type="checkbox"
           checked={this.state.checked}
           onChange={this.toggleChecked}
-          name={this.name}
+          name={this.props.name}
           id={this.id}
           className={s.input}
         />
@@ -46,5 +47,6 @@ Checkbox.propTypes = {
   onChange: PropTypes.func,
   checked: PropTypes.bool,
   name: PropTypes.string,
-  label: PropTypes.string
+  label: PropTypes.string,
+  className: PropTypes.string
 };

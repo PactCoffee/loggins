@@ -4,13 +4,6 @@ loggins
 > Pact's component library for any web-related projects
 
 
-Todo
-====
-
-- [ ] Get unit testing up and running
-- [ ] Write readme for adding components to the library
-
-
 This repo serves two purposes:
 
 1. A central module for reusable react components, and common styles that we can use across a variety of different projects
@@ -23,7 +16,11 @@ Using the components in your project
 Import the components you want:
 
 ```js
-import {Btn, Link} from 'loggins';
+import Btn from 'loggins/components/Btn/Btn.js';
+
+export default (
+  <Btn>My button!</Btn>
+);
 ```
 
 Then use them how you wish in your React project. Webpack is required as we're doing fancy stuff with it — check out the [example](https://github.com/PactCoffee/loggins/blob/master/examples/) to get an idea of how to use it.
@@ -44,6 +41,11 @@ $ open http://localhost:8080
 Any changes you make to any CSS or JS file will live-reload inside the browser you have open. Pretty slick.
 
 When running locally you'll get a 404 for the `bundle.css` file. Don't worry this is fine. Your styles are loaded in via webpack's style-loader.
+
+Running tests
+-------------
+
+`npm test`
 
 
 Running in production

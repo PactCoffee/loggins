@@ -78,6 +78,7 @@
 .fgMuted {    color: var(--color-muted);}
 
 /* Background coloured-in */
+.bgWhite {    background: var(--color-white);}
 .bgPrimary {  background: var(--color-primary);}
 .bgSecondary {background: var(--color-secondary);}
 .bgError {    background: var(--color-error);}
