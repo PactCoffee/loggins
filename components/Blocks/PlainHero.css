@@ -1,0 +1,30 @@
+.root {
+  background: var(--color-offwhite);
+  color: var(--color-grey);
+  text-align: center;
+}
+
+.inner {
+  margin: 0 auto;
+  max-width: 40em;
+  padding: 3em 0;
+}
+
+.heading {
+  font-family: var(--font-lunchbox);
+  font-size: var(--font-larger);
+  margin: 0 auto 0.5em;
+  font-weight: 100;
+  line-height: 1.1;
+  width: 31rem;
+}
+
+.tagline {
+  font-family: var(--font-brandon);
+  font-size: var(--font-large);
+  color: #636363;
+  font-weight: 200;
+  line-height: 1.2;
+  margin: 0 auto;
+  width: 31rem;
+}
