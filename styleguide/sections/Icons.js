@@ -7,7 +7,7 @@ import Icon from 'components/Icon/Icon';
 
 export default class Icons {
   render() {
-    delete allIcons['default'];
+    delete allIcons.default;
 
     const container = {
       textAlign: 'center'

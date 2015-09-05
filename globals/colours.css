@@ -15,6 +15,7 @@
   --color-brown:        rgb(156,120,102);
   --color-brown-dark:   rgb(96,79,76);
 
+  --color-blue-light:   rgb(243,250,255);
   --color-blue-muted:   rgb(225,235,242);
   --color-blue-harsh:   rgb(21,125,249);
   --color-blue:         rgb(41,179,225);
@@ -39,4 +40,5 @@
 
   --color-twitter:    rgb(42,169,224);
   --color-facebook:   rgb(60,90,153);
+  --color-instagram:  rgb(18,86,136);
 }

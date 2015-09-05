@@ -126,6 +126,18 @@
   background: color(var(--color-secondary) l(- 5%));
 }
 
+.white.hollow {
+  box-shadow: inset 0 0 0 0.12em var(--color-white);
+  color: var(--color-white);
+}
+.white.hollow:hover {
+  background: var(--color-white);
+  color: var(--color-white);
+}
+.white.hollow:active {
+  background: color(var(--color-white) l(- 5%));
+}
+
 .fullWidth {
   width: 100%;
   text-align: center;

@@ -13,12 +13,14 @@ const ROUTES = [
   'colours',
   'type',
   'grids',
+  'blocks',
   'buttons',
   'forms',
   'overlays',
   'panels',
   'icons'
 ];
+
 let oldRouteName = '';
 let newRouteName = '';
 
@@ -29,7 +31,7 @@ export default class Styleguide extends React.Component {
     }
   }
   componentWillReceiveProps(nextProps) {
-    // Some complicated stuff just so we know which transition to use
+    // Some dumb logic just so we know which transition to use
     if (!this.props.children && !nextProps.children) {
       oldRouteName = 'home';
       return;

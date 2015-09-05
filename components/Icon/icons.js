@@ -39,9 +39,11 @@ export default {
   cross: cleanupSvg(require('./icons/cross.svg')),
   coffee: cleanupSvg(require('./icons/coffee.svg')),
   chevron: cleanupSvg(require('./icons/chevron.svg')),
+  triangle: cleanupSvg(require('./icons/triangle.svg')),
+
   twitter: cleanupSvg(require('./icons/twitter.svg')),
   facebook: cleanupSvg(require('./icons/facebook.svg')),
-  triangle: cleanupSvg(require('./icons/triangle.svg')),
+  instagram: cleanupSvg(require('./icons/instagram.svg')),
 
   drip: cleanupSvg(require('./icons/drip.svg')),
   dripper: cleanupSvg(require('./icons/dripper.svg')),

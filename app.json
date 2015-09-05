@@ -1,0 +1,14 @@
+{
+  "name":"loggins",
+  "scripts":{},
+  "env":{
+    "NODE_ENV":{
+      "required":true
+    },
+    "NPM_TOKEN":{
+      "required":true
+    },
+    "STAGING":"true"
+  },
+  "addons":[]
+}
