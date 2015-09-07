@@ -5,9 +5,9 @@ var assign = require('object-assign');
 var config = require('./webpack.config');
 
 module.exports = assign({}, config, {
+  devtool: 'eval',
   entry: [
-    'webpack-dev-server/client?http://localhost:8080',
-    'webpack/hot/only-dev-server',
+    'webpack-hot-middleware/client',
     './index'
   ],
   output: {
@@ -36,7 +36,7 @@ module.exports = assign({}, config, {
       loader: 'raw-loader!svgo-loader?useConfig=svgoConfig'
     }, {
       test: /\.js$/,
-      loaders: ['react-hot', 'babel-loader'],
+      loaders: ['babel'],
       include: [path.join(__dirname, '../')],
       exclude: [path.join(__dirname, '../', 'node_modules')]
     }, {
