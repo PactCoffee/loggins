@@ -7,7 +7,7 @@
 .inner {
   margin: 0 auto;
   max-width: 40em;
-  padding: 3em 0;
+  padding: 3em 0.5em;
 }
 
 .heading {
@@ -16,7 +16,7 @@
   margin: 0 auto 0.5em;
   font-weight: 100;
   line-height: 1.1;
-  width: 31rem;
+  max-width: 31rem;
 }
 
 .tagline {
@@ -26,5 +26,5 @@
   font-weight: 200;
   line-height: 1.2;
   margin: 0 auto;
-  width: 31rem;
+  max-width: 31rem;
 }
