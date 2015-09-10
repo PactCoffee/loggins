@@ -5,7 +5,7 @@
   --largeLogoSize: calc(2 * var(--baseLogoSize));
 
   --horizontalRatio: 2.272727273;
-  --verticalRatio: 0.756756757;
+  --verticalRatio: 1.4;
 };
 .root {
   display: inline-block;
