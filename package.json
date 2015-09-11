@@ -8,7 +8,7 @@
     "build": "npm run clean && cd styleguide && webpack --progress",
     "dev": "npm run clean && cd styleguide && node devServer.js",
     "start": "npm run build && cd styleguide && node server.js",
-    "clean": "cd styleguide && rm -rf public",
+    "clean": "cd styleguide && rimraf public",
     "test": "eslint ./components && karma start"
   },
   "repository": {
@@ -59,7 +59,6 @@
     "matthewmueller-react-remarkable": "^1.1.2",
     "mocha": "^2.2.5",
     "node-libs-browser": "^0.5.2",
-    "normalize.css": "^3.0.3",
     "object-assign": "^2.0.0",
     "phantomjs": "^1.9.18",
     "postcss-calc": "^4.0.1",
@@ -81,7 +80,8 @@
     "webpack": "^1.9.10",
     "webpack-dev-middleware": "^1.2.0",
     "webpack-hot-middleware": "^2.0.0",
-    "webpack-postcss-tools": "^1.1.1"
+    "webpack-postcss-tools": "^1.1.1",
+    "rimraf": "^2.4.2"
   },
   "peerDependencies": {
     "react": "^0.13.0"
