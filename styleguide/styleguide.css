@@ -1,3 +1,4 @@
+@import 'normalize.css/normalize.css';
 @import '@pactcoffee/fontpack/brandonThin.css'; /* 100 */
 @import '@pactcoffee/fontpack/brandonReg.css';  /* 400 */
 @import '@pactcoffee/fontpack/brandonBold.css'; /* 700 */
