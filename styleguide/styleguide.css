@@ -6,6 +6,12 @@
 @import '@pactcoffee/fontpack/lunchboxLight.css'; /* light   */
 @import '@pactcoffee/fontpack/lunchboxReg.css';   /* regular */
 
+.root {
+  background: var(--color-white-dark);
+  font: 1.125em/1.5 var(--font-brandon);
+  color: var(--color-text);
+}
+
 .container {
   margin: 2em auto 0;
   max-width: 55em;
