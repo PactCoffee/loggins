@@ -1,5 +1,4 @@
 .nav {
-  composes: root from '../../components/Container/Container.css';
   background: var(--color-white);
   composes: bs from '../../globals/modifiers.css';
   width: 100%;
