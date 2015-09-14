@@ -1,7 +1,6 @@
 import React, {PropTypes} from 'react';
 import RTG from 'react/lib/ReactCSSTransitionGroup';
 
-import Container from 'components/Container/Container';
 import Logo from 'components/Logo/Logo';
 import Nav from './components/Nav';
 import Home from './sections/Home';
@@ -67,7 +66,7 @@ export default class Styleguide extends React.Component {
     }
 
     return (
-      <Container>
+      <div className={styles.root}>
         <div className={styles.heading}>
             <Logo className={styles.logo} size="small" type="horizontal"/>
             <h1>
@@ -90,7 +89,7 @@ export default class Styleguide extends React.Component {
             }
           </RTG>
         </div>
-      </Container>
+      </div>
     );
   }
 }

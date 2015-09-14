@@ -1,6 +1,6 @@
 {
   "name": "@pactcoffee/loggins",
-  "version": "2.7.1",
+  "version": "3.0.0",
   "description": "Pact's component library",
   "main": "components/index.js",
   "license": "MIT",
@@ -8,7 +8,7 @@
     "build": "npm run clean && cd styleguide && webpack --progress",
     "dev": "npm run clean && cd styleguide && node devServer.js",
     "start": "npm run build && cd styleguide && node server.js",
-    "clean": "cd styleguide && rm -rf public",
+    "clean": "cd styleguide && rimraf public",
     "test": "eslint ./components && karma start"
   },
   "repository": {
@@ -72,6 +72,7 @@
     "react-transform-catch-errors": "^0.1.1",
     "react-transform-webpack-hmr": "^0.1.1",
     "redbox-react": "^1.0.0",
+    "rimraf": "^2.4.2",
     "sinon": "^1.16.1",
     "sinon-chai": "^2.8.0",
     "style-loader": "^0.12.3",
