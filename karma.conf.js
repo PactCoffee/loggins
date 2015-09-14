@@ -5,7 +5,6 @@ var webpack = require('webpack');
 var path = require('path');
 
 var isCI = process.env.CI === 'true';
-var devBrowser = process.env.PHANTOM ? 'PhantomJS' : 'Chrome';
 
 module.exports = function(config) {
   config.set({
@@ -33,7 +32,7 @@ module.exports = function(config) {
 
     autoWatch: true,
 
-    browsers: [isCI ? 'ChromeTravisCI' : devBrowser],
+    browsers: ['Chrome'],
 
     customLaunchers: {
       ChromeTravisCI: {
