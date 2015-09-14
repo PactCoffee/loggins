@@ -1,4 +1,5 @@
 var webpack = require('webpack');
+var failPlugin = require('webpack-fail-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var varMap = require('webpack-postcss-tools').makeVarMap('../globals/index.css');
 var path = require('path');
@@ -65,6 +66,7 @@ module.exports = {
   },
 
   plugins: [
+    failPlugin,
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production')

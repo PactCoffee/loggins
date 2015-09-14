@@ -1,9 +1,12 @@
 {
   "name": "@pactcoffee/loggins",
-  "version": "3.0.0",
+  "version": "3.0.2",
   "description": "Pact's component library",
   "main": "components/index.js",
   "license": "MIT",
+  "engines": {
+    "node": "^4.0.0"
+  },
   "scripts": {
     "build": "npm run clean && cd styleguide && webpack --progress",
     "dev": "npm run clean && cd styleguide && node devServer.js",
@@ -51,7 +54,6 @@
     "karma-coverage": "^0.5.0",
     "karma-firefox-launcher": "^0.1.6",
     "karma-mocha": "^0.2.0",
-    "karma-phantomjs-launcher": "^0.2.1",
     "karma-sinon-chai": "^1.0.0",
     "karma-sourcemap-loader": "^0.3.5",
     "karma-webpack": "^1.7.0",
@@ -61,11 +63,10 @@
     "node-libs-browser": "^0.5.2",
     "normalize.css": "^3.0.3",
     "object-assign": "^2.0.0",
-    "phantomjs": "^1.9.18",
     "postcss-calc": "^4.0.1",
     "postcss-color-function": "^1.2.0",
     "postcss-custom-properties": "^3.3.0",
-    "postcss-loader": "^0.4.3",
+    "postcss-loader": "^0.6.0",
     "postcss-simple-vars": "^0.3.0",
     "raw-loader": "^0.5.1",
     "react": "^0.13.3",
@@ -81,6 +82,7 @@
     "url-loader": "^0.5.6",
     "webpack": "^1.9.10",
     "webpack-dev-middleware": "^1.2.0",
+    "webpack-fail-plugin": "^1.0.2",
     "webpack-hot-middleware": "^2.0.0",
     "webpack-postcss-tools": "^1.1.1"
   },
