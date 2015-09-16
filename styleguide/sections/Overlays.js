@@ -14,18 +14,17 @@ export default class Overlays extends Component {
     super(props);
     this.handleDate = this.handleDate.bind(this);
     this.state = {
-      date: new Date().getTime()
+      date: new Date().getTime(),
     };
   }
 
   handleDate(milliseconds) {
     this.setState({
-      date: milliseconds
+      date: milliseconds,
     });
   }
 
   render() {
-
     const tooltip = <TooltipToggle container={this} content="Hello from inside a tooltip!"><strong>these words</strong></TooltipToggle>;
 
     return (
