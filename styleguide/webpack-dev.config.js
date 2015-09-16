@@ -17,14 +17,6 @@ module.exports = assign({}, config, {
   },
   module: {
 
-    preLoaders: [
-      {
-        test: /\.js$/,
-        loader: 'eslint',
-        include: [__dirname, path.join(__dirname, '../components')],
-        exclude: [path.join(__dirname, '../', 'node_modules')],
-      },
-    ],
     loaders: [
       {
         test: /\.(woff|woff2|gif|png|jpe?g)$/,
