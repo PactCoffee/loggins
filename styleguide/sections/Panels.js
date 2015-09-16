@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
 
 import Section from '../components/Section';
-import styles from '../styleguide.css';
 import * as m from 'globals/modifiers.css';
-import List from 'components/List/List';
 import Panel from 'components/Panel/Panel';
 import Icon from 'components/Icon/Icon';
+import styles from '../styleguide.css';
 
 export default class Panels extends Component {
   render() {
@@ -36,7 +35,7 @@ export default class Panels extends Component {
         <div className={[styles.grid, m.mtm].join(' ')}>
           <div className={styles.third}>
             <Panel>
-              <List>
+              <ul>
                 <li>Also with a list</li>
                 <li><a href="#">Like this</a></li>
                 <li><a className="listActive" href="#">or this</a></li>
@@ -46,7 +45,7 @@ export default class Panels extends Component {
                   and this
                   </a>
                 </li>
-              </List>
+              </ul>
             </Panel>
           </div>
         </div>
