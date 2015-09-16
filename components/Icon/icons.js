@@ -40,6 +40,7 @@ export default {
   coffee: cleanupSvg(require('./icons/coffee.svg')),
   chevron: cleanupSvg(require('./icons/chevron.svg')),
   triangle: cleanupSvg(require('./icons/triangle.svg')),
+  recurring: cleanupSvg(require('./icons/recurring.svg')),
 
   twitter: cleanupSvg(require('./icons/twitter.svg')),
   facebook: cleanupSvg(require('./icons/facebook.svg')),
