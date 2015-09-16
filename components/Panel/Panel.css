@@ -1,7 +1,16 @@
 .root {
-  composes: bs br from '../../globals/modifiers.css';
   padding: 1em;
   background: var(--color-white);
+}
+
+.rounded {
+  composes: bs br from '../../globals/modifiers.css';
+}
+
+.squared {
+  border-color: var(--color-grey-lightest);
+  border-style: solid;
+  border-width: 1px 0;
 }
 
 .success {

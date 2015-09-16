@@ -12,7 +12,12 @@ export default class Panels extends Component {
     return (
       <Section name="Panels" href="https://github.com/PactCoffee/loggins/blob/master/styleguide%2Fsections%2FPanels.js">
         <Panel>
-          <p>This is a panel</p>
+          <p>This is a <strong>rounded</strong> (and the default) panel</p>
+        </Panel>
+        <br/>
+
+        <Panel variant="squared">
+          <p>This is a <strong>squared</strong> panel</p>
         </Panel>
         <br/>
 
