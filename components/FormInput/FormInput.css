@@ -43,6 +43,8 @@
   transition: all 200ms ease;
   background: var(--color-error);
   color: white;
+  /* Stops the element being bigger than the input */
+  box-sizing: border-box;
 }
 .messageError {
   min-height: 1.5em;
@@ -58,6 +60,7 @@
 .containerError {
   box-shadow: inset 0 0 0 1px var(--color-error);
   border-radius: 4px 4px 0 0;
+  margin-bottom: 1em;
 }
 .containerActive .label {
   transform: scale(0.8) translate(-0.75em, -2.7em);
