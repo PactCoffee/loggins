@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12072) - http://www.bohemiancoding.com/sketch -->
+    <title>Recurring Order</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Recurring-Order" sketch:type="MSArtboardGroup" stroke-linecap="round" stroke="#636363" stroke-linejoin="round">
+            <g id="Group-Copy" sketch:type="MSLayerGroup" transform="translate(0.141728, 2.468683)">
+                <g id="Group" transform="translate(8.369930, 11.995678) scale(-1, -1) translate(-8.369930, -11.995678) translate(0.104271, 8.379452)" sketch:type="MSShapeGroup">
+                    <g transform="translate(7.272966, 3.557769) rotate(0.000000) translate(-7.272966, -3.557769) translate(0.040515, 0.974751)" id="Shape" stroke-width="1.35500002">
+                        <path d="M0.0517685809,4.93066083 C0.0517685809,4.93066083 1.81761176,0.0338004682 6.82315523,0.0258622669 C12.183713,0.0173625011 13.7473717,4.93301143 13.7473717,4.93301143"></path>
+                    </g>
+                    <g transform="translate(14.862474, 3.792825) scale(-1, -1) translate(-14.862474, -3.792825) translate(13.895016, 0.890451)" id="Shape" stroke-width="1.255">
+                        <path d="M1.61160892,0.345648639 L0.331501334,4.98061568"></path>
+                    </g>
+                    <g transform="translate(11.835684, 5.712930) scale(1, -1) translate(-11.835684, -5.712930) translate(9.417040, 4.745472)" id="Shape" stroke-width="1.255">
+                        <path d="M4.64991641,0.345648639 L0.153117404,1.39137622"></path>
+                    </g>
+                </g>
+                <g id="Group" transform="translate(2.903241, 0.025318)" sketch:type="MSShapeGroup">
+                    <g transform="translate(7.296448, 3.877124) rotate(0.000000) translate(-7.296448, -3.877124) translate(0.040515, 0.974751)" id="Shape" stroke-width="1.35500002">
+                        <path d="M0.0517685809,4.93066083 C0.0517685809,4.93066083 1.81761176,0.0338004682 6.82315523,0.0258622669 C12.183713,0.0173625011 13.7473717,4.93301143 13.7473717,4.93301143"></path>
+                    </g>
+                    <g transform="translate(14.862474, 3.792825) scale(-1, -1) translate(-14.862474, -3.792825) translate(13.895016, 0.890451)" id="Shape" stroke-width="1.255">
+                        <path d="M1.61160892,0.345648639 L0.331501334,4.98061568"></path>
+                    </g>
+                    <g transform="translate(11.946621, 5.373172) scale(1, -1) translate(-11.946621, -5.373172) translate(9.527977, 4.405714)" id="Shape" stroke-width="1.255">
+                        <path d="M4.53897914,0.00589053802 L0.0421801394,1.05161812"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
