@@ -5,7 +5,7 @@ import styles from './Panel.css';
 const types = {
   info: styles.info,
   success: styles.success,
-  error: styles.error
+  error: styles.error,
 };
 
 export default class Panel extends Component {
@@ -14,7 +14,7 @@ export default class Panel extends Component {
       styles.root,
       this.props.variant === 'squared' ? styles.squared : styles.rounded,
       types[this.props.type],
-      this.props.className
+      this.props.className,
     ].join(' ');
 
     return (
@@ -30,5 +30,5 @@ Panel.propTypes = {
   style: PropTypes.any,
   type: PropTypes.string,
   variant: PropTypes.oneOf(['squared', 'rounded']),
-  className: PropTypes.string
+  className: PropTypes.string,
 };

@@ -13,7 +13,7 @@ export default class DatePickerDropdown extends Component {
     this.handleDateChange = this.handleDateChange.bind(this);
 
     this.state = {
-      show: false
+      show: false,
     };
   }
 
@@ -40,7 +40,7 @@ export default class DatePickerDropdown extends Component {
   render() {
     const clonedTrigger = cloneElement(this.props.trigger, {
       onClick: this.toggleShow,
-      ref: 'trigger'
+      ref: 'trigger',
     });
 
     return (
@@ -52,8 +52,8 @@ export default class DatePickerDropdown extends Component {
                      placement="bottom"
                      ref="hovercard"
                      onRequestClose={this.handleCloseRequest}
-                     escListen={true}
-                     caret={true}>
+                     escListen
+                     caret>
             <DatePicker value={this.props.value}
                         onChange={this.handleDateChange}/>
           </HoverCard>
@@ -71,6 +71,6 @@ DatePickerDropdown.propTypes = {
   onChange: PropTypes.func.isRequired,
   value: PropTypes.oneOfType([
     PropTypes.string,
-    PropTypes.number
-  ])
+    PropTypes.number,
+  ]),
 };

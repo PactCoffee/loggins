@@ -11,7 +11,7 @@ export default class Dropdown extends Component {
     this.handleCloseRequest = this.handleCloseRequest.bind(this);
 
     this.state = {
-      show: false
+      show: false,
     };
   }
 
@@ -34,7 +34,7 @@ export default class Dropdown extends Component {
     const {container, placement, children, trigger} = this.props;
     const clonedTrigger = cloneElement(trigger, {
       onClick: this.toggleShow,
-      ref: 'trigger'
+      ref: 'trigger',
     });
 
     return (
@@ -47,8 +47,8 @@ export default class Dropdown extends Component {
                      placement={placement}
                      ref="hovercard"
                      onRequestClose={this.handleCloseRequest}
-                     escListen={true}
-                     caret={true}>
+                     escListen
+                     caret>
             {children}
           </HoverCard>
           : null
@@ -72,10 +72,10 @@ Dropdown.propTypes = {
   // within will attempt alternative placements if the one designated doesnt fit
   placement: PropTypes.oneOf(['top', 'left', 'bottom', 'right']),
 
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 
 Dropdown.defaultProps = {
-  placement: 'bottom'
+  placement: 'bottom',
 };
 

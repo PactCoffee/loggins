@@ -30,15 +30,15 @@ export default class Portal extends Component {
     }
   }
 
+  getContainerDOMNode() {
+    return findDOMNode(this.props.container) || ownerDocument(this).body;
+  }
+
   renderPortal(props) {
     this.portal = React.render(
       Children.only(props.children),
       this.node
     );
-  }
-
-  getContainerDOMNode() {
-    return findDOMNode(this.props.container) || ownerDocument(this).body;
   }
 
   render() {
@@ -47,5 +47,5 @@ export default class Portal extends Component {
 }
 
 Portal.propTypes = {
-  container: PropTypes.any
+  container: PropTypes.any,
 };

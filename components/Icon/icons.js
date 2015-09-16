@@ -10,7 +10,7 @@ const cleanups = {
   stroke: / +stroke=\"(none|#[0-9a-f]+)\"/gi,
   sketchMSShapeGroup: / +sketch:type=\"MSShapeGroup\"/gi,
   sketchMSPage: / +sketch:type=\"MSPage\"/gi,
-  sketchMSLayerGroup: / +sketch:type=\"MSLayerGroup\"/gi
+  sketchMSLayerGroup: / +sketch:type=\"MSLayerGroup\"/gi,
 };
 
 function cleanupSvg(svg) {
@@ -53,6 +53,5 @@ export default {
   aeropress: cleanupSvg(require('./icons/aeropress.svg')),
   cafatiere: cleanupSvg(require('./icons/cafatiere.svg')),
   wholebean: cleanupSvg(require('./icons/wholebean.svg')),
-  aeropressFilter: cleanupSvg(require('./icons/aeropressFilter.svg'))
-
+  aeropressFilter: cleanupSvg(require('./icons/aeropressFilter.svg')),
 };

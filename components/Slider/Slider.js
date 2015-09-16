@@ -52,10 +52,10 @@ Slider.propTypes = {
   value: PropTypes.number.isRequired,
   ticks: PropTypes.number,
   min: PropTypes.number,
-  max: PropTypes.number
+  max: PropTypes.number,
 };
 
 Slider.defaultProps = {
   min: 0,
-  max: 100
+  max: 100,
 };

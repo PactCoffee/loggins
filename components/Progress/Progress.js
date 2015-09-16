@@ -48,6 +48,6 @@ Progress.propTypes = {
   min: PropTypes.number.isRequired,
   max: PropTypes.number.isRequired,
   value: PropTypes.number.isRequired,
-  hueChange: PropTypes.bool
+  hueChange: PropTypes.bool,
 };
 

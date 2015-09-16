@@ -14,5 +14,5 @@ export default class PlainHero {
 }
 
 PlainHero.propTypes = {
-  children: PropTypes.any
+  children: PropTypes.any,
 };

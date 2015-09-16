@@ -16,5 +16,5 @@ export default class SectionTitle extends Component {
 
 SectionTitle.propTypes = {
   children: PropTypes.any,
-  component: PropTypes.string
+  component: PropTypes.string,
 };
