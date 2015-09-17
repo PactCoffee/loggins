@@ -48,6 +48,7 @@ export default {
   facebook: cleanupSvg(require('./icons/facebook.svg')),
   instagram: cleanupSvg(require('./icons/instagram.svg')),
 
+  pod: cleanupSvg(require('./icons/pod.svg')),
   drip: cleanupSvg(require('./icons/drip.svg')),
   dripper: cleanupSvg(require('./icons/dripper.svg')),
   espresso: cleanupSvg(require('./icons/espresso.svg')),
