@@ -1,4 +1,5 @@
 import React, {Component, PropTypes} from 'react';
+import {uniqueId} from 'lodash';
 
 import css from './FormInput.css';
 
@@ -12,6 +13,7 @@ export default class FormInput extends Component {
     this.state = {
       active: !!props.value,
       focus: false,
+      uniqueId: uniqueId('forminput')
     };
   }
 
@@ -38,7 +40,7 @@ export default class FormInput extends Component {
 
   render() {
     const {error, onChange, value, type, label, placeholder} = this.props;
-    const {active, focus} = this.state;
+    const {active, focus, uniqueId} = this.state;
     const outerCSS = [
       css.container,
       placeholder ? css.labelInside : css.labelOutside,
@@ -54,17 +56,18 @@ export default class FormInput extends Component {
 
     return (
       <div className={outerCSS}>
-        <label className={css.label}>
+        <label htmlFor={uniqueId} className={css.label}>
           {label}
         </label>
         <input
-          className={css.input}
+          placeholder={placeholder}
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
+          className={css.input}
           onChange={onChange}
           value={value}
+          id={uniqueId}
           type={type}
-          placeholder={placeholder}
         />
         <span className={messageCSS}>
           {this.props.error}

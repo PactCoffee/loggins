@@ -12,7 +12,6 @@
 
 .label {
   color: var(--color-grey-light);
-  pointer-events: none;
   padding: 0.75em;
   display: block;
 }
@@ -87,6 +86,7 @@
   color: var(--color-primary);
   display: table-cell;
   width: 1%;
+  padding: 0.5em;
 }
 .labelInside input {
   display: table-cell;
