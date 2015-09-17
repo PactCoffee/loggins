@@ -15,7 +15,7 @@ export default class Panels extends Component {
         </Panel>
         <br/>
 
-        <Panel variant="squared">
+        <Panel squared>
           <p>This is a <strong>squared</strong> panel</p>
         </Panel>
         <br/>
