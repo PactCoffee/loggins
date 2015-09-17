@@ -5,7 +5,6 @@ import Btn from '../Btn/Btn.js';
 import classNames from '../Btn/Btn.css';
 
 describe('Btn', () => {
-
   it('Should render a button', () => {
     const node = findDOMNode(renderIntoDocument(<Btn>btn</Btn>));
     assert.equal(node.nodeName, 'BUTTON');
