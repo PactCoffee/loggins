@@ -29,6 +29,7 @@
   --color-yellow:       rgb(253,180,82);
   --color-mauve:        rgb(97,40,79);
   --color-copper:       rgb(179,91,60);
+  --color-deepgrey:     rgb(77,77,77);
   --color-pact:         rgb(240, 168, 75);
 
   --color-primary:   var(--color-green);
