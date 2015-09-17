@@ -68,7 +68,7 @@
   border-color: var(--color-primary);
 }
 .radio:checked + .radioLabel:after {
-  transform: scale(0.6);
+  transform: scale(0.75);
   opacity: 1;
 }
 
