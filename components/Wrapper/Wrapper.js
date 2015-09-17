@@ -14,5 +14,5 @@ export default class Wrap extends Component {
 
 Wrap.propTypes = {
   children: React.PropTypes.any,
-  className: React.PropTypes.string
+  className: React.PropTypes.string,
 };

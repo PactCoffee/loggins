@@ -6,7 +6,7 @@ export default React.createClass({
 
   propTypes: {
     className: React.PropTypes.string,
-    children: React.PropTypes.any
+    children: React.PropTypes.any,
   },
 
   componentWillEnter(callback) {
@@ -20,5 +20,5 @@ export default React.createClass({
         {this.props.children}
       </div>
     );
-  }
+  },
 });

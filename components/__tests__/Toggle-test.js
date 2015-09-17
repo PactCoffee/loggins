@@ -17,7 +17,6 @@ const getLabelNode = (wrapper) => findDOMNode(
 const noOp = () => '';
 
 describe('Toggle', () => {
-
   it('Should render an input inside a label inside a wrapper', () => {
     const instance = renderIntoDocument(
       <Toggle value={false} onChange={noOp}/>
@@ -55,5 +54,4 @@ describe('Toggle', () => {
     );
     assert.ok(findDOMNode(instance).className.match(/TEEESTTT/));
   });
-
 });
