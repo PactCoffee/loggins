@@ -10,23 +10,23 @@ export default class Icons {
     delete allIcons.default;
 
     const container = {
-      textAlign: 'center'
+      textAlign: 'center',
     };
     const outer = {
       display: 'inline-block',
       textAlign: 'center',
       padding: '0.5em',
-      width: '10em'
+      width: '10em',
     };
     const title = {
-      fontFamily: 'monospace'
+      fontFamily: 'monospace',
     };
     const icon = {
       display: 'block',
       margin: '0 auto',
       fontSize: '3em',
       background: 'rgba(255,255,255,0.7)',
-      borderRadius: '2px'
+      borderRadius: '2px',
     };
 
     return (

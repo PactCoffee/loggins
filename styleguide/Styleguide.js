@@ -17,7 +17,7 @@ const ROUTES = [
   'forms',
   'overlays',
   'panels',
-  'icons'
+  'icons',
 ];
 
 let oldRouteName = '';
@@ -95,5 +95,5 @@ export default class Styleguide extends React.Component {
 }
 
 Styleguide.propTypes = {
-  children: PropTypes.any
+  children: PropTypes.any,
 };

@@ -46,7 +46,7 @@ export default class FormSection extends Component {
       checked: false,
       progressVal: 50,
       date: new Date().getTime(),
-      slideVal: 50
+      slideVal: 50,
     };
   }
 
@@ -54,7 +54,7 @@ export default class FormSection extends Component {
     const min = 0;
     const max = 100;
     this.setState({
-      progressVal: Math.floor(Math.random() * (max - min)) + min
+      progressVal: Math.floor(Math.random() * (max - min)) + min,
     });
   }
 
@@ -63,7 +63,7 @@ export default class FormSection extends Component {
     this.setState({
       text: val,
       error: val.length > 5 ? 'Yep, you broke it' : '',
-      lolText: [].slice.call(val).sort().join('').toUpperCase()
+      lolText: [].slice.call(val).sort().join('').toUpperCase(),
     });
   }
 
@@ -89,13 +89,13 @@ export default class FormSection extends Component {
 
   handleRadio(val) {
     this.setState({
-      radioVal: val
+      radioVal: val,
     });
   }
 
   handleDate(milliseconds) {
     this.setState({
-      date: milliseconds
+      date: milliseconds,
     });
   }
 
@@ -141,35 +141,38 @@ export default class FormSection extends Component {
               {radio({
                 value: 'Loves',
                 className: styles.tab,
-                children:
+                children: (
                   <span className={[m.db, m.alignc].join(' ')}>
                     <span className={[m.db, m.alignc, m.large].join(' ')}>
                       <Icon name="heart"/>
                     </span>
                     Love
                   </span>
+                ),
               })}
               {radio({
                 value: 'Pact',
                 className: styles.tab,
-                children:
+                children: (
                   <span className={[m.db, m.alignc].join(' ')}>
                     <span className={[m.db, m.alignc, m.large].join(' ')}>
                       <Icon name="stamp"/>
                     </span>
                     Fresh
                   </span>
+                ),
               })}
               {radio({
                 value: 'Coffee',
                 className: styles.tab,
-                children:
+                children: (
                   <span className={[m.db, m.alignc].join(' ')}>
                     <span className={[m.db, m.alignc, m.large].join(' ')}>
                       <Icon name="coffee"/>
                     </span>
                     Coffee
                   </span>
+                ),
               })}
             </span>
           )}

@@ -2,7 +2,7 @@
 import React from 'react';
 
 export function ownerDocument(componentOrElement) {
-  let elem = React.findDOMNode(componentOrElement);
+  const elem = React.findDOMNode(componentOrElement);
   return (elem && elem.ownerDocument) || document;
 }
 
@@ -11,10 +11,10 @@ export function getComputedStyles(elem) {
 }
 
 export function getOffset(DOMNode) {
-  let docElem = ownerDocument(DOMNode).documentElement;
+  const docElem = ownerDocument(DOMNode).documentElement;
   let box = {
     top: 0,
-    left: 0
+    left: 0,
   };
 
   // If we don't have gBCR, just use 0,0 rather than error
@@ -25,12 +25,12 @@ export function getOffset(DOMNode) {
 
   return {
     top: box.top + window.pageYOffset - docElem.clientTop,
-    left: box.left + window.pageXOffset - docElem.clientLeft
+    left: box.left + window.pageXOffset - docElem.clientLeft,
   };
 }
 
 export function offsetParentFunc(elem) {
-  let docElem = ownerDocument(elem).documentElement;
+  const docElem = ownerDocument(elem).documentElement;
   let offsetParent = elem.offsetParent || docElem;
 
   while (offsetParent && (offsetParent.nodeName !== 'HTML' &&
@@ -45,14 +45,13 @@ export function getRelativePosition(elem, offsetParent) {
   let offset;
   let parentOffset = {
     top: 0,
-    left: 0
+    left: 0,
   };
 
   // Fixed elements are offset from window (parentOffset = {top:0, left: 0}, because it is its only offset parent
   if (getComputedStyles(elem).position === 'fixed') {
     // We assume that getBoundingClientRect is available when computed position is fixed
     offset = elem.getBoundingClientRect();
-
   } else {
     if (!offsetParent) {
       // Get *real* offsetParent
@@ -73,7 +72,7 @@ export function getRelativePosition(elem, offsetParent) {
   // Subtract parent offsets and element margins
   return {
     top: offset.top - parentOffset.top - parseInt(getComputedStyles(elem).marginTop, 10),
-    left: offset.left - parentOffset.left - parseInt(getComputedStyles(elem).marginLeft, 10)
+    left: offset.left - parentOffset.left - parseInt(getComputedStyles(elem).marginLeft, 10),
   };
 }
 
@@ -83,7 +82,9 @@ export function getContainerDimensions(containerNode) {
   const scroll = containerNode.scrollTop;
 
   return {
-    width, height, scroll
+    width,
+    height,
+    scroll,
   };
 }
 
@@ -131,9 +132,9 @@ export function getPosition(target, container) {
     getOffset(target) : getRelativePosition(target, container);
 
   return {
-    ...offset, // eslint-disable-line object-shorthand
+    ...offset,
     height: target.offsetHeight,
-    width: target.offsetWidth
+    width: target.offsetWidth,
   };
 }
 
@@ -162,7 +163,6 @@ export function calcOverlayPosition(placement, overlayNode, target, container, p
     positionTop += topDelta;
     arrowOffsetTop = 50 * (1 - 2 * topDelta / overlayHeight) + '%';
     arrowOffsetLeft = null;
-
   } else if (placement === 'top' || placement === 'bottom') {
     positionLeft = childOffset.left + (childOffset.width - overlayWidth) / 2;
 
@@ -183,6 +183,9 @@ export function calcOverlayPosition(placement, overlayNode, target, container, p
   }
 
   return {
-    positionLeft, positionTop, arrowOffsetLeft, arrowOffsetTop
+    positionLeft,
+    positionTop,
+    arrowOffsetLeft,
+    arrowOffsetTop,
   };
 }

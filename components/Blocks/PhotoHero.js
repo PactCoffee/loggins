@@ -17,5 +17,5 @@ export default class PhotoHero {
 
 PhotoHero.propTypes = {
   src: PropTypes.string.isRequired,
-  children: PropTypes.any
+  children: PropTypes.any,
 };

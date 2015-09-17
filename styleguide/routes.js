@@ -14,7 +14,7 @@ import Buttons from './sections/Buttons';
 import Overlays from './sections/Overlays';
 
 export default (
-  <Route ignoreScrollBehavior={true} path="/" component={Styleguide}>
+  <Route ignoreScrollBehavior path="/" component={Styleguide}>
     <Route path="type" component={Type}/>
     <Route path="grids" component={Grids}/>
     <Route path="blocks" component={Blocks}/>

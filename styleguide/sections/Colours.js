@@ -1,4 +1,4 @@
-/*eslint react/no-multi-comp:0*/
+/* eslint react/no-multi-comp:0 */
 import React, {Component, findDOMNode} from 'react';
 import Section from '../components/Section';
 
@@ -12,13 +12,8 @@ class Swatch extends Component {
     this.onBlur = this.onBlur.bind(this);
     this.toggle = this.toggle.bind(this);
     this.state = {
-      showInput: false
+      showInput: false,
     };
-  }
-  toggle(cb) {
-    this.setState({
-      showInput: !this.state.showInput
-    }, cb);
   }
   onBlur() {
     if (this.state.showInput) this.toggle();
@@ -29,6 +24,11 @@ class Swatch extends Component {
         findDOMNode(this.refs.val).setSelectionRange(0, 9999)
       );
     }
+  }
+  toggle(cb) {
+    this.setState({
+      showInput: !this.state.showInput,
+    }, cb);
   }
   render() {
     const {colour} = this.props;
@@ -45,7 +45,7 @@ class Swatch extends Component {
   }
 }
 Swatch.propTypes = {
-  colour: React.PropTypes.string.isRequired
+  colour: React.PropTypes.string.isRequired,
 };
 
 export default class Colours extends Component {
@@ -59,7 +59,8 @@ export default class Colours extends Component {
           'error',
           'alert',
           'text',
-          'muted'].map((c, i) => <Swatch key={i} colour={c}/>)
+          'muted',
+          ].map((c, i) => <Swatch key={i} colour={c}/>)
         }
 
         <h2>9 shades of grey</h2>
@@ -70,7 +71,8 @@ export default class Colours extends Component {
           'grey-lighter',
           'grey-light',
           'grey',
-          'black'].map((c, i) => <Swatch key={i} colour={c}/>)
+          'black',
+          ].map((c, i) => <Swatch key={i} colour={c}/>)
         }
 
         <h2>Even moar colours</h2>
@@ -78,7 +80,8 @@ export default class Colours extends Component {
           'red',
           'orange',
           'brown',
-          'brown-dark'].map((c, i) => <Swatch key={i} colour={c}/>)
+          'brown-dark',
+          ].map((c, i) => <Swatch key={i} colour={c}/>)
         }
 
         <h2>Various blues</h2>
@@ -87,7 +90,8 @@ export default class Colours extends Component {
           'blue',
           'blue-dark',
           'blue-darker',
-          'steel'].map((c, i) => <Swatch key={i} colour={c}/>)
+          'steel',
+          ].map((c, i) => <Swatch key={i} colour={c}/>)
         }
 
         <h2>Official™ Pact colour scheme</h2>
@@ -97,7 +101,8 @@ export default class Colours extends Component {
           'yellow',
           'mauve',
           'copper',
-          'pact'].map((c, i) => <Swatch key={i} colour={c}/>)
+          'pact',
+          ].map((c, i) => <Swatch key={i} colour={c}/>)
         }
 
         <h2>Third parties</h2>

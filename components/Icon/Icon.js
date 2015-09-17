@@ -17,7 +17,7 @@ export default class Icon extends Component {
     const css = [
       styles.root,
       styles[this.props.name],
-      this.props.className || ''
+      this.props.className || '',
     ].join(' ');
 
     return (
@@ -32,5 +32,5 @@ export default class Icon extends Component {
 
 Icon.propTypes = {
   name: React.PropTypes.string.isRequired,
-  className: React.PropTypes.string
+  className: React.PropTypes.string,
 };

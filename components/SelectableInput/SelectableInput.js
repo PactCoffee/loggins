@@ -9,7 +9,7 @@ export default class SelectableInput extends Component {
     this.setDimensions = this.setDimensions.bind(this);
     this.state = {
       width: null,
-      height: null
+      height: null,
     };
   }
 
@@ -21,10 +21,6 @@ export default class SelectableInput extends Component {
         .findDOMNode(this.refs.selectable)
         .addEventListener('copy', this.props.onAction);
     }
-  }
-
-  componentWillRecieveProps() {
-    this.setDimensions();
   }
 
   componentWillUnmount() {
@@ -39,8 +35,12 @@ export default class SelectableInput extends Component {
     const dimensions = React.findDOMNode(this.refs.fake).getBoundingClientRect();
     this.setState({
       width: dimensions.width,
-      height: dimensions.height
+      height: dimensions.height,
     });
+  }
+
+  componentWillRecieveProps() {
+    this.setDimensions();
   }
 
   handleClick() {
@@ -48,11 +48,10 @@ export default class SelectableInput extends Component {
   }
 
   render() {
-
     const styles = {
       width: this.state.width,
       height: this.state.height,
-      opacity: this.state.width ? 1 : 0
+      opacity: this.state.width ? 1 : 0,
     };
 
     return (
@@ -75,5 +74,5 @@ export default class SelectableInput extends Component {
 
 SelectableInput.propTypes = {
   value: PropTypes.string.isRequired,
-  onAction: PropTypes.func
+  onAction: PropTypes.func,
 };

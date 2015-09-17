@@ -126,6 +126,30 @@
   background: color(var(--color-secondary) l(- 5%));
 }
 
+.clean {
+  background: transparent;
+  border-color: transparent;
+  color: var(--color-text);
+}
+.clean:hover {
+  background: transparent;
+  color: color(var(--color-text) l(- 10%));
+}
+.clean:active {
+  background: transparent;
+  color: color(var(--color-text) a(70%));
+}
+
+.primary.clean {
+  color: var(--color-primary);
+}
+.primary.clean:hover {
+  color: color(var(--color-primary) l(- 10%));
+}
+.primary.clean:active {
+  color: color(var(--color-primary) a(70%));
+}
+
 .white.hollow {
   box-shadow: inset 0 0 0 0.12em var(--color-white);
   color: var(--color-white);

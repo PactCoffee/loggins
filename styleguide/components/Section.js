@@ -22,5 +22,5 @@ export default class Section extends Component {
 Section.propTypes = {
   name: PropTypes.string.isRequired,
   href: PropTypes.string,
-  children: PropTypes.any.isRequired
+  children: PropTypes.any.isRequired,
 };

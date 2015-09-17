@@ -20,7 +20,6 @@ const getIconNode = (wrapper) => findDOMNode(
 );
 
 describe('Checkbox', () => {
-
   it('Should render an input, label, and icon within a wrapper', () => {
     const instance = renderIntoDocument(
       <Checkbox/>
@@ -81,5 +80,4 @@ describe('Checkbox', () => {
     );
     assert.ok(findDOMNode(instance).className.match(/TEEESTTT/));
   });
-
 });

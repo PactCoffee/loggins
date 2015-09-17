@@ -5,15 +5,16 @@ import styles from './Panel.css';
 const types = {
   info: styles.info,
   success: styles.success,
-  error: styles.error
+  error: styles.error,
 };
 
 export default class Panel extends Component {
   render() {
     const classNames = [
       styles.root,
+      this.props.squared ? styles.squared : null,
       types[this.props.type],
-      this.props.className
+      this.props.className,
     ].join(' ');
 
     return (
@@ -28,5 +29,6 @@ Panel.propTypes = {
   children: PropTypes.any,
   style: PropTypes.any,
   type: PropTypes.string,
-  className: PropTypes.string
+  squared: PropTypes.bool,
+  className: PropTypes.string,
 };

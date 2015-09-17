@@ -9,7 +9,7 @@ export default class LikeDislike extends Component {
     super(props);
     this.state = {
       liked: props.liked === true,
-      disliked: props.liked === false
+      disliked: props.liked === false,
     };
     this.like = this.like.bind(this);
     this.dislike = this.dislike.bind(this);
@@ -17,27 +17,25 @@ export default class LikeDislike extends Component {
   }
 
   like() {
-
     if (this.state.liked) {
       return this.clear();
     }
 
     this.setState({
       liked: true,
-      disliked: false
+      disliked: false,
     });
     this.props.onChange(true);
   }
 
   dislike() {
-
     if (this.state.disliked) {
       return this.clear();
     }
 
     this.setState({
       liked: false,
-      disliked: true
+      disliked: true,
     });
     this.props.onChange(false);
   }
@@ -45,7 +43,7 @@ export default class LikeDislike extends Component {
   clear() {
     this.setState({
       liked: false,
-      disliked: false
+      disliked: false,
     });
     this.props.onChange(null);
   }
@@ -54,7 +52,7 @@ export default class LikeDislike extends Component {
     const outerStyles = [
       styles.root,
       this.state.liked ? styles.liked : null,
-      this.state.disliked ? styles.disliked : null
+      this.state.disliked ? styles.disliked : null,
     ].join(' ');
 
     return (
@@ -94,5 +92,5 @@ LikeDislike.propTypes = {
   liked: PropTypes.any,
 
   // Called with the user's preference
-  onChange: PropTypes.func.isRequired
+  onChange: PropTypes.func.isRequired,
 };

@@ -8,7 +8,7 @@ export default class Logo {
     const cssClasses = [
       styles.logo,
       styles[size],
-      styles[type]
+      styles[type],
     ];
 
     return (
@@ -22,5 +22,5 @@ export default class Logo {
 Logo.propTypes = {
   size: PropTypes.oneOf(['small', 'medium', 'large']).isRequired,
   type: PropTypes.oneOf(['horizontal', 'vertical']).isRequired,
-  className: PropTypes.string
+  className: PropTypes.string,
 };

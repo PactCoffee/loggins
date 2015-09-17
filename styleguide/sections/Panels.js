@@ -1,18 +1,22 @@
 import React, {Component} from 'react';
 
 import Section from '../components/Section';
-import styles from '../styleguide.css';
 import * as m from 'globals/modifiers.css';
-import List from 'components/List/List';
 import Panel from 'components/Panel/Panel';
 import Icon from 'components/Icon/Icon';
+import styles from '../styleguide.css';
 
 export default class Panels extends Component {
   render() {
     return (
       <Section name="Panels" href="https://github.com/PactCoffee/loggins/blob/master/styleguide%2Fsections%2FPanels.js">
         <Panel>
-          <p>This is a panel</p>
+          <p>This is a <strong>rounded</strong> (and the default) panel</p>
+        </Panel>
+        <br/>
+
+        <Panel variant="squared">
+          <p>This is a <strong>squared</strong> panel</p>
         </Panel>
         <br/>
 
@@ -31,7 +35,7 @@ export default class Panels extends Component {
         <div className={[styles.grid, m.mtm].join(' ')}>
           <div className={styles.third}>
             <Panel>
-              <List>
+              <ul>
                 <li>Also with a list</li>
                 <li><a href="#">Like this</a></li>
                 <li><a className="listActive" href="#">or this</a></li>
@@ -41,7 +45,7 @@ export default class Panels extends Component {
                   and this
                   </a>
                 </li>
-              </List>
+              </ul>
             </Panel>
           </div>
         </div>

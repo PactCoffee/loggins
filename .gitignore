@@ -3,3 +3,4 @@ dist
 styleguide/public/bundle.*
 *.log
 *.sublime-*
+.DS_Store

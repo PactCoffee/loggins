@@ -7,7 +7,7 @@ export default React.createClass({
     className: React.PropTypes.string,
     isOpen: React.PropTypes.bool.isRequired,
     onRequestClose: React.PropTypes.func,
-    children: React.PropTypes.any
+    children: React.PropTypes.any,
   },
 
   backgroundClick(e) {
@@ -17,9 +17,8 @@ export default React.createClass({
   },
 
   render() {
-
     const classes = cx({
-      'is-open': this.props.isOpen
+      'is-open': this.props.isOpen,
     });
 
     // TODO: share code with Dropdown for non-this clicks
@@ -40,5 +39,5 @@ export default React.createClass({
         </div>
       </div>
     );
-  }
+  },
 });

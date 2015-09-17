@@ -9,14 +9,18 @@ export default class extends Component {
     this.onScroll = this.onScroll.bind(this);
     this.state = {
       fixed: false,
-      initNavOffset: null
+      initNavOffset: null,
     };
   }
   componentDidMount() {
     window.addEventListener('scroll', this.onScroll);
     this.setState({
-      initNavOffset: React.findDOMNode(this).offsetTop
+      initNavOffset: React.findDOMNode(this).offsetTop,
     });
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll);
   }
 
   onScroll() {
@@ -24,14 +28,9 @@ export default class extends Component {
     const isFixed = currentScroll > this.state.initNavOffset;
     if (this.state.fixed !== isFixed) {
       this.setState({
-        fixed: isFixed
+        fixed: isFixed,
       });
     }
-
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.onScroll);
   }
 
   render() {

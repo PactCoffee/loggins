@@ -16,23 +16,47 @@ export default class BtnSection extends Component {
 
         <Btn className={[m.mbs, m.mrs].join(' ')}>Standard</Btn>
 
-        <p>Types:</p>
+        <h3>Types</h3>
         <Btn className={[m.mbs, m.mrs].join(' ')} type="primary">Primary</Btn>
         <Btn className={[m.mbs, m.mrs].join(' ')} type="secondary">Secondary</Btn>
         <Btn className={[m.mbs, m.mrs].join(' ')} type="warning">Warning</Btn>
 
-        <p>Variants:</p>
+        <h3>Variants</h3>
+
+        <h4>Hollow</h4>
+
         <Btn className={[m.mbs, m.mrs].join(' ')} variant="hollow">Hollow</Btn>
         <Btn className={[m.mbs, m.mrs].join(' ')} type="secondary" variant="hollow">Secondary</Btn>
 
-        <p>With icon(s):</p>
+        <h4>Clean</h4>
 
-        <Btn className={m.mbs}>
+        <Btn className={[m.mbs, m.mrs].join(' ')} variant="clean">Clean</Btn>
+        <Btn className={[m.mbs, m.mrs].join(' ')} type="primary" variant="clean">Primary</Btn>
+
+        <h3>With icon(s)</h3>
+
+        <Btn className={[m.mbs, m.mrs].join(' ')}>
           <Icon name="heart"/>
           &nbsp;
           Avec icon
           &nbsp;
           <Icon name="coffee"/>
+        </Btn>
+
+        <Btn className={[m.mbs, m.mrs].join(' ')} variant="hollow">
+          <Icon name="asap"/>
+          &nbsp;
+          Avec icon
+          &nbsp;
+          <Icon name="pin"/>
+        </Btn>
+
+        <Btn className={[m.mbs, m.mrs].join(' ')} variant="clean">
+          <Icon name="play"/>
+          &nbsp;
+          Avec icon
+          &nbsp;
+          <Icon name="thumb"/>
         </Btn>
 
         <Btn fullWidth>Full width</Btn>
