@@ -31,18 +31,23 @@
 .ps {position: static;}
 
 /* Padding */
+.pt0 {padding-top:    0;}
 .pts {padding-top:    var(--size-small);}
 .ptm {padding-top:    var(--size-medium);}
 .ptl {padding-top:    var(--size-large);}
+.pl0 {padding-left:   0;}
 .pls {padding-left:   var(--size-small);}
 .plm {padding-left:   var(--size-medium);}
 .pll {padding-left:   var(--size-large);}
+.pb0 {padding-bottom: 0;}
 .pbs {padding-bottom: var(--size-small);}
 .pbm {padding-bottom: var(--size-medium);}
 .pbl {padding-bottom: var(--size-large);}
+.pr0 {padding-right:  0;}
 .prs {padding-right:  var(--size-small);}
 .prm {padding-right:  var(--size-medium);}
 .prl {padding-right:  var(--size-large);}
+.p0  {padding:        0;}
 .pas {padding:        var(--size-small);}
 .pam {padding:        var(--size-medium);}
 .pal {padding:        var(--size-large);}
