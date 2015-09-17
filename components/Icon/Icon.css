@@ -30,7 +30,8 @@
 .drip,
 .pause,
 .cross,
-.heart {
+.heart,
+.asap {
   fill: transparent;
   stroke: currentColor;
 }
@@ -46,7 +47,8 @@
 .cafatiere,
 .wholebean,
 .espresso,
-.stovetop {
+.stovetop,
+.calendar {
   fill: currentColor;
 }
 

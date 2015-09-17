@@ -35,12 +35,28 @@ export default class BtnSection extends Component {
 
         <h3>With icon(s)</h3>
 
-        <Btn className={m.mbs}>
+        <Btn className={[m.mbs, m.mrs].join(' ')}>
           <Icon name="heart"/>
           &nbsp;
           Avec icon
           &nbsp;
           <Icon name="coffee"/>
+        </Btn>
+
+        <Btn className={[m.mbs, m.mrs].join(' ')} variant="hollow">
+          <Icon name="asap"/>
+          &nbsp;
+          Avec icon
+          &nbsp;
+          <Icon name="pin"/>
+        </Btn>
+
+        <Btn className={[m.mbs, m.mrs].join(' ')} variant="clean">
+          <Icon name="play"/>
+          &nbsp;
+          Avec icon
+          &nbsp;
+          <Icon name="thumb"/>
         </Btn>
 
         <Btn fullWidth>Full width</Btn>

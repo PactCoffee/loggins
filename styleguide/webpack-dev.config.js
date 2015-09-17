@@ -16,7 +16,6 @@ module.exports = assign({}, config, {
     publicPath: '/public/',
   },
   module: {
-
     loaders: [
       {
         test: /\.(woff|woff2|gif|png|jpe?g)$/,

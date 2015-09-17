@@ -41,6 +41,8 @@ export default {
   chevron: cleanupSvg(require('./icons/chevron.svg')),
   triangle: cleanupSvg(require('./icons/triangle.svg')),
   recurring: cleanupSvg(require('./icons/recurring.svg')),
+  asap: cleanupSvg(require('./icons/asap.svg')),
+  calendar: cleanupSvg(require('./icons/calendar.svg')),
 
   twitter: cleanupSvg(require('./icons/twitter.svg')),
   facebook: cleanupSvg(require('./icons/facebook.svg')),
@@ -54,4 +56,5 @@ export default {
   cafatiere: cleanupSvg(require('./icons/cafatiere.svg')),
   wholebean: cleanupSvg(require('./icons/wholebean.svg')),
   aeropressFilter: cleanupSvg(require('./icons/aeropressFilter.svg')),
+
 };

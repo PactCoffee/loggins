@@ -12,7 +12,7 @@ export default class Panel extends Component {
   render() {
     const classNames = [
       styles.root,
-      this.props.variant === 'squared' ? styles.squared : styles.rounded,
+      this.props.squared ? styles.squared : null,
       types[this.props.type],
       this.props.className,
     ].join(' ');
@@ -29,6 +29,6 @@ Panel.propTypes = {
   children: PropTypes.any,
   style: PropTypes.any,
   type: PropTypes.string,
-  variant: PropTypes.oneOf(['squared', 'rounded']),
+  squared: PropTypes.bool,
   className: PropTypes.string,
 };
