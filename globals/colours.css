@@ -35,7 +35,7 @@
   --color-secondary: var(--color-orange);
   --color-error:     var(--color-red);
   --color-alert:     var(--color-orange);
-  --color-text:      var(--color-grey);
+  --color-text:      var(--color-black);
   --color-muted:     var(--color-grey-lighter);
 
   --color-twitter:    rgb(42,169,224);
