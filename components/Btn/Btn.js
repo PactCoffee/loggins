@@ -45,5 +45,5 @@ Btn.propTypes = {
 
   children: PropTypes.any,
   fullWidth: PropTypes.bool,
-  className: PropTypes.string
+  className: PropTypes.string,
 };

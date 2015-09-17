@@ -14,5 +14,5 @@ export default class CTABlock {
 }
 
 CTABlock.propTypes = {
-  children: PropTypes.any
+  children: PropTypes.any,
 };

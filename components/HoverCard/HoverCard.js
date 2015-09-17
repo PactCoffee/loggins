@@ -21,7 +21,7 @@ export default class HoverCard extends Component {
       positionLeft: null,
       positionTop: null,
       arrowOffsetLeft: null,
-      arrowOffsetTop: null
+      arrowOffsetTop: null,
     };
   }
 
@@ -35,17 +35,19 @@ export default class HoverCard extends Component {
     window.addEventListener('click', this.clickListener);
     window.addEventListener('touchend', this.clickListener);
   }
-  componentWillUnmount() {
-    window.removeEventListener('keydown', this.keyListener);
-    window.removeEventListener('click', this.clickListener);
-    window.removeEventListener('touchend', this.clickListener);
-  }
+
   componentWillReceiveProps() {
     this._needsFlush = true;
   }
 
   componentDidUpdate() {
     this._maybeUpdatePosition();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('keydown', this.keyListener);
+    window.removeEventListener('click', this.clickListener);
+    window.removeEventListener('touchend', this.clickListener);
   }
 
   clickListener(e) {
@@ -74,16 +76,16 @@ export default class HoverCard extends Component {
 
     const {placement} = this.props;
     const hoverCard = findDOMNode(this.refs.self);
-    let target = findDOMNode(this.props.anchor);
-    let container = findDOMNode(this.props.container) || ownerDocument(this).body;
+    const target = findDOMNode(this.props.anchor);
+    const container = findDOMNode(this.props.container) || ownerDocument(this).body;
 
 
     // Starting with props.placement, try out each placement to find one
     // where this component will fit on the page best
     let idealPosition;
     let idealPlacement;
-    let placements = ['top', 'left', 'bottom', 'right']
-      .sort(function(a, b) {
+    const placements = ['top', 'left', 'bottom', 'right']
+      .sort(function sort(a, b) {
         if (b === placement) return 1;
         return 0;
       });
@@ -119,7 +121,7 @@ export default class HoverCard extends Component {
 
     this.setState({
       placement: idealPlacement,
-      ...idealPosition
+      ...idealPosition,
     });
   }
 
@@ -140,17 +142,17 @@ export default class HoverCard extends Component {
     const css = [
       s.root,
       s[variant],
-      s[placement]
+      s[placement],
     ].join(' ');
 
     const outerStyle = {
       left: positionLeft,
-      top: positionTop
+      top: positionTop,
     };
 
     const caretStyle = {
       left: arrowOffsetLeft,
-      top: arrowOffsetTop
+      top: arrowOffsetTop,
     };
 
     return (
@@ -196,12 +198,12 @@ HoverCard.propTypes = {
   // Call onRequestClose when the user hits escape
   escListen: PropTypes.bool,
 
-  children: PropTypes.any.isRequired
+  children: PropTypes.any.isRequired,
 };
 
 HoverCard.defaultProps = {
   anchorPadding: 10,
   onRequestClose: () => {},
   escListen: false,
-  caret: true
+  caret: true,
 };

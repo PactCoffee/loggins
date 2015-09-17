@@ -11,14 +11,14 @@ export default class FormInput extends Component {
 
     this.state = {
       active: !!props.value,
-      focus: false
+      focus: false,
     };
   }
 
   componentWillReceiveProps(nextProps) {
     if (!this.state.focus) {
       this.setState({
-        active: nextProps.value.length
+        active: nextProps.value.length,
       });
     }
   }
@@ -26,28 +26,27 @@ export default class FormInput extends Component {
   handleFocus() {
     this.setState({
       focus: true,
-      active: true
+      active: true,
     });
   }
   handleBlur() {
     this.setState({
       focus: false,
-      active: !!this.props.value
+      active: !!this.props.value,
     });
   }
 
   render() {
-
     const outerCSS = [
       css.container,
       this.props.error ? css.containerError : null,
       this.state.active ? css.containerActive : null,
-      this.state.focus ? css.containerFocus : null
+      this.state.focus ? css.containerFocus : null,
     ].join(' ');
 
     const messageCSS = [
       css.message,
-      this.props.error ? css.messageError : null
+      this.props.error ? css.messageError : null,
     ].join(' ');
 
     return (
@@ -79,5 +78,5 @@ FormInput.propTypes = {
   type: PropTypes.string.isRequired,
 
   // If set, will display underneath the input
-  error: PropTypes.string
+  error: PropTypes.string,
 };

@@ -11,7 +11,7 @@ export default React.createClass({
   propTypes: {
     emails: React.PropTypes.array.isRequired,
     placeholder: React.PropTypes.string.isRequired,
-    onChange: React.PropTypes.func.isRequired
+    onChange: React.PropTypes.func.isRequired,
   },
 
   validateEmail(input) {
@@ -32,7 +32,6 @@ export default React.createClass({
       this.props.onChange(
         this.props.emails.concat(validEmails)
       );
-
     } else {
       // Tag was removed
       this.props.onChange(
@@ -61,5 +60,5 @@ export default React.createClass({
         />
       </div>
     );
-  }
+  },
 });

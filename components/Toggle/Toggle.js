@@ -31,5 +31,5 @@ export default class Toggle extends Component {
 Toggle.propTypes = {
   value: PropTypes.bool.isRequired,
   onChange: PropTypes.func.isRequired,
-  className: PropTypes.string
+  className: PropTypes.string,
 };

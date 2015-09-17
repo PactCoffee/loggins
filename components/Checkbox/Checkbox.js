@@ -9,7 +9,7 @@ export default class Checkbox extends Component {
     this.id = `check-${Math.random() * new Date().getTime()}`;
     this.toggleChecked = this.toggleChecked.bind(this);
     this.state = {
-      checked: props.checked || false
+      checked: props.checked || false,
     };
   }
 
@@ -23,7 +23,7 @@ export default class Checkbox extends Component {
     const checkboxClasses = [
       s.root,
       this.props.className,
-      this.state.checked ? s.isChecked : null
+      this.state.checked ? s.isChecked : null,
     ].join(' ');
 
     return (
@@ -48,5 +48,5 @@ Checkbox.propTypes = {
   checked: PropTypes.bool,
   name: PropTypes.string,
   label: PropTypes.string,
-  className: PropTypes.string
+  className: PropTypes.string,
 };

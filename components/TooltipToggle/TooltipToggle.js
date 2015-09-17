@@ -12,18 +12,18 @@ export default class TooltipToggle extends Component {
     this.handleBlur = debounce(this.handleBlur.bind(this), 100);
 
     this.state = {
-      show: false
+      show: false,
     };
   }
 
   handleHover() {
     this.setState({
-      show: true
+      show: true,
     });
   }
   handleBlur() {
     this.setState({
-      show: false
+      show: false,
     });
   }
 
@@ -34,7 +34,7 @@ export default class TooltipToggle extends Component {
       onFocus: this.handleHover,
       onMouseOut: this.handleBlur,
       onBlur: this.handleBlur,
-      ref: 'anchor'
+      ref: 'anchor',
     });
     return (
       <span>
@@ -45,7 +45,7 @@ export default class TooltipToggle extends Component {
                      anchor={this.refs.anchor}
                      anchorPading={10}
                      placement={placement}
-                     caret={true}>
+                     caret>
             {content}
           </HoverCard>
           : null
@@ -59,10 +59,10 @@ TooltipToggle.propTypes = {
   content: PropTypes.node.isRequired,
   children: PropTypes.element.isRequired,
   container: mountable,
-  placement: PropTypes.oneOf(['top', 'left', 'bottom', 'right'])
+  placement: PropTypes.oneOf(['top', 'left', 'bottom', 'right']),
 };
 
 TooltipToggle.defaultProps = {
-  placement: 'top'
+  placement: 'top',
 };
 

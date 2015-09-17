@@ -12,7 +12,8 @@
     "dev": "npm run clean && cd styleguide && node devServer.js",
     "start": "npm run build && cd styleguide && node server.js",
     "clean": "cd styleguide && rimraf public",
-    "test": "eslint ./components && karma start"
+    "test": "eslint ./components && karma start",
+    "prepublish": "npm test"
   },
   "repository": {
     "type": "git",
@@ -72,8 +73,8 @@
     "raw-loader": "^0.5.1",
     "react": "^0.13.3",
     "react-transform-catch-errors": "^0.1.1",
-    "react-transform-webpack-hmr": "^0.1.1",
-    "redbox-react": "^1.0.0",
+    "react-transform-webpack-hmr": "^0.1.2",
+    "redbox-react": "^1.0.1",
     "rimraf": "^2.4.2",
     "sinon": "^1.16.1",
     "sinon-chai": "^2.8.0",
