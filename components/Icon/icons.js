@@ -49,8 +49,8 @@ export default {
   instagram: cleanupSvg(require('./icons/instagram.svg')),
 
   pod: cleanupSvg(require('./icons/pod.svg')),
-  drip: cleanupSvg(require('./icons/drip.svg')),
-  dripper: cleanupSvg(require('./icons/dripper.svg')),
+  anDrip: cleanupSvg(require('./icons/drip.svg')),
+  drip: cleanupSvg(require('./icons/dripper.svg')),
   espresso: cleanupSvg(require('./icons/espresso.svg')),
   stovetop: cleanupSvg(require('./icons/stovetop.svg')),
   aeropress: cleanupSvg(require('./icons/aeropress.svg')),
