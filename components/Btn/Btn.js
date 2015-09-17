@@ -36,7 +36,13 @@ export default class Btn extends Component {
 }
 
 Btn.propTypes = {
-  type: PropTypes.oneOf(['primary', 'secondary', 'warning', 'clear', 'white']),
+  type: PropTypes.oneOf([
+    'primary',
+    'secondary',
+    'danger',
+    'clear',
+    'white',
+  ]),
   variant: PropTypes.oneOf(['cta', 'hollow', 'clean']),
 
   onClick: PropTypes.func,
