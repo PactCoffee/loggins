@@ -150,6 +150,16 @@
   color: color(var(--color-primary) a(70%));
 }
 
+.danger.clean {
+  color: var(--color-error);
+}
+.danger.clean:hover {
+  color: color(var(--color-error) l(- 10%));
+}
+.danger.clean:active {
+  color: color(var(--color-error) a(70%));
+}
+
 .white.hollow {
   box-shadow: inset 0 0 0 0.12em var(--color-white);
   color: var(--color-white);
