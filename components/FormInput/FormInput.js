@@ -39,7 +39,14 @@ export default class FormInput extends Component {
   }
 
   render() {
-    const {error, onChange, value, type, label, placeholder} = this.props;
+    const {error,
+      onChange,
+      value,
+      type,
+      label,
+      placeholder,
+      borderless
+    } = this.props;
     const {active, focus, uniqueId} = this.state;
     const outerCSS = [
       css.container,
@@ -47,6 +54,7 @@ export default class FormInput extends Component {
       error ? css.containerError : null,
       active ? css.containerActive : null,
       focus ? css.containerFocus : null,
+      borderless ? css.borderless : null,
     ].join(' ');
 
     const messageCSS = [
@@ -85,7 +93,9 @@ FormInput.propTypes = {
   type: PropTypes.string.isRequired,
 
   placeholder: PropTypes.string,
+  borderless: PropTypes.bool,
 
   // If set, will display underneath the input
   error: PropTypes.string,
+
 };
