@@ -33,9 +33,9 @@
 
 /* Globals as the classnames are appended with a number */
 :global .SliderBar {
-  height: 50%;
+  height: 30%;
   position: relative;
-  top: 25%;
+  top: calc(50% - (30% / 2));
   border-radius: 2em;
 }
 :global .SliderBar-0 {
