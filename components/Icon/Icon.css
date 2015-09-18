@@ -31,6 +31,7 @@
 .pause,
 .cross,
 .heart,
+.pod,
 .asap {
   fill: transparent;
   stroke: currentColor;
@@ -48,7 +49,6 @@
 .wholebean,
 .espresso,
 .stovetop,
-.pod,
 .calendar {
   fill: currentColor;
 }
