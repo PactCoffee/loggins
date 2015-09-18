@@ -20,6 +20,8 @@
 .di {display:  inline;}
 .dib {display: inline-block;}
 .db {display:  block;}
+.dt {display:  table;}
+.dtc {display:  table-cell;}
 
 /* Floats */
 .cf {lost-utility: clearfix;}
@@ -139,3 +141,7 @@
 
 /* Grid helpers */
 .cf {lost-utility: clearfix;}
+
+/* Widths */
+.w1 {  width: 1%;}
+.w100 {width: 100%;}
