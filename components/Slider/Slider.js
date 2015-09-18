@@ -22,12 +22,6 @@ export default class Slider {
     const {ticks} = this.props;
     return (
       <div>
-        <ReactSlider withBars
-                     className={styles.slider}
-                     barClassName={BAR_CLASS_NAME}
-                     handleClassName={styles.handle}
-                     handleActiveClassName={styles.activeHandle}
-                     {...this.props}/>
         {ticks ?
           <div className={styles.tickContainer}>
             <span className={styles.ticks}>
@@ -42,6 +36,12 @@ export default class Slider {
           </div>
           : null
         }
+        <ReactSlider withBars
+                     className={styles.slider}
+                     barClassName={BAR_CLASS_NAME}
+                     handleClassName={styles.handle}
+                     handleActiveClassName={styles.activeHandle}
+                     {...this.props}/>
       </div>
     );
   }
