@@ -1,14 +1,24 @@
 import React, {PropTypes} from 'react';
+import {uniqueId} from 'lodash';
 
+import Icon from '../Icon/Icon';
 import s from './Radio.css';
 
 export default class Radio {
   constructor(props) {
-    this.id = `radioChild.${props.value.replace(' ', '-')}.${new Date().getTime()}`;
+    this.id = uniqueId('radio');
   }
   render() {
-    const {tabbed, className} = this.props;
-    const isChecked = this.props.value === this.props.selectedValue;
+    const {
+      name,
+      value,
+      tabbed,
+      tabIcon,
+      onChange,
+      className,
+      selectedValue,
+    } = this.props;
+    const isChecked = value === selectedValue;
     return (
       <span className={[s.child, className].join(' ')}>
         <input id={this.id}
@@ -20,9 +30,12 @@ export default class Radio {
         <label htmlFor={this.id}
                className={tabbed ? s.tabLabel : s.radioLabel}>
           {tabbed ?
-            this.props.children
+            <span>
+              <Icon className={s.tabIcon} name={tabIcon}/>
+              {value}
+            </span>
             :
-            this.props.value
+            value
           }
         </label>
       </span>
@@ -31,8 +44,9 @@ export default class Radio {
 }
 
 Radio.propTypes = {
-  tabbed: PropTypes.bool,
-  children: PropTypes.any,
+  name: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+
   selectedValue: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
@@ -41,7 +55,7 @@ Radio.propTypes = {
     PropTypes.string,
     PropTypes.number,
   ]),
-  name: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
   className: PropTypes.string,
+  children: PropTypes.any,
+  tabbed: PropTypes.bool,
 };

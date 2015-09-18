@@ -33,6 +33,8 @@
 .radioLabel:hover:before {
   border-color: var(--color-primary);
 }
+
+/* Outer ring */
 .radioLabel:before {
   position: absolute;
   left: 0;
@@ -42,12 +44,13 @@
   width: var(--baseRadioSize);
   height: var(--baseRadioSize);
   border-radius: 500rem;
-  background: var(--color-white);
-  border: 1px solid var(--color-grey-light);
+  background: var(--color-offwhite);
+  border: 1px solid var(--color-grey-lightest);
   transition: all 200ms var(--easeinoutback);
   line-height: 0;
 }
 
+/* Inner circle */
 .radioLabel:after {
   content: '';
   position: absolute;
@@ -72,18 +75,25 @@
   opacity: 1;
 }
 
-/* Tab */
+/* Tabbed variant */
+.tabs {
+  text-align: center;
+}
+
+.tabs .child {
+  display: table-cell;
+}
+
 .tab {
   display: none;
 }
 
 .tabLabel {
-  composes: root from '../Panel/Panel.css';
-  width: 100%;
-  padding: 0.5em;
   cursor: pointer;
-  border-radius: 0;
-  display: inline-block;
+  display: block;
+  text-align: center;
+  color: var(--color-grey-light);
+  margin: 0.75em;
 }
 .tabLabel:hover {
   background: color(var(--color-primary) l(97%));
@@ -92,7 +102,19 @@
   background: color(var(--color-primary) l(90%));
 }
 
+.tabIcon {
+  display: block;
+  margin: 0 auto;
+  font-size: 3.5em;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 2px var(--color-grey-light);
+}
+
 .tab:checked + .tabLabel {
-  background: var(--color-primary);
+  color: var(--color-primary);
+}
+.tab:checked + .tabLabel .tabIcon {
+  box-shadow: none;
   color: var(--color-white);
+  background: var(--color-primary);
 }
