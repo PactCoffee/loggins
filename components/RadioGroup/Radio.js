@@ -47,10 +47,13 @@ Radio.propTypes = {
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
 
+  // The value of the parent group
   selectedValue: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
   ]),
+
+  // The value of this radio
   value: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,

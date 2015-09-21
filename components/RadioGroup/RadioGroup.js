@@ -23,7 +23,7 @@ import s from './Radio.css';
 export default class RadioGroup {
   render() {
     const {
-      selectedValue,
+      value,
       className,
       onChange,
       children,
@@ -37,7 +37,7 @@ export default class RadioGroup {
           <Radio name={name}
                  tabbed={tabbed}
                  tabIcon={tabIcon}
-                 selectedValue={selectedValue}
+                 selectedValue={value}
                  onChange={onChange} {...props} />
         )}
       </div>
@@ -50,7 +50,7 @@ RadioGroup.propTypes = {
   onChange: PropTypes.func.isRequired,
   children: PropTypes.func.isRequired,
 
-  selectedValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   className: PropTypes.string,
   tabbed: PropTypes.bool,
   tabIcon: PropTypes.string,
