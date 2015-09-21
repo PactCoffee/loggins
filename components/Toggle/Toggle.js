@@ -3,22 +3,16 @@ import React, {Component, PropTypes} from 'react';
 import s from './Toggle.css';
 
 export default class Toggle extends Component {
-  constructor(props) {
-    super(props);
-    this.handleChange = this.handleChange.bind(this);
-  }
-  handleChange() {
-    this.props.onChange(!this.props.value);
-  }
   render() {
-    const isOn = this.props.value === true;
+    const {value, onChange, className} = this.props;
+    const isOn = value === true;
     return (
-      <span className={[s.root, this.props.className].join(' ')}>
+      <span className={[s.root, className].join(' ')}>
         <label className={[s.label, isOn ? s.isOn : null].join(' ')}>
           <input
             type="checkbox"
-            checked={this.props.value}
-            onChange={this.handleChange}
+            checked={value}
+            onChange={onChange}
             className={s.input}
           />
           <span className={s.circle}/>
