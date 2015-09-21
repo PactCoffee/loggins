@@ -20,12 +20,13 @@
 }
 
 .radioLabel {
-  display: inline-block;
-  position: relative;
-  padding-left: calc(var(--baseRadioSize) + 0.5em);
   cursor: pointer;
-  transition: all 200ms var(--easeinoutback);
   user-select: none;
+  position: relative;
+  display: inline-block;
+  text-transform: capitalize;
+  transition: all 200ms var(--easeinoutback);
+  padding-left: calc(var(--baseRadioSize) + 0.5em);
 }
 .radioLabel:hover {
   color: var(--color-primary);
@@ -89,11 +90,12 @@
 }
 
 .tabLabel {
-  cursor: pointer;
   display: block;
-  text-align: center;
-  color: var(--color-grey-light);
   margin: 0.75em;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: capitalize;
+  color: var(--color-grey-light);
 }
 .tabLabel:hover {
   background: color(var(--color-primary) l(97%));
