@@ -51,6 +51,7 @@
   width: 100%;
 }
 .ticks {
+  pointer-events: none;
   position: relative;
   display: block;
   width: 100%;
