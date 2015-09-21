@@ -99,9 +99,11 @@ export default class HoverCard extends Component {
           container,
           this.props.anchorPadding
         );
+
       const {positionLeft, positionTop} = idealPosition;
       const positionBottom = positionTop + hoverCard.offsetHeight;
       const positionRight = positionLeft + hoverCard.offsetWidth;
+
       if (
           // Not too far left
           positionLeft > -1 &&
@@ -110,10 +112,10 @@ export default class HoverCard extends Component {
           positionTop > -1 &&
 
           // Not too far down
-          positionBottom < container.offsetHeight &&
+          positionBottom <= container.offsetHeight &&
 
           // Not too far right
-          positionRight < container.offsetWidth
+          positionRight <= container.offsetWidth
           ) {
         break;
       }
@@ -136,7 +138,7 @@ export default class HoverCard extends Component {
 
     const {
       variant,
-      caret
+      caret,
     } = this.props;
 
     const css = [
@@ -199,6 +201,8 @@ HoverCard.propTypes = {
   escListen: PropTypes.bool,
 
   children: PropTypes.any.isRequired,
+
+  className: PropTypes.string,
 };
 
 HoverCard.defaultProps = {
