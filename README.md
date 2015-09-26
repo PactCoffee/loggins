@@ -40,7 +40,7 @@ $ open http://localhost:8080
 
 Any changes you make to any CSS or JS file will live-reload inside the browser you have open. Pretty slick.
 
-When running locally you'll get a 404 for the `bundle.css` file. Don't worry this is fine. Your styles are loaded in via webpack's style-loader.
+**Please note**: If you want to run the styleguide locally, make sure to move the loggins folder outside of any `node_modules` folder you might have it inside. For some reason the hot-reloading doesnt't work if that's the case.
 
 Running tests
 -------------
