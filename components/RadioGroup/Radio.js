@@ -7,6 +7,14 @@ import s from './Radio.css';
 export default class Radio {
   constructor(props) {
     this.id = uniqueId('radio');
+    this.renderValue = this.renderValue.bind(this);
+  }
+  renderValue() {
+    const {children, value} = this.props;
+    if (children) {
+      return children;
+    }
+    return value
   }
   render() {
     const {
@@ -25,7 +33,8 @@ export default class Radio {
                type="radio"
                className={tabbed ? s.tab : s.radio}
                checked={isChecked}
-               name={this.props.name}
+               name={name}
+               value={value}
                onChange={() => this.props.onChange(this.props.value)} />
         <label htmlFor={this.id}
                className={tabbed ? s.tabLabel : s.radioLabel}>
@@ -35,7 +44,7 @@ export default class Radio {
               {value}
             </span>
             :
-            value
+            this.renderValue()
           }
         </label>
       </span>
