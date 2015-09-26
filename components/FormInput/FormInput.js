@@ -13,7 +13,7 @@ export default class FormInput extends Component {
     this.state = {
       active: !!props.value,
       focus: false,
-      uniqueId: uniqueId('forminput')
+      id: uniqueId('forminput'),
     };
   }
 
@@ -47,7 +47,7 @@ export default class FormInput extends Component {
       placeholder,
       borderless
     } = this.props;
-    const {active, focus, uniqueId} = this.state;
+    const {active, focus, id} = this.state;
     const outerCSS = [
       css.container,
       placeholder ? css.labelInside : css.labelOutside,
@@ -64,7 +64,7 @@ export default class FormInput extends Component {
 
     return (
       <div className={outerCSS}>
-        <label htmlFor={uniqueId} className={css.label}>
+        <label htmlFor={id} className={css.label}>
           {label}
         </label>
         <input

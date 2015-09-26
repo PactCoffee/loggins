@@ -17,10 +17,10 @@
 
 .input {
   composes: legacy_textarea textarea from '../../globals/reset.css';
+  color: var(--color-black);
   display: block;
   padding: 0.5em;
   border: none;
-  color: var(--color-black);
   width: 100%;
 }
 
@@ -62,7 +62,7 @@
 
 /* Default label outside variant */
 .labelOutside {
-  margin: 1.5em 0 0;
+  margin-top: 1.5em;
 }
 .labelOutside .label {
   transition: all 250ms var(--easeoutback);
