@@ -83,8 +83,8 @@ export default class FormSection extends Component {
     this.setState({checkbox: val});
   }
 
-  handleToggle(val) {
-    this.setState({toggleVal: val});
+  handleToggle() {
+    this.setState({toggleVal: !this.state.toggleVal});
   }
 
   handleRadio(val) {
@@ -115,7 +115,7 @@ export default class FormSection extends Component {
         <h3>Radio buttons</h3>
         <RadioGroup name="example"
                     onChange={this.handleRadio}
-                    selectedValue={this.state.radioVal}>
+                    value={this.state.radioVal}>
           {radio => (
             <span>
               {radio({value: 'Apple'})}
@@ -128,52 +128,17 @@ export default class FormSection extends Component {
         </RadioGroup>
         <p>You selected {this.state.radioVal}</p>
 
-        <h3>Tab buttons</h3>
-        <p>
-          Exactly the same component as RadioGroup, but with in a tab style. Unopinionated about border-radius and width.
-        </p>
+        <h3>Giant radio buttons</h3>
         <RadioGroup name="example"
-                    tabbed
+                    giant
                     onChange={this.handleRadio}
-                    selectedValue={this.state.radioVal}>
+                    value={this.state.radioVal}>
           {radio => (
             <span>
-              {radio({
-                value: 'Loves',
-                className: styles.tab,
-                children: (
-                  <span className={[m.db, m.alignc].join(' ')}>
-                    <span className={[m.db, m.alignc, m.large].join(' ')}>
-                      <Icon name="heart"/>
-                    </span>
-                    Love
-                  </span>
-                ),
-              })}
-              {radio({
-                value: 'Pact',
-                className: styles.tab,
-                children: (
-                  <span className={[m.db, m.alignc].join(' ')}>
-                    <span className={[m.db, m.alignc, m.large].join(' ')}>
-                      <Icon name="stamp"/>
-                    </span>
-                    Fresh
-                  </span>
-                ),
-              })}
-              {radio({
-                value: 'Coffee',
-                className: styles.tab,
-                children: (
-                  <span className={[m.db, m.alignc].join(' ')}>
-                    <span className={[m.db, m.alignc, m.large].join(' ')}>
-                      <Icon name="coffee"/>
-                    </span>
-                    Coffee
-                  </span>
-                ),
-              })}
+              <span>
+                {radio({value: 'Normal', icon: 'asap'})}
+                {radio({value: 'Decaf', icon: 'cross'})}
+              </span>
             </span>
           )}
         </RadioGroup>

@@ -27,17 +27,15 @@ export default class RadioGroup {
       className,
       onChange,
       children,
-      tabIcon,
-      tabbed,
+      giant,
       name,
     } = this.props;
     return (
-      <div className={[tabbed ? s.tabs : s.group, className].join(' ')}>
+      <div className={[giant ? s.giant : s.group, className].join(' ')}>
         {children && children(props =>
           <Radio name={name}
-                 tabbed={tabbed}
-                 tabIcon={tabIcon}
                  selectedValue={value}
+                 giant={giant}
                  onChange={onChange} {...props} />
         )}
       </div>
@@ -52,6 +50,5 @@ RadioGroup.propTypes = {
 
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   className: PropTypes.string,
-  tabbed: PropTypes.bool,
-  tabIcon: PropTypes.string,
+  giant: PropTypes.bool,
 };

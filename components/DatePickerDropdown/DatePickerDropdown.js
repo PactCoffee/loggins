@@ -41,7 +41,7 @@ export default class DatePickerDropdown extends Component {
     const clonedTrigger = cloneElement(this.props.trigger, {
       onClick: this.toggleShow,
       ref: 'trigger',
-      active: this.state.show
+      active: this.state.show,
     });
 
     return (

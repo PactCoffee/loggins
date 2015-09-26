@@ -1,27 +1,36 @@
 import React, {PropTypes} from 'react';
 import {uniqueId} from 'lodash';
 
+import * as m from '../../globals/modifiers.css';
 import Icon from '../Icon/Icon';
 import s from './Radio.css';
 
 export default class Radio {
-  constructor(props) {
+  constructor() {
     this.id = uniqueId('radio');
     this.renderValue = this.renderValue.bind(this);
   }
   renderValue() {
-    const {children, value} = this.props;
+    const {giant, icon, children, value} = this.props;
+    if (giant) {
+      return (
+        <span className={s.iconOuter}>
+          <span className={s.iconInner}>
+            <Icon className={s.icon} name={icon || 'tick'}/>
+          </span>
+          <span className={m.db}>{value}</span>
+        </span>
+      );
+    }
     if (children) {
       return children;
     }
-    return value
+    return value;
   }
   render() {
     const {
       name,
       value,
-      tabbed,
-      tabIcon,
       onChange,
       className,
       selectedValue,
@@ -31,21 +40,14 @@ export default class Radio {
       <span className={[s.child, className].join(' ')}>
         <input id={this.id}
                type="radio"
-               className={tabbed ? s.tab : s.radio}
+               className={s.radio}
                checked={isChecked}
                name={name}
                value={value}
-               onChange={() => this.props.onChange(this.props.value)} />
+               onChange={() => onChange(this.props.value)} />
         <label htmlFor={this.id}
-               className={tabbed ? s.tabLabel : s.radioLabel}>
-          {tabbed ?
-            <span>
-              <Icon className={s.tabIcon} name={tabIcon}/>
-              {value}
-            </span>
-            :
-            this.renderValue()
-          }
+               className={s.radioLabel}>
+          {this.renderValue()}
         </label>
       </span>
     );
@@ -67,7 +69,10 @@ Radio.propTypes = {
     PropTypes.string,
     PropTypes.number,
   ]),
+
   className: PropTypes.string,
   children: PropTypes.any,
-  tabbed: PropTypes.bool,
+
+  giant: PropTypes.bool,
+  icon: PropTypes.string,
 };

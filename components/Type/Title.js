@@ -11,5 +11,5 @@ export default class Title {
 }
 
 Title.propTypes = {
-  children: PropTypes.any.isRequired
+  children: PropTypes.any.isRequired,
 };
