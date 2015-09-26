@@ -54,7 +54,7 @@ export default {
   espresso: cleanupSvg(require('./icons/espresso.svg')),
   stovetop: cleanupSvg(require('./icons/stovetop.svg')),
   aeropress: cleanupSvg(require('./icons/aeropress.svg')),
-  cafatiere: cleanupSvg(require('./icons/cafatiere.svg')),
+  cafetiere: cleanupSvg(require('./icons/cafetiere.svg')),
   wholebean: cleanupSvg(require('./icons/wholebean.svg')),
   aeropressFilter: cleanupSvg(require('./icons/aeropressFilter.svg')),
 
