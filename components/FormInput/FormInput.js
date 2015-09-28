@@ -74,7 +74,7 @@ export default class FormInput extends Component {
           className={css.input}
           onChange={onChange}
           value={value}
-          id={uniqueId}
+          id={id}
           type={type}
         />
         <span className={messageCSS}>
