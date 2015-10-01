@@ -1,6 +1,5 @@
 :root {
   --size-xsmall: 0.25rem;
-  -sxize-small: x 0.5rem;
   --size-small:  0.5rem;
   --size-medium: 1rem;
   --size-base:   1.125rem;
@@ -112,6 +111,11 @@
 .alignl {text-align: left;}
 .alignr {text-align: right;}
 
+/* Vertical align */
+.vat {vertical-align: top};
+.vam {vertical-align: middle};
+.vab {vertical-align: bottom};
+
 /* Transforms */
 .rotate90 {transform:  rotate(90deg);}
 .rotate180 {transform: rotate(180deg);}
@@ -147,3 +151,15 @@
 /* Widths */
 .w1 {  width: 1%;}
 .w100 {width: 100%;}
+
+/* Heights */
+.ha {  height: auto;}
+.h100 {height: 100%;}
+
+/* Overflow */
+.oh {overflow: hidden;}
+.ov {overflow: visible;}
+
+/* Pointer events */
+.pointera {pointer-events: auto;}
+.pointern {pointer-events: none;}
