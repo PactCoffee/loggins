@@ -20,7 +20,7 @@ export default class FormInput extends Component {
   componentWillReceiveProps(nextProps) {
     if (!this.state.focus) {
       this.setState({
-        active: nextProps.value.length,
+        active: nextProps.value && nextProps.value.length,
       });
     }
   }
