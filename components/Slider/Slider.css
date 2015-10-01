@@ -4,8 +4,8 @@
 
 .handle {
   position: relative;
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
   line-height: 0;
   border-radius: 50%;
   cursor: pointer;
@@ -15,20 +15,8 @@
   composes: bs from '../../globals/modifiers.css';
   transition: transform 200ms var(--easeoutback);
 }
-.handle:before {
-  content: '';
-  display: block;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  border-left: 1px solid var(--color-grey-lighter);
-  border-right: 1px solid var(--color-grey-lighter);
-  height: 11px;
-  width: 3px;
-}
 .activeHandle {
-  transform: translateY(-25%) scale(1.2);
+  transform: translateY(-25%) scale(1.1);
 }
 
 /* Globals as the classnames are appended with a number */
@@ -46,8 +34,8 @@
 }
 
 .tickContainer {
-  padding: 0 0.5em;
-  height: 1em;
+  padding: 0 0.9em;
+  height: 1.2em;
   width: 100%;
 }
 .ticks {
