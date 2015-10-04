@@ -1,8 +1,9 @@
 import React from 'react';
-import {Route} from 'react-router';
+import {Route, IndexRoute} from 'react-router';
 
 import Styleguide from './Styleguide';
 
+import Home from './sections/Home';
 import Type from './sections/Type';
 import Icons from './sections/Icons';
 import Grids from './sections/Grids';
@@ -15,6 +16,7 @@ import Overlays from './sections/Overlays';
 
 export default (
   <Route ignoreScrollBehavior path="/" component={Styleguide}>
+    <IndexRoute component={Home}/>
     <Route path="type" component={Type}/>
     <Route path="grids" component={Grids}/>
     <Route path="blocks" component={Blocks}/>

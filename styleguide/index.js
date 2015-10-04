@@ -1,12 +1,12 @@
 import React from 'react';
 import {Router} from 'react-router';
-import {history} from 'react-router/lib/HashHistory';
+import createBrowserHistory from 'history/lib/createBrowserHistory';
 
 import routes from './routes';
 
 React.render(
   <Router
-    history={history}
+    history={createBrowserHistory()}
     children={routes}
   />,
   document.getElementById('outlet'));
