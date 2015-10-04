@@ -37,6 +37,7 @@ export default {
   heart: cleanupSvg(require('./icons/heart.svg')),
   thumb: cleanupSvg(require('./icons/thumb.svg')),
   cross: cleanupSvg(require('./icons/cross.svg')),
+  plus: cleanupSvg(require('./icons/plus.svg')),
   coffee: cleanupSvg(require('./icons/coffee.svg')),
   chevron: cleanupSvg(require('./icons/chevron.svg')),
   triangle: cleanupSvg(require('./icons/triangle.svg')),
