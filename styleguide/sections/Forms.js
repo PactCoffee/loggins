@@ -12,13 +12,12 @@ import RadioGroup from 'components/RadioGroup/RadioGroup';
 import FormInput from 'components/FormInput/FormInput';
 import Progress from 'components/Progress/Progress';
 import Checkbox from 'components/Checkbox/Checkbox';
+import FieldGroup from 'components/Form/FieldGroup';
 import Toggle from 'components/Toggle/Toggle';
 import Slider from 'components/Slider/Slider';
-import Icon from 'components/Icon/Icon';
-
 import * as m from 'globals/modifiers.css';
-import styles from '../styleguide.css';
-
+import Field from 'components/Form/Field';
+import Btn from 'components/Btn/Btn';
 
 export default class FormSection extends Component {
 
@@ -106,6 +105,32 @@ export default class FormSection extends Component {
   render() {
     return (
       <Section name="Forms" href="https://github.com/PactCoffee/loggins/blob/master/styleguide/sections/Forms.js">
+
+        <h3>FieldGroup &amp; Field</h3>
+        <FieldGroup title="Example field group">
+          <Field>
+            <FormInput borderless type="text" onChange={this.handleTextChange} value={this.state.text} label="First name" placeholder="e.g. Bat"/>
+          </Field>
+          <Field>
+            <FormInput borderless type="text" onChange={this.handleTextChange} value={this.state.text} label="Second name" placeholder="e.g. Man"/>
+          </Field>
+          <Field>
+            <p>Here's some text in the field</p>
+          </Field>
+          <Field>
+            <Btn variant="clean" type="primary" fullWidth>And a btn</Btn>
+          </Field>
+          <Field>
+            <span className={[m.dt, m.ptm, m.pbs].join(' ')}>
+              <span className={[m.dtc, m.w100].join(' ')}>
+                Fancy a really very long labeled toggle?
+              </span>
+              <span className={[m.dtc, m.alignr, m.w1, m.h100, m.vam].join(' ')}>
+              <Toggle value={this.state.toggleVal} onChange={this.handleToggle}/>
+              </span>
+            </span>
+          </Field>
+        </FieldGroup>
 
         <h3>Toggle</h3>
         <Toggle value={this.state.toggleVal} onChange={this.handleToggle}/>
