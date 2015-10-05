@@ -112,9 +112,9 @@
 .alignr {text-align: right;}
 
 /* Vertical align */
-.vat {vertical-align: top};
-.vam {vertical-align: middle};
-.vab {vertical-align: bottom};
+.vat {vertical-align: top;}
+.vam {vertical-align: middle;}
+.vab {vertical-align: bottom;}
 
 /* Transforms */
 .rotate90 {transform:  rotate(90deg);}
