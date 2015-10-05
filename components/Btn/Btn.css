@@ -62,21 +62,6 @@
   background: color(var(--color-error) l(- 5%));
 }
 
-.clear {
-  background: transparent;
-  color: var(--color-brown-dark);
-  font-weight: normal;
-  font-style: italic;
-}
-.clear:hover {
-  background: transparent;
-  color: var(--color-brown);
-}
-.clear:active {
-  background: transparent;
-  color: var(--color-black);
-}
-
 .white {
   background: var(--color-white);
   color: var(--color-text);

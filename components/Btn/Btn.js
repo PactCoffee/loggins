@@ -44,7 +44,6 @@ Btn.propTypes = {
     'primary',
     'secondary',
     'danger',
-    'clear',
     'white',
   ]),
   variant: PropTypes.oneOf(['cta', 'hollow', 'clean']),
