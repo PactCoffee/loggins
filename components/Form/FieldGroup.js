@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react';
 
 import Panel from '../Panel/Panel';
-import css from './Forms.css';
+import css from './Form.css';
 
 export default class FieldGroup {
   render() {

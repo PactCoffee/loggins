@@ -1,13 +1,15 @@
 .fieldset {
-  border: none;
-  margin: 0;
-  padding: 0;
+  border: inherit;
+  margin: inherit;
+  padding: inherit;
 }
 .legend {
   font-family: var(--font-brandon);
   font-size: var(--font-small);
   text-transform: uppercase;
   font-weight: 700;
+  display: block;
+  padding: 0 1em;
 }
 .panel {
   padding: 0.5em 1em;
