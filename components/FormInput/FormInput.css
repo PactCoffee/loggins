@@ -86,16 +86,17 @@
 }
 .labelInside .label {
   color: var(--color-primary);
+  vertical-align: middle;
   display: table-cell;
   padding: 0.5em;
   padding-left: 0;
-  white-space: nowrap;
-  width: 1%;
+  width: 5em;
 }
 .labelInside input {
+  vertical-align: middle;
   display: table-cell;
-  padding-left: 0;
   padding-right: 0;
+  padding-left: 0;
 }
 
 /* Borderless */
