@@ -1,6 +1,6 @@
 {
   "name": "@pactcoffee/loggins",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Pact's component library",
   "main": "components/index.js",
   "license": "MIT",
@@ -12,7 +12,7 @@
     "dev": "npm run clean && cd styleguide && node devServer.js",
     "start": "npm run build && cd styleguide && node server.js",
     "clean": "cd styleguide && rimraf public",
-    "test": "eslint ./components && karma start",
+    "test": "eslint ./components && karma start --single-run",
     "prepublish": "npm test"
   },
   "repository": {
