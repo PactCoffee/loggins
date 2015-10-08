@@ -7,8 +7,10 @@ import s from './Radio.css';
 
 export default class Radio {
   constructor() {
-    this.id = uniqueId('radio');
     this.renderValue = this.renderValue.bind(this);
+    this.state = {
+      id: uniqueId('radio'),
+    };
   }
   renderValue() {
     const {giant, icon, children, value} = this.props;
@@ -35,17 +37,18 @@ export default class Radio {
       className,
       selectedValue,
     } = this.props;
+    const {id} = this.state;
     const isChecked = value === selectedValue;
     return (
       <span className={[s.child, className].join(' ')}>
-        <input id={this.id}
+        <input id={id}
                type="radio"
                className={s.radio}
                checked={isChecked}
                name={name}
                value={value}
                onChange={() => onChange(this.props.value)} />
-        <label htmlFor={this.id}
+        <label htmlFor={id}
                className={s.radioLabel}>
           {this.renderValue()}
         </label>
