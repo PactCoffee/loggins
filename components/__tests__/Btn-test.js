@@ -32,7 +32,7 @@ describe('Btn', () => {
   });
 
   it('Correctly applies the className for the type', () => {
-    ['primary', 'secondary', 'warning', 'clear', 'white'].forEach(type => {
+    ['primary', 'secondary', 'danger', 'white'].forEach(type => {
       const node = findDOMNode(renderIntoDocument(
         <Btn type={type}/>
       ));
@@ -41,7 +41,7 @@ describe('Btn', () => {
   });
 
   it('Correctly applies the className for the variant', () => {
-    ['cta', 'hollow'].forEach(variant => {
+    ['cta', 'hollow', 'clean'].forEach(variant => {
       const node = findDOMNode(renderIntoDocument(
         <Btn variant={variant}/>
       ));
