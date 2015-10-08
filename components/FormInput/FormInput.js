@@ -11,43 +11,37 @@ export default class FormInput extends Component {
     this.handleBlur = this.handleBlur.bind(this);
 
     this.state = {
-      active: !!props.value,
       focus: false,
       id: uniqueId('forminput'),
     };
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (!this.state.focus) {
-      this.setState({
-        active: nextProps.value && nextProps.value.length,
-      });
-    }
-  }
-
   handleFocus() {
     this.setState({
       focus: true,
-      active: true,
     });
   }
+
   handleBlur() {
     this.setState({
       focus: false,
-      active: !!this.props.value,
     });
   }
 
   render() {
-    const {error,
-      onChange,
-      value,
-      type,
-      label,
+    const {
       placeholder,
-      borderless
+      borderless,
+      onChange,
+      error,
+      value,
+      label,
+      type,
     } = this.props;
-    const {active, focus, id} = this.state;
+    const {focus, id} = this.state;
+
+    const active = value && !!value.length;
+
     const outerCSS = [
       css.container,
       placeholder ? css.labelInside : css.labelOutside,
@@ -97,5 +91,4 @@ FormInput.propTypes = {
 
   // If set, will display underneath the input
   error: PropTypes.string,
-
 };
