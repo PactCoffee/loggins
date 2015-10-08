@@ -1,21 +1,20 @@
 import React, {Component, PropTypes} from 'react';
 
-import s from './Toggle.css';
+import css from './Toggle.css';
 
 export default class Toggle extends Component {
   render() {
     const {value, onChange, className} = this.props;
-    const isOn = value === true;
     return (
-      <span className={[s.root, className].join(' ')}>
-        <label className={[s.label, isOn ? s.isOn : null].join(' ')}>
+      <span className={[css.root, className].join(' ')}>
+        <label className={[css.label, value ? css.isOn : null].join(' ')}>
           <input
             type="checkbox"
             checked={value}
             onChange={onChange}
-            className={s.input}
+            className={css.input}
           />
-          <span className={s.circle}/>
+          <span className={css.circle}/>
         </label>
       </span>
     );
