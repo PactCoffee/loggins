@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12072) - http://www.bohemiancoding.com/sketch -->
+    <title>pod</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="pod" sketch:type="MSArtboardGroup" stroke="#000000">
+            <path d="M37.9294425,15.5621173 C39.8603486,14.9837795 41,14.2710032 41,13.5 C41,11.5670034 33.836556,10 25,10 C16.163444,10 9,11.5670034 9,13.5 C9,14.2707828 10.1389999,14.983372 12.0689018,15.5616212 C12.4408321,18.5707846 14.2208772,32.682625 15,33.5662785 C15.8724551,34.5557861 19.9571667,38.4183578 22,39 C24.0428333,39.5816422 25.972434,39.5816422 28,39 C30.027566,38.4183578 34.189415,34.6449318 35,33.6484222 C35.7240238,32.7583285 37.5481149,18.5801101 37.9294425,15.5621173 Z" id="Oval-3" sketch:type="MSShapeGroup"></path>
+            <path d="M15,33 C15,33 21.6530654,32.5 25,32.5 C28.3197321,32.5 35,33 35,33" id="Line" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+            <path d="M38,15.5 C38,14.1192881 32.1797017,13 25,13 C17.8202983,13 12,14.1192881 12,15.5" id="Path-Copy" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

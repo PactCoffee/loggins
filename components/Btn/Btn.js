@@ -13,6 +13,8 @@ export default class Btn extends Component {
       disabled,
       onClick,
       children,
+      active,
+      opens,
     } = this.props;
 
     const classNames = [
@@ -21,6 +23,8 @@ export default class Btn extends Component {
       styles[variant],
       variant ? styles[variant] : null,
       fullWidth ? styles.fullWidth : null,
+      active ? styles.active : null,
+      opens ? styles.opens : null,
       className,
     ].join(' ');
 
@@ -36,7 +40,12 @@ export default class Btn extends Component {
 }
 
 Btn.propTypes = {
-  type: PropTypes.oneOf(['primary', 'secondary', 'warning', 'clear', 'white']),
+  type: PropTypes.oneOf([
+    'primary',
+    'secondary',
+    'danger',
+    'white',
+  ]),
   variant: PropTypes.oneOf(['cta', 'hollow', 'clean']),
 
   onClick: PropTypes.func,
@@ -46,4 +55,6 @@ Btn.propTypes = {
   children: PropTypes.any,
   fullWidth: PropTypes.bool,
   className: PropTypes.string,
+  active: PropTypes.bool,
+  opens: PropTypes.bool,
 };

@@ -38,16 +38,15 @@ export default class extends Component {
     return (
       <nav className={css}>
         <ul>
-          <li className={styles.home}><Link to="/">Home</Link></li>
-          <li><Link to="colours">Colours</Link></li>
-          <li><Link to="type">Type</Link></li>
-          <li><Link to="grids">Grids</Link></li>
-          <li><Link to="blocks">Blocks</Link></li>
-          <li><Link to="buttons">Buttons</Link></li>
-          <li><Link to="forms">Forms</Link></li>
-          <li><Link to="overlays">Overlays</Link></li>
-          <li><Link to="panels">Panels</Link></li>
-          <li><Link to="icons">Icons</Link></li>
+          <li className={styles.home}><Link activeClassName="active" to="/">Home</Link></li>
+          <li><Link activeClassName="active" to="/colours">Colours</Link></li>
+          <li><Link activeClassName="active" to="/type">Type</Link></li>
+          <li><Link activeClassName="active" to="/grids">Grids</Link></li>
+          <li><Link activeClassName="active" to="/blocks">Blocks</Link></li>
+          <li><Link activeClassName="active" to="/buttons">Buttons</Link></li>
+          <li><Link activeClassName="active" to="/forms">Forms</Link></li>
+          <li><Link activeClassName="active" to="/panels">Panels</Link></li>
+          <li><Link activeClassName="active" to="/icons">Icons</Link></li>
         </ul>
       </nav>
     );

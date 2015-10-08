@@ -12,6 +12,14 @@
   box-shadow: none;
 }
 
+.zeroPadding {
+  padding: 0;
+}
+
+.split {
+  border-top: 1px solid var(--color-grey-lightest);
+}
+
 .success {
   background: color(var(--color-green) l(+ 5%));
   color: var(--color-white);

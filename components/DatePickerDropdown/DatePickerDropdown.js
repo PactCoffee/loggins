@@ -41,6 +41,7 @@ export default class DatePickerDropdown extends Component {
     const clonedTrigger = cloneElement(this.props.trigger, {
       onClick: this.toggleShow,
       ref: 'trigger',
+      active: this.state.show,
     });
 
     return (
@@ -48,12 +49,12 @@ export default class DatePickerDropdown extends Component {
         {this.state.show ?
           <HoverCard variant="datepicker"
                      anchor={this.refs.trigger}
-                     anchorPadding={20}
+                     anchorPadding={0}
                      placement="bottom"
                      ref="hovercard"
                      onRequestClose={this.handleCloseRequest}
                      escListen
-                     caret>
+                     caret={false}>
             <DatePicker value={this.props.value}
                         onChange={this.handleDateChange}/>
           </HoverCard>

@@ -29,7 +29,6 @@ export default class Overlays extends Component {
 
     return (
       <Section name="Overlays" href="https://github.com/PactCoffee/loggins/blob/master/styleguide/sections/Overlays.js">
-
         <h3>TooltipToggle</h3>
         <p>
           Try hovering over {tooltip}. The child passed into TooltipToggle must be a react element (i.e. can't just be a string).

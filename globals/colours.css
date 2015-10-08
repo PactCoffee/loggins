@@ -6,7 +6,7 @@
   --color-grey-lighter: rgb(197,197,197);
   --color-grey-light:   rgb(138,138,138);
   --color-grey:         rgb(99,99,99);
-  --color-black:        rgb(20,20, 20);
+  --color-black:        rgb(51,51, 51);
 
   --color-green:        rgb(41,174,155);
   --color-red:          rgb(252,99,99);
@@ -29,13 +29,15 @@
   --color-yellow:       rgb(253,180,82);
   --color-mauve:        rgb(97,40,79);
   --color-copper:       rgb(179,91,60);
+  --color-deepgrey:     rgb(77,77,77);
   --color-pact:         rgb(240, 168, 75);
 
   --color-primary:   var(--color-green);
   --color-secondary: var(--color-orange);
   --color-error:     var(--color-red);
   --color-alert:     var(--color-orange);
-  --color-text:      var(--color-grey);
+  --color-text:      var(--color-black);
+  --color-text-light:var(--color-grey-light);
   --color-muted:     var(--color-grey-lighter);
 
   --color-twitter:    rgb(42,169,224);

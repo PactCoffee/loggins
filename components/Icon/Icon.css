@@ -28,9 +28,12 @@
 .triangle,
 .aeropressFilter,
 .drip,
+.anDrip,
 .pause,
 .cross,
+.plus,
 .heart,
+.pod,
 .asap {
   fill: transparent;
   stroke: currentColor;
@@ -44,7 +47,7 @@
 .play,
 .thumb,
 .aeropress,
-.cafatiere,
+.cafetiere,
 .wholebean,
 .espresso,
 .stovetop,

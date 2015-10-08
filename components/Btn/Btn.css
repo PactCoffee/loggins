@@ -25,6 +25,12 @@
   pointer-events: none;
 }
 
+.root.opens.active:after {
+  content: '\2715';
+  display: inline;
+  margin-left: 0.5em;
+}
+
 /* Types */
 .primary {
   background: var(--color-primary);
@@ -46,29 +52,14 @@
   background: color(var(--color-secondary) l(- 5%));
 }
 
-.warning {
+.danger {
   background: var(--color-error);
 }
-.warning:hover {
+.danger:hover {
   background: color(var(--color-error) l(+ 5%));
 }
-.warning:active {
+.danger:active {
   background: color(var(--color-error) l(- 5%));
-}
-
-.clear {
-  background: transparent;
-  color: var(--color-brown-dark);
-  font-weight: normal;
-  font-style: italic;
-}
-.clear:hover {
-  background: transparent;
-  color: var(--color-brown);
-}
-.clear:active {
-  background: transparent;
-  color: var(--color-black);
 }
 
 .white {
@@ -87,7 +78,7 @@
   font-family: var(--font-brandon);
   text-transform: uppercase;
   font-weight: 600;
-  padding: 1em 1.5em;
+  padding: 1em;
 }
 
 .hollow {
@@ -133,11 +124,15 @@
 }
 .clean:hover {
   background: transparent;
-  color: color(var(--color-text) l(- 10%));
+  color: color(var(--color-text) w(+ 50%));
 }
 .clean:active {
   background: transparent;
   color: color(var(--color-text) a(70%));
+}
+.clean.active {
+  background-color: var(--color-primary);
+  color: var(--color-white);
 }
 
 .primary.clean {
@@ -148,6 +143,16 @@
 }
 .primary.clean:active {
   color: color(var(--color-primary) a(70%));
+}
+
+.danger.clean {
+  color: var(--color-error);
+}
+.danger.clean:hover {
+  color: color(var(--color-error) l(- 10%));
+}
+.danger.clean:active {
+  color: color(var(--color-error) a(70%));
 }
 
 .white.hollow {

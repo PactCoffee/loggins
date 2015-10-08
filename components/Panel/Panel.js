@@ -10,25 +10,28 @@ const types = {
 
 export default class Panel extends Component {
   render() {
+    const {squared, zeroPadding, type, style, children, className} = this.props;
     const classNames = [
       styles.root,
-      this.props.squared ? styles.squared : null,
-      types[this.props.type],
-      this.props.className,
+      squared ? styles.squared : null,
+      zeroPadding ? styles.zeroPadding : null,
+      types[type],
+      className,
     ].join(' ');
 
     return (
-      <div style={this.props.style} className={classNames}>
-        {this.props.children}
+      <div style={style} className={classNames}>
+        {children}
       </div>
     );
   }
 }
 
 Panel.propTypes = {
-  children: PropTypes.any,
-  style: PropTypes.any,
-  type: PropTypes.string,
-  squared: PropTypes.bool,
   className: PropTypes.string,
+  children: PropTypes.any,
+  squared: PropTypes.bool,
+  zeroPadding: PropTypes.bool,
+  type: PropTypes.string,
+  style: PropTypes.any,
 };

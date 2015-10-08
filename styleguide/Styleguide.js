@@ -1,11 +1,10 @@
 import React, {PropTypes} from 'react';
-import RTG from 'react/lib/ReactCSSTransitionGroup';
+import {TransitionMotion, spring} from 'react-motion';
 
 import Logo from 'components/Logo/Logo';
 import Nav from './components/Nav';
-import Home from './sections/Home';
 
-import styles from './styleguide.css';
+import css from './styleguide.css';
 
 const ROUTES = [
   'home',
@@ -15,7 +14,6 @@ const ROUTES = [
   'blocks',
   'buttons',
   'forms',
-  'overlays',
   'panels',
   'icons',
 ];
@@ -23,7 +21,16 @@ const ROUTES = [
 let oldRouteName = '';
 let newRouteName = '';
 
+const physics = [160, 18];
+
 export default class Styleguide extends React.Component {
+  constructor(props) {
+    super(props);
+    this.getStyles = this.getStyles.bind(this);
+    this.willEnter = this.willEnter.bind(this);
+    this.willLeave = this.willLeave.bind(this);
+  }
+
   componentWillMount() {
     if (this.props.children) {
       oldRouteName = this.props.children.props.location.pathname;
@@ -46,7 +53,6 @@ export default class Styleguide extends React.Component {
       newRouteName = 'home';
       return;
     }
-
     const _oldRouteName = this.props.children.props.location.pathname;
     const _newRouteName = nextProps.children.props.location.pathname;
     if (_oldRouteName !== _newRouteName) {
@@ -54,21 +60,44 @@ export default class Styleguide extends React.Component {
       newRouteName = _newRouteName;
     }
   }
-  render() {
+
+  getStyles() {
+    const {children} = this.props;
+    return {
+      [children.type.displayName]: {
+        opacity: spring(1),
+        x: spring(0, physics),
+        child: children,
+      },
+    };
+  }
+
+  willEnter() {
+    const {children} = this.props;
     const oldIndex = ROUTES.indexOf(oldRouteName.replace('/', ''));
     const newIndex = ROUTES.indexOf(newRouteName.replace('/', ''));
+    return {
+      opacity: spring(0),
+      x: spring(newIndex > oldIndex ? 120 : -120, physics),
+      child: children,
+    };
+  }
 
-    let transitionName;
-    if (newIndex > oldIndex) {
-      transitionName = 'transLeft';
-    } else {
-      transitionName = 'transRight';
-    }
+  willLeave(key, config) {
+    const oldIndex = ROUTES.indexOf(oldRouteName.replace('/', ''));
+    const newIndex = ROUTES.indexOf(newRouteName.replace('/', ''));
+    return {
+      opacity: spring(0),
+      x: spring(newIndex > oldIndex ? -120 : 120, physics),
+      child: config.child,
+    };
+  }
 
+  render() {
     return (
-      <div className={styles.root}>
-        <div className={styles.heading}>
-            <Logo className={styles.logo} size="small" type="horizontal"/>
+      <div>
+        <div className={css.heading}>
+            <Logo className={css.logo} size="small" type="horizontal"/>
             <h1>
               <a href="https://github.com/PactCoffee/loggins">Loggins</a>
             </h1>
@@ -76,18 +105,26 @@ export default class Styleguide extends React.Component {
 
         <Nav/>
 
-        <div className={styles.container}>
-          <RTG className={styles.animator} transitionName={transitionName}>
-            {this.props.children ?
-              <div key={this.props.children.props.location.pathname}>
-                {this.props.children}
-              </div>
-             :
-              <div key="home">
-                <Home/>
+        <div className={css.container}>
+          <TransitionMotion styles={this.getStyles()}
+                            willEnter={this.willEnter}
+                            willLeave={this.willLeave}>
+            {interpolatedcss =>
+              <div className={css.animator}>
+                {Object.keys(interpolatedcss).map((key, i) => {
+                  const {child, opacity, x} = interpolatedcss[key];
+                  return (
+                    <div key={i} style={{
+                      opacity,
+                      transform: `translate3d(${x}%, 0,0)`,
+                    }}>
+                      {child}
+                    </div>
+                  );
+                })}
               </div>
             }
-          </RTG>
+          </TransitionMotion>
         </div>
       </div>
     );

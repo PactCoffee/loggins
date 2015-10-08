@@ -12,13 +12,12 @@ import RadioGroup from 'components/RadioGroup/RadioGroup';
 import FormInput from 'components/FormInput/FormInput';
 import Progress from 'components/Progress/Progress';
 import Checkbox from 'components/Checkbox/Checkbox';
+import FieldGroup from 'components/Form/FieldGroup';
 import Toggle from 'components/Toggle/Toggle';
 import Slider from 'components/Slider/Slider';
-import Icon from 'components/Icon/Icon';
-
 import * as m from 'globals/modifiers.css';
-import styles from '../styleguide.css';
-
+import Field from 'components/Form/Field';
+import Btn from 'components/Btn/Btn';
 
 export default class FormSection extends Component {
 
@@ -83,8 +82,8 @@ export default class FormSection extends Component {
     this.setState({checkbox: val});
   }
 
-  handleToggle(val) {
-    this.setState({toggleVal: val});
+  handleToggle() {
+    this.setState({toggleVal: !this.state.toggleVal});
   }
 
   handleRadio(val) {
@@ -107,6 +106,32 @@ export default class FormSection extends Component {
     return (
       <Section name="Forms" href="https://github.com/PactCoffee/loggins/blob/master/styleguide/sections/Forms.js">
 
+        <h3>FieldGroup &amp; Field</h3>
+        <FieldGroup title="Example field group">
+          <Field>
+            <FormInput borderless type="text" onChange={this.handleTextChange} value={this.state.text} label="First name" placeholder="e.g. Bat"/>
+          </Field>
+          <Field>
+            <FormInput borderless type="text" onChange={this.handleTextChange} value={this.state.text} label="Second name" placeholder="e.g. Man"/>
+          </Field>
+          <Field>
+            <p>Here's some text in the field</p>
+          </Field>
+          <Field>
+            <Btn variant="clean" type="primary" fullWidth>And a btn</Btn>
+          </Field>
+          <Field>
+            <span className={[m.dt, m.ptm, m.pbs].join(' ')}>
+              <span className={[m.dtc, m.w100].join(' ')}>
+                Fancy a really very long labeled toggle?
+              </span>
+              <span className={[m.dtc, m.alignr, m.w1, m.h100, m.vam].join(' ')}>
+              <Toggle value={this.state.toggleVal} onChange={this.handleToggle}/>
+              </span>
+            </span>
+          </Field>
+        </FieldGroup>
+
         <h3>Toggle</h3>
         <Toggle value={this.state.toggleVal} onChange={this.handleToggle}/>
         <br/>
@@ -115,7 +140,7 @@ export default class FormSection extends Component {
         <h3>Radio buttons</h3>
         <RadioGroup name="example"
                     onChange={this.handleRadio}
-                    selectedValue={this.state.radioVal}>
+                    value={this.state.radioVal}>
           {radio => (
             <span>
               {radio({value: 'Apple'})}
@@ -128,52 +153,17 @@ export default class FormSection extends Component {
         </RadioGroup>
         <p>You selected {this.state.radioVal}</p>
 
-        <h3>Tab buttons</h3>
-        <p>
-          Exactly the same component as RadioGroup, but with in a tab style. Unopinionated about border-radius and width.
-        </p>
+        <h3>Giant radio buttons</h3>
         <RadioGroup name="example"
-                    tabbed
+                    giant
                     onChange={this.handleRadio}
-                    selectedValue={this.state.radioVal}>
+                    value={this.state.radioVal}>
           {radio => (
             <span>
-              {radio({
-                value: 'Loves',
-                className: styles.tab,
-                children: (
-                  <span className={[m.db, m.alignc].join(' ')}>
-                    <span className={[m.db, m.alignc, m.large].join(' ')}>
-                      <Icon name="heart"/>
-                    </span>
-                    Love
-                  </span>
-                ),
-              })}
-              {radio({
-                value: 'Pact',
-                className: styles.tab,
-                children: (
-                  <span className={[m.db, m.alignc].join(' ')}>
-                    <span className={[m.db, m.alignc, m.large].join(' ')}>
-                      <Icon name="stamp"/>
-                    </span>
-                    Fresh
-                  </span>
-                ),
-              })}
-              {radio({
-                value: 'Coffee',
-                className: styles.tab,
-                children: (
-                  <span className={[m.db, m.alignc].join(' ')}>
-                    <span className={[m.db, m.alignc, m.large].join(' ')}>
-                      <Icon name="coffee"/>
-                    </span>
-                    Coffee
-                  </span>
-                ),
-              })}
+              <span>
+                {radio({value: 'Normal', icon: 'asap'})}
+                {radio({value: 'Decaf', icon: 'cross'})}
+              </span>
             </span>
           )}
         </RadioGroup>
@@ -216,10 +206,12 @@ export default class FormSection extends Component {
         <h3>FormInput</h3>
         <p>Just a cute little animating input. Gracefully handles having a value passed in as well:</p>
         <FormInput type="text" onChange={this.handleTextChange} value={this.state.text} error={this.state.error} label="First name"/>
-        &nbsp;
         <FormInput type="text" onChange={this.handleTextChange} value={this.state.lolText} error={this.state.error} label="Upcase &amp; sorted"/>
         <p>Will also show an error if it's passed in:</p>
         <FormInput type="text" onChange={this.handleTextChange} value={this.state.text} error="Something bad happened" label="Error example"/>
+
+        Has second variant where the label and placeholder are separate:
+        <FormInput placeholder="e.g. Home" type="text" onChange={this.handleTextChange} value={this.state.text} error={this.state.error} label="Name"/>
 
         <h3>Progress</h3>
         <p><code>hueChange</code> makes the bar change colour according to it's value:</p>

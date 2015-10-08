@@ -19,7 +19,7 @@ export default class BtnSection extends Component {
         <h3>Types</h3>
         <Btn className={[m.mbs, m.mrs].join(' ')} type="primary">Primary</Btn>
         <Btn className={[m.mbs, m.mrs].join(' ')} type="secondary">Secondary</Btn>
-        <Btn className={[m.mbs, m.mrs].join(' ')} type="warning">Warning</Btn>
+        <Btn className={[m.mbs, m.mrs].join(' ')} type="danger">Danger</Btn>
 
         <h3>Variants</h3>
 
