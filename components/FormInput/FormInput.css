@@ -89,7 +89,6 @@
   vertical-align: middle;
   display: table-cell;
   padding: 0.5em;
-  padding-left: 0;
   width: 5em;
 }
 .labelInside input {
@@ -102,4 +101,7 @@
 /* Borderless */
 .borderless {
   box-shadow: none;
+}
+.borderless .label {
+  padding-left: 0;
 }
