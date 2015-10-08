@@ -14,7 +14,6 @@ const ROUTES = [
   'blocks',
   'buttons',
   'forms',
-  'overlays',
   'panels',
   'icons',
 ];
