@@ -96,7 +96,7 @@ export default class Styleguide extends React.Component {
 
   render() {
     return (
-      <div className={css.root}>
+      <div>
         <div className={css.heading}>
             <Logo className={css.logo} size="small" type="horizontal"/>
             <h1>
