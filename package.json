@@ -1,6 +1,6 @@
 {
   "name": "@pactcoffee/loggins",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "Pact's component library",
   "main": "components/index.js",
   "license": "MIT",
@@ -21,7 +21,6 @@
   },
   "dependencies": {
     "@pactcoffee/fontpack": "^2.0.0",
-    "history": "^1.12.3",
     "lodash": "^3.10.0",
     "moment": "^2.10.3",
     "react-day-picker": "^1.0.1",
@@ -46,6 +45,7 @@
     "eslint-loader": "^0.14.1",
     "eslint-plugin-mocha": "^0.5.1",
     "eslint-plugin-react": "^3.3.0",
+    "history": "^1.12.3",
     "express": "^4.13.1",
     "extract-text-webpack-plugin": "^0.8.1",
     "file-loader": "^0.8.4",

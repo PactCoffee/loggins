@@ -79,51 +79,15 @@ export default class HoverCard extends Component {
     const target = findDOMNode(this.props.anchor);
     const container = findDOMNode(this.props.container) || ownerDocument(this).body;
 
-
-    // Starting with props.placement, try out each placement to find one
-    // where this component will fit on the page best
-    let idealPosition;
-    let idealPlacement;
-    const placements = ['top', 'left', 'bottom', 'right']
-      .sort(function sort(a, b) {
-        if (b === placement) return 1;
-        return 0;
-      });
-
-    for (let i = 0; i < placements.length; i++) {
-      idealPlacement = placements[i];
-      idealPosition = calcOverlayPosition(
-          idealPlacement,
+    this.setState({
+      placement,
+      ...calcOverlayPosition(
+          placement,
           hoverCard,
           target,
           container,
           this.props.anchorPadding
-        );
-
-      const {positionLeft, positionTop} = idealPosition;
-      const positionBottom = positionTop + hoverCard.offsetHeight;
-      const positionRight = positionLeft + hoverCard.offsetWidth;
-
-      if (
-          // Not too far left
-          positionLeft > -1 &&
-
-          // Not too far up
-          positionTop > -1 &&
-
-          // Not too far down
-          positionBottom <= container.offsetHeight &&
-
-          // Not too far right
-          positionRight <= container.offsetWidth
-          ) {
-        break;
-      }
-    }
-
-    this.setState({
-      placement: idealPlacement,
-      ...idealPosition,
+        ),
     });
   }
 

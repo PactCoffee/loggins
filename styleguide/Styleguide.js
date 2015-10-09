@@ -14,6 +14,7 @@ const ROUTES = [
   'blocks',
   'buttons',
   'forms',
+  'overlays',
   'panels',
   'icons',
 ];
@@ -95,7 +96,7 @@ export default class Styleguide extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className={css.root}>
         <div className={css.heading}>
             <Logo className={css.logo} size="small" type="horizontal"/>
             <h1>
