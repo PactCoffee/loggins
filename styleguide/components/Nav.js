@@ -44,6 +44,7 @@ export default class extends Component {
           <li><Link activeClassName="active" to="/grids">Grids</Link></li>
           <li><Link activeClassName="active" to="/blocks">Blocks</Link></li>
           <li><Link activeClassName="active" to="/buttons">Buttons</Link></li>
+          <li><Link activeClassName="active" to="/overlays">Overlays</Link></li>
           <li><Link activeClassName="active" to="/forms">Forms</Link></li>
           <li><Link activeClassName="active" to="/panels">Panels</Link></li>
           <li><Link activeClassName="active" to="/icons">Icons</Link></li>
