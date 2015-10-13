@@ -28,6 +28,7 @@ export default {
 
   cog: cleanupSvg(require('./icons/cog.svg')),
   pin: cleanupSvg(require('./icons/pin.svg')),
+  card: cleanupSvg(require('./icons/card.svg')),
   play: cleanupSvg(require('./icons/play.svg')),
   bean: cleanupSvg(require('./icons/bean.svg')),
   tick: cleanupSvg(require('./icons/tick.svg')),
