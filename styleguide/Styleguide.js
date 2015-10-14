@@ -13,8 +13,8 @@ const ROUTES = [
   'grids',
   'blocks',
   'buttons',
-  'forms',
   'overlays',
+  'forms',
   'panels',
   'icons',
 ];
