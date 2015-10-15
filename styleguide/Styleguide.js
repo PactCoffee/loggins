@@ -1,4 +1,5 @@
 import React, {PropTypes} from 'react';
+import {uniqueId} from 'lodash';
 import {TransitionMotion, spring} from 'react-motion';
 
 import Logo from 'components/Logo/Logo';
@@ -13,8 +14,8 @@ const ROUTES = [
   'grids',
   'blocks',
   'buttons',
-  'forms',
   'overlays',
+  'forms',
   'panels',
   'icons',
 ];
@@ -65,7 +66,7 @@ export default class Styleguide extends React.Component {
   getStyles() {
     const {children} = this.props;
     return {
-      [children.type.displayName]: {
+      [uniqueId('animator')]: {
         opacity: spring(1),
         x: spring(0, physics),
         child: children,
