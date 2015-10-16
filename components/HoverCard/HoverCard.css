@@ -119,10 +119,6 @@
   padding: 0.5em;
 }
 
-.datepicker {
-  box-shadow: none;
-  margin: 0;
-}
 .datepicker.top    .caret       {border-top-color:    transparent;}
 .datepicker.left   .caret       {border-left-color:   transparent;}
 .datepicker.right  .caret       {border-right-color:  transparent;}
