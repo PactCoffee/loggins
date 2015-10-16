@@ -43,19 +43,20 @@ export default class DatePickerDropdown extends Component {
       ref: 'trigger',
       active: this.state.show,
     });
-
+    const {value, container} = this.props;
     return (
       <span>
         {this.state.show ?
           <HoverCard variant="datepicker"
                      anchor={this.refs.trigger}
+                     container={container}
                      anchorPadding={0}
                      placement="bottom"
                      ref="hovercard"
                      onRequestClose={this.handleCloseRequest}
                      escListen
                      caret={false}>
-            <DatePicker value={this.props.value}
+            <DatePicker value={value}
                         onChange={this.handleDateChange}/>
           </HoverCard>
           : null
@@ -69,6 +70,7 @@ export default class DatePickerDropdown extends Component {
 
 DatePickerDropdown.propTypes = {
   trigger: PropTypes.element.isRequired,
+  container: PropTypes.node,
   onChange: PropTypes.func.isRequired,
   value: PropTypes.oneOfType([
     PropTypes.string,
