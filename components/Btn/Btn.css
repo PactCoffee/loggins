@@ -25,12 +25,6 @@
   pointer-events: none;
 }
 
-.root.opens.active:after {
-  content: '\2715';
-  display: inline;
-  margin-left: 0.5em;
-}
-
 /* Types */
 .primary {
   background: var(--color-primary);
