@@ -8,7 +8,10 @@
     "NPM_TOKEN":{
       "required":true
     },
-    "STAGING":"true"
+    "NPM_CONFIG_PRODUCTION": {
+      "required": true
+    },
+    "STAGING":"true",
   },
   "addons":[]
 }

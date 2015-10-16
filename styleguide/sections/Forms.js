@@ -4,6 +4,7 @@ import React, {Component} from 'react';
 
 import Section from '../components/Section';
 
+import MaskedFormInput from 'components/MaskedFormInput/MaskedFormInput';
 import EmailMultiInput from 'components/EmailMultiInput/EmailMultiInput';
 import SelectableInput from 'components/SelectableInput/SelectableInput';
 import LikeDislike from 'components/LikeDislike/LikeDislike';
@@ -27,6 +28,9 @@ export default class FormSection extends Component {
     this.handleProgressChange = this.handleProgressChange.bind(this);
     this.handleEmailChange = this.handleEmailChange.bind(this);
     this.handleTextChange = this.handleTextChange.bind(this);
+    this.handleCreditCard = this.handleCreditCard.bind(this);
+    this.handleExpiryDate = this.handleExpiryDate.bind(this);
+    this.handleCVC = this.handleCVC.bind(this);
     this.handleCheckbox = this.handleCheckbox.bind(this);
     this.handleToggle = this.handleToggle.bind(this);
     this.likeChanged = this.likeChanged.bind(this);
@@ -46,6 +50,9 @@ export default class FormSection extends Component {
       progressVal: 50,
       date: new Date().getTime(),
       slideVal: 50,
+      creditCard: '',
+      expiryDate: '',
+      cvc: '',
     };
   }
 
@@ -100,6 +107,27 @@ export default class FormSection extends Component {
 
   handleSlide(slideVal) {
     this.setState({slideVal});
+  }
+
+  handleCreditCard(e) {
+    const {value} = e.target;
+    this.setState({
+      creditCard: value,
+    });
+  }
+
+  handleExpiryDate(e) {
+    const {value} = e.target;
+    this.setState({
+      expiryDate: value,
+    });
+  }
+
+  handleCVC(e) {
+    const {value} = e.target;
+    this.setState({
+      cvc: value,
+    });
   }
 
   render() {
@@ -212,6 +240,32 @@ export default class FormSection extends Component {
 
         Has second variant where the label and placeholder are separate:
         <FormInput placeholder="e.g. Home" type="text" onChange={this.handleTextChange} value={this.state.text} error={this.state.error} label="Name"/>
+
+        <h3>FormInput... Zorro Style (Masked)</h3>
+        <MaskedFormInput
+          pattern="1111 1111 1111 1111"
+          placeholder="____ ____ ____ ____"
+          type="text"
+          onChange={this.handleCreditCard}
+          value={this.state.creditCard}
+          label="Credit Card" />
+        <br />
+        <MaskedFormInput
+          pattern="11 / 1111"
+          placeholder="MM / YYYY"
+          type="text"
+          onChange={this.handleExpiryDate}
+          value={this.state.expiryDate}
+          label="Expiry" />
+        <br />
+        <MaskedFormInput
+          pattern="111"
+          placeholder="123"
+          type="text"
+          onChange={this.handleCVC}
+          value={this.state.cvc}
+          label="Security code" />
+
 
         <h3>Progress</h3>
         <p><code>hueChange</code> makes the bar change colour according to it's value:</p>
