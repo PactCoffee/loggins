@@ -14,7 +14,6 @@ export default class Btn extends Component {
       onClick,
       children,
       active,
-      opens,
     } = this.props;
 
     const classNames = [
@@ -24,7 +23,6 @@ export default class Btn extends Component {
       variant ? styles[variant] : null,
       fullWidth ? styles.fullWidth : null,
       active ? styles.active : null,
-      opens ? styles.opens : null,
       className,
     ].join(' ');
 
@@ -56,5 +54,4 @@ Btn.propTypes = {
   fullWidth: PropTypes.bool,
   className: PropTypes.string,
   active: PropTypes.bool,
-  opens: PropTypes.bool,
 };

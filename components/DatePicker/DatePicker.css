@@ -9,11 +9,6 @@
   padding: 0.75em 0;
   display: block;
 }
-@media screen and (min-width: 25em) {
-  :global .DayPicker {
-    padding: 0.75em;
-  }
-}
 
 :global .DayPicker-Month {
   position: relative;

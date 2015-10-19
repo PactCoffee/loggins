@@ -101,6 +101,7 @@ export default class HoverCard extends Component {
     } = this.state;
 
     const {
+      className,
       variant,
       caret,
     } = this.props;
@@ -109,6 +110,7 @@ export default class HoverCard extends Component {
       s.root,
       s[variant],
       s[placement],
+      className,
     ].join(' ');
 
     const outerStyle = {
