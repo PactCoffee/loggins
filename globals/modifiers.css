@@ -15,6 +15,7 @@
   --radius-medium: 8px;
 
   --shadow: 1px 1px 3px rgba(0,0,0,0.15);
+  --shadow-heavy: 0px 2px 6px rgba(0,0,0,0.46);
 }
 
 /* Display */
