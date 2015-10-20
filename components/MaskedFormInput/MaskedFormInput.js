@@ -84,7 +84,6 @@ export default class MaskedFormInput extends Component {
 }
 
 MaskedFormInput.propTypes = {
-
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired,

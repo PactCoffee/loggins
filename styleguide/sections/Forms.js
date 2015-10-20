@@ -181,21 +181,6 @@ export default class FormSection extends Component {
         </RadioGroup>
         <p>You selected {this.state.radioVal}</p>
 
-        <h3>Giant radio buttons</h3>
-        <RadioGroup name="example"
-                    giant
-                    onChange={this.handleRadio}
-                    value={this.state.radioVal}>
-          {radio => (
-            <span>
-              <span>
-                {radio({value: 'Normal', icon: 'asap'})}
-                {radio({value: 'Decaf', icon: 'cross'})}
-              </span>
-            </span>
-          )}
-        </RadioGroup>
-
         <h3>Checkbox</h3>
         <p><Checkbox label="Checkbox" onChange={this.handleCheckbox}/> value is {this.state.checkbox ? 'checked' : 'not checked'}.</p>
 
