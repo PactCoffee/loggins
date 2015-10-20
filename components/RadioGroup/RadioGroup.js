@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react';
 
 import Radio from './Radio';
-import s from './Radio.css';
+import css from './Radio.css';
 
 /*
  * Example usage:
@@ -27,16 +27,15 @@ export default class RadioGroup {
       className,
       onChange,
       children,
-      giant,
       name,
     } = this.props;
     return (
-      <div className={[giant ? s.giant : s.group, className].join(' ')}>
+      <div className={[css.group, className].join(' ')}>
         {children && children(props =>
-          <Radio name={name}
-                 selectedValue={value}
-                 giant={giant}
-                 onChange={onChange} {...props} />
+          <Radio
+            name={name}
+            selectedValue={value}
+            onChange={onChange} {...props} />
         )}
       </div>
     );

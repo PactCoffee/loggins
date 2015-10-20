@@ -5,12 +5,12 @@
 .group {
   position: relative;
 }
-.child {
+.radio {
   position: relative;
 }
 
 /* Radio */
-.radio {
+.radio input {
   opacity: 0;
   position: absolute;
   top: 0.15em;
@@ -19,7 +19,7 @@
   height: var(--baseRadioSize);
 }
 
-.radioLabel {
+.radio label {
   cursor: pointer;
   user-select: none;
   position: relative;
@@ -28,15 +28,15 @@
   transition: all 200ms var(--easeinoutback);
   padding-left: calc(var(--baseRadioSize) + 0.5em);
 }
-.radioLabel:hover {
+.radio label:hover {
   color: var(--color-primary);
 }
-.radioLabel:hover:before {
+.radio label:hover:before {
   border-color: var(--color-primary);
 }
 
 /* Outer ring */
-.radioLabel:before {
+.radio label:before {
   position: absolute;
   left: 0;
   top: 0.15em;
@@ -52,7 +52,7 @@
 }
 
 /* Inner circle */
-.radioLabel:after {
+.radio label:after {
   content: '';
   position: absolute;
   left: 0;
@@ -68,58 +68,10 @@
   opacity: 0;
 }
 
-.radio:checked + .radioLabel:before {
+.radio input:checked + label:before {
   border-color: var(--color-primary);
 }
-.radio:checked + .radioLabel:after {
+.radio input:checked + label:after {
   transform: scale(0.75);
   opacity: 1;
-}
-
-/* Giant variant */
-.giant {
-  display: table;
-  width: 100%;
-  text-align: center;
-}
-.giant .radio {
-  display: none;
-}
-.giant .child {
-  display: table-cell;
-  text-align: center;
-  margin: 0 0.5em;
-  width: 1%;
-}
-.giant .radioLabel {
-  color: var(--color-grey-light);
-  transition: none;
-  display: block;
-  padding: 0;
-}
-.giant .radioLabel:before,
-.giant .radioLabel:after {
-  display: none;
-}
-.giant .iconOuter {
-  display: block;
-}
-.giant .iconInner {
-  box-shadow: inset 0 0 0 2px var(--color-grey-light);
-  margin: 0 auto 0.5em;
-  border-radius: 50%;
-  padding: 0.75em;
-  display: inline-block;
-}
-.giant .icon {
-  font-size: 3em;
-}
-
-.giant .radio:checked + .radioLabel {
-  color: var(--color-primary);
-}
-.giant .radio:checked + .radioLabel .iconInner {
-  background: var(--color-primary);
-  color: var(--color-white);
-  box-shadow: none;
 }
