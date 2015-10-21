@@ -42,18 +42,27 @@ Any changes you make to any CSS or JS file will live-reload inside the browser y
 
 **Please note**: If you want to run the styleguide locally, make sure to move the loggins folder outside of any `node_modules` folder you might have it inside. For some reason the hot-reloading doesnt't work if that's the case.
 
-Running tests
--------------
 
-`npm test`
+Publishing a new version
+------------------------
+
+1. Pull down latest master. Then on master,
+1. `npm version [major|minor|patch]` (see below for which one to use)
+1. npm will automatically check to make sure the build succeeds and all tests pass
+1. `git push origin master && git push origin master --tags`
+1. `npm publish`
+
+When to use what:
+
+- `major`: A change where a consumer of this library will have to **change their code** to work with this new version
+- `minor`: Adding a new feature, or making a major internal change **without outward-facing consequences**
+- `patch`: Fixing a small bug, typo, or other small change
+
+We need to write a bash script to automate this, but the above will work for now.
+
+**Do not create tags as part of pull requests**. Adding new features to master is different to publishing a version to npm.
 
 
-Running in production
----------------------------------
-
-```bash
-$ npm start
-```
 
 Deployment
 ----------
