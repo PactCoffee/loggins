@@ -30,9 +30,7 @@ export default class Radio {
                value={value}
                onChange={() => onChange(this.props.value)} />
         <label htmlFor={id}>
-          {children ? (
-            {children}
-          ) : {value}}
+          {children ? children : value}
         </label>
       </span>
     );
