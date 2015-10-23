@@ -68,6 +68,10 @@
   opacity: 0;
 }
 
+.radio input:focus + label:before {
+  box-shadow: 0 0 3px 1px var(--color-blue);
+}
+
 .radio input:checked + label:before {
   border-color: var(--color-primary);
 }
