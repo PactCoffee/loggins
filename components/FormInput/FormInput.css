@@ -71,6 +71,7 @@
   top: -0.25em;
   left: 0;
 }
+.containerFocus.labelOutside .label,
 .containerActive.labelOutside .label {
   transform: scale(0.8) translate(-0.75em, -2.7em);
   color: var(--color-grey-light);
