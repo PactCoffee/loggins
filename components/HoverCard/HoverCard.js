@@ -33,7 +33,6 @@ export default class HoverCard extends Component {
     this._maybeUpdatePosition();
     window.addEventListener('keydown', this.keyListener);
     window.addEventListener('click', this.clickListener);
-    window.addEventListener('touchend', this.clickListener);
   }
 
   componentWillReceiveProps() {
@@ -47,7 +46,6 @@ export default class HoverCard extends Component {
   componentWillUnmount() {
     window.removeEventListener('keydown', this.keyListener);
     window.removeEventListener('click', this.clickListener);
-    window.removeEventListener('touchend', this.clickListener);
   }
 
   clickListener(e) {
