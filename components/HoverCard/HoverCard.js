@@ -33,7 +33,6 @@ export default class HoverCard extends Component {
     this._maybeUpdatePosition();
     window.addEventListener('keydown', this.keyListener);
     window.addEventListener('click', this.clickListener);
-    window.addEventListener('touchend', this.clickListener);
   }
 
   componentWillReceiveProps() {
@@ -47,11 +46,13 @@ export default class HoverCard extends Component {
   componentWillUnmount() {
     window.removeEventListener('keydown', this.keyListener);
     window.removeEventListener('click', this.clickListener);
-    window.removeEventListener('touchend', this.clickListener);
   }
 
   clickListener(e) {
-    if (!findDOMNode(this.refs.self).contains(e.target)) {
+    const {outsideClickClose} = this.props;
+    const clickedOutside = !findDOMNode(this.refs.self).contains(e.target);
+
+    if (outsideClickClose && clickedOutside) {
       this.props.onRequestClose(e);
     }
   }
@@ -163,17 +164,20 @@ HoverCard.propTypes = {
   // Callback to call when clicking outside of this HoverCard
   onRequestClose: PropTypes.func,
 
+  // Call `onRequestClose` when clicking outside of the hovercard
+  outsideClickClose: PropTypes.bool,
+
   // Call onRequestClose when the user hits escape
   escListen: PropTypes.bool,
 
   children: PropTypes.any.isRequired,
-
   className: PropTypes.string,
 };
 
 HoverCard.defaultProps = {
   anchorPadding: 10,
   onRequestClose: () => {},
+  outsideClickClose: true,
   escListen: false,
   caret: true,
 };
