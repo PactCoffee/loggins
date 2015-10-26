@@ -24,7 +24,6 @@
   user-select: none;
   position: relative;
   display: inline-block;
-  text-transform: capitalize;
   transition: all 200ms var(--easeinoutback);
   padding-left: calc(var(--baseRadioSize) + 0.5em);
 }
