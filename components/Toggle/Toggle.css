@@ -68,6 +68,9 @@
   cursor: pointer;
   opacity: 0;
 }
+.input:focus + .circle {
+  box-shadow: 0 0 3px 3px var(--color-blue);
+}
 
 .label.isOn {
   background: var(--color-green);

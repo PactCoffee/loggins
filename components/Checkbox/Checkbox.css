@@ -50,6 +50,10 @@
   background: var(--color-white);
 }
 
+.input:focus + .label:before {
+  box-shadow: 0 0 3px 1px var(--color-blue);
+}
+
 /* The tick icon*/
 .tick {
   position: absolute;
