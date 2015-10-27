@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 
+import BtnContainer from 'components/BtnContainer/BtnContainer';
 import Section from '../components/Section';
-import Btn from 'components/Btn/Btn';
-import Icon from 'components/Icon/Icon';
 import * as m from 'globals/modifiers.css';
+import Icon from 'components/Icon/Icon';
+import Btn from 'components/Btn/Btn';
 
 export default class BtnSection extends Component {
   constructor(props) {
@@ -60,6 +61,13 @@ export default class BtnSection extends Component {
         </Btn>
 
         <Btn fullWidth>Full width</Btn>
+
+        <h3>Button container... do what you want</h3>
+
+        <BtnContainer>
+          <h4>Button container</h4>
+          <p>Will simply render children and impose no style by default</p>
+        </BtnContainer>
 
       </Section>
     );
