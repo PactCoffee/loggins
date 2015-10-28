@@ -33,6 +33,9 @@
   --color-pact:         rgb(240, 168, 75);
 
   --color-primary:   var(--color-green);
+  --color-selection: var(--color-blue-harsh);
+  --color-action:    var(--color-steel);
+
   --color-secondary: var(--color-orange);
   --color-error:     var(--color-red);
   --color-alert:     var(--color-orange);

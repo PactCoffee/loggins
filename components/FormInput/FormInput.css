@@ -25,7 +25,7 @@
 }
 
 .input:focus {
-  border-color: var(--color-primary);
+  border-color: var(--color-selection);
   outline: 0;
 }
 .message {
@@ -46,7 +46,7 @@
 .containerActive {}
 
 .containerFocus {
-  box-shadow: inset 0 0 0 1px var(--color-primary), 0 0 2px color(var(--color-primary) l(70%));
+  box-shadow: inset 0 0 0 1px var(--color-selection), 0 0 2px color(var(--color-selection) l(70%));
 }
 
 .containerError {
@@ -107,7 +107,10 @@
   border: 1px solid transparent;
 }
 .borderless.containerFocus.labelInside {
-  border-bottom-color: var(--color-green);
+  border-bottom-color: var(--color-selection);
+}
+.borderless.containerFocus.labelInside .label {
+  color: var(--color-selection);
 }
 .borderless .label {
   padding-left: 0;

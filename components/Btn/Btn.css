@@ -114,15 +114,15 @@
 .clean {
   background: transparent;
   border-color: transparent;
-  color: var(--color-text);
+  color: var(--color-action);
 }
 .clean:hover {
   background: transparent;
-  color: color(var(--color-text) w(+ 50%));
+  color: color(var(--color-action) w(+ 50%));
 }
 .clean:active {
   background: transparent;
-  color: color(var(--color-text) a(70%));
+  color: color(var(--color-action) a(70%));
 }
 .clean.active {
   background-color: var(--color-primary);
@@ -164,4 +164,11 @@
 .fullWidth {
   width: 100%;
   text-align: center;
+}
+
+.link {
+  composes: root clean;
+}
+.primaryLink {
+  composes: root clean primary;
 }
