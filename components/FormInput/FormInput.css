@@ -78,7 +78,7 @@
   border-radius: 0 0 4px 4px;
 }
 .containerFocus.labelOutside .label {
-  color: var(--color-primary);
+  color: var(--color-blue-darker);
 }
 
 /* Label inside variant */
@@ -87,7 +87,7 @@
   border-radius: 0;
 }
 .labelInside .label {
-  color: var(--color-primary);
+  color: var(--color-blue-darker);
   vertical-align: middle;
   display: table-cell;
   padding: 0.5em;
