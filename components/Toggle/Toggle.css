@@ -9,14 +9,14 @@
   display: inline-block;
   content: 'No';
   text-transform: uppercase;
-  color: var(--color-white);
   font-weight: bold;
   font-size: 0.65em;
-  background: var(--color-red);
+  background: var(--color-blue-muted);
   height: 1.75rem;
   width: 4rem;
   line-height: 1.9rem;
   border-radius: 500rem;
+  box-shadow: 0 0 0 1px var(--color-white);
   transition: all 200ms var(--easeoutcubic);
   overflow: hidden;
 }
@@ -38,7 +38,7 @@
   right: 0.6rem;
   content: 'No';
   text-transform: uppercase;
-  color: var(--color-white);
+  color: var(--color-action);
   line-height: 1.9rem;
   transition: all 200ms var(--easeoutcubic);
 }
@@ -55,6 +55,7 @@
   transform: scale(0.85);
   cursor: pointer;
   transition: all 200ms var(--easeoutcubic);
+  box-shadow: 0 0 2px var(--color-steel);
 }
 
 .input {
@@ -64,16 +65,15 @@
   top: 0;
   height: 1.75rem;
   width: 4rem;
-  background: green;
   cursor: pointer;
   opacity: 0;
 }
 .input:focus + .circle {
-  box-shadow: 0 0 3px 3px var(--color-blue);
+  box-shadow: 0 0 3px 3px var(--color-blue-harsh);
 }
 
 .label.isOn {
-  background: var(--color-green);
+  background: var(--color-action);
 }
 .label.isOn:before {
   transform: translateX(0);
