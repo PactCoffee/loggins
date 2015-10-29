@@ -6,10 +6,10 @@
   position: relative;
 }
 .root:hover .label {
-  color: var(--color-primary);
+  color: var(--color-action);
 }
 .root:hover .label:before {
-  border-color: var(--color-primary);
+  border-color: var(--color-action);
 }
 
 /* Make the input invisible but still clickable */
@@ -51,7 +51,7 @@
 }
 
 .input:focus + .label:before {
-  box-shadow: 0 0 3px 1px var(--color-blue);
+  box-shadow: 0 0 3px 1px var(--color-blue-harsh);
 }
 
 /* The tick icon*/
@@ -73,7 +73,7 @@
   transform: scale(1) rotate(0deg);
 }
 .root.isChecked .label:before {
-  background: var(--color-primary);
-  border-color: var(--color-primary);
+  background: var(--color-action);
+  border-color: var(--color-action);
 }
 
