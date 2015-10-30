@@ -7,6 +7,7 @@ export default class FormInput extends Component {
   constructor(props) {
     super(props);
 
+    this.handleChange = this.handleChange.bind(this);
     this.handleFocus = this.handleFocus.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
 
@@ -28,11 +29,19 @@ export default class FormInput extends Component {
     });
   }
 
+  handleChange(e) {
+    const {onChange, transform} = this.props;
+    let {value} = e.target;
+    if (transform) {
+      value = transform(value);
+    }
+    onChange(value);
+  }
+
   render() {
     const {
       placeholder,
       borderless,
-      onChange,
       error,
       value,
       label,
@@ -66,7 +75,7 @@ export default class FormInput extends Component {
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
           className={css.input}
-          onChange={onChange}
+          onChange={this.handleChange}
           value={value}
           id={id}
           type={type}
@@ -85,8 +94,9 @@ FormInput.propTypes = {
   onChange: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
-
   placeholder: PropTypes.string,
+
+  transform: PropTypes.func,
   borderless: PropTypes.bool,
 
   // If set, will display underneath the input
