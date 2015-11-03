@@ -9,6 +9,7 @@ export default class MaskedFormInput extends Component {
   constructor(props) {
     super(props);
 
+    this.handleChange = this.handleChange.bind(this);
     this.handleFocus = this.handleFocus.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
 
@@ -30,11 +31,16 @@ export default class MaskedFormInput extends Component {
     });
   }
 
+  handleChange(e) {
+    const {onChange} = this.props;
+    const {value} = e.target;
+    onChange(value);
+  }
+
   render() {
     const {
       placeholder,
       borderless,
-      onChange,
       error,
       value,
       label,
@@ -68,7 +74,7 @@ export default class MaskedFormInput extends Component {
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
           className={css.input}
-          onChange={onChange}
+          onChange={this.handleChange}
           value={value}
           id={id}
           type={type}
