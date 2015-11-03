@@ -50,14 +50,16 @@ export default {
   facebook: cleanupSvg(require('./icons/facebook.svg')),
   instagram: cleanupSvg(require('./icons/instagram.svg')),
 
-  pod: cleanupSvg(require('./icons/pod.svg')),
   anDrip: cleanupSvg(require('./icons/drip.svg')),
+  aeropressFilter: cleanupSvg(require('./icons/aeropressFilter.svg')),
+
+  pod: cleanupSvg(require('./icons/pod.svg')),
+  pod_long: cleanupSvg(require('./icons/pod.svg')),
+  pod_short: cleanupSvg(require('./icons/pod.svg')),
   drip: cleanupSvg(require('./icons/dripper.svg')),
   espresso: cleanupSvg(require('./icons/espresso.svg')),
   stovetop: cleanupSvg(require('./icons/stovetop.svg')),
   aeropress: cleanupSvg(require('./icons/aeropress.svg')),
   cafetiere: cleanupSvg(require('./icons/cafetiere.svg')),
   wholebean: cleanupSvg(require('./icons/wholebean.svg')),
-  aeropressFilter: cleanupSvg(require('./icons/aeropressFilter.svg')),
-
 };

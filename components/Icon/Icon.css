@@ -33,6 +33,8 @@
 .plus,
 .heart,
 .pod,
+.pod_long,
+.pod_short,
 .card,
 .asap {
   fill: transparent;
