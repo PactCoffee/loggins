@@ -42,6 +42,7 @@ export default class FormInput extends Component {
     const {
       placeholder,
       borderless,
+      required,
       error,
       value,
       label,
@@ -53,6 +54,7 @@ export default class FormInput extends Component {
 
     const outerCSS = [
       css.container,
+      required ? css.required: null,
       placeholder ? css.labelInside : css.labelOutside,
       error ? css.containerError : null,
       active ? css.containerActive : null,
@@ -68,7 +70,7 @@ export default class FormInput extends Component {
     return (
       <div className={outerCSS}>
         <label htmlFor={id} className={css.label}>
-          {label}
+          {label}{required ? '*' : null}
         </label>
         <input
           placeholder={placeholder}
@@ -101,4 +103,5 @@ FormInput.propTypes = {
 
   // If set, will display underneath the input
   error: PropTypes.string,
+  required: PropTypes.bool,
 };

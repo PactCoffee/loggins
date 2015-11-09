@@ -136,7 +136,13 @@ export default class FormSection extends Component {
         <h3>FieldGroup &amp; Field</h3>
         <FieldGroup title="Example field group">
           <Field>
-            <FormInput borderless type="text" onChange={this.handleTextChange} value={this.state.text} label="First name" placeholder="e.g. Bat"/>
+            <FormInput borderless required
+                       type="text"
+                       onChange={this.handleTextChange}
+                       value={this.state.text}
+                       label="First name"
+                       error={this.state.error}
+                       placeholder="e.g. Bat"/>
           </Field>
           <Field>
             <FormInput borderless type="text" onChange={this.handleTextChange} value={this.state.text} label="Second name" placeholder="e.g. Man"/>
