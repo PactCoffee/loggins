@@ -56,7 +56,7 @@ export default class FormInput extends Component {
 
     const outerCSS = [
       css.container,
-      required ? css.required: null,
+      required ? css.required : null,
       placeholder ? css.labelInside : css.labelOutside,
       error ? css.containerError : null,
       active ? css.containerActive : null,
