@@ -29,10 +29,6 @@
   outline: 0;
 }
 
-.required .label {
-  font-weight: 700;
-}
-
 .message {
   background: var(--color-error);
   transition: all 200ms ease;
@@ -95,7 +91,7 @@
   vertical-align: middle;
   display: table-cell;
   padding: 0.5em;
-  width: 6em;
+  width: 5.5em;
 }
 .labelInside input {
   vertical-align: middle;
