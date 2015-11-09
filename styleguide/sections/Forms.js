@@ -64,8 +64,7 @@ export default class FormSection extends Component {
     });
   }
 
-  handleTextChange(e) {
-    const val = e.target.value;
+  handleTextChange(val) {
     this.setState({
       text: val,
       error: val.length > 5 ? 'Yep, you broke it' : '',
