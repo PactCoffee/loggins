@@ -18,15 +18,17 @@ export default class FormInput extends Component {
   }
 
   handleFocus() {
+    const {onFocus} = this.props;
     this.setState({
       focus: true,
-    });
+    }, () => onFocus && onFocus());
   }
 
   handleBlur() {
+    const {onBlur} = this.props;
     this.setState({
       focus: false,
-    });
+    }, () => onBlur && onBlur());
   }
 
   handleChange(e) {
@@ -92,8 +94,11 @@ export default class FormInput extends Component {
 
 FormInput.propTypes = {
 
-  value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  onFocus: PropTypes.func,
+  onBlur: PropTypes.func,
+
+  value: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
