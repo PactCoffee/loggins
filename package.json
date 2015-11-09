@@ -45,7 +45,7 @@
     "eslint-config-airbnb": "0.0.8",
     "eslint-loader": "^0.14.1",
     "eslint-plugin-mocha": "^0.5.1",
-    "eslint-plugin-react": "^3.3.0",
+    "eslint-plugin-react": "3.3.0",
     "history": "^1.12.3",
     "express": "^4.13.1",
     "extract-text-webpack-plugin": "^0.8.1",
