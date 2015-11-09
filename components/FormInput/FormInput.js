@@ -18,15 +18,17 @@ export default class FormInput extends Component {
   }
 
   handleFocus() {
+    const {onFocus} = this.props;
     this.setState({
       focus: true,
-    });
+    }, () => onFocus && onFocus());
   }
 
   handleBlur() {
+    const {onBlur} = this.props;
     this.setState({
       focus: false,
-    });
+    }, () => onBlur && onBlur());
   }
 
   handleChange(e) {
@@ -42,6 +44,7 @@ export default class FormInput extends Component {
     const {
       placeholder,
       borderless,
+      required,
       error,
       value,
       label,
@@ -53,6 +56,7 @@ export default class FormInput extends Component {
 
     const outerCSS = [
       css.container,
+      required ? css.required : null,
       placeholder ? css.labelInside : css.labelOutside,
       error ? css.containerError : null,
       active ? css.containerActive : null,
@@ -68,7 +72,7 @@ export default class FormInput extends Component {
     return (
       <div className={outerCSS}>
         <label htmlFor={id} className={css.label}>
-          {label}
+          {label}{required ? '*' : null}
         </label>
         <input
           placeholder={placeholder}
@@ -90,8 +94,11 @@ export default class FormInput extends Component {
 
 FormInput.propTypes = {
 
-  value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  onFocus: PropTypes.func,
+  onBlur: PropTypes.func,
+
+  value: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
@@ -101,4 +108,5 @@ FormInput.propTypes = {
 
   // If set, will display underneath the input
   error: PropTypes.string,
+  required: PropTypes.bool,
 };
