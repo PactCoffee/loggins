@@ -25,7 +25,6 @@
 .tick,
 .chevron,
 .bean,
-.triangle,
 .aeropressFilter,
 .anDrip,
 .pause,
@@ -36,6 +35,7 @@
 .pod_long,
 .pod_short,
 .card,
+.arrow,
 .asap {
   fill: transparent;
   stroke: currentColor;
@@ -44,10 +44,12 @@
 /* Filled */
 .pactV,
 .pactH,
+.triangle,
 .stamp,
 .pin,
 .play,
 .thumb,
+.voucher,
 .drip,
 .aeropress,
 .cafetiere,
