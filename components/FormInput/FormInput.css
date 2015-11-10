@@ -1,7 +1,7 @@
 .container {
   box-shadow: inset 0 0 0 1px var(--color-grey-lighter);
   background: var(--color-white);
-  transition: all 300ms ease;
+  transition: all 200ms ease;
   display: inline-block;
   position: relative;
   border-radius: 4px;
@@ -34,13 +34,16 @@
   transition: all 200ms ease;
   padding: 0em 0.5em;
   position: absolute;
+  text-align: left;
   min-height: 0;
   color: white;
   width: 100%;
+  opacity: 0;
   left: 0;
 }
 .messageError {
   border-radius: 0 0 4px 4px;
+  opacity: 1;
   min-height: 1.5em;
 }
 
@@ -52,8 +55,7 @@
 
 .containerError {
   box-shadow: inset 0 0 0 1px var(--color-error);
-  border-radius: 4px 4px 0 0;
-  padding-bottom: 2em;
+  padding-bottom: 1.5em;
 }
 
 .containerError .label {
