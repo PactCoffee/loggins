@@ -1,7 +1,7 @@
 /* eslint-disable*/
 
 import React, {Component, PropTypes} from 'react';
-import {isSameDay} from 'react-day-picker/lib/Utils';
+import {dateUtils} from "react-day-picker/utils";
 import DayPicker from 'react-day-picker';
 import {memoize} from 'lodash';
 import moment from 'moment';
@@ -67,7 +67,7 @@ export default class DatePicker extends Component {
     const selectedDay = new Date(parseInt(this.props.value, 10));
     const modifiers = {
       disabled: memoize(cantShip),
-      selected: memoize(isSameDay.bind(this, selectedDay))
+      selected: memoize(dateUtils.isSameDay.bind(this, selectedDay))
     };
 
     return (
