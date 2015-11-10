@@ -72,12 +72,6 @@
 :global .DayPicker-Weekdays {
   display: table-header-group;
 }
-:global .DayPicker-Weekdays > div {
-  display: table;
-  table-layout: fixed;
-  width: 100%;
-  font-weight: bold;
-}
 
 :global .DayPicker-Weekday {
   display: table-cell;
@@ -87,9 +81,7 @@
 }
 
 :global .DayPicker-Body {
-  display: table;
-  table-layout: fixed;
-  width: 100%;
+  display: table-row-group;
 }
 
 :global .DayPicker-Week {
