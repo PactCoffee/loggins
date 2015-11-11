@@ -20,15 +20,17 @@ export default class MaskedFormInput extends Component {
   }
 
   handleFocus() {
+    const {onFocus} = this.props;
     this.setState({
       focus: true,
-    });
+    }, () => onFocus && onFocus());
   }
 
   handleBlur() {
+    const {onBlur} = this.props;
     this.setState({
       focus: false,
-    });
+    }, () => onBlur && onBlur());
   }
 
   handleChange(e) {
