@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {uniqueId} from 'lodash';
 
-import MaskedInput from 'react-maskedinput';
+import MaskedInput from 'react-maskedinput/src/index.jsx';
 
 import css from '../FormInput/FormInput.css';
 
