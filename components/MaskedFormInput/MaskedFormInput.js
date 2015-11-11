@@ -94,6 +94,8 @@ export default class MaskedFormInput extends Component {
 MaskedFormInput.propTypes = {
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  onFocus: PropTypes.func,
+  onBlur: PropTypes.func,
   label: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   pattern: PropTypes.string.isRequired,
