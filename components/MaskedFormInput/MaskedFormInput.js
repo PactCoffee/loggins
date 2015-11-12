@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {uniqueId} from 'lodash';
 
-import MaskedInput from 'react-maskedinput';
+import MaskedInput from 'react-maskedinput/src/index.jsx';
 
 import css from '../FormInput/FormInput.css';
 
@@ -20,15 +20,17 @@ export default class MaskedFormInput extends Component {
   }
 
   handleFocus() {
+    const {onFocus} = this.props;
     this.setState({
       focus: true,
-    });
+    }, () => onFocus && onFocus());
   }
 
   handleBlur() {
+    const {onBlur} = this.props;
     this.setState({
       focus: false,
-    });
+    }, () => onBlur && onBlur());
   }
 
   handleChange(e) {
@@ -92,6 +94,8 @@ export default class MaskedFormInput extends Component {
 MaskedFormInput.propTypes = {
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  onFocus: PropTypes.func,
+  onBlur: PropTypes.func,
   label: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   pattern: PropTypes.string.isRequired,
