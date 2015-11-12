@@ -28,10 +28,14 @@ module.exports = assign({}, config, {
         test: /icons\/.+\.svg$/,
         loader: 'raw-loader!svgo-loader?useConfig=svgoConfig',
       }, {
-        test: /\.js$/,
+        test: /\.js|jsx$/,
         loaders: ['babel'],
-        include: [path.join(__dirname, '../')],
-        exclude: [path.join(__dirname, '../', 'node_modules')],
+        include: [
+          path.join(__dirname, '../', 'components'),
+          path.join(__dirname, '../', 'globals'),
+          path.join(__dirname, '../', 'lib'),
+          path.join(__dirname, '../', 'styleguide'),
+          path.join(__dirname, '../', 'node_modules', 'react-maskedinput'),
       }, {
         test: /\.css$/,
         loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]-[local]!postcss-loader',
