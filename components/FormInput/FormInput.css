@@ -87,6 +87,7 @@
 .labelInside {
   display: table;
   border-radius: 0;
+  padding-left: 1rem;
 }
 .labelInside .label {
   color: var(--color-blue-darker);
@@ -108,7 +109,7 @@
   color: var(--color-error);
   background: transparent;
   border-radius: 0;
-  padding: 0;
+  padding: 0 1rem;
   bottom: 0.1em;
   opacity: 0;
 }
