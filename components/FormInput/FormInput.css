@@ -87,6 +87,7 @@
 .labelInside {
   display: table;
   border-radius: 0;
+  padding-left: 1rem;
 }
 .labelInside .label {
   color: var(--color-blue-darker);
