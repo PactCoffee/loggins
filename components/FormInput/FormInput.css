@@ -109,7 +109,7 @@
   color: var(--color-error);
   background: transparent;
   border-radius: 0;
-  padding: 0;
+  padding: 0 1rem;
   bottom: 0.1em;
   opacity: 0;
 }
