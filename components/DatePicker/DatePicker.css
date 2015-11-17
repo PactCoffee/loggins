@@ -69,6 +69,10 @@
   padding-bottom: 0.25em;
 }
 
+:global .DayPicker-WeekdaysRow {
+  display: table-row;
+}
+
 :global .DayPicker-Weekdays {
   display: table-header-group;
 }
