@@ -17,7 +17,7 @@ export default class Radio {
       onChange,
       className,
       selectedValue,
-      children
+      children,
     } = this.props;
     const {id} = this.state;
     const isChecked = value === selectedValue;

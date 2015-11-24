@@ -36,7 +36,7 @@ export default class DatePicker extends Component {
     return (
       <div className={s.root}>
         <DayPicker locale="en-gb"
-                   enableOutsideDays={true}
+                   enableOutsideDays
                    localeUtils={localeUtils}
                    renderDay={this.renderDay}
                    onDayClick={this.props.onChange}

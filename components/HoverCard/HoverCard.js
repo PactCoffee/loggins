@@ -98,7 +98,7 @@ export default class HoverCard extends Component {
       positionLeft,
       positionTop,
       arrowOffsetLeft,
-      arrowOffsetTop
+      arrowOffsetTop,
     } = this.state;
 
     const {

@@ -3,7 +3,7 @@ import {range, uniq} from 'lodash';
 import {
   renderIntoDocument,
   Simulate,
-  findRenderedDOMComponentWithClass
+  findRenderedDOMComponentWithClass,
 } from 'react/lib/ReactTestUtils';
 
 import Checkbox from '../Checkbox/Checkbox.js';
