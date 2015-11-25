@@ -36,6 +36,7 @@ module.exports = assign({}, config, {
           path.join(__dirname, '../', 'lib'),
           path.join(__dirname, '../', 'styleguide'),
           path.join(__dirname, '../', 'node_modules', 'react-maskedinput'),
+        ],
       }, {
         test: /\.css$/,
         loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]-[local]!postcss-loader',
