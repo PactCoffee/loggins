@@ -146,6 +146,7 @@
 .light {font-weight: lighter;}
 .italic {font-style: italic;}
 .strike {text-decoration: line-through;}
+.code {font-family: monospace;}
 
 /* Text styles */
 .upcase {text-transform: uppercase;}
