@@ -1,6 +1,12 @@
 import React, {Component, PropTypes} from 'react';
 
 export default class SelectableInput extends Component {
+
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
   componentDidMount() {
     if (this.props.onAction) {
       React
@@ -17,7 +23,7 @@ export default class SelectableInput extends Component {
     }
   }
 
-  handleClick = () => {
+  handleClick() {
     React.findDOMNode(this.refs.selectable).setSelectionRange(0, 9999);
   }
 
