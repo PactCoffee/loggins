@@ -28,6 +28,7 @@ export default class BtnSection extends Component {
 
         <Btn className={[m.mbs, m.mrs].join(' ')} variant="hollow">Hollow</Btn>
         <Btn className={[m.mbs, m.mrs].join(' ')} type="secondary" variant="hollow">Secondary</Btn>
+        <Btn className={[m.mbs, m.mrs].join(' ')} type="white" variant="hollow">white</Btn>
 
         <h4>Clean</h4>
 

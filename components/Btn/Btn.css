@@ -111,6 +111,20 @@
   background: color(var(--color-secondary) l(- 5%));
 }
 
+.white.hollow {
+  box-shadow: inset 0 0 0 0.1em var(--color-white);
+  color: var(--color-white);
+}
+.white.hollow:hover {
+  box-shadow: inset 0 0 0 0.1em var(--color-white);
+  background: color(var(--color-white) a(50%));
+  color: var(--color-white);
+}
+.white.hollow:active {
+  box-shadow: inset 0 0 0 0.1em var(--color-white);
+  background: color(var(--color-white) a(70%));
+}
+
 .clean {
   background: transparent;
   border-color: transparent;
@@ -147,18 +161,6 @@
 }
 .danger.clean:active {
   color: color(var(--color-error) a(70%));
-}
-
-.white.hollow {
-  box-shadow: inset 0 0 0 0.12em var(--color-white);
-  color: var(--color-white);
-}
-.white.hollow:hover {
-  background: var(--color-white);
-  color: var(--color-white);
-}
-.white.hollow:active {
-  background: color(var(--color-white) l(- 5%));
 }
 
 .fullWidth {
