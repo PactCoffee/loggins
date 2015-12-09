@@ -35,6 +35,11 @@ export default class BtnSection extends Component {
         <Btn className={[m.mbs, m.mrs].join(' ')} variant="clean">Clean</Btn>
         <Btn className={[m.mbs, m.mrs].join(' ')} type="primary" variant="clean">Primary</Btn>
 
+        <h3>CTAs</h3>
+        <Btn cta className={[m.mbs, m.mrs].join(' ')} type="primary">Primary</Btn>
+        <Btn cta className={[m.mbs, m.mrs].join(' ')} variant="hollow">Hollow</Btn>
+        <Btn cta className={[m.mbs, m.mrs].join(' ')} variant="clean">Clean</Btn>
+
         <h3>With icon(s)</h3>
 
         <Btn className={[m.mbs, m.mrs].join(' ')}>

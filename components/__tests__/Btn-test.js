@@ -41,7 +41,7 @@ describe('Btn', () => {
   });
 
   it('Correctly applies the className for the variant', () => {
-    ['cta', 'hollow', 'clean'].forEach(variant => {
+    ['hollow', 'clean'].forEach(variant => {
       const node = findDOMNode(renderIntoDocument(
         <Btn variant={variant}/>
       ));

@@ -68,13 +68,6 @@
 }
 
 /* Variants */
-.cta {
-  font-family: var(--font-brandon);
-  text-transform: uppercase;
-  font-weight: 600;
-  padding: 1em;
-}
-
 .hollow {
   background: transparent;
   box-shadow: inset 0 0 0 0.1em var(--color-action);
@@ -163,10 +156,21 @@
   color: color(var(--color-error) a(70%));
 }
 
+/* Modifiers */
+
 .fullWidth {
   width: 100%;
   text-align: center;
 }
+
+.cta {
+  font-family: var(--font-brandon);
+  font-size: 0.9em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Links */
 
 .link {
   composes: root clean;
