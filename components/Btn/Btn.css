@@ -56,17 +56,6 @@
   background: color(var(--color-error) l(- 5%));
 }
 
-.white {
-  background: var(--color-white);
-  color: var(--color-text);
-}
-.white:hover {
-  background: color(var(--color-white) a(10%));
-}
-.white:active {
-  background: color(var(--color-white) a(20%));
-}
-
 /* Variants */
 .hollow {
   background: transparent;
@@ -156,8 +145,17 @@
   color: color(var(--color-error) a(70%));
 }
 
-/* Modifiers */
+.white.clean {
+  color: var(--color-white);
+}
+.white.clean:hover {
+  color: color(var(--color-white) l(- 10%));
+}
+.white.clean:active {
+  color: color(var(--color-white) a(70%));
+}
 
+/* Modifiers */
 .fullWidth {
   width: 100%;
   text-align: center;
@@ -171,10 +169,12 @@
 }
 
 /* Links */
-
 .link {
   composes: root clean;
 }
 .primaryLink {
   composes: root clean primary;
+}
+.linkWhite {
+  composes: root clean white;
 }
