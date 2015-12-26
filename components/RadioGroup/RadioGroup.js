@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react';
+import React, { PropTypes } from 'react';
 
 import Radio from './Radio';
 import css from './Radio.css';
@@ -35,7 +35,8 @@ export default class RadioGroup {
           <Radio
             name={name}
             selectedValue={value}
-            onChange={onChange} {...props} />
+            onChange={onChange} {...props}
+          />
         )}
       </div>
     );

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 import BtnContainer from 'components/BtnContainer/BtnContainer';
 import Section from '../components/Section';

@@ -1,10 +1,10 @@
-import React, {Component, PropTypes} from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import css from './Toggle.css';
 
 export default class Toggle extends Component {
   render() {
-    const {value, onChange, className} = this.props;
+    const { value, onChange, className } = this.props;
     return (
       <span className={[css.root, className].join(' ')}>
         <label className={[css.label, value ? css.isOn : null].join(' ')}>

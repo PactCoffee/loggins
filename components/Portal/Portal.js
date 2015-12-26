@@ -1,6 +1,6 @@
-import React, {findDOMNode, PropTypes, Component, Children} from 'react';
+import React, { findDOMNode, PropTypes, Component, Children } from 'react';
 
-import {ownerDocument} from '../HoverCard/positionUtils';
+import { ownerDocument } from '../HoverCard/positionUtils';
 
 /*
  * A portal through to a div appended to the document body.

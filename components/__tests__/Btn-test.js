@@ -1,5 +1,5 @@
-import React, {findDOMNode} from 'react';
-import {renderIntoDocument, Simulate} from 'react/lib/ReactTestUtils';
+import React, { findDOMNode } from 'react';
+import { renderIntoDocument, Simulate } from 'react/lib/ReactTestUtils';
 
 import Btn from '../Btn/Btn.js';
 import classNames from '../Btn/Btn.css';

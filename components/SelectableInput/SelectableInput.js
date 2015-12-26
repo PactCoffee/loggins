@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from 'react';
+import React, { Component, PropTypes } from 'react';
 
 export default class SelectableInput extends Component {
 
@@ -28,7 +28,7 @@ export default class SelectableInput extends Component {
   }
 
   render() {
-    const {className} = this.props;
+    const { className } = this.props;
     return (
       <input
         ref="selectable"
