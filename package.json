@@ -31,7 +31,7 @@
     "react-tagsinput": "3.0.3"
   },
   "devDependencies": {
-    "autoprefixer-core": "^6.0.1",
+    "autoprefixer": "^6.2.1",
     "babel": "^6.3.26",
     "babel-core": "^6.3.26",
     "babel-eslint": "^5.0.0-beta6",

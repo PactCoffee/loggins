@@ -55,7 +55,7 @@ module.exports = {
   },
 
   postcss: [
-    require('autoprefixer-core'),
+    require('autoprefixer'),
     require('postcss-custom-properties')({
       variables: varMap.vars,
     }),
