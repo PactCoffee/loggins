@@ -1,80 +1,110 @@
-import React, { findDOMNode } from 'react';
-import { renderIntoDocument, Simulate } from 'react/lib/ReactTestUtils';
+import './setup-dom';
+
+import {
+  Simulate,
+  createRenderer,
+  renderIntoDocument,
+  findRenderedDOMComponentWithTag,
+} from 'react-addons-test-utils';
+import React from 'react';
+import test from 'tape';
 
 import Btn from '../Btn/Btn.js';
 import classNames from '../Btn/Btn.css';
 
-describe('Btn', () => {
-  it('Should render a button', () => {
-    const node = findDOMNode(renderIntoDocument(<Btn>btn</Btn>));
-    assert.equal(node.nodeName, 'BUTTON');
+function shallowRender(component) {
+  const renderer = createRenderer();
+  renderer.render(component);
+  return renderer.getRenderOutput();
+}
+function domRender(component) {
+  const { type } = shallowRender(component);
+  const result = renderIntoDocument(component);
+  return findRenderedDOMComponentWithTag(result, type);
+}
+
+test('Btn', (T) => {
+  T.test('Should render a button', t => {
+    t.plan(1);
+    const result = shallowRender(<Btn>btn</Btn>);
+    t.equal(result.type, 'button');
   });
 
-  it('Should output an anchor when passed an href', () => {
-    const node = findDOMNode(renderIntoDocument(
+  T.test('Should output an anchor when passed an href', t => {
+    t.plan(1);
+    const result = shallowRender(
       <Btn href="#">A link, really. Not a button at all.</Btn>
-    ));
-    assert.equal(node.nodeName, 'A');
+    );
+    t.equal(result.type, 'a');
   });
 
-  it('Passes through the className to the actual DOM element', () => {
-    const node = findDOMNode(renderIntoDocument(
-      <Btn className="TESTMCTESTERSON"/>
-    ));
-    assert.ok(node.className.match(/\bTESTMCTESTERSON\b/));
+  T.test('Passes through the correct className', t => {
+    t.plan(1);
+    const CLASSNAME = 'TESTMCTESTERSON';
+    const result = shallowRender(
+      <Btn className={CLASSNAME}/>
+    );
+    t.ok(result.props.className.indexOf(CLASSNAME) > -1);
   });
 
-  it(`Doesn't pass through all props it's given`, () => {
-    const node = findDOMNode(renderIntoDocument(
-      <Btn data-someRandoAttribute="derp"/>
-    ));
-    assert.equal(node.getAttribute('data-someRandoAttribute'), null);
+  T.test(`Doesn't pass through all props it's given`, t => {
+    t.plan(1);
+    const result = shallowRender(
+      <Btn randoAttribute/>
+    );
+    t.notOk(result.props.randoAttribute);
   });
 
-  it('Correctly applies the className for the type', () => {
-    ['primary', 'secondary', 'danger', 'white'].forEach(type => {
-      const node = findDOMNode(renderIntoDocument(
+  T.test('Correctly applies the className for the type', t => {
+    const types = ['primary', 'secondary', 'danger', 'white'];
+    t.plan(types.length);
+    types.forEach(type => {
+      const result = shallowRender(
         <Btn type={type}/>
-      ));
-      assert.ok(node.className.match(new RegExp(classNames[type])));
+      );
+      t.ok(result.props.className.indexOf(type) > -1);
     });
   });
 
-  it('Correctly applies the className for the variant', () => {
+  T.test('Correctly applies the className for the variant', t => {
+    t.plan(2);
     ['hollow', 'clean'].forEach(variant => {
-      const node = findDOMNode(renderIntoDocument(
+      const result = shallowRender(
         <Btn variant={variant}/>
-      ));
-      assert.ok(node.className.match(new RegExp(classNames[variant])));
+      );
+      t.ok(result.props.className.indexOf(variant) > -1);
     });
   });
 
-  it('Applies the correct CSS class when the fullWidth prop is passed', () => {
-    const node = findDOMNode(renderIntoDocument(
+  T.test('Applies the correct CSS class when the fullWidth prop is passed', t => {
+    t.plan(1);
+    const result = shallowRender(
       <Btn fullWidth/>
-    ));
-    assert.ok(node.className.match(new RegExp(classNames.fullWidth)));
+    );
+    t.ok(result.props.className.indexOf(classNames.fullWidth) > -1);
   });
 
-  it('Disables correctly as a button', () => {
-    const node = findDOMNode(renderIntoDocument(
+  T.test('Can be disabled', t => {
+    t.plan(1);
+    const node = domRender(
       <Btn disabled/>
-    ));
-    assert.ok(node.disabled);
+    );
+    t.ok(node.disabled);
   });
 
-  it(`Can't be disabled if it's an anchor with an href`, () => {
-    const node = findDOMNode(renderIntoDocument(
+  T.test('Is not disablable when it’s an anchor', t => {
+    t.plan(1);
+    const node = domRender(
       <Btn href="#" disabled/>
-    ));
-    assert.notOk(node.disabled);
+    );
+    t.notOk(node.disabled);
   });
 
-  it(`Calls the onClick function it's passed`, (done) => {
-    const doneOp = () => done();
-    const node = findDOMNode(renderIntoDocument(
-      <Btn onClick={doneOp}/>
-    ));
+  T.test(`Calls the onClick function it's passed`, t => {
+    t.plan(1);
+    const node = domRender(
+      <Btn onClick={t.ok}/>
+    );
     Simulate.click(node);
   });
 });
