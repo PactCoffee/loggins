@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import invariant from 'react/lib/invariant';
+import invariant from 'invariant';
 
 import styles from './Icon.css';
 import icons from './icons';
