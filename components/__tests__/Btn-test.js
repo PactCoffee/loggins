@@ -1,27 +1,14 @@
 import './setup-dom';
+import { shallowRender, domRender } from './test-utils.js';
 
 import {
   Simulate,
-  createRenderer,
-  renderIntoDocument,
-  findRenderedDOMComponentWithTag,
 } from 'react-addons-test-utils';
 import React from 'react';
 import test from 'tape';
 
 import Btn from '../Btn/Btn.js';
 import classNames from '../Btn/Btn.css';
-
-function shallowRender(component) {
-  const renderer = createRenderer();
-  renderer.render(component);
-  return renderer.getRenderOutput();
-}
-function domRender(component) {
-  const { type } = shallowRender(component);
-  const result = renderIntoDocument(component);
-  return findRenderedDOMComponentWithTag(result, type);
-}
 
 test('Btn', (T) => {
   T.test('Should render a button', t => {
