@@ -27,6 +27,7 @@ cssHook({
   ],
 });
 
+// Allow importing of SVG files with node
 require.extensions['.svg'] = function hook(m, filename) {
   const str = fs.readFileSync(filename).toString();
   return m._compile('module.exports = ' + JSON.stringify(str), filename);
