@@ -13,16 +13,16 @@ import classNames from '../Btn/Btn.css';
 test('Btn', (T) => {
   T.test('Should render a button', t => {
     t.plan(1);
-    const result = shallowRender(<Btn>btn</Btn>);
-    t.equal(result.type, 'button');
+    const result = domRender(<Btn>btn</Btn>);
+    t.equal(result.nodeName, 'BUTTON');
   });
 
   T.test('Should output an anchor when passed an href', t => {
     t.plan(1);
-    const result = shallowRender(
+    const result = domRender(
       <Btn href="#">A link, really. Not a button at all.</Btn>
     );
-    t.equal(result.type, 'a');
+    t.equal(result.nodeName, 'A');
   });
 
   T.test('Passes through the correct className', t => {

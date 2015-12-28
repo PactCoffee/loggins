@@ -1,7 +1,7 @@
 import {
   createRenderer,
   renderIntoDocument,
-  findRenderedDOMComponentWithTag,
+  scryRenderedDOMComponentsWithTag,
 } from 'react-addons-test-utils';
 
 export function shallowRender(component) {
@@ -13,5 +13,5 @@ export function shallowRender(component) {
 export function domRender(component) {
   const { type } = shallowRender(component);
   const result = renderIntoDocument(component);
-  return findRenderedDOMComponentWithTag(result, type);
+  return scryRenderedDOMComponentsWithTag(result, type)[0];
 }

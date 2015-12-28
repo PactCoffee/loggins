@@ -9,64 +9,67 @@ import React from 'react';
 import test from 'tape';
 
 import Checkbox from '../Checkbox/Checkbox.js';
-// import classNames from '../Checkbox/Checkbox.css';
+import classNames from '../Checkbox/Checkbox.css';
 
 test('Checkbox', (T) => {
-  T.test('Should render an input, label, and icon within a wrapper', () => {
+  T.test('Should render an input, label, and icon within a wrapper', t => {
     const result = shallowRender(
       <Checkbox/>
     );
-    console.log(result.props.children);
+    t.plan(1);
+    t.equal(result.props.children.length, 3);
   });
-//
-//   it('Calls onChange when changed', (done) => {
-//     const doneOp = () => done();
-//     const instance = renderIntoDocument(
-//       <Checkbox onChange={doneOp}/>
-//     );
-//     Simulate.change(getInputNode(instance));
-//   });
-//
-//   it(`Has a label with a "for" attribute that matches the input's "id"`, () => {
-//     const instance = renderIntoDocument(
-//       <Checkbox/>
-//     );
-//     assert.equal(getInputNode(instance).id, getLabelNode(instance).getAttribute('for'));
-//   });
-//
-//   it(`Has a unique id so there's no mismatching "for"s and "ids"`, () => {
-//     const ids = range(10).map(() => {
-//       const instance = renderIntoDocument(
-//         <Checkbox />
-//       );
-//       return getInputNode(instance).id;
-//     });
-//     assert.equal(uniq(ids).length, ids.length);
-//   });
-//
-//   it('Is checked when the checked prop is true', () => {
-//     const node = findDOMNode(renderIntoDocument(
-//       <Checkbox checked={true}/>
-//     ));
-//     assert.ok(node.className.match(new RegExp(classNames.isChecked)));
-//   });
-//
-//   it('Is not checked when the checked prop is false', () => {
-//     const node = findDOMNode(renderIntoDocument(
-//       <Checkbox checked={false}/>
-//     ));
-//     assert.notOk(node.className.match(new RegExp(classNames.isChecked)));
-//   });
-//
-//   it('Accepts a name attribute and applies it to the input', () => {
-//     const instance = renderIntoDocument(<Checkbox name="herp"/>);
-//     assert.equal(getInputNode(instance).name, 'herp');
-//   });
-//
-//   it('Passes through the className', () => {
-//     const instance = renderIntoDocument(
-//       <Checkbox className="TEEESTTT"/>
-//     );
-//     assert.ok(findDOMNode(instance).className.match(/TEEESTTT/));
-//   });
+
+  T.test('Calls onChange when changed', t => {
+    t.plan(1);
+    const input = domRender(
+      <Checkbox onChange={t.ok}/>
+    ).children[0];
+    Simulate.change(input);
+  });
+
+  T.test(`Has a label with a "for" attribute that matches the input's "id"`, t => {
+    const [input, label] = shallowRender(
+      <Checkbox/>
+    ).props.children;
+    t.plan(1);
+    t.equal(input.props.id, label.props.htmlFor);
+  });
+
+  T.test(`Has a unique id so there's no mismatching "for"s and "ids"`, t => {
+    const ids = range(10).map(() => domRender(<Checkbox />).children[0].id);
+    t.plan(2);
+    t.ok(ids[0]);
+    t.equal(uniq(ids).length, ids.length);
+  });
+
+  T.test('Is checked when the checked prop is true', t => {
+    const result = shallowRender(
+      <Checkbox checked/>
+    );
+    t.plan(1);
+    t.ok(result.props.className.indexOf(classNames.isChecked) > -1);
+  });
+
+  T.test('Is not checked when the checked prop is false', t => {
+    const result = shallowRender(
+      <Checkbox checked={false}/>
+    );
+    t.plan(1);
+    t.ok(result.props.className.indexOf(classNames.isChecked) === -1);
+  });
+
+  T.test('Accepts a name attribute and applies it to the input', t => {
+    const result = domRender(<Checkbox name="foo"/>);
+    t.plan(1);
+    t.equal(result.children[0].name, 'foo');
+  });
+
+  T.test('Passes through the className', t => {
+    const result = shallowRender(
+      <Checkbox className="foo"/>
+    );
+    t.plan(1);
+    t.ok(result.props.className.indexOf('foo') > -1);
+  });
 });
