@@ -6,15 +6,16 @@
  */
 const path = require('path');
 const glob = require('glob');
+const fs = require('fs');
 
-// 1. Setup babel to transform all require'd js files
+// Setup babel to transform all require'd js files
 require('babel-register');
 require('babel-polyfill');
 
-// 2. Setup css-module hook so we can read CSS files in JS
-const hook = require('css-modules-require-hook');
+// Setup css-module hook so we can read CSS files in JS
+const cssHook = require('css-modules-require-hook');
 const varMap = require('webpack-postcss-tools').makeVarMap('./globals/index.css');
-hook({
+cssHook({
   prepend: [
     require('autoprefixer'),
     require('postcss-custom-properties')({
@@ -26,7 +27,12 @@ hook({
   ],
 });
 
-// 3. Require in each requested test file
+require.extensions['.svg'] = function hook(m, filename) {
+  const str = fs.readFileSync(filename).toString();
+  return m._compile('module.exports = ' + JSON.stringify(str), filename);
+};
+
+// Require in each requested test file
 process.argv.slice(2).forEach(function (arg) {
   glob(arg, function (er, files) {
     if (er) throw er;

@@ -12,7 +12,7 @@
     "dev": "npm run clean && cd styleguide && node devServer.js",
     "start": "npm run build && cd styleguide && node server.js",
     "clean": "cd styleguide && rimraf public",
-    "test": "env NODE_ENV=development node test-runner.js components/__tests__/*-test.js | faucet",
+    "test": "env NODE_ENV=development node test/runner.js components/__tests__/*-test.js | faucet",
     "preversion": "npm test"
   },
   "repository": {
@@ -85,6 +85,7 @@
     "style-loader": "^0.13.0",
     "svgo": "^0.6.1",
     "svgo-loader": "^1.1.0",
+    "tap-webpack-plugin": "^1.0.0",
     "tape": "^4.4.0",
     "url-loader": "^0.5.7",
     "webpack": "^1.12.9",

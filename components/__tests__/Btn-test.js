@@ -1,5 +1,5 @@
-import './setup-dom';
-import { shallowRender, domRender } from './test-utils.js';
+import '../../test/setup-dom';
+import { shallowRender, domRender } from '../../test/utils';
 
 import {
   Simulate,

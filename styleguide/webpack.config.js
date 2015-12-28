@@ -1,8 +1,8 @@
+const path = require('path');
 const webpack = require('webpack');
 const failPlugin = require('webpack-fail-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const varMap = require('webpack-postcss-tools').makeVarMap('../globals/index.css');
-const path = require('path');
+const varMap = require('webpack-postcss-tools').makeVarMap(path.join(__dirname, '../globals/index.css'));
 
 module.exports = {
   entry: [
