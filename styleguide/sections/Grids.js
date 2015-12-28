@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 import Section from '../components/Section';
 import styles from '../styleguide.css';

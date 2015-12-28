@@ -1,6 +1,6 @@
 import styles from './Btn.css';
 
-import React, {Component, PropTypes} from 'react';
+import React, { Component, PropTypes } from 'react';
 
 export default class Btn extends Component {
   render() {

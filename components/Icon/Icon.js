@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import invariant from 'react/lib/invariant';
+import React, { Component } from 'react';
+import invariant from 'invariant';
 
 import styles from './Icon.css';
 import icons from './icons';
@@ -24,7 +24,7 @@ export default class Icon extends Component {
       <span
         {...this.props}
         className={css}
-        dangerouslySetInnerHTML={{__html: icons[this.props.name]}}
+        dangerouslySetInnerHTML={{ __html: icons[this.props.name] }}
       />
     );
   }

@@ -1,5 +1,5 @@
-import React, {PropTypes} from 'react';
-import {uniqueId} from 'lodash';
+import React, { PropTypes } from 'react';
+import { uniqueId } from 'lodash/utility';
 
 import css from './Radio.css';
 
@@ -19,16 +19,18 @@ export default class Radio {
       selectedValue,
       children,
     } = this.props;
-    const {id} = this.state;
+    const { id } = this.state;
     const isChecked = value === selectedValue;
     return (
       <span className={[css.radio, className].join(' ')}>
-        <input id={id}
-               type="radio"
-               checked={isChecked}
-               name={name}
-               value={value}
-               onChange={() => onChange(this.props.value)} />
+        <input
+          id={id}
+          type="radio"
+          checked={isChecked}
+          name={name}
+          value={value}
+          onChange={() => onChange(this.props.value)}
+        />
         <label htmlFor={id}>
           {children ? children : value}
         </label>
