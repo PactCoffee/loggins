@@ -35,7 +35,10 @@ module.exports = {
         loader: 'raw-loader!svgo-loader?useConfig=svgoConfig',
       }, {
         test: /\.js|jsx$/,
-        loaders: ['babel-loader'],
+        loader: 'babel',
+        query: {
+          presets: ['react', 'stage-1', 'es2015'],
+        },
         include: [
           path.join(__dirname, '../', 'components'),
           path.join(__dirname, '../', 'globals'),
