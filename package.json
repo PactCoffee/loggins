@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@pactcoffee/fontpack": "^2.0.0",
+    "invariant": "^2.2.0",
     "lodash": "^3.10.0",
     "moment": "^2.10.3",
     "react-day-picker": "^1.2.0",
