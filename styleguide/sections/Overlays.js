@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 import Section from '../components/Section';
 
@@ -63,34 +63,48 @@ export default class Overlays extends Component {
         <p>
           Very similar to TooltipToggle, but the children prop is the content you want inside the dropdown, and you pass in a trigger to open and close the dropdown.
         </p>
-        <div style={{textAlign: 'center'}}>
-          <Dropdown trigger={
-            <Btn className={m.mbs}>Toggle dropdown <Icon name="triangle"/></Btn>
-          }>
+        <div style={{ textAlign: 'center' }}>
+          <Dropdown
+            trigger={
+              <Btn className={m.mbs}>Toggle dropdown <Icon name="triangle"/></Btn>
+            }
+          >
             Some content inside the dropdown
           </Dropdown>
 
           <br/>
 
-          <Dropdown placement="left" container={this} trigger={
-            <Btn className={m.mbs}>Toggle left <Icon className={m.rotate90} name="triangle"/></Btn>
-          }>
+          <Dropdown
+            placement="left"
+            container={this}
+            trigger={
+              <Btn className={m.mbs}>Toggle left <Icon className={m.rotate90} name="triangle"/></Btn>
+            }
+          >
             Left!
           </Dropdown>
 
           <br/>
 
-          <Dropdown placement="right" container={this} trigger={
-            <Btn className={m.mbs}>Toggle right <Icon className={m.rotate270} name="triangle"/></Btn>
-          }>
+          <Dropdown
+            placement="right"
+            container={this}
+            trigger={
+              <Btn className={m.mbs}>Toggle right <Icon className={m.rotate270} name="triangle"/></Btn>
+            }
+          >
             Right!
           </Dropdown>
 
           <br/>
 
-          <Dropdown placement="top" container={this} trigger={
-            <Btn className={m.mbs}>Toggle top <Icon className={m.rotate180} name="triangle"/></Btn>
-          }>
+          <Dropdown
+            placement="top"
+            container={this}
+            trigger={
+              <Btn className={m.mbs}>Toggle top <Icon className={m.rotate180} name="triangle"/></Btn>
+            }
+          >
             Top!
           </Dropdown>
         </div>

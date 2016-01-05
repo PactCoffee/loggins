@@ -1,4 +1,4 @@
-import React, {findDOMNode, Component, cloneElement, PropTypes} from 'react';
+import React, { findDOMNode, Component, cloneElement, PropTypes } from 'react';
 
 import HoverCard from '../HoverCard/HoverCard';
 
@@ -16,11 +16,11 @@ export default class Dropdown extends Component {
   }
 
   hide() {
-    this.setState({show: false});
+    this.setState({ show: false });
   }
 
   toggleShow() {
-    this.setState(state => ({show: !state.show}));
+    this.setState(state => ({ show: !state.show }));
   }
 
   handleCloseRequest(e) {
@@ -31,7 +31,7 @@ export default class Dropdown extends Component {
   }
 
   render() {
-    const {container, placement, children, trigger} = this.props;
+    const { container, placement, children, trigger } = this.props;
     const clonedTrigger = cloneElement(trigger, {
       onClick: this.toggleShow,
       ref: 'trigger',
@@ -40,15 +40,17 @@ export default class Dropdown extends Component {
     return (
       <span>
         {this.state.show ?
-          <HoverCard container={container}
-                     variant={'dropdown'}
-                     anchor={this.refs.trigger}
-                     anchorPadding={20}
-                     placement={placement}
-                     ref="hovercard"
-                     onRequestClose={this.handleCloseRequest}
-                     escListen
-                     caret>
+          <HoverCard
+            container={container}
+            variant={'dropdown'}
+            anchor={this.refs.trigger}
+            anchorPadding={20}
+            placement={placement}
+            ref="hovercard"
+            onRequestClose={this.handleCloseRequest}
+            escListen
+            caret
+          >
             {children}
           </HoverCard>
           : null
@@ -78,4 +80,3 @@ Dropdown.propTypes = {
 Dropdown.defaultProps = {
   placement: 'bottom',
 };
-

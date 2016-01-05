@@ -8,7 +8,7 @@ export default class Home {
   render() {
     return (
       <div>
-        <div style={{maxWidth: '40em', margin: '0 auto'}} className={m.alignc}>
+        <div style={{ maxWidth: '40em', margin: '0 auto' }} className={m.alignc}>
           <span className={styles.loggins}/>
 
           <Markdown>{`

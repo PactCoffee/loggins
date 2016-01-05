@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from 'react';
+import React, { Component, PropTypes } from 'react';
 import DayPicker from 'react-day-picker';
 import moment from 'moment';
 
@@ -35,12 +35,14 @@ export default class DatePicker extends Component {
   render() {
     return (
       <div className={s.root}>
-        <DayPicker locale="en-gb"
-                   enableOutsideDays
-                   localeUtils={localeUtils}
-                   renderDay={this.renderDay}
-                   onDayClick={this.props.onChange}
-                   {...this.props}/>
+        <DayPicker
+          locale="en-gb"
+          enableOutsideDays
+          localeUtils={localeUtils}
+          renderDay={this.renderDay}
+          onDayClick={this.props.onChange}
+          {...this.props}
+        />
       </div>
     );
   }

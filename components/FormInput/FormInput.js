@@ -1,5 +1,5 @@
-import React, {Component, PropTypes} from 'react';
-import {uniqueId} from 'lodash';
+import React, { Component, PropTypes } from 'react';
+import { uniqueId } from 'lodash/utility';
 
 import css from './FormInput.css';
 
@@ -18,22 +18,22 @@ export default class FormInput extends Component {
   }
 
   handleFocus() {
-    const {onFocus} = this.props;
+    const { onFocus } = this.props;
     this.setState({
       focus: true,
     }, () => onFocus && onFocus());
   }
 
   handleBlur() {
-    const {onBlur} = this.props;
+    const { onBlur } = this.props;
     this.setState({
       focus: false,
     }, () => onBlur && onBlur());
   }
 
   handleChange(e) {
-    const {onChange, transform} = this.props;
-    let {value} = e.target;
+    const { onChange, transform } = this.props;
+    let { value } = e.target;
     if (transform) {
       value = transform(value);
     }
@@ -50,7 +50,7 @@ export default class FormInput extends Component {
       label,
       type,
     } = this.props;
-    const {focus, id} = this.state;
+    const { focus, id } = this.state;
 
     const active = value && !!value.length;
 

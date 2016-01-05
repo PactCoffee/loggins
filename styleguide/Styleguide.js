@@ -1,6 +1,6 @@
-import React, {PropTypes} from 'react';
-import {uniqueId} from 'lodash';
-import {TransitionMotion, spring} from 'react-motion';
+import React, { PropTypes } from 'react';
+import { uniqueId } from 'lodash';
+import { TransitionMotion, spring } from 'react-motion';
 
 import Logo from 'components/Logo/Logo';
 import Nav from './components/Nav';
@@ -64,7 +64,7 @@ export default class Styleguide extends React.Component {
   }
 
   getStyles() {
-    const {children} = this.props;
+    const { children } = this.props;
     return {
       [uniqueId('animator')]: {
         opacity: spring(1),
@@ -75,7 +75,7 @@ export default class Styleguide extends React.Component {
   }
 
   willEnter() {
-    const {children} = this.props;
+    const { children } = this.props;
     const oldIndex = ROUTES.indexOf(oldRouteName.replace('/', ''));
     const newIndex = ROUTES.indexOf(newRouteName.replace('/', ''));
     return {
@@ -109,17 +109,19 @@ export default class Styleguide extends React.Component {
 
         <div className={css.container}>
           <TransitionMotion styles={this.getStyles()}
-                            willEnter={this.willEnter}
-                            willLeave={this.willLeave}>
+            willEnter={this.willEnter}
+            willLeave={this.willLeave}
+          >
             {interpolatedcss =>
               <div className={css.animator}>
                 {Object.keys(interpolatedcss).map((key, i) => {
-                  const {child, opacity, x} = interpolatedcss[key];
+                  const { child, opacity, x } = interpolatedcss[key];
                   return (
                     <div key={i} style={{
                       opacity,
                       transform: `translate3d(${x}%, 0,0)`,
-                    }}>
+                    }}
+                    >
                       {child}
                     </div>
                   );

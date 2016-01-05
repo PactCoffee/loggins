@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import styles from './Panel.css';
 
@@ -10,7 +10,7 @@ const types = {
 
 export default class Panel extends Component {
   render() {
-    const {squared, zeroPadding, type, style, children, className} = this.props;
+    const { squared, zeroPadding, type, style, children, className } = this.props;
     const classNames = [
       styles.root,
       squared ? styles.squared : null,

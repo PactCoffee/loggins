@@ -1,5 +1,5 @@
-import React, {findDOMNode} from 'react';
-import {range, uniq} from 'lodash';
+import React, { findDOMNode } from 'react';
+import { range, uniq } from 'lodash';
 import {
   renderIntoDocument,
   Simulate,

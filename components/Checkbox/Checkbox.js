@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import Icon from '../Icon/Icon';
 import s from './Checkbox.css';
@@ -15,7 +15,7 @@ export default class Checkbox extends Component {
 
   toggleChecked() {
     this.setState(state => (
-      {checked: !state.checked}
+      { checked: !state.checked }
     ), () => this.props.onChange(this.state.checked));
   }
 

@@ -1,7 +1,7 @@
-import React, {Component, cloneElement, PropTypes} from 'react';
-import {debounce} from 'lodash';
+import React, { Component, cloneElement, PropTypes } from 'react';
+import { debounce } from 'lodash';
 
-import {mountable} from '../../lib/customPropTypes';
+import { mountable } from '../../lib/customPropTypes';
 import HoverCard from '../HoverCard/HoverCard';
 
 export default class TooltipToggle extends Component {
@@ -28,7 +28,7 @@ export default class TooltipToggle extends Component {
   }
 
   render() {
-    const {container, content, placement, children} = this.props;
+    const { container, content, placement, children } = this.props;
     const trigger = cloneElement(React.Children.only(children), {
       onMouseOver: this.handleHover,
       onFocus: this.handleHover,
@@ -40,12 +40,14 @@ export default class TooltipToggle extends Component {
       <span>
         {trigger}
         {this.state.show ?
-          <HoverCard container={container}
-                     variant="tooltip"
-                     anchor={this.refs.anchor}
-                     anchorPading={10}
-                     placement={placement}
-                     caret>
+          <HoverCard
+            container={container}
+            variant="tooltip"
+            anchor={this.refs.anchor}
+            anchorPading={10}
+            placement={placement}
+            caret
+          >
             {content}
           </HoverCard>
           : null
@@ -65,4 +67,3 @@ TooltipToggle.propTypes = {
 TooltipToggle.defaultProps = {
   placement: 'top',
 };
-

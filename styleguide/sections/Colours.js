@@ -1,5 +1,5 @@
 /* eslint react/no-multi-comp:0 */
-import React, {Component, findDOMNode} from 'react';
+import React, { Component, findDOMNode } from 'react';
 import Section from '../components/Section';
 
 import styles from '../styleguide.css';
@@ -31,8 +31,8 @@ class Swatch extends Component {
     }, cb);
   }
   render() {
-    const {colour} = this.props;
-    const {showInput} = this.state;
+    const { colour } = this.props;
+    const { showInput } = this.state;
     return (
       <button onBlur={this.onBlur} onClick={this.onClick} className={[styles.swatch, styles[colour], t.title].join(' ')}>
         {showInput ?

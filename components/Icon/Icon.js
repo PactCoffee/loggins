@@ -24,7 +24,7 @@ export default class Icon extends Component {
       <span
         {...this.props}
         className={css}
-        dangerouslySetInnerHTML={{__html: icons[this.props.name]}}
+        dangerouslySetInnerHTML={{ __html: icons[this.props.name] }}
       />
     );
   }
