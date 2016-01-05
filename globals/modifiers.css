@@ -177,3 +177,18 @@
 /* Pointer events */
 .pointera {pointer-events: auto;}
 .pointern {pointer-events: none;}
+
+/* Accessibility helpers */
+/*
+ * Hide only visually, but have it available for screen readers: h5bp.com/v
+ */
+.visuallyHidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
