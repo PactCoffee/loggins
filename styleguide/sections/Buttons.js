@@ -40,6 +40,11 @@ export default class BtnSection extends Component {
         <Btn cta className={[m.mbs, m.mrs].join(' ')} variant="hollow">Hollow</Btn>
         <Btn cta className={[m.mbs, m.mrs].join(' ')} variant="clean">Clean</Btn>
 
+        <h3>Disabled</h3>
+        <Btn className={[m.mbs, m.mrs].join(' ')} type="primary" disabled>Primary</Btn>
+        <Btn className={[m.mbs, m.mrs].join(' ')} type="secondary" disabled>Secondary</Btn>
+        <Btn className={[m.mbs, m.mrs].join(' ')} type="danger" disabled>Danger</Btn>
+
         <h3>With icon(s)</h3>
 
         <Btn className={[m.mbs, m.mrs].join(' ')}>
@@ -66,9 +71,16 @@ export default class BtnSection extends Component {
           <Icon name="thumb"/>
         </Btn>
 
-        <Btn fullWidth>Full width</Btn>
+        <h3>Just icon(s) (with hidden labels for accessibility)</h3>
 
-        <h3>Button container... do what you want</h3>
+        <Btn className={[m.mbs, m.mrs].join(' ')}>
+          <Icon name="thumb"/>
+          <span className={m.visuallyHidden}>+1</span>
+        </Btn>
+
+        <h3>Full width</h3>
+
+        <Btn fullWidth>Full width</Btn>
 
         <BtnContainer>
           <h4>Button container</h4>
