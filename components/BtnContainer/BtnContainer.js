@@ -1,10 +1,10 @@
-import React, {PropTypes} from 'react';
+import React, { PropTypes } from 'react';
 
 import css from './BtnContainer.css';
 
 export default class BtnContainer {
   render() {
-    const {children, className, ...props} = this.props;
+    const { children, className, ...props } = this.props;
 
     return (
       <button {...props} className={[css.root, className].join(' ')}>
