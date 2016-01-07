@@ -15,6 +15,12 @@
     "test": "eslint ./components && karma start --single-run && npm run build",
     "preversion": " npm test"
   },
+  "files": [
+    "./components",
+    "./util",
+    "./globals",
+    "*.md"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/PactCoffee/loggins.git"
