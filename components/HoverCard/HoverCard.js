@@ -1,8 +1,8 @@
 import React, { Component, PropTypes, findDOMNode } from 'react';
 
 import { ownerDocument, calcOverlayPosition } from './positionUtils';
-import { mountable } from '../../lib/customPropTypes';
-import keyCodes from '../../lib/keyCodes';
+import { mountable } from '../../util/customPropTypes';
+import keyCodes from '../../util/keyCodes';
 import Portal from '../Portal/Portal';
 import s from './HoverCard.css';
 
