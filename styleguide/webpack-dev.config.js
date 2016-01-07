@@ -29,10 +29,7 @@ module.exports = assign({}, config, {
         loader: 'raw-loader!svgo-loader?useConfig=svgoConfig',
       }, {
         test: /\.js|jsx$/,
-        loader: 'babel',
-        query: {
-          presets: ['react', 'stage-1', 'es2015', 'react-hmre'],
-        },
+        loaders: ['babel'],
         include: [
           path.join(__dirname, '../', 'components'),
           path.join(__dirname, '../', 'globals'),
