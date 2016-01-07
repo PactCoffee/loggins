@@ -46,6 +46,7 @@ export default {
   triangle: cleanupSvg(require('./icons/triangle.svg')),
   recurring: cleanupSvg(require('./icons/recurring.svg')),
   asap: cleanupSvg(require('./icons/asap.svg')),
+  decaf: cleanupSvg(require('./icons/decaf.svg')),
   calendar: cleanupSvg(require('./icons/calendar.svg')),
 
   twitter: cleanupSvg(require('./icons/twitter.svg')),

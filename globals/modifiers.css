@@ -9,8 +9,9 @@
   --font-smaller: 0.5rem;
   --font-small:   0.8rem;
   --font-medium:  1rem;
-  --font-large:   1.277777778rem;
-  --font-larger:  2.944444444rem;
+  --font-large:   1.3rem;
+  --font-larger:  2rem;
+  --font-largest: 2.9rem;
 
   --radius-medium: 8px;
 
@@ -140,6 +141,7 @@
 .medium { font-size: var(--font-medium);}
 .large {  font-size: var(--font-large);}
 .larger { font-size: var(--font-larger);}
+.largest {font-size: var(--font-largest);}
 
 /* Font styles */
 .bold {font-weight: bold;}
