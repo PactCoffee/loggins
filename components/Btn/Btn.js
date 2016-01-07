@@ -1,38 +1,35 @@
-import styles from './Btn.css';
-
 import React, { Component, PropTypes } from 'react';
+
+import css from './Btn.css';
 
 export default class Btn extends Component {
   render() {
     const {
-      href,
-      type,
-      variant,
-      fullWidth,
-      className,
-      disabled,
-      onClick,
-      children,
       active,
-      cta,
+      children,
+      className,
+      fullWidth,
+      context,
+      variant,
+      onClick,
+      ...remainingProps,
     } = this.props;
 
     const classNames = [
-      styles.root,
-      styles[type],
-      styles[variant],
-      variant ? styles[variant] : null,
-      fullWidth ? styles.fullWidth : null,
-      active ? styles.active : null,
-      cta ? styles.cta : null,
+      css.root,
+      variant ? css[variant] : null,
+      context ? css[context] : null,
+      fullWidth ? css.fullWidth : null,
+      active ? css.active : null,
       className,
     ].join(' ');
 
     return (
-      href ?
-      <a href={href} className={classNames}>{children}</a>
-      :
-      <button onClick={onClick} disabled={disabled} className={classNames}>
+      <button
+        className={classNames}
+        onClick={onClick}
+        {...remainingProps}
+      >
         {children}
       </button>
     );
@@ -40,24 +37,19 @@ export default class Btn extends Component {
 }
 
 Btn.propTypes = {
-  type: PropTypes.oneOf([
+  active: PropTypes.bool,
+  children: PropTypes.any,
+  className: PropTypes.string,
+  fullWidth: PropTypes.bool,
+  context: PropTypes.oneOf([
     'primary',
     'secondary',
     'danger',
-    'white',
+    'whiteOut',
   ]),
   variant: PropTypes.oneOf([
     'hollow',
-    'clean',
+    'text',
   ]),
-
   onClick: PropTypes.func,
-  href: PropTypes.string,
-  disabled: PropTypes.bool,
-
-  children: PropTypes.any,
-  fullWidth: PropTypes.bool,
-  className: PropTypes.string,
-  active: PropTypes.bool,
-  cta: PropTypes.bool,
 };
