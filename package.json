@@ -48,15 +48,15 @@
     "compression": "^1.5.1",
     "css-loader": "^0.15.2",
     "es5-shim": "^4.1.11",
-    "eslint": "^1.10.1",
-    "eslint-config-airbnb": "1.0.0",
+    "eslint": "^1.10.3",
+    "eslint-config-airbnb": "2.1.1",
     "eslint-loader": "^1.1.1",
     "eslint-plugin-mocha": "^1.1.0",
-    "eslint-plugin-react": "3.10.0",
-    "history": "^1.12.3",
+    "eslint-plugin-react": "3.13.1",
     "express": "^4.13.1",
     "extract-text-webpack-plugin": "^0.8.1",
     "file-loader": "^0.8.4",
+    "history": "^1.12.3",
     "image-webpack-loader": "^1.6.1",
     "imagemin": "^3.2.0",
     "isparta-loader": "^0.2.0",
@@ -100,6 +100,6 @@
     "webpack-postcss-tools": "^1.1.1"
   },
   "peerDependencies": {
-    "react": "^0.13.0"
+    "react": "^0.13.3"
   }
 }
