@@ -1,4 +1,5 @@
-import React, { findDOMNode } from 'react';
+import React from 'react';
+import { findDOMNode } from 'react-dom';
 import { renderIntoDocument, Simulate } from 'react/lib/ReactTestUtils';
 
 import Btn from '../Btn/Btn.js';
@@ -8,13 +9,6 @@ describe('Btn', () => {
   it('Should render a button', () => {
     const node = findDOMNode(renderIntoDocument(<Btn>btn</Btn>));
     assert.equal(node.nodeName, 'BUTTON');
-  });
-
-  it('Should output an anchor when passed an href', () => {
-    const node = findDOMNode(renderIntoDocument(
-      <Btn href="#">A link, really. Not a button at all.</Btn>
-    ));
-    assert.equal(node.nodeName, 'A');
   });
 
   it('Passes through the className to the actual DOM element', () => {
@@ -31,17 +25,17 @@ describe('Btn', () => {
     assert.equal(node.getAttribute('data-someRandoAttribute'), null);
   });
 
-  it('Correctly applies the className for the type', () => {
-    ['primary', 'secondary', 'danger', 'white'].forEach(type => {
+  it('Correctly applies the className for the context', () => {
+    ['primary', 'secondary', 'danger', 'whiteOut'].forEach(context => {
       const node = findDOMNode(renderIntoDocument(
-        <Btn type={type}/>
+        <Btn context={context}/>
       ));
-      assert.ok(node.className.match(new RegExp(classNames[type])));
+      assert.ok(node.className.match(new RegExp(classNames[context])));
     });
   });
 
   it('Correctly applies the className for the variant', () => {
-    ['hollow', 'clean'].forEach(variant => {
+    ['hollow', 'text'].forEach(variant => {
       const node = findDOMNode(renderIntoDocument(
         <Btn variant={variant}/>
       ));
@@ -61,13 +55,6 @@ describe('Btn', () => {
       <Btn disabled/>
     ));
     assert.ok(node.disabled);
-  });
-
-  it(`Can't be disabled if it's an anchor with an href`, () => {
-    const node = findDOMNode(renderIntoDocument(
-      <Btn href="#" disabled/>
-    ));
-    assert.notOk(node.disabled);
   });
 
   it(`Calls the onClick function it's passed`, (done) => {
