@@ -1,7 +1,7 @@
 import React, { Component, cloneElement, PropTypes } from 'react';
 import { debounce } from 'lodash';
 
-import { mountable } from '../../lib/customPropTypes';
+import { mountable } from '../../util/customPropTypes';
 import HoverCard from '../HoverCard/HoverCard';
 
 export default class TooltipToggle extends Component {
