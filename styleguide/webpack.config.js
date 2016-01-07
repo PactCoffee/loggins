@@ -35,14 +35,11 @@ module.exports = {
         loader: 'raw-loader!svgo-loader?useConfig=svgoConfig',
       }, {
         test: /\.js|jsx$/,
-        loader: 'babel',
-        query: {
-          presets: ['react', 'stage-1', 'es2015'],
-        },
+        loaders: ['babel-loader'],
         include: [
           path.join(__dirname, '../', 'components'),
           path.join(__dirname, '../', 'globals'),
-          path.join(__dirname, '../', 'lib'),
+          path.join(__dirname, '../', 'util'),
           path.join(__dirname, '../', 'styleguide'),
           path.join(__dirname, '../', 'node_modules', 'react-maskedinput'),
         ],

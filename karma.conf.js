@@ -1,11 +1,12 @@
-/* eslint no-var: 0, babel/object-shorthand: 0, vars-on-top: 0, comma-dangle: 0 */
+/* eslint no-var: 0, babel/object-shorthand: 0, vars-on-top: 0 */
+require('babel/register');
 
 var webpack = require('webpack');
 var path = require('path');
 
 var isCI = process.env.CI === 'true';
 
-module.exports = function (config) {
+module.exports = function(config) {
   config.set({
 
     frameworks: [
@@ -32,6 +33,13 @@ module.exports = function (config) {
     autoWatch: true,
 
     browsers: ['Chrome'],
+
+    customLaunchers: {
+      ChromeTravisCI: {
+        base: 'Chrome',
+        flags: ['--no-sandbox']
+      }
+    },
 
     captureTimeout: 60000,
     browserNoActivityTimeout: 45000,
@@ -61,10 +69,7 @@ module.exports = function (config) {
       module: {
         loaders: [{
           test: /\.js$/,
-          loader: 'babel',
-          query: {
-            presets: ['react', 'stage-1', 'es2015'],
-          },
+          loader: 'babel?cacheDirectory',
           exclude: /node_modules/
         }, {
           test: /\.css$/,
@@ -112,7 +117,7 @@ module.exports = function (config) {
   });
 
   if (isCI) {
-    config.singleRun = true;
+    config.sngleRun = true;
     config.reporters = ['dots'];
   }
 };
