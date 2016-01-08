@@ -16,9 +16,9 @@
     "preversion": " npm test"
   },
   "files": [
-    "./components",
-    "./util",
-    "./globals",
+    "components",
+    "util",
+    "globals",
     "*.md"
   ],
   "repository": {
@@ -33,7 +33,6 @@
     "react-day-picker": "^1.2.0",
     "react-maskedinput": "iest/react-maskedinput",
     "react-motion": "^0.3.0",
-    "react-router": "^1.0.0-rc1",
     "react-slider": "^0.5.1",
     "react-tagsinput": "1.4.7"
   },
@@ -83,6 +82,7 @@
     "postcss-simple-vars": "^1.2.0",
     "raw-loader": "^0.5.1",
     "react": "^0.13.3",
+    "react-router": "^1.0.0-rc1",
     "react-transform-catch-errors": "^0.1.1",
     "react-transform-hmr": "^1.0.1",
     "redbox-react": "^1.0.1",
