@@ -16,9 +16,9 @@
     "preversion": " npm test"
   },
   "files": [
-    "./components",
-    "./util",
-    "./globals",
+    "components",
+    "util",
+    "globals",
     "*.md"
   ],
   "repository": {
