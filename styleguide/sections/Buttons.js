@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 
+import AccessibleLabel from 'components/AccessibleLabel/AccessibleLabel';
 import BtnContainer from 'components/BtnContainer/BtnContainer';
 import Section from '../components/Section';
 import * as m from 'globals/modifiers.css';
@@ -75,7 +76,7 @@ export default class BtnSection extends Component {
 
         <Btn className={[m.mbs, m.mrs].join(' ')}>
           <Icon name="thumb"/>
-          <span className={m.visuallyHidden}>+1</span>
+          <AccessibleLabel>+1</AccessibleLabel>
         </Btn>
 
         <h3>Full width</h3>
