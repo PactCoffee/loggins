@@ -86,8 +86,8 @@ export default class FormSection extends Component {
     this.setState({ liked: didLike });
   }
 
-  handleCheckbox(val) {
-    this.setState({ checkbox: val });
+  handleCheckbox() {
+    this.setState({ checkbox: !this.state.checkbox });
   }
 
   handleToggle() {
@@ -201,7 +201,22 @@ export default class FormSection extends Component {
         <p>You selected {this.state.radioVal}</p>
 
         <h3>Checkbox</h3>
-        <p><Checkbox label="Checkbox" onChange={this.handleCheckbox}/> value is {this.state.checkbox ? 'checked' : 'not checked'}.</p>
+        <p>
+          <Checkbox
+            label="Checkbox"
+            checked={this.state.checkbox}
+            onChange={this.handleCheckbox}
+          /> value is {this.state.checkbox ? 'checked' : 'not checked'}.
+        </p>
+        <p>
+          <Checkbox
+            label={
+              <span>Checkbox with <strong>component</strong> label</span>
+            }
+            checked={!this.state.checkbox}
+            onChange={this.handleCheckbox}
+          /> is {!this.state.checkbox ? 'checked' : 'not checked'}.
+        </p>
 
         <h3>Slider</h3>
         <strong>Basic version:</strong>
