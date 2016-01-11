@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component, PropTypes, findDOMNode } from 'react';
 import { uniqueId } from 'lodash/utility';
 
 import css from './FormInput.css';
@@ -38,6 +38,13 @@ export default class FormInput extends Component {
       value = transform(value);
     }
     onChange(value);
+  }
+
+  focus() {
+    return findDOMNode(this.refs.focusable).focus();
+  }
+  blur() {
+    return findDOMNode(this.refs.focusable).blur();
   }
 
   render() {
@@ -80,6 +87,7 @@ export default class FormInput extends Component {
             value={value}
             id={id}
             type={type}
+            ref="focusable"
           />
         </div>
         <div className={css.message}>
