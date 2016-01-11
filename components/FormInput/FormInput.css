@@ -2,7 +2,6 @@
   box-shadow: inset 0 0 0 1px var(--color-grey-lighter);
   background: var(--color-white);
   transition: all 200ms ease;
-  display: inline-block;
   position: relative;
   border-radius: 4px;
   min-width: 12em;
@@ -13,6 +12,7 @@
   color: var(--color-grey-light);
   padding: 0.75em;
   display: block;
+  cursor: text;
 }
 
 .input {
@@ -31,35 +31,28 @@
 
 .message {
   background: var(--color-error);
+  border-radius: 0 0 4px 4px;
   transition: all 200ms ease;
-  padding: 0em 0.5em;
-  position: absolute;
+  padding-right: 0.5em;
   text-align: left;
-  min-height: 0;
   color: white;
   width: 100%;
   opacity: 0;
   left: 0;
 }
-.messageError {
-  border-radius: 0 0 4px 4px;
-  opacity: 1;
-  min-height: 1.5em;
-}
 
-.containerActive {}
-
-.containerFocus {
+.focus {
   box-shadow: inset 0 0 0 1px var(--color-selection), 0 0 2px color(var(--color-selection) l(70%));
 }
 
-.containerError {
+.error {
   box-shadow: inset 0 0 0 1px var(--color-error);
-  padding-bottom: 1.5em;
 }
-
-.containerError .label {
+.error .label {
   color: var(--color-error);
+}
+.error .message {
+  opacity: 1;
 }
 
 /* Default label outside variant */
@@ -73,21 +66,26 @@
   top: -0.25em;
   left: 0;
 }
-.containerFocus.labelOutside .label,
-.containerActive.labelOutside .label {
-  transform: scale(0.8) translate(-0.75em, -2.7em);
-  color: var(--color-grey-light);
-  border-radius: 0 0 4px 4px;
+.labelOutside .message {
+  padding: 0 0.5em;
 }
-.containerFocus.labelOutside .label {
+.focus.labelOutside .label,
+.active.labelOutside .label {
+  transform: scale(0.8) translate(-13px, -48px);
+  color: var(--color-grey-light);
+}
+.focus.labelOutside .label {
   color: var(--color-blue-darker);
 }
 
 /* Label inside variant */
 .labelInside {
-  display: table;
   border-radius: 0;
-  padding-left: 1rem;
+}
+.labelInside .wrapper {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
 }
 .labelInside .label {
   color: var(--color-blue-darker);
@@ -102,18 +100,17 @@
   padding-right: 0;
   padding-left: 0;
 }
-.labelInside.containerError {
-  padding-bottom: 1em;
+.labelInside.error {
+  padding-bottom: 0.5em;
 }
 .labelInside .message {
   color: var(--color-error);
   background: transparent;
   border-radius: 0;
-  padding: 0 1rem;
-  bottom: 0.1em;
+  padding-left: 0.5rem;
   opacity: 0;
 }
-.labelInside .messageError {
+.error.labelInside .message {
   opacity: 1;
 }
 
@@ -123,12 +120,9 @@
   transition: all 300ms ease;
   border: 1px solid transparent;
 }
-.borderless.containerFocus.labelInside {
+.borderless.focus.labelInside {
   border-bottom-color: var(--color-selection);
 }
-.borderless.containerFocus.labelInside .label {
+.borderless.focus.labelInside .label {
   color: var(--color-selection);
-}
-.borderless .label {
-  padding-left: 0;
 }
