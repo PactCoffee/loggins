@@ -101,6 +101,8 @@ export default class Colours extends Component {
           'yellow',
           'mauve',
           'copper',
+          'aubergine',
+          'gold',
           'pact',
           ].map((c, i) => <Swatch key={i} colour={c}/>)
         }
