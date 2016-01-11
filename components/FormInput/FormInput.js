@@ -53,40 +53,38 @@ export default class FormInput extends Component {
     const { focus, id } = this.state;
 
     const active = value && !!value.length;
+    const isInsideVariant = !!placeholder;
 
     const outerCSS = [
       css.container,
       required ? css.required : null,
-      placeholder ? css.labelInside : css.labelOutside,
-      error ? css.containerError : null,
-      active ? css.containerActive : null,
-      focus ? css.containerFocus : null,
+      isInsideVariant ? css.labelInside : css.labelOutside,
+      error ? css.error : null,
+      active ? css.active : null,
+      focus ? css.focus : null,
       borderless ? css.borderless : null,
-    ].join(' ');
-
-    const messageCSS = [
-      css.message,
-      error ? css.messageError : null,
     ].join(' ');
 
     return (
       <div className={outerCSS}>
-        <label htmlFor={id} className={css.label}>
-          {label}{required ? '*' : null}
-        </label>
-        <input
-          placeholder={placeholder}
-          onFocus={this.handleFocus}
-          onBlur={this.handleBlur}
-          className={css.input}
-          onChange={this.handleChange}
-          value={value}
-          id={id}
-          type={type}
-        />
-        <span className={messageCSS}>
+        <div className={css.wrapper}>
+          <label htmlFor={id} className={css.label}>
+            {label}{required ? '*' : null}
+          </label>
+          <input
+            placeholder={placeholder}
+            onFocus={this.handleFocus}
+            onBlur={this.handleBlur}
+            className={css.input}
+            onChange={this.handleChange}
+            value={value}
+            id={id}
+            type={type}
+          />
+        </div>
+        <div className={css.message}>
           {this.props.error}
-        </span>
+        </div>
       </div>
     );
   }

@@ -56,9 +56,9 @@ export default class MaskedFormInput extends Component {
     const outerCSS = [
       css.container,
       placeholder ? css.labelInside : css.labelOutside,
-      error ? css.containerError : null,
-      active ? css.containerActive : null,
-      focus ? css.containerFocus : null,
+      error ? css.error : null,
+      active ? css.active : null,
+      focus ? css.focus : null,
       borderless ? css.borderless : null,
     ].join(' ');
 
@@ -69,20 +69,22 @@ export default class MaskedFormInput extends Component {
 
     return (
       <div className={outerCSS}>
-        <label htmlFor={id} className={css.label}>
-          {label}
-        </label>
-        <MaskedInput
-          onFocus={this.handleFocus}
-          onBlur={this.handleBlur}
-          className={css.input}
-          onChange={this.handleChange}
-          value={value}
-          id={id}
-          type={type}
-          pattern={pattern}
-          placeholder={placeholder}
-        />
+        <div className={css.wrapper}>
+          <label htmlFor={id} className={css.label}>
+            {label}
+          </label>
+          <MaskedInput
+            onFocus={this.handleFocus}
+            onBlur={this.handleBlur}
+            className={css.input}
+            onChange={this.handleChange}
+            value={value}
+            id={id}
+            type={type}
+            pattern={pattern}
+            placeholder={placeholder}
+          />
+        </div>
         <span className={messageCSS}>
           {this.props.error}
         </span>
