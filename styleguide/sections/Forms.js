@@ -228,13 +228,38 @@ export default class FormSection extends Component {
 
         <h3>FormInput</h3>
         <p>Just a cute little animating input. Gracefully handles having a value passed in as well:</p>
-        <FormInput type="text" onChange={this.handleTextChange} value={this.state.text} error={this.state.error} label="First name"/>
-        <FormInput type="text" onChange={this.handleTextChange} value={this.state.lolText} error={this.state.error} label="Upcase &amp; sorted"/>
+        <FormInput
+          type="text"
+          onChange={this.handleTextChange}
+          value={this.state.text}
+          error={this.state.error}
+          label="First name"
+        />
+        <FormInput
+          type="text"
+          placeho
+          onChange={this.handleTextChange}
+          value={this.state.lolText}
+          error={this.state.error}
+          label="Upcase &amp; sorted"
+        />
         <p>Will also show an error if it's passed in:</p>
-        <FormInput type="text" onChange={this.handleTextChange} value={this.state.text} error="Something bad happened" label="Error example"/>
+        <FormInput
+          type="text"
+          onChange={this.handleTextChange}
+          value={this.state.text}
+          error="Something bad happened" label="Error example"
+        />
 
         Has second variant where the label and placeholder are separate:
-        <FormInput placeholder="e.g. Home" type="text" onChange={this.handleTextChange} value={this.state.text} error={this.state.error} label="Name"/>
+        <FormInput
+          placeholder="e.g. Home"
+          type="text"
+          onChange={this.handleTextChange}
+          value={this.state.text}
+          error={this.state.error}
+          label="Name"
+        />
 
         <h3>FormInput... Zorro Style (Masked)</h3>
         <MaskedFormInput
