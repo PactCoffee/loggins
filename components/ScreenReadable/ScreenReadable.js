@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react';
 
-import css from './AccessibleLabel.css';
+import css from './ScreenReadable.css';
 
-export default class AccessibleLabel {
+export default class ScreenReadable {
   render() {
     return (
       <span className={css.root}>{this.props.children}</span>
@@ -10,6 +10,6 @@ export default class AccessibleLabel {
   }
 }
 
-AccessibleLabel.propTypes = {
+ScreenReadable.propTypes = {
   children: PropTypes.any.isRequired,
 };
