@@ -57,7 +57,7 @@ describe('Checkbox', () => {
 
   it('Is checked when the checked prop is true', () => {
     const node = findDOMNode(renderIntoDocument(
-      <Checkbox onChange={() => ({})} checked={true}/>
+      <Checkbox checked={true}/>
     ));
     assert.ok(node.className.match(new RegExp(classNames.isChecked)));
   });
@@ -67,6 +67,11 @@ describe('Checkbox', () => {
       <Checkbox checked={false}/>
     ));
     assert.notOk(node.className.match(new RegExp(classNames.isChecked)));
+  });
+
+  it('Accepts a name attribute and applies it to the input', () => {
+    const instance = renderIntoDocument(<Checkbox name="herp"/>);
+    assert.equal(getInputNode(instance).name, 'herp');
   });
 
   it('Passes through the className', () => {

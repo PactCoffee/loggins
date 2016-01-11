@@ -1,4 +1,4 @@
-import React, { Component, PropTypes, findDOMNode } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { uniqueId } from 'lodash/utility';
 
 import css from './FormInput.css';
@@ -40,13 +40,6 @@ export default class FormInput extends Component {
     onChange(value);
   }
 
-  focus() {
-    return findDOMNode(this.refs.focusable).focus();
-  }
-  blur() {
-    return findDOMNode(this.refs.focusable).blur();
-  }
-
   render() {
     const {
       placeholder,
@@ -60,39 +53,40 @@ export default class FormInput extends Component {
     const { focus, id } = this.state;
 
     const active = value && !!value.length;
-    const isInsideVariant = !!placeholder;
 
     const outerCSS = [
       css.container,
       required ? css.required : null,
-      isInsideVariant ? css.labelInside : css.labelOutside,
-      error ? css.error : null,
-      active ? css.active : null,
-      focus ? css.focus : null,
+      placeholder ? css.labelInside : css.labelOutside,
+      error ? css.containerError : null,
+      active ? css.containerActive : null,
+      focus ? css.containerFocus : null,
       borderless ? css.borderless : null,
+    ].join(' ');
+
+    const messageCSS = [
+      css.message,
+      error ? css.messageError : null,
     ].join(' ');
 
     return (
       <div className={outerCSS}>
-        <div className={css.wrapper}>
-          <label htmlFor={id} className={css.label}>
-            {label}{required ? '*' : null}
-          </label>
-          <input
-            placeholder={placeholder}
-            onFocus={this.handleFocus}
-            onBlur={this.handleBlur}
-            className={css.input}
-            onChange={this.handleChange}
-            value={value}
-            id={id}
-            type={type}
-            ref="focusable"
-          />
-        </div>
-        <div className={css.message}>
+        <label htmlFor={id} className={css.label}>
+          {label}{required ? '*' : null}
+        </label>
+        <input
+          placeholder={placeholder}
+          onFocus={this.handleFocus}
+          onBlur={this.handleBlur}
+          className={css.input}
+          onChange={this.handleChange}
+          value={value}
+          id={id}
+          type={type}
+        />
+        <span className={messageCSS}>
           {this.props.error}
-        </div>
+        </span>
       </div>
     );
   }
