@@ -27,7 +27,6 @@ export default class BtnSection extends Component {
         <h3>Contexts</h3>
         <Btn className={[m.mbs, m.mrs].join(' ')}>Default</Btn>
         <Btn className={[m.mbs, m.mrs].join(' ')} context="primary">Primary</Btn>
-        <Btn className={[m.mbs, m.mrs].join(' ')} context="secondary">Secondary</Btn>
         <Btn className={[m.mbs, m.mrs].join(' ')} context="danger">Danger</Btn>
         <Btn className={[m.mbs, m.mrs].join(' ')} context="whiteOut">Whiteout</Btn>
 
@@ -37,7 +36,6 @@ export default class BtnSection extends Component {
 
         <Btn className={[m.mbs, m.mrs].join(' ')} variant="hollow">Default</Btn>
         <Btn className={[m.mbs, m.mrs].join(' ')} context="primary" variant="hollow">Primary</Btn>
-        <Btn className={[m.mbs, m.mrs].join(' ')} context="secondary" variant="hollow">Secondary</Btn>
         <Btn className={[m.mbs, m.mrs].join(' ')} context="danger" variant="hollow">Danger</Btn>
         <Btn className={[m.mbs, m.mrs].join(' ')} context="whiteOut" variant="hollow">Whiteout</Btn>
 
@@ -45,20 +43,17 @@ export default class BtnSection extends Component {
 
         <Btn className={[m.mbs, m.mrs].join(' ')} variant="text">Default</Btn>
         <Btn className={[m.mbs, m.mrs].join(' ')} context="primary" variant="text">Primary</Btn>
-        <Btn className={[m.mbs, m.mrs].join(' ')} context="secondary" variant="text">Secondary</Btn>
         <Btn className={[m.mbs, m.mrs].join(' ')} context="danger" variant="text">Danger</Btn>
         <Btn className={[m.mbs, m.mrs].join(' ')} context="whiteOut" variant="text">Whiteout</Btn>
 
         <h3>Disabled</h3>
         <Btn className={[m.mbs, m.mrs].join(' ')} disabled>Default</Btn>
         <Btn className={[m.mbs, m.mrs].join(' ')} context="primary" variant="hollow" disabled>Primary</Btn>
-        <Btn className={[m.mbs, m.mrs].join(' ')} context="secondary" variant="text" disabled>Secondary</Btn>
         <Btn className={[m.mbs, m.mrs].join(' ')} context="danger" disabled>Danger</Btn>
         <Btn className={[m.mbs, m.mrs].join(' ')} context="whiteOut" disabled>Whiteout</Btn>
 
         <h3>Disabled</h3>
         <Btn className={[m.mbs, m.mrs].join(' ')} type="primary" disabled>Primary</Btn>
-        <Btn className={[m.mbs, m.mrs].join(' ')} type="secondary" disabled>Secondary</Btn>
         <Btn className={[m.mbs, m.mrs].join(' ')} type="danger" disabled>Danger</Btn>
 
         <h3>With icon(s)</h3>

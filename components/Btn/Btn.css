@@ -37,16 +37,6 @@
   background: color(var(--color-primary) l(- 2%));
 }
 
-.secondary {
-  background: var(--color-secondary);
-}
-.secondary:hover {
-  background: color(var(--color-secondary) l(+ 5%));
-}
-.secondary:active {
-  background: color(var(--color-secondary) l(- 5%));
-}
-
 .danger {
   background: var(--color-error);
 }
@@ -91,18 +81,6 @@
 }
 .primary.hollow:active {
   background: color(var(--color-primary) l(- 5%));
-}
-
-.secondary.hollow {
-  box-shadow: inset 0 0 0 0.1em var(--color-secondary);
-  color: var(--color-secondary);
-}
-.secondary.hollow:hover {
-  background: var(--color-secondary);
-  color: var(--color-white);
-}
-.secondary.hollow:active {
-  background: color(var(--color-secondary) l(- 5%));
 }
 
 .danger.hollow {
@@ -157,16 +135,6 @@
 }
 .primary.text:active {
   color: color(var(--color-primary) a(70%));
-}
-
-.secondary.text {
-  color: var(--color-secondary);
-}
-.secondary.text:hover {
-  color: color(var(--color-secondary) l(- 10%));
-}
-.secondary.text:active {
-  color: color(var(--color-secondary) a(70%));
 }
 
 .danger.text {
