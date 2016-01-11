@@ -57,7 +57,7 @@ describe('Checkbox', () => {
 
   it('Is checked when the checked prop is true', () => {
     const node = findDOMNode(renderIntoDocument(
-      <Checkbox checked={true}/>
+      <Checkbox onChange={() => ({})} checked={true}/>
     ));
     assert.ok(node.className.match(new RegExp(classNames.isChecked)));
   });
