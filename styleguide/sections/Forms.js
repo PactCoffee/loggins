@@ -38,6 +38,8 @@ export default class FormSection extends Component {
     this.handleSlide = this.handleSlide.bind(this);
     this.handleCopy = this.handleCopy.bind(this);
     this.handleDate = this.handleDate.bind(this);
+    this.focus = this.focus.bind(this);
+    this.blur = this.blur.bind(this);
 
     this.state = {
       emails: [],
@@ -127,6 +129,13 @@ export default class FormSection extends Component {
     this.setState({
       cvc: value,
     });
+  }
+
+  focus() {
+    this.refs.focusable.focus();
+  }
+  blur() {
+    this.refs.focusable.blur();
   }
 
   render() {
@@ -227,14 +236,44 @@ export default class FormSection extends Component {
         <SelectableInput value="Highlight me by clicking. If you copy text, you'll be alerted" onAction={this.handleCopy}/>
 
         <h3>FormInput</h3>
-        <p>Just a cute little animating input. Gracefully handles having a value passed in as well:</p>
-        <FormInput type="text" onChange={this.handleTextChange} value={this.state.text} error={this.state.error} label="First name"/>
-        <FormInput type="text" onChange={this.handleTextChange} value={this.state.lolText} error={this.state.error} label="Upcase &amp; sorted"/>
+        <p>
+          Just a cute little animating input. Gracefully handles having a value passed in, and can be focused/blurred from outside:
+          <button onClick={this.focus}>Focus</button>
+          <button onClick={this.blur}>Blur</button>
+        </p>
+        <FormInput
+          type="text"
+          onChange={this.handleTextChange}
+          value={this.state.text}
+          error={this.state.error}
+          label="First name"
+          ref="focusable"
+        />
+        <FormInput
+          type="text"
+          placeho
+          onChange={this.handleTextChange}
+          value={this.state.lolText}
+          error={this.state.error}
+          label="Upcase &amp; sorted"
+        />
         <p>Will also show an error if it's passed in:</p>
-        <FormInput type="text" onChange={this.handleTextChange} value={this.state.text} error="Something bad happened" label="Error example"/>
+        <FormInput
+          type="text"
+          onChange={this.handleTextChange}
+          value={this.state.text}
+          error="Something bad happened" label="Error example"
+        />
 
         Has second variant where the label and placeholder are separate:
-        <FormInput placeholder="e.g. Home" type="text" onChange={this.handleTextChange} value={this.state.text} error={this.state.error} label="Name"/>
+        <FormInput
+          placeholder="e.g. Home"
+          type="text"
+          onChange={this.handleTextChange}
+          value={this.state.text}
+          error={this.state.error}
+          label="Name"
+        />
 
         <h3>FormInput... Zorro Style (Masked)</h3>
         <MaskedFormInput
