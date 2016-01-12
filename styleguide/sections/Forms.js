@@ -108,22 +108,19 @@ export default class FormSection extends Component {
     this.setState({ slideVal });
   }
 
-  handleCreditCard(e) {
-    const { value } = e.target;
+  handleCreditCard(value) {
     this.setState({
       creditCard: value,
     });
   }
 
-  handleExpiryDate(e) {
-    const { value } = e.target;
+  handleExpiryDate(value) {
     this.setState({
       expiryDate: value,
     });
   }
 
-  handleCVC(e) {
-    const { value } = e.target;
+  handleCVC(value) {
     this.setState({
       cvc: value,
     });
@@ -253,6 +250,7 @@ export default class FormSection extends Component {
           onChange={this.handleExpiryDate}
           value={this.state.expiryDate}
           label="Expiry"
+          required
         />
         <br />
         <MaskedFormInput
