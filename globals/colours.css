@@ -30,6 +30,8 @@
   --color-mauve:        rgb(97,40,79);
   --color-copper:       rgb(179,91,60);
   --color-deepgrey:     rgb(77,77,77);
+  --color-gold:         rgb(225, 133, 51);
+  --color-aubergine:    rgb(95, 80, 78);
   --color-pact:         rgb(240, 168, 75);
 
   --color-primary:   var(--color-green);
