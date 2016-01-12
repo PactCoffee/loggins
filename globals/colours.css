@@ -9,7 +9,7 @@
   --color-black:        rgb(51,51, 51);
 
   --color-green:        rgb(41,174,155);
-  --color-red:          rgb(252,99,99);
+  --color-red:          var(--color-coral);
   --color-orange:       rgb(255,148,28);
 
   --color-brown:        rgb(156,120,102);
@@ -24,14 +24,17 @@
   --color-steel:        rgb(105,125,139);
 
   --color-teal:         rgb(95,183,177);
+  --color-teal-dark:    rgb(68, 136, 147);
   --color-maroon:       rgb(127,57,46);
   --color-taupe:        rgb(177,137,121);
   --color-yellow:       rgb(253,180,82);
   --color-mauve:        rgb(97,40,79);
   --color-copper:       rgb(179,91,60);
+  --color-coral:        rgb(252,99,99);
   --color-deepgrey:     rgb(77,77,77);
   --color-gold:         rgb(225, 133, 51);
   --color-aubergine:    rgb(95, 80, 78);
+  --color-charcoal:     rgb(95, 81, 72);
   --color-pact:         rgb(240, 168, 75);
 
   --color-primary:   var(--color-green);
