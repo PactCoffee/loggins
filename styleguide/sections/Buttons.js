@@ -29,8 +29,17 @@ export default class BtnSection extends Component {
         <Btn className={[m.mbs, m.mrs].join(' ')} context="primary">Primary</Btn>
         <Btn className={[m.mbs, m.mrs].join(' ')} context="danger">Danger</Btn>
         <Btn className={[m.mbs, m.mrs].join(' ')} context="whiteOut">Whiteout</Btn>
+        <Btn className={[m.mbs, m.mrs].join(' ')} context="subtle">Subtle</Btn>
 
         <h3>Styles</h3>
+
+        <h4>Call to action</h4>
+
+        <Btn className={[m.mbs, m.mrs].join(' ')} variant="cta">Default</Btn>
+        <Btn className={[m.mbs, m.mrs].join(' ')} context="primary" variant="cta">Primary</Btn>
+        <Btn className={[m.mbs, m.mrs].join(' ')} context="danger" variant="cta">Danger</Btn>
+        <Btn className={[m.mbs, m.mrs].join(' ')} context="whiteOut" variant="cta">Whiteout</Btn>
+        <Btn className={[m.mbs, m.mrs].join(' ')} context="subtle" variant="cta">Subtle</Btn>
 
         <h4>Hollow</h4>
 
@@ -38,6 +47,7 @@ export default class BtnSection extends Component {
         <Btn className={[m.mbs, m.mrs].join(' ')} context="primary" variant="hollow">Primary</Btn>
         <Btn className={[m.mbs, m.mrs].join(' ')} context="danger" variant="hollow">Danger</Btn>
         <Btn className={[m.mbs, m.mrs].join(' ')} context="whiteOut" variant="hollow">Whiteout</Btn>
+        <Btn className={[m.mbs, m.mrs].join(' ')} context="subtle" variant="hollow">Subtle</Btn>
 
         <h4>Text only</h4>
 
@@ -45,16 +55,30 @@ export default class BtnSection extends Component {
         <Btn className={[m.mbs, m.mrs].join(' ')} context="primary" variant="text">Primary</Btn>
         <Btn className={[m.mbs, m.mrs].join(' ')} context="danger" variant="text">Danger</Btn>
         <Btn className={[m.mbs, m.mrs].join(' ')} context="whiteOut" variant="text">Whiteout</Btn>
+        <Btn className={[m.mbs, m.mrs].join(' ')} context="subtle" variant="text">Subtle</Btn>
+
+        <h4>Condensed</h4>
+
+        <Btn className={[m.mbs, m.mrs].join(' ')} variant="condensed">Default</Btn>
+        <Btn className={[m.mbs, m.mrs].join(' ')} context="primary" variant="condensed">Primary</Btn>
+        <Btn className={[m.mbs, m.mrs].join(' ')} context="danger" variant="condensed">Danger</Btn>
+        <Btn className={[m.mbs, m.mrs].join(' ')} context="whiteOut" variant="condensed">Whiteout</Btn>
+        <Btn className={[m.mbs, m.mrs].join(' ')} context="subtle" variant="condensed">Subtle</Btn>
+
+        <h4>Tiny</h4>
+
+        <Btn className={[m.mbs, m.mrs].join(' ')} variant="tiny">Default</Btn>
+        <Btn className={[m.mbs, m.mrs].join(' ')} context="primary" variant="tiny">Primary</Btn>
+        <Btn className={[m.mbs, m.mrs].join(' ')} context="danger" variant="tiny">Danger</Btn>
+        <Btn className={[m.mbs, m.mrs].join(' ')} context="whiteOut" variant="tiny">Whiteout</Btn>
+        <Btn className={[m.mbs, m.mrs].join(' ')} context="subtle" variant="tiny">Subtle</Btn>
 
         <h3>Disabled</h3>
         <Btn className={[m.mbs, m.mrs].join(' ')} disabled>Default</Btn>
-        <Btn className={[m.mbs, m.mrs].join(' ')} context="primary" variant="hollow" disabled>Primary</Btn>
-        <Btn className={[m.mbs, m.mrs].join(' ')} context="danger" disabled>Danger</Btn>
-        <Btn className={[m.mbs, m.mrs].join(' ')} context="whiteOut" disabled>Whiteout</Btn>
-
-        <h3>Disabled</h3>
-        <Btn className={[m.mbs, m.mrs].join(' ')} type="primary" disabled>Primary</Btn>
-        <Btn className={[m.mbs, m.mrs].join(' ')} type="danger" disabled>Danger</Btn>
+        <Btn className={[m.mbs, m.mrs].join(' ')} variant="cta" disabled>Default</Btn>
+        <Btn className={[m.mbs, m.mrs].join(' ')} variant="condensed" disabled>Default</Btn>
+        <Btn className={[m.mbs, m.mrs].join(' ')} variant="tiny" disabled>Default</Btn>
+        <Btn className={[m.mbs, m.mrs].join(' ')} variant="hollow" disabled>Default</Btn>
 
         <h3>With icon(s)</h3>
         <Btn className={[m.mbs, m.mrs].join(' ')}>

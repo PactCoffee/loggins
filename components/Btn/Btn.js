@@ -43,13 +43,16 @@ Btn.propTypes = {
   fullWidth: PropTypes.bool,
   context: PropTypes.oneOf([
     'primary',
-    'secondary',
     'danger',
     'whiteOut',
+    'subtle',
   ]),
   variant: PropTypes.oneOf([
+    'condensed',
+    'cta',
     'hollow',
     'text',
+    'tiny',
   ]),
   onClick: PropTypes.func,
 };
