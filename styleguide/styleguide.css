@@ -135,6 +135,10 @@ body {
 .copper {background-color: var(--color-copper);}
 .aubergine {background-color: var(--color-aubergine);}
 .gold {background-color: var(--color-gold);}
+.coral {background-color: var(--color-coral);}
+.teal-dark {background-color: var(--color-teal-dark);}
+.deepgrey {background-color: var(--color-deepgrey);}
+.charcoal {background-color: var(--color-charcoal);}
 .pact {background-color: var(--color-pact);}
 .primary {background-color: var(--color-primary);}
 .secondary {background-color: var(--color-secondary);}

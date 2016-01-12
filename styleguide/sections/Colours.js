@@ -96,13 +96,17 @@ export default class Colours extends Component {
 
         <h2>Official™ Pact colour scheme</h2>
         {['teal',
+          'teal-dark',
           'maroon',
           'taupe',
           'yellow',
           'mauve',
           'copper',
-          'aubergine',
+          'coral',
+          'deepgrey',
           'gold',
+          'aubergine',
+          'charcoal',
           'pact',
           ].map((c, i) => <Swatch key={i} colour={c}/>)
         }
