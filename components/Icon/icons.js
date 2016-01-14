@@ -44,6 +44,7 @@ export default {
   chevron: cleanupSvg(require('./icons/chevron.svg')),
   voucher: cleanupSvg(require('./icons/voucher.svg')),
   triangle: cleanupSvg(require('./icons/triangle.svg')),
+  randomise: cleanupSvg(require('./icons/randomise.svg')),
   recurring: cleanupSvg(require('./icons/recurring.svg')),
   asap: cleanupSvg(require('./icons/asap.svg')),
   decaf: cleanupSvg(require('./icons/decaf.svg')),
