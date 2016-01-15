@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 
 import SharedFormInput from '../FormInput/SharedFormInput';
 
-export default class FormInput extends Component {
+export default class MaskedFormInput extends Component {
   render() {
     return (
       <SharedFormInput masked {...this.props}/>
@@ -10,13 +10,12 @@ export default class FormInput extends Component {
   }
 }
 
-FormInput.propTypes = {
-
+MaskedFormInput.propTypes = {
+  value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   onFocus: PropTypes.func,
   onBlur: PropTypes.func,
 
-  value: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   placeholder: PropTypes.string,

@@ -57,14 +57,15 @@ export default class SharedFormInput extends Component {
     const { focus, id } = this.state;
 
     const active = value && !!value.length;
+    const isInsideVariant = !!placeholder;
 
     const outerCSS = [
       css.container,
       required ? css.required : null,
-      placeholder ? css.labelInside : css.labelOutside,
-      error ? css.containerError : null,
-      active ? css.containerActive : null,
-      focus ? css.containerFocus : null,
+      isInsideVariant ? css.labelInside : css.labelOutside,
+      error ? css.error : null,
+      active ? css.active : null,
+      focus ? css.focus : null,
       borderless ? css.borderless : null,
     ].join(' ');
 
