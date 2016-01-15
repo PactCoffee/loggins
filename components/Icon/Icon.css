@@ -37,6 +37,7 @@
 .pod_mixed,
 .card,
 .arrow,
+.caffiene,
 .play,
 .asap {
   fill: transparent;
@@ -45,6 +46,7 @@
 
 /* Filled */
 .decaf,
+.randomise,
 .pactV,
 .pactH,
 .triangle,
