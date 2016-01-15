@@ -84,36 +84,37 @@ export default class SharedFormInput extends Component {
 
     return (
       <div className={outerCSS}>
-        <label htmlFor={id} className={css.label}>
-          {label}{required ? '*' : null}
-        </label>
-        {masked ?
-          <MaskedInput
-            onFocus={this.handleFocus}
-            onBlur={this.handleBlur}
-            className={css.input}
-            onChange={this.handleChange}
-            value={value}
-            id={id}
-            type={type}
-            pattern={pattern}
-            placeholder={placeholder}
-            ref="focusable"
-          />
-          :
-          <input
-            placeholder={placeholder}
-            onFocus={this.handleFocus}
-            onBlur={this.handleBlur}
-            className={css.input}
-            onChange={this.handleChange}
-            value={value}
-            id={id}
-            type={type}
-            ref="focusable"
-          />
-
-        }
+        <div className={css.wrapper}>
+          <label htmlFor={id} className={css.label}>
+            {label}{required ? '*' : null}
+          </label>
+          {masked ?
+            <MaskedInput
+              onFocus={this.handleFocus}
+              onBlur={this.handleBlur}
+              className={css.input}
+              onChange={this.handleChange}
+              value={value}
+              id={id}
+              type={type}
+              pattern={pattern}
+              placeholder={placeholder}
+              ref="focusable"
+            />
+            :
+            <input
+              placeholder={placeholder}
+              onFocus={this.handleFocus}
+              onBlur={this.handleBlur}
+              className={css.input}
+              onChange={this.handleChange}
+              value={value}
+              id={id}
+              type={type}
+              ref="focusable"
+            />
+          }
+        </div>
         <span className={messageCSS}>
           {this.props.error}
         </span>
