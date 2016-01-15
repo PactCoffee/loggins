@@ -3,9 +3,15 @@ import React, { Component, PropTypes } from 'react';
 import SharedFormInput from '../FormInput/SharedFormInput';
 
 export default class MaskedFormInput extends Component {
+  focus() {
+    return this.refs.focusable.focus();
+  }
+  blur() {
+    return this.refs.focusable.blur();
+  }
   render() {
     return (
-      <SharedFormInput masked {...this.props}/>
+      <SharedFormInput ref="focusable" masked {...this.props}/>
     );
   }
 }
