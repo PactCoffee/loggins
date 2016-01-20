@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component, PropTypes, findDOMNode } from 'react';
 import { uniqueId } from 'lodash/utility';
 
 import MaskedInput from 'react-maskedinput/src/index.jsx';
@@ -18,6 +18,14 @@ export default class SharedFormInput extends Component {
       id: uniqueId('forminput'),
     };
   }
+
+  focus() {
+    return findDOMNode(this.refs.focusable).focus();
+  }
+  blur() {
+    return findDOMNode(this.refs.focusable).blur();
+  }
+
 
   handleFocus() {
     const { onFocus } = this.props;
@@ -57,14 +65,15 @@ export default class SharedFormInput extends Component {
     const { focus, id } = this.state;
 
     const active = value && !!value.length;
+    const isInsideVariant = !!placeholder;
 
     const outerCSS = [
       css.container,
       required ? css.required : null,
-      placeholder ? css.labelInside : css.labelOutside,
-      error ? css.containerError : null,
-      active ? css.containerActive : null,
-      focus ? css.containerFocus : null,
+      isInsideVariant ? css.labelInside : css.labelOutside,
+      error ? css.error : null,
+      active ? css.active : null,
+      focus ? css.focus : null,
       borderless ? css.borderless : null,
     ].join(' ');
 
@@ -75,34 +84,37 @@ export default class SharedFormInput extends Component {
 
     return (
       <div className={outerCSS}>
-        <label htmlFor={id} className={css.label}>
-          {label}{required ? '*' : null}
-        </label>
-        {masked ?
-          <MaskedInput
-            onFocus={this.handleFocus}
-            onBlur={this.handleBlur}
-            className={css.input}
-            onChange={this.handleChange}
-            value={value}
-            id={id}
-            type={type}
-            pattern={pattern}
-            placeholder={placeholder}
-          />
-          :
-          <input
-            placeholder={placeholder}
-            onFocus={this.handleFocus}
-            onBlur={this.handleBlur}
-            className={css.input}
-            onChange={this.handleChange}
-            value={value}
-            id={id}
-            type={type}
-          />
-
-        }
+        <div className={css.wrapper}>
+          <label htmlFor={id} className={css.label}>
+            {label}{required ? '*' : null}
+          </label>
+          {masked ?
+            <MaskedInput
+              onFocus={this.handleFocus}
+              onBlur={this.handleBlur}
+              className={css.input}
+              onChange={this.handleChange}
+              value={value}
+              id={id}
+              type={type}
+              pattern={pattern}
+              placeholder={placeholder}
+              ref="focusable"
+            />
+            :
+            <input
+              placeholder={placeholder}
+              onFocus={this.handleFocus}
+              onBlur={this.handleBlur}
+              className={css.input}
+              onChange={this.handleChange}
+              value={value}
+              id={id}
+              type={type}
+              ref="focusable"
+            />
+          }
+        </div>
         <span className={messageCSS}>
           {this.props.error}
         </span>
