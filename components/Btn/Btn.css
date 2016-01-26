@@ -28,6 +28,7 @@
 /* Types */
 .primary {
   background: var(--color-primary);
+  color: var(--color-white);
 }
 .primary:hover {
   background: color(var(--color-primary) l(+ 2%));
@@ -166,6 +167,7 @@
   font-size: 0.9em;
   text-transform: uppercase;
   font-weight: 600;
+  padding: .84rem 3.1rem;
 }
 
 /* Links */
