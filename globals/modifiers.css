@@ -122,16 +122,6 @@
 .bgTextLight {background: var(--color-text-light);}
 .bgMuted {    background: var(--color-muted);}
 
-/* Color icons */
-.flPrimary {  fill: var(--color-primary);}
-.flSecondary {fill: var(--color-secondary);}
-.flError {    fill: var(--color-error);}
-.flAlert {    fill: var(--color-alert);}
-.flText {     fill: var(--color-text);}
-.flTextLight {fill: var(--color-text-light);}
-.flMuted {    fill: var(--color-muted);}
-.flWhite {    fill: var(--color-white);}
-
 /* Text align */
 .alignc {text-align: center;}
 .alignl {text-align: left;}
@@ -152,6 +142,7 @@
 .small {  font-size: var(--font-small);}
 .medium { font-size: var(--font-medium);}
 .large {  font-size: var(--font-large);}
+.largeish { font-size: var(--font-largeish);}
 .larger { font-size: var(--font-larger);}
 .largest {font-size: var(--font-largest);}
 
