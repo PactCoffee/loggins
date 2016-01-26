@@ -42,3 +42,32 @@
   font-size: 1em;
   font-weight: 700;
 }
+
+.link:link {
+  text-decoration: underline;
+  color: var(--color-primary);
+  font-style: italic;
+}
+.link:visited {
+  color: color(var(--color-primary) l(-10%));
+}
+.link:hover {
+  color: color(var(--color-primary) a(70%));
+}
+.link:active {
+  color: color(var(--color-primary) a(50%));
+}
+
+.whitelink:link {
+  composes: link;
+  color: var(--color-white);
+}
+.whitelink:visited {
+  color: color(var(--color-white) l(-10%));
+}
+.whitelink:hover {
+  color: color(var(--color-white) a(70%));
+}
+.whitelink:active {
+  color: color(var(--color-white) a(50%));
+}

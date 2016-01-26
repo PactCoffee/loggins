@@ -21,6 +21,8 @@ export default class Type extends Component {
         <SectionTitle>Section Title</SectionTitle>
         <SectionTitle>Really very long section title indeed</SectionTitle>
         <p>Body text is always brandon. We have <em>italic</em> and <strong>bold</strong>, as well as light, thin, medium and black weights (to be used specifically).</p>
+        <p>Links are cool: <a className={t.link} href="#">just add a class</a>. <a className={t.whitelink} href="#">They also come in white</a>.</p>
+        <p></p>
       </Section>
     );
   }
