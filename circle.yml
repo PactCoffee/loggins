@@ -1,0 +1,3 @@
+dependencies:
+  post:
+    - rm -r ~/loggins/node_modules
