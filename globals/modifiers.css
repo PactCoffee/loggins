@@ -6,12 +6,13 @@
   --size-large:  1.5rem;
   --size-larger: 2rem;
 
-  --font-smaller: 0.5rem;
-  --font-small:   0.8rem;
-  --font-medium:  1rem;
-  --font-large:   1.3rem;
-  --font-larger:  2rem;
-  --font-largest: 2.9rem;
+  --font-smaller:  0.5rem;
+  --font-small:    0.8rem;
+  --font-medium:   1rem;
+  --font-large:    1.3rem;
+  --font-largeish: 1.56rem;
+  --font-larger:   2rem;
+  --font-largest:  2.9rem;
 
   --radius-medium: 8px;
 
@@ -109,6 +110,7 @@
 .fgText {     color: var(--color-text);}
 .fgTextLight {color: var(--color-text-light);}
 .fgMuted {    color: var(--color-muted);}
+.fgWhite {    color: var(--color-white);}
 
 /* Background coloured-in */
 .bgWhite {    background: var(--color-white);}
@@ -140,6 +142,7 @@
 .small {  font-size: var(--font-small);}
 .medium { font-size: var(--font-medium);}
 .large {  font-size: var(--font-large);}
+.largeish { font-size: var(--font-largeish);}
 .larger { font-size: var(--font-larger);}
 .largest {font-size: var(--font-largest);}
 
