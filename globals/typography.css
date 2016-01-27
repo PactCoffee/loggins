@@ -58,7 +58,7 @@
   color: color(var(--color-primary) a(50%));
 }
 
-.whitelink:link {
+.whitelink {
   composes: link;
   color: var(--color-white);
 }
