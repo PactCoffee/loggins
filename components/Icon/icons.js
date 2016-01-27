@@ -47,9 +47,12 @@ export default {
   triangle: cleanupSvg(require('./icons/triangle.svg')),
   randomise: cleanupSvg(require('./icons/randomise.svg')),
   recurring: cleanupSvg(require('./icons/recurring.svg')),
+  recurringSmall: cleanupSvg(require('./icons/recurringSmall.svg')),
   asap: cleanupSvg(require('./icons/asap.svg')),
   decaf: cleanupSvg(require('./icons/decaf.svg')),
   calendar: cleanupSvg(require('./icons/calendar.svg')),
+  star: cleanupSvg(require('./icons/star.svg')),
+  envelope: cleanupSvg(require('./icons/envelope.svg')),
 
   twitter: cleanupSvg(require('./icons/twitter.svg')),
   facebook: cleanupSvg(require('./icons/facebook.svg')),
