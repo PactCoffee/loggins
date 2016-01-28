@@ -43,7 +43,7 @@
   font-weight: 700;
 }
 
-.link:link {
+.link {
   text-decoration: underline;
   color: var(--color-primary);
   font-style: italic;
