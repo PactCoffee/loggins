@@ -21,6 +21,7 @@
 .clock,
 .coffee,
 .recurring,
+.recurringSmall,
 .cog,
 .tick,
 .chevron,
@@ -39,7 +40,8 @@
 .arrow,
 .caffiene,
 .play,
-.asap {
+.asap,
+.star {
   fill: transparent;
   stroke: currentColor;
 }
@@ -60,7 +62,8 @@
 .wholebean,
 .espresso,
 .stovetop,
-.calendar {
+.calendar,
+.envelope {
   fill: currentColor;
 }
 
@@ -72,4 +75,8 @@
 }
 .instagram {
   fill: var(--color-instagram);
+}
+
+.white {
+  fill: var(--color-white);
 }
