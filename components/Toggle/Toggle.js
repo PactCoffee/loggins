@@ -10,7 +10,7 @@ export default class Toggle extends Component {
         <label className={[css.label, value ? css.isOn : null].join(' ')}>
           <input
             type="checkbox"
-            checked={value}
+            defaultChecked={value}
             onChange={onChange}
             className={css.input}
           />
