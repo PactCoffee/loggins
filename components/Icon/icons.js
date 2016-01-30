@@ -53,6 +53,7 @@ export default {
   calendar: cleanupSvg(require('./icons/calendar.svg')),
   star: cleanupSvg(require('./icons/star.svg')),
   envelope: cleanupSvg(require('./icons/envelope.svg')),
+  globe: cleanupSvg(require('./icons/globe.svg')),
 
   twitter: cleanupSvg(require('./icons/twitter.svg')),
   facebook: cleanupSvg(require('./icons/facebook.svg')),

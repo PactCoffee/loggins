@@ -63,7 +63,8 @@
 .espresso,
 .stovetop,
 .calendar,
-.envelope {
+.envelope,
+.globe {
   fill: currentColor;
 }
 
