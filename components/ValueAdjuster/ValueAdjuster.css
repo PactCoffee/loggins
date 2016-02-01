@@ -1,0 +1,21 @@
+.root {
+  display: block;
+}
+
+.value {
+  display: inline-block;
+  margin: 0 1em;
+  font-size: 1.5em;
+  vertical-align: middle;
+}
+
+.btn {
+  padding: 0.5rem;
+  border: 0;
+  display: inline-block;
+  font-size: 0.5em;
+  vertical-align: middle;
+}
+.btn:disabled {
+  opacity: 0.5;
+}

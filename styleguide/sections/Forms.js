@@ -7,6 +7,7 @@ import Section from '../components/Section';
 import MaskedFormInput from 'components/MaskedFormInput/MaskedFormInput';
 import EmailMultiInput from 'components/EmailMultiInput/EmailMultiInput';
 import SelectableInput from 'components/SelectableInput/SelectableInput';
+import ValueAdjuster from 'components/ValueAdjuster/ValueAdjuster';
 import LikeDislike from 'components/LikeDislike/LikeDislike';
 import DatePicker from 'components/DatePicker/DatePicker';
 import RadioGroup from 'components/RadioGroup/RadioGroup';
@@ -27,6 +28,7 @@ export default class FormSection extends Component {
 
     this.handleProgressChange = this.handleProgressChange.bind(this);
     this.handleEmailChange = this.handleEmailChange.bind(this);
+    this.handleValueAdjust = this.handleValueAdjust.bind(this);
     this.handleTextChange = this.handleTextChange.bind(this);
     this.handleCreditCard = this.handleCreditCard.bind(this);
     this.handleExpiryDate = this.handleExpiryDate.bind(this);
@@ -50,6 +52,7 @@ export default class FormSection extends Component {
       progressVal: 50,
       date: new Date().getTime(),
       slideVal: 50,
+      adjustVal: 50,
       creditCard: '',
       expiryDate: '',
       cvc: '',
@@ -106,6 +109,10 @@ export default class FormSection extends Component {
 
   handleSlide(slideVal) {
     this.setState({ slideVal });
+  }
+
+  handleValueAdjust(adjustVal) {
+    this.setState({ adjustVal });
   }
 
   handleCreditCard(value) {
@@ -199,6 +206,27 @@ export default class FormSection extends Component {
         <strong>With steps &amp; ticks:</strong>
         <Slider ticks={10} step={10} onChange={this.handleSlide} value={this.state.slideVal}/>
         <p>Value: {this.state.slideVal}</p>
+
+        <h3>Value adjuster</h3>
+        <ValueAdjuster
+          value={this.state.adjustVal}
+          changeAmount={10}
+          min={0}
+          max={100}
+          onChange={this.handleValueAdjust}
+        />
+        <p>Value: {this.state.adjustVal}</p>
+
+        <h3>With a display value transformation</h3>
+        <ValueAdjuster
+          value={this.state.adjustVal}
+          changeAmount={10}
+          min={0}
+          max={100}
+          onChange={this.handleValueAdjust}
+          transformValue={(val) => { return `$${val}`; }}
+        />
+        <p>Value: {this.state.adjustVal}</p>
 
         <h3>DatePicker</h3>
         <DatePicker value={this.state.date} onChange={this.handleDate}/>
