@@ -61,6 +61,7 @@ export default class SharedFormInput extends Component {
       value,
       label,
       type,
+      autocomplete,
     } = this.props;
     const { focus, id } = this.state;
 
@@ -112,6 +113,7 @@ export default class SharedFormInput extends Component {
               id={id}
               type={type}
               ref="focusable"
+              autoComplete={autocomplete}
             />
           }
         </div>
@@ -136,6 +138,7 @@ SharedFormInput.propTypes = {
   type: PropTypes.string.isRequired,
   pattern: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
+  autocomplete: PropTypes.string,
 
   transform: PropTypes.func,
   borderless: PropTypes.bool,
