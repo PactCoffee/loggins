@@ -40,6 +40,7 @@ export default {
   thumb: cleanupSvg(require('./icons/thumb.svg')),
   cross: cleanupSvg(require('./icons/cross.svg')),
   plus: cleanupSvg(require('./icons/plus.svg')),
+  minus: cleanupSvg(require('./icons/minus.svg')),
   caffiene: cleanupSvg(require('./icons/caffiene.svg')),
   coffee: cleanupSvg(require('./icons/coffee.svg')),
   chevron: cleanupSvg(require('./icons/chevron.svg')),
