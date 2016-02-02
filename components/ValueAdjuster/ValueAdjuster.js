@@ -61,16 +61,17 @@ export default class ValueAdjuster extends Component {
       max,
       className,
       btnClassName,
+      disabled,
     } = this.props;
 
     return (
       <div className={[css.root, className].join(' ')}>
-        <button type="button" className={[css.btn, btnClassName].join(' ')} onClick={this.decrementValue} disabled={value <= min}>
+        <button type="button" className={[css.btn, btnClassName].join(' ')} onClick={this.decrementValue} disabled={disabled || value <= min}>
           <Icon name="minus" />
           <ScreenReadable>Decrease value by {changeAmount}</ScreenReadable>
         </button>
         <span className={css.value}>{this.getDisplayValue()}</span>
-        <button type="button" className={[css.btn, btnClassName].join(' ')} onClick={this.incrementValue} disabled={value >= max}>
+        <button type="button" className={[css.btn, btnClassName].join(' ')} onClick={this.incrementValue} disabled={disabled || value >= max}>
           <Icon name="plus" />
           <ScreenReadable>Increase value by {changeAmount}</ScreenReadable>
         </button>
@@ -89,6 +90,7 @@ ValueAdjuster.propTypes = {
   changeAmount: PropTypes.number,
   className: PropTypes.string,
   btnClassName: PropTypes.string,
+  disabled: PropTypes.bool,
 };
 
 ValueAdjuster.defaultProps = {

@@ -228,6 +228,17 @@ export default class FormSection extends Component {
         />
         <p>Value: {this.state.adjustVal}</p>
 
+        <h3>Disabled</h3>
+        <ValueAdjuster
+          value={this.state.adjustVal}
+          changeAmount={10}
+          min={0}
+          max={100}
+          onChange={this.handleValueAdjust}
+          disabled
+          transformValue={(val) => { return `$${val}`; }}
+        />
+
         <h3>DatePicker</h3>
         <DatePicker value={this.state.date} onChange={this.handleDate}/>
         <p>Selected date: {new Date(this.state.date).toDateString()}</p>
