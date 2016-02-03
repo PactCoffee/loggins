@@ -34,9 +34,6 @@
 .minus,
 .heart,
 .pod,
-.pod_long,
-.pod_short,
-.pod_mixed,
 .card,
 .arrow,
 .caffiene,
@@ -65,7 +62,10 @@
 .stovetop,
 .calendar,
 .envelope,
-.globe {
+.globe,
+.pod_long,
+.pod_short,
+.pod_mixed, {
   fill: currentColor;
 }
 
