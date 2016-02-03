@@ -64,9 +64,9 @@ export default {
   aeropressFilter: cleanupSvg(require('./icons/aeropressFilter.svg')),
 
   pod: cleanupSvg(require('./icons/pod.svg')),
-  pod_long: cleanupSvg(require('./icons/podLong.svg')),
-  pod_short: cleanupSvg(require('./icons/podShort.svg')),
-  pod_mixed: cleanupSvg(require('./icons/podMixed.svg')),
+  pod_long: cleanupSvg(require('./icons/pod_long.svg')),
+  pod_short: cleanupSvg(require('./icons/pod_short.svg')),
+  pod_mixed: cleanupSvg(require('./icons/pod_mixed.svg')),
   drip: cleanupSvg(require('./icons/dripper.svg')),
   espresso: cleanupSvg(require('./icons/espresso.svg')),
   stovetop: cleanupSvg(require('./icons/stovetop.svg')),
