@@ -1,5 +1,4 @@
-import React from 'react';
-import { findDOMNode } from 'react-dom';
+import React, { findDOMNode } from 'react';
 import { renderIntoDocument, Simulate } from 'react/lib/ReactTestUtils';
 
 import Btn from '../Btn/Btn.js';
@@ -18,15 +17,8 @@ describe('Btn', () => {
     assert.ok(node.className.match(/\bTESTMCTESTERSON\b/));
   });
 
-  it(`Doesn't pass through all props it's given`, () => {
-    const node = findDOMNode(renderIntoDocument(
-      <Btn data-someRandoAttribute="derp"/>
-    ));
-    assert.equal(node.getAttribute('data-someRandoAttribute'), null);
-  });
-
   it('Correctly applies the className for the context', () => {
-    ['primary', 'secondary', 'danger', 'whiteOut'].forEach(context => {
+    ['primary', 'danger', 'whiteOut', 'subtle'].forEach(context => {
       const node = findDOMNode(renderIntoDocument(
         <Btn context={context}/>
       ));
@@ -35,7 +27,7 @@ describe('Btn', () => {
   });
 
   it('Correctly applies the className for the variant', () => {
-    ['hollow', 'text'].forEach(variant => {
+    ['condensed', 'cta', 'hollow', 'text', 'tiny'].forEach(variant => {
       const node = findDOMNode(renderIntoDocument(
         <Btn variant={variant}/>
       ));
