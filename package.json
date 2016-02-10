@@ -26,7 +26,7 @@
     "url": "https://github.com/PactCoffee/loggins.git"
   },
   "dependencies": {
-    "@pactcoffee/fontpack": "^2.1.0",
+    "@pactcoffee/fontpack": "^2.2.0",
     "invariant": "^2.2.0",
     "lodash": "^3.10.1",
     "moment": "^2.11.0",
