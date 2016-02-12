@@ -60,7 +60,7 @@ export default class SharedFormInput extends Component {
       error,
       value,
       label,
-      type,
+      ...remainingProps,
     } = this.props;
     const { focus, id } = this.state;
 
@@ -90,19 +90,20 @@ export default class SharedFormInput extends Component {
           </label>
           {masked ?
             <MaskedInput
+              {...remainingProps}
               onFocus={this.handleFocus}
               onBlur={this.handleBlur}
               className={css.input}
               onChange={this.handleChange}
               value={value}
               id={id}
-              type={type}
               pattern={pattern}
               placeholder={placeholder}
               ref="focusable"
             />
             :
             <input
+              {...remainingProps}
               placeholder={placeholder}
               onFocus={this.handleFocus}
               onBlur={this.handleBlur}
@@ -110,7 +111,6 @@ export default class SharedFormInput extends Component {
               onChange={this.handleChange}
               value={value}
               id={id}
-              type={type}
               ref="focusable"
             />
           }
@@ -133,7 +133,6 @@ SharedFormInput.propTypes = {
 
   value: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
   pattern: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
 
