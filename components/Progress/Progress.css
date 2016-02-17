@@ -12,7 +12,6 @@
   max-width: 100%;
   background: var(--color-grey);
   border-radius: 1em;
-  transition: all 100ms linear;
 }
 
 .low {
