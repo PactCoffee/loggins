@@ -31,10 +31,11 @@ export default class Progress extends Component {
   }
 
   render() {
+    const white = this.props.white;
     const width = (this.props.value / (this.props.max - this.props.min)) * 100;
 
     return (
-      <div className={styles.root}>
+      <div className={[styles.root, white && styles.white].join(' ')}>
         <div
           className={[styles.bar, this.getStyles(width)].join(' ')}
           style={{ width: `${width}%` }}
@@ -49,4 +50,5 @@ Progress.propTypes = {
   max: PropTypes.number.isRequired,
   value: PropTypes.number.isRequired,
   hueChange: PropTypes.bool,
+  white: PropTypes.bool,
 };

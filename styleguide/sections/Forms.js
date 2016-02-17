@@ -18,6 +18,7 @@ import FieldGroup from 'components/Form/FieldGroup';
 import Toggle from 'components/Toggle/Toggle';
 import Slider from 'components/Slider/Slider';
 import * as m from 'globals/modifiers.css';
+import Panel from 'components/Panel/Panel';
 import Field from 'components/Form/Field';
 import Btn from 'components/Btn/Btn';
 
@@ -342,6 +343,12 @@ export default class FormSection extends Component {
         <Progress min={0} max={100} value={25}/>
         <p>Changing the value will animate the bar. <button onClick={this.handleProgressChange}>Change value</button></p>
         <Progress min={0} max={100} hueChange value={this.state.progressVal}/>
+
+        <p>Also there's a white version for use on non-white backgrounds:</p>
+        <Panel type="success">
+          <Progress min={0} max={100} white value={this.state.progressVal}/>
+        </Panel>
+        <br/>
       </Section>
     );
   }
