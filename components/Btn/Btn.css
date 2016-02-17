@@ -216,3 +216,13 @@
   width: 100%;
   text-align: center;
 }
+
+.link {
+  composes: root text;
+}
+.primaryLink {
+  composes: root text primary;
+}
+.linkWhite {
+  composes: root text whiteOut;
+}
