@@ -11,7 +11,8 @@
   text-transform: uppercase;
   font-weight: bold;
   font-size: 0.65em;
-  background: var(--color-blue-muted);
+  background: var(--color-red);
+  color: var(--color-white);
   height: 1.75rem;
   width: 4rem;
   line-height: 1.9rem;
@@ -38,7 +39,7 @@
   right: 0.6rem;
   content: 'No';
   text-transform: uppercase;
-  color: var(--color-action);
+  color: var(--color-white);
   line-height: 1.9rem;
   transition: all 200ms var(--easeoutcubic);
 }
@@ -73,7 +74,7 @@
 }
 
 .label.isOn {
-  background: var(--color-action);
+  background: var(--color-primary);
 }
 .label.isOn:before {
   transform: translateX(0);
