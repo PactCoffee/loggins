@@ -30,6 +30,7 @@
     "invariant": "^2.2.0",
     "lodash": "^3.10.1",
     "moment": "^2.11.0",
+    "react": "^0.13.3",
     "react-day-picker": "^1.2.0",
     "react-maskedinput": "iest/react-maskedinput",
     "react-motion": "^0.3.0",
@@ -81,7 +82,6 @@
     "postcss-loader": "^0.8.0",
     "postcss-simple-vars": "^1.2.0",
     "raw-loader": "^0.5.1",
-    "react": "^0.13.3",
     "react-router": "^1.0.0-rc1",
     "react-transform-catch-errors": "^0.1.1",
     "react-transform-hmr": "^1.0.1",
@@ -98,8 +98,5 @@
     "webpack-fail-plugin": "^1.0.2",
     "webpack-hot-middleware": "^2.6.0",
     "webpack-postcss-tools": "^1.1.1"
-  },
-  "peerDependencies": {
-    "react": "^0.13.3"
   }
 }
