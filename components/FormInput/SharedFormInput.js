@@ -60,21 +60,36 @@ export default class SharedFormInput extends Component {
       error,
       value,
       label,
+      labelOutside,
       ...remainingProps,
     } = this.props;
+
     const { focus, id } = this.state;
 
-    const active = value && !!value.length;
-    const isInsideVariant = !!placeholder;
+    const hasValue = value && value.length > 0;
+    const isOutsideVariant = labelOutside || !placeholder;
+    const labelIsOutside = labelOutside || (hasValue && !placeholder);
 
     const outerCSS = [
       css.container,
-      required ? css.required : null,
-      isInsideVariant ? css.labelInside : css.labelOutside,
-      error ? css.error : null,
-      active ? css.active : null,
-      focus ? css.focus : null,
-      borderless ? css.borderless : null,
+      isOutsideVariant
+        ? css.labelOutside
+        : css.labelInside,
+      labelIsOutside
+        ? css.active
+        : null,
+      required
+        ? css.required
+        : null,
+      error
+        ? css.error
+        : null,
+      focus
+        ? css.focus
+        : null,
+      borderless
+        ? css.borderless
+        : null,
     ].join(' ');
 
     const messageCSS = [
@@ -139,7 +154,12 @@ SharedFormInput.propTypes = {
   transform: PropTypes.func,
   borderless: PropTypes.bool,
   required: PropTypes.bool,
+  labelOutside: PropTypes.bool,
 
   // If set, will display underneath the input
   error: PropTypes.string,
+};
+
+SharedFormInput.defaultProps = {
+  labelOutside: false,
 };
