@@ -274,7 +274,15 @@ export default class FormSection extends Component {
         />
         <FormInput
           type="text"
-          placeho
+          placeholder="Adding a placeholder removes the animation"
+          labelOutside
+          onChange={this.handleTextChange}
+          value={this.state.text}
+          error={this.state.error}
+          label="With placeholder"
+        />
+        <FormInput
+          type="text"
           onChange={this.handleTextChange}
           value={this.state.lolText}
           error={this.state.error}
