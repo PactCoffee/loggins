@@ -1,5 +1,5 @@
 import React, { Component, PropTypes, findDOMNode } from 'react';
-import { uniqueId } from 'lodash/utility';
+import { uniqueId } from 'lodash';
 
 import css from './FormInput.css';
 

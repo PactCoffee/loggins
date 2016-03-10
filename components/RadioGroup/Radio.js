@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { uniqueId } from 'lodash/utility';
+import { uniqueId } from 'lodash';
 
 import css from './Radio.css';
 
