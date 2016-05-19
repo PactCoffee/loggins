@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import TagInput from 'react-tagsinput';
 import { backspace, tab, enter, del, comma } from '../../util/keyCodes';
 
@@ -6,17 +6,18 @@ import s from './EmailMultiInput.css';
 
 const MATCHER = /[^\s@,]+@[^\s,@]+\.[^\s@,]+/;
 
-export default React.createClass({
+export default class EmailMultiInput extends Component {
+  constructor(props) {
+    super(props);
 
-  propTypes: {
-    emails: React.PropTypes.array.isRequired,
-    placeholder: React.PropTypes.string.isRequired,
-    onChange: React.PropTypes.func.isRequired,
-  },
+    this.validateEmail = this.validateEmail.bind(this);
+    this.handleContainerClick = this.handleContainerClick.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
 
   validateEmail(input) {
     return MATCHER.test(input);
-  },
+  }
 
   handleChange(tags, addedOrRemovedTag) {
     if (tags.indexOf(addedOrRemovedTag) !== -1) {
@@ -38,13 +39,13 @@ export default React.createClass({
         tags.filter(email => email !== addedOrRemovedTag)
       );
     }
-  },
+  }
 
   handleContainerClick(e) {
     if (!e.target.classList.contains('react-tagsinput-remove')) {
       this.refs.input.focus();
     }
-  },
+  }
 
   render() {
     return (
@@ -60,5 +61,11 @@ export default React.createClass({
         />
       </div>
     );
-  },
-});
+  }
+}
+
+EmailMultiInput.propTypes = {
+  emails: React.PropTypes.array.isRequired,
+  placeholder: React.PropTypes.string.isRequired,
+  onChange: React.PropTypes.func.isRequired,
+};

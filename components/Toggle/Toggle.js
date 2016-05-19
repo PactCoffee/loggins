@@ -14,7 +14,7 @@ export default class Toggle extends Component {
             onChange={onChange}
             className={css.input}
           />
-          <span className={css.circle}/>
+          <span className={css.circle} />
         </label>
       </span>
     );

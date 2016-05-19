@@ -36,7 +36,7 @@ export default class Portal extends Component {
   }
 
   renderPortal(props) {
-    this.portal = React.render(
+    this.portal = ReactDOM.render(
       Children.only(props.children),
       this.node
     );

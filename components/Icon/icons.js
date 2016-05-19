@@ -6,11 +6,11 @@ const cleanups = {
   defs: /<defs>.*<\/defs>/gi,
   width: / +width="\d+(\.\d+)?(px)?"/gi,
   height: / +height="\d+(\.\d+)?(px)?"/gi,
-  fill: / +fill=\"(none|#[0-9a-f]+)\"/gi,
-  stroke: / +stroke=\"(none|#[0-9a-f]+)\"/gi,
-  sketchMSShapeGroup: / +sketch:type=\"MSShapeGroup\"/gi,
-  sketchMSPage: / +sketch:type=\"MSPage\"/gi,
-  sketchMSLayerGroup: / +sketch:type=\"MSLayerGroup\"/gi,
+  fill: / +fill="(none|#[0-9a-f]+)"/gi,
+  stroke: / +stroke="(none|#[0-9a-f]+)"/gi,
+  sketchMSShapeGroup: / +sketch:type="MSShapeGroup"/gi,
+  sketchMSPage: / +sketch:type="MSPage"/gi,
+  sketchMSLayerGroup: / +sketch:type="MSLayerGroup"/gi,
 };
 
 function cleanupSvg(svg) {
