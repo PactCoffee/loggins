@@ -1,8 +1,8 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
 
 import styles from './CTABlock.css';
 
-export default class CTABlock {
+export default class CTABlock extends Component {
   render() {
     const { children } = this.props;
     return (

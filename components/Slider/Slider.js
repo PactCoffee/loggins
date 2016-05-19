@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
 import ReactSlider from 'react-slider';
 // https://github.com/mpowaga/react-slider
 
@@ -6,8 +6,9 @@ import styles from './Slider.css';
 
 const BAR_CLASS_NAME = 'SliderBar';
 
-export default class Slider {
-  constructor() {
+export default class Slider extends Component {
+  constructor(props) {
+    super(props);
     this.generateTicks = this.generateTicks.bind(this);
   }
   generateTicks() {

@@ -1,8 +1,8 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
 
 import css from './BtnContainer.css';
 
-export default class BtnContainer {
+export default class BtnContainer extends Component {
   render() {
     const { children, className, ...props } = this.props;
 
