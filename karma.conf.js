@@ -1,5 +1,5 @@
 /* eslint no-var: 0, babel/object-shorthand: 0, vars-on-top: 0 */
-require('babel/register');
+require('babel-core/register');
 
 var webpack = require('webpack');
 var path = require('path');
