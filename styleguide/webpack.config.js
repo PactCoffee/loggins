@@ -17,7 +17,7 @@ module.exports = {
     preLoaders: [
       {
         test: /\.js$/,
-        loader: 'eslint',
+        loader: 'eslint-loader',
         include: [__dirname, path.join(__dirname, '../components')],
         exclude: [path.join(__dirname, '../', 'node_modules')],
       },
@@ -41,7 +41,6 @@ module.exports = {
           path.join(__dirname, '../', 'globals'),
           path.join(__dirname, '../', 'util'),
           path.join(__dirname, '../', 'styleguide'),
-          path.join(__dirname, '../', 'node_modules', 'react-maskedinput'),
         ],
       }, {
         test: /\.css$/,
