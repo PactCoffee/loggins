@@ -26,12 +26,19 @@ export default class DatePicker extends Component {
   constructor(props) {
     super(props);
     this.renderDay = this.renderDay.bind(this);
+    this.onDayClick = this.onDayClick.bind(this);
   }
+
   renderDay(day) {
     return (
       <span>{day.getDate()}</span>
     );
   }
+
+  onDayClick(event, day) {
+    this.props.onChange(day);
+  }
+
   render() {
     return (
       <div className={s.root}>
@@ -40,7 +47,7 @@ export default class DatePicker extends Component {
           enableOutsideDays
           localeUtils={localeUtils}
           renderDay={this.renderDay}
-          onDayClick={this.props.onChange}
+          onDayClick={this.onDayClick}
           {...this.props}
         />
       </div>
@@ -49,9 +56,5 @@ export default class DatePicker extends Component {
 }
 
 DatePicker.propTypes = {
-  value: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-  ]),
   onChange: PropTypes.func.isRequired,
 };
