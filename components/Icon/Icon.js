@@ -4,7 +4,6 @@ import invariant from 'invariant';
 import styles from './Icon.css';
 import icons from './icons';
 
-
 export default class Icon extends Component {
   constructor(props) {
     super(props);

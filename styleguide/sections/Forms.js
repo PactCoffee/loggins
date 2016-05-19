@@ -23,7 +23,6 @@ import Field from 'components/Form/Field';
 import Btn from 'components/Btn/Btn';
 
 export default class FormSection extends Component {
-
   constructor(props) {
     super(props);
 
@@ -159,7 +158,7 @@ export default class FormSection extends Component {
             <p>Here's some text in the field</p>
           </Field>
           <Field>
-            <Btn variant="clean" type="primary" fullWidth>And a btn</Btn>
+            <Btn variant="cta" type="primary" fullWidth>And a btn</Btn>
           </Field>
           <Field>
             <span className={[m.dt, m.ptm, m.pbs].join(' ')}>
@@ -241,7 +240,7 @@ export default class FormSection extends Component {
         />
 
         <h3>DatePicker</h3>
-        <DatePicker value={this.state.date} onChange={this.handleDate}/>
+        <DatePicker onChange={this.handleDate}/>
         <p>Selected date: {new Date(this.state.date).toDateString()}</p>
 
         <h3>LikeDislike</h3>
