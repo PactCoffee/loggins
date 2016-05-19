@@ -1,8 +1,9 @@
 /* Pretty much ripped from react-bootstrap */
 import React from 'react';
+import ReactDOM from 'react-dom';
 
 export function ownerDocument(componentOrElement) {
-  const elem = React.findDOMNode(componentOrElement);
+  const elem = ReactDOM.findDOMNode(componentOrElement);
   return (elem && elem.ownerDocument) || document;
 }
 

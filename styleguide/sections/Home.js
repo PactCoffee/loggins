@@ -6,11 +6,10 @@ import styles from './Home.css';
 
 export default class Home extends Component {
   render() {
-    console.log('RENDER');
     return (
       <div>
         <div style={{ maxWidth: '40em', margin: '0 auto' }} className={m.alignc}>
-          <span className={styles.loggins}/>
+          <span className={styles.loggins} />
 
           <Markdown>{`
             # Loggins

@@ -11,7 +11,7 @@ export default class FormInput extends Component {
   }
   render() {
     return (
-      <SharedFormInput ref="focusable" {...this.props}/>
+      <SharedFormInput ref="focusable" {...this.props} />
     );
   }
 }

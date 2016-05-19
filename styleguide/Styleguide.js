@@ -101,13 +101,13 @@ export default class Styleguide extends React.Component {
     return (
       <div className={css.root}>
         <div className={css.heading}>
-            <Logo className={css.logo} size="small" type="horizontal"/>
-            <h1>
-              <a href="https://github.com/PactCoffee/loggins">Loggins</a>
-            </h1>
+          <Logo className={css.logo} size="small" type="horizontal" />
+          <h1>
+            <a href="https://github.com/PactCoffee/loggins">Loggins</a>
+          </h1>
         </div>
 
-        <Nav/>
+        <Nav />
 
         <div className={css.container}>
           {this.props.children}

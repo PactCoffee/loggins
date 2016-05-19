@@ -10,7 +10,7 @@ export default class PhotoHero extends Component {
         className={styles.root}
         style={{ backgroundImage: `url(${src})` }}
       >
-        <div className={styles.cover}/>
+        <div className={styles.cover} />
         {children}
       </div>
     );

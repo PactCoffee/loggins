@@ -66,7 +66,7 @@ export default class LikeDislike extends Component {
           type="radio"
         />
         <label htmlFor={`dislike-${this.id}`}>
-          <Icon className={m.rotate180} name="thumb"/>
+          <Icon className={m.rotate180} name="thumb" />
         </label>
 
         <input
@@ -77,7 +77,7 @@ export default class LikeDislike extends Component {
           type="radio"
         />
         <label htmlFor={`like-${this.id}`}>
-          <Icon name="thumb"/>
+          <Icon name="thumb" />
         </label>
       </form>
     );
