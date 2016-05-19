@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Section from '../components/Section';
 
 import * as allIcons from 'components/Icon/icons.js';
 import * as m from 'globals/modifiers.css';
 import Icon from 'components/Icon/Icon';
 
-export default class Icons {
+export default class Icons extends Component {
   render() {
     delete allIcons.default;
 
@@ -46,7 +46,7 @@ export default class Icons {
         <h2>All our icons</h2>
         <div style={container}>
           {Object.keys(allIcons).map(k =>
-            <div style={outer}>
+            <div style={outer} key={k}>
               <Icon style={icon} name={k}/>
               <span style={title}>{k}</span>
             </div>
