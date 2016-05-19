@@ -29,14 +29,16 @@ module.exports = assign({}, config, {
         loader: 'raw-loader!svgo-loader?useConfig=svgoConfig',
       }, {
         test: /\.js|jsx$/,
-        loaders: ['babel'],
+        loader: 'babel-loader',
         include: [
           path.join(__dirname, '../', 'components'),
           path.join(__dirname, '../', 'globals'),
           path.join(__dirname, '../', 'util'),
           path.join(__dirname, '../', 'styleguide'),
-          path.join(__dirname, '../', 'node_modules', 'react-maskedinput'),
         ],
+        query: {
+          presets: ["es2015", "react", "stage-1"],
+        }
       }, {
         test: /\.css$/,
         loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]-[local]!postcss-loader',
