@@ -13,7 +13,7 @@ export default class Logo extends Component {
 
     return (
       <div className={[styles.root, this.props.className].join(' ')}>
-        <span className={cssClasses.join(' ')}/>
+        <span className={cssClasses.join(' ')} />
       </div>
     );
   }

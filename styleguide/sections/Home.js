@@ -9,7 +9,7 @@ export default class Home extends Component {
     return (
       <div>
         <div style={{ maxWidth: '40em', margin: '0 auto' }} className={m.alignc}>
-          <span className={styles.loggins}/>
+          <span className={styles.loggins} />
 
           <Markdown>{`
             # Loggins

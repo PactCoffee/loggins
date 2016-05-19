@@ -66,43 +66,43 @@ export default class Overlays extends Component {
         <div style={{ textAlign: 'center' }}>
           <Dropdown
             trigger={
-              <Btn className={m.mbs}>Toggle dropdown <Icon name="triangle"/></Btn>
+              <Btn className={m.mbs}>Toggle dropdown <Icon name="triangle" /></Btn>
             }
           >
             Some content inside the dropdown
           </Dropdown>
 
-          <br/>
+          <br />
 
           <Dropdown
             placement="left"
             container={this}
             trigger={
-              <Btn className={m.mbs}>Toggle left <Icon className={m.rotate90} name="triangle"/></Btn>
+              <Btn className={m.mbs}>Toggle left <Icon className={m.rotate90} name="triangle" /></Btn>
             }
           >
             Left!
           </Dropdown>
 
-          <br/>
+          <br />
 
           <Dropdown
             placement="right"
             container={this}
             trigger={
-              <Btn className={m.mbs}>Toggle right <Icon className={m.rotate270} name="triangle"/></Btn>
+              <Btn className={m.mbs}>Toggle right <Icon className={m.rotate270} name="triangle" /></Btn>
             }
           >
             Right!
           </Dropdown>
 
-          <br/>
+          <br />
 
           <Dropdown
             placement="top"
             container={this}
             trigger={
-              <Btn className={m.mbs}>Toggle top <Icon className={m.rotate180} name="triangle"/></Btn>
+              <Btn className={m.mbs}>Toggle top <Icon className={m.rotate180} name="triangle" /></Btn>
             }
           >
             Top!

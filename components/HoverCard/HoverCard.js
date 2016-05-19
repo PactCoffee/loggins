@@ -128,7 +128,7 @@ export default class HoverCard extends Component {
       <Portal container={this.props.container}>
         <div ref="self" style={outerStyle} className={css}>
           {caret ?
-            <div style={caretStyle} className={s.caret}/>
+            <div style={caretStyle} className={s.caret} />
             : null
           }
           <div className={s.inner}>

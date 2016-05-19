@@ -41,7 +41,7 @@ export default React.createClass({
       this.portal.setProps(props);
     } else {
       this.portal = React.render(
-        <ModalPortal {...props}/>,
+        <ModalPortal {...props} />,
         this.node
       );
     }

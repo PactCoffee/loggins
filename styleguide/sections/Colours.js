@@ -36,7 +36,7 @@ class Swatch extends Component {
     return (
       <button onBlur={this.onBlur} onClick={this.onClick} className={[styles.swatch, styles[colour], t.title].join(' ')}>
         {showInput ?
-          <input ref="val" readOnly value={`var(--color-${colour})`}/>
+          <input ref="val" readOnly value={`var(--color-${colour})`} />
           :
           <span>{colour}</span>
         }
@@ -60,7 +60,7 @@ export default class Colours extends Component {
           'alert',
           'text',
           'muted',
-          ].map((c, i) => <Swatch key={i} colour={c}/>)
+          ].map((c, i) => <Swatch key={i} colour={c} />)
         }
 
         <h2>9 shades of grey</h2>
@@ -72,7 +72,7 @@ export default class Colours extends Component {
           'grey-light',
           'grey',
           'black',
-          ].map((c, i) => <Swatch key={i} colour={c}/>)
+          ].map((c, i) => <Swatch key={i} colour={c} />)
         }
 
         <h2>Even moar colours</h2>
@@ -81,7 +81,7 @@ export default class Colours extends Component {
           'orange',
           'brown',
           'brown-dark',
-          ].map((c, i) => <Swatch key={i} colour={c}/>)
+          ].map((c, i) => <Swatch key={i} colour={c} />)
         }
 
         <h2>Various blues</h2>
@@ -91,7 +91,7 @@ export default class Colours extends Component {
           'blue-dark',
           'blue-darker',
           'steel',
-          ].map((c, i) => <Swatch key={i} colour={c}/>)
+          ].map((c, i) => <Swatch key={i} colour={c} />)
         }
 
         <h2>Official™ Pact colour scheme</h2>
@@ -108,11 +108,11 @@ export default class Colours extends Component {
           'aubergine',
           'charcoal',
           'pact',
-          ].map((c, i) => <Swatch key={i} colour={c}/>)
+          ].map((c, i) => <Swatch key={i} colour={c} />)
         }
 
         <h2>Third parties</h2>
-        {['twitter', 'facebook'].map((c, i) => <Swatch key={i} colour={c}/>)}
+        {['twitter', 'facebook'].map((c, i) => <Swatch key={i} colour={c} />)}
       </Section>
     );
   }

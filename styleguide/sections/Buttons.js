@@ -9,10 +9,6 @@ import Icon from 'components/Icon/Icon';
 import Btn from 'components/Btn/Btn';
 
 export default class BtnSection extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <Section name="Buttons" href="https://github.com/PactCoffee/loggins/blob/master/styleguide%2Fsections%2FButtons.js">
@@ -20,7 +16,7 @@ export default class BtnSection extends Component {
         <h2>Standard button</h2>
 
         <Markdown>{`
-          The \`<Btn />\` component acts as a wrapper for a typical HTML \`<button/>\` with the addition of styles and contexts. Pass it any [valid (React style) HTML attribute](https://facebook.github.io/react/docs/tags-and-attributes.html), \`context\` or \`variant\` like so:
+          The \`<Btn />\` component acts as a wrapper for a typical HTML \`<button />\` with the addition of styles and contexts. Pass it any [valid (React style) HTML attribute](https://facebook.github.io/react/docs/tags-and-attributes.html), \`context\` or \`variant\` like so:
         `}
         </Markdown>
 
@@ -82,31 +78,31 @@ export default class BtnSection extends Component {
 
         <h3>With icon(s)</h3>
         <Btn className={[m.mbs, m.mrs].join(' ')}>
-          <Icon name="heart"/>
+          <Icon name="heart" />
           &nbsp;
           Avec icon
           &nbsp;
-          <Icon name="coffee"/>
+          <Icon name="coffee" />
         </Btn>
         <Btn className={[m.mbs, m.mrs].join(' ')} variant="hollow">
-          <Icon name="asap"/>
+          <Icon name="asap" />
           &nbsp;
           Avec icon
           &nbsp;
-          <Icon name="pin"/>
+          <Icon name="pin" />
         </Btn>
         <Btn className={[m.mbs, m.mrs].join(' ')} variant="text">
-          <Icon name="play"/>
+          <Icon name="play" />
           &nbsp;
           Avec icon
           &nbsp;
-          <Icon name="thumb"/>
+          <Icon name="thumb" />
         </Btn>
 
         <h3>Just icon(s) (with hidden labels for accessibility)</h3>
 
         <Btn className={[m.mbs, m.mrs].join(' ')}>
-          <Icon name="thumb"/>
+          <Icon name="thumb" />
           <ScreenReadable>+1</ScreenReadable>
         </Btn>
 
