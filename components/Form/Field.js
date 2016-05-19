@@ -1,8 +1,8 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
 
 import css from './Form.css';
 
-export default class Field {
+export default class Field extends Component {
   render() {
     const { children, className } = this.props;
     return (

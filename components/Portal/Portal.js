@@ -1,4 +1,5 @@
-import React, { findDOMNode, PropTypes, Component, Children } from 'react';
+import React, { PropTypes, Component, Children } from 'react';
+import ReactDOM from 'react-dom';
 
 import { ownerDocument } from '../HoverCard/positionUtils';
 
@@ -31,7 +32,7 @@ export default class Portal extends Component {
   }
 
   getContainerDOMNode() {
-    return findDOMNode(this.props.container) || ownerDocument(this).body;
+    return ReactDOM.findDOMNode(this.props.container) || ownerDocument(this).body;
   }
 
   renderPortal(props) {
