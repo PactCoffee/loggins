@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import { Link } from 'react-router';
 
 import styles from './Nav.css';
@@ -15,7 +16,7 @@ export default class extends Component {
   componentDidMount() {
     window.addEventListener('scroll', this.onScroll);
     this.setState({
-      initNavOffset: React.findDOMNode(this).offsetTop,
+      initNavOffset: ReactDOM.findDOMNode(this).offsetTop,
     });
   }
 
