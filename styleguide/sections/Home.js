@@ -6,6 +6,7 @@ import styles from './Home.css';
 
 export default class Home {
   render() {
+    console.log('RENDER');
     return (
       <div>
         <div style={{ maxWidth: '40em', margin: '0 auto' }} className={m.alignc}>

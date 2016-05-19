@@ -1,8 +1,8 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import styles from './Logo.css';
 
-export default class Logo {
+export default class Logo extends Component {
   render() {
     const { type, size } = this.props;
     const cssClasses = [
