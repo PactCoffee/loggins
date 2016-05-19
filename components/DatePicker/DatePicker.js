@@ -29,14 +29,14 @@ export default class DatePicker extends Component {
     this.onDayClick = this.onDayClick.bind(this);
   }
 
+  onDayClick(event, day) {
+    this.props.onChange(day);
+  }
+
   renderDay(day) {
     return (
       <span>{day.getDate()}</span>
     );
-  }
-
-  onDayClick(event, day) {
-    this.props.onChange(day);
   }
 
   render() {
