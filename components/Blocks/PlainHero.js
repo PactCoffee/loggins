@@ -1,8 +1,8 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
 
 import styles from './PlainHero.css';
 
-export default class PlainHero {
+export default class PlainHero extends Component {
   render() {
     const { children } = this.props;
     return (

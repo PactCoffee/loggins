@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
 
 import Radio from './Radio';
 import css from './Radio.css';
@@ -20,7 +20,7 @@ import css from './Radio.css';
  * </RadioGroup>
  */
 
-export default class RadioGroup {
+export default class RadioGroup extends Component {
   render() {
     const {
       value,

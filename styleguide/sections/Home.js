@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Markdown from 'matthewmueller-react-remarkable';
 
 import * as m from 'globals/modifiers.css';
 import styles from './Home.css';
 
-export default class Home {
+export default class Home extends Component {
   render() {
     console.log('RENDER');
     return (

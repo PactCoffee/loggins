@@ -1,10 +1,11 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
 import { uniqueId } from 'lodash/utility';
 
 import css from './Radio.css';
 
-export default class Radio {
-  constructor() {
+export default class Radio extends Component {
+  constructor(props) {
+    super(props);
     this.state = {
       id: uniqueId('radio'),
     };

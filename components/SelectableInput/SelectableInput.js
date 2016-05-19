@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import ReactDOM from 'react-dom';
 
 export default class SelectableInput extends Component {
 
@@ -9,7 +10,7 @@ export default class SelectableInput extends Component {
 
   componentDidMount() {
     if (this.props.onAction) {
-      React
+      ReactDOM
         .findDOMNode(this.refs.selectable)
         .addEventListener('copy', this.props.onAction);
     }
@@ -17,14 +18,14 @@ export default class SelectableInput extends Component {
 
   componentWillUnmount() {
     if (this.props.onAction) {
-      React
+      ReactDOM
         .findDOMNode(this.refs.selectable)
         .removeEventListener('copy', this.props.onAction);
     }
   }
 
   handleClick() {
-    React.findDOMNode(this.refs.selectable).setSelectionRange(0, 9999);
+    ReactDOM.findDOMNode(this.refs.selectable).setSelectionRange(0, 9999);
   }
 
   render() {

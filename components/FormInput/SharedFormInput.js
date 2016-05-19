@@ -113,7 +113,7 @@ export default class SharedFormInput extends Component {
               onChange={this.handleChange}
               value={value}
               id={id}
-              pattern={pattern}
+              mask={pattern}
               placeholder={placeholder}
               ref="focusable"
             />
@@ -142,6 +142,8 @@ export default class SharedFormInput extends Component {
 SharedFormInput.propTypes = {
   // Render a MaskedInput or not
   masked: PropTypes.bool.isRequired,
+  // Only required for masked
+  pattern: PropTypes.string,
 
   onChange: PropTypes.func.isRequired,
   onFocus: PropTypes.func,
@@ -149,7 +151,7 @@ SharedFormInput.propTypes = {
 
   value: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
-  pattern: PropTypes.string.isRequired,
+
   placeholder: PropTypes.string,
 
   transform: PropTypes.func,
@@ -163,4 +165,5 @@ SharedFormInput.propTypes = {
 
 SharedFormInput.defaultProps = {
   labelOutside: false,
+  masked: false,
 };
