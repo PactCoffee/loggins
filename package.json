@@ -1,6 +1,6 @@
 {
   "name": "@pactcoffee/loggins",
-  "version": "11.5.0",
+  "version": "12.0.0",
   "description": "Pact's component library",
   "main": "components/index.js",
   "license": "MIT",
@@ -10,10 +10,11 @@
   "scripts": {
     "build": "npm run clean && cd styleguide && webpack --progress",
     "dev": "npm run clean && cd styleguide && node devServer.js",
-    "start": "npm run build && cd styleguide && node server.js",
+    "start": "cd styleguide && node server.js",
     "clean": "cd styleguide && rimraf public",
     "test": "eslint ./components && karma start --single-run && npm run build",
-    "preversion": " npm test"
+    "preversion": "npm test",
+    "postinstall": "npm run build"
   },
   "files": [
     "components",
