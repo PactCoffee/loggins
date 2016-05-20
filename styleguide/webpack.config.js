@@ -14,14 +14,6 @@ module.exports = {
     publicPath: '/public/',
   },
   module: {
-    preLoaders: [
-      {
-        test: /\.js$/,
-        loader: 'eslint-loader',
-        include: [__dirname, path.join(__dirname, '../components')],
-        exclude: [path.join(__dirname, '../', 'node_modules')],
-      },
-    ],
     loaders: [
       {
         test: /\.(woff|woff2|gif|png|jpe?g)$/,
@@ -86,7 +78,9 @@ module.exports = {
     new ExtractTextPlugin('bundle.css', {
       allChunks: true,
     }),
-    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: { warnings: false }
+    }),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.DedupePlugin(),
   ],
