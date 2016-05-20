@@ -1,4 +1,6 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+
 import ModalPortal from './ModalPortal';
 
 export default React.createClass({
@@ -40,7 +42,7 @@ export default React.createClass({
     if (this.portal) {
       this.portal.setProps(props);
     } else {
-      this.portal = React.render(
+      this.portal = ReactDOM.render(
         <ModalPortal {...props} />,
         this.node
       );
