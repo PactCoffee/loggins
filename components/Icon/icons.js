@@ -15,10 +15,10 @@ const cleanups = {
 
 function cleanupSvg(svg) {
   return Object.keys(cleanups)
-    .reduce((acc, key) => {
-      return acc.replace(cleanups[key], '');
-    }, svg)
-    .trim();
+               .reduce((acc, key) => {
+                 return acc.replace(cleanups[key], '');
+               }, svg)
+               .trim();
 }
 
 export default {
