@@ -12,6 +12,7 @@
     "dev": "npm run clean && cd styleguide && node devServer.js",
     "start": "cd styleguide && node server.js",
     "clean": "cd styleguide && rimraf public",
+    "lint": "eslint ./components",
     "test": "eslint ./components && karma start --single-run && npm run build",
     "preversion": "npm test",
     "postinstall": "npm run build"
@@ -46,6 +47,7 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-1": "^6.5.0",
     "chai": "^3.5.0",
+    "classnames": "^2.2.5",
     "compression": "^1.5.1",
     "css-loader": "^0.15.2",
     "es5-shim": "^4.1.11",
