@@ -1,17 +1,17 @@
 {
-  "name":"loggins",
-  "scripts":{},
-  "env":{
-    "NODE_ENV":{
-      "required":true
+  "name": "loggins",
+  "scripts": {},
+  "env": {
+    "NODE_ENV": {
+      "required": true
     },
-    "NPM_TOKEN":{
-      "required":true
+    "NPM_TOKEN": {
+      "required": true
     },
     "NPM_CONFIG_PRODUCTION": {
       "required": true
     },
-    "STAGING":"true",
-  },
-  "addons":[]
+    "NODE_MODULES_CACHE": "false",
+    "STAGING": "true"
+  }
 }
