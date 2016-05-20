@@ -9,6 +9,8 @@
   --z-8: 80;
   --z-9: 90;
 
+  --z-modalCover:      var(--z-7);
+
   --z-dropdownOverlay: var(--z-8);
   --z-dropdown:        var(--z-9);
 }
