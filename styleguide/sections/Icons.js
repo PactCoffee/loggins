@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Section from '../components/Section';
 
-import * as allIcons from 'components/Icon/icons.js';
+import allIcons from 'components/Icon/icons.js';
 import * as m from 'globals/modifiers.css';
 import Icon from 'components/Icon/Icon';
 

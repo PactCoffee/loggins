@@ -1,5 +1,6 @@
 import React from 'react';
-import cx from 'react/lib/cx';
+
+import cx from 'classnames';
 
 export default React.createClass({
 
