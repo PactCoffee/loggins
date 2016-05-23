@@ -5,7 +5,7 @@
   "main": "components/index.js",
   "license": "MIT",
   "engines": {
-    "node": "^4.0.0"
+    "node": "^4.4.0"
   },
   "scripts": {
     "build": "npm run clean && cd styleguide && webpack --progress",
@@ -85,7 +85,7 @@
     "react-router": "^1.0.0-rc1",
     "react-transform-catch-errors": "^0.1.1",
     "react-transform-hmr": "^1.0.1",
-    "redbox-react": "^1.0.1",
+    "redbox-react": "~1.0.1",
     "rimraf": "^2.4.2",
     "sinon": "^1.16.1",
     "sinon-chai": "^2.8.0",
