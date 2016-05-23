@@ -1,8 +1,6 @@
 import React, { PropTypes } from 'react';
 import { uniqueId } from 'lodash';
-// import { TransitionMotion, spring } from 'react-motion';
-import { spring } from 'react-motion';
-
+import { TransitionMotion, spring } from 'react-motion';
 
 import Logo from 'components/Logo/Logo';
 import Nav from './components/Nav';
@@ -110,7 +108,27 @@ export default class Styleguide extends React.Component {
         <Nav />
 
         <div className={css.container}>
-          {this.props.children}
+          <TransitionMotion styles={this.getStyles()}
+                            willEnter={this.willEnter}
+                            willLeave={this.willLeave}
+          >
+            {interpolatedcss =>
+              <div className={css.animator}>
+                {Object.keys(interpolatedcss).map((key, i) => {
+                   const { child, opacity, x } = interpolatedcss[key];
+                   return (
+                           <div key={i} style={{
+                               opacity,
+                                                transform: `translate3d(${x}%, 0,0)`,
+                             }}
+                           >
+                             {child}
+                           </div>
+                   );
+                 })}
+              </div>
+            }
+          </TransitionMotion>
         </div>
       </div>
     );
