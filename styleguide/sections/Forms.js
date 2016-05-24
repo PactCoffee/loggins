@@ -101,7 +101,7 @@ export default class FormSection extends Component {
     });
   }
 
-  handleDate(milliseconds) {
+  handleDate(e, milliseconds) {
     this.setState({
       date: milliseconds,
     });
