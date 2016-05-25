@@ -37,7 +37,7 @@ export default class Checkbox extends Component {
           className={s.input}
         />
         <label htmlFor={this.id} className={s.label}>{this.props.label}</label>
-        <Icon className={s.tick} name="tick"/>
+        <Icon className={s.tick} name="tick" />
       </span>
     );
   }

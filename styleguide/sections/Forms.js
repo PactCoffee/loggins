@@ -23,7 +23,6 @@ import Field from 'components/Form/Field';
 import Btn from 'components/Btn/Btn';
 
 export default class FormSection extends Component {
-
   constructor(props) {
     super(props);
 
@@ -102,7 +101,7 @@ export default class FormSection extends Component {
     });
   }
 
-  handleDate(milliseconds) {
+  handleDate(e, milliseconds) {
     this.setState({
       date: milliseconds,
     });
@@ -153,13 +152,13 @@ export default class FormSection extends Component {
             />
           </Field>
           <Field>
-            <FormInput borderless type="text" onChange={this.handleTextChange} value={this.state.text} label="Second name" placeholder="e.g. Man"/>
+            <FormInput borderless type="text" onChange={this.handleTextChange} value={this.state.text} label="Second name" placeholder="e.g. Man" />
           </Field>
           <Field>
             <p>Here's some text in the field</p>
           </Field>
           <Field>
-            <Btn variant="clean" type="primary" fullWidth>And a btn</Btn>
+            <Btn variant="cta" type="primary" fullWidth>And a btn</Btn>
           </Field>
           <Field>
             <span className={[m.dt, m.ptm, m.pbs].join(' ')}>
@@ -167,15 +166,15 @@ export default class FormSection extends Component {
                 Fancy a really very long labeled toggle?
               </span>
               <span className={[m.dtc, m.alignr, m.w1, m.h100, m.vam].join(' ')}>
-              <Toggle value={this.state.toggleVal} onChange={this.handleToggle}/>
+                <Toggle value={this.state.toggleVal} onChange={this.handleToggle} />
               </span>
             </span>
           </Field>
         </FieldGroup>
 
         <h3>Toggle</h3>
-        <Toggle value={this.state.toggleVal} onChange={this.handleToggle}/>
-        <br/>
+        <Toggle value={this.state.toggleVal} onChange={this.handleToggle} />
+        <br />
         Is mothercluckers the best chicken in the universe? <strong>{this.state.toggleVal ? 'Absolutely.' : 'I don’t know. Probably.'}</strong>
 
         <h3>Radio buttons</h3>
@@ -187,9 +186,9 @@ export default class FormSection extends Component {
           {radio => (
             <span>
               {radio({ value: 'Apple' })}
-              <br/>
+              <br />
               {radio({ value: 'Orange' })}
-              <br/>
+              <br />
               {radio({ value: 'Banana' })}
             </span>
           )}
@@ -197,15 +196,15 @@ export default class FormSection extends Component {
         <p>You selected {this.state.radioVal}</p>
 
         <h3>Checkbox</h3>
-        <p><Checkbox label="Checkbox" onChange={this.handleCheckbox}/> value is {this.state.checkbox ? 'checked' : 'not checked'}.</p>
+        <p><Checkbox label="Checkbox" onChange={this.handleCheckbox} /> value is {this.state.checkbox ? 'checked' : 'not checked'}.</p>
 
         <h3>Slider</h3>
         <strong>Basic version:</strong>
-        <Slider onChange={this.handleSlide} value={this.state.slideVal}/>
+        <Slider onChange={this.handleSlide} value={this.state.slideVal} />
         <p>Value: {this.state.slideVal}</p>
 
         <strong>With steps &amp; ticks:</strong>
-        <Slider ticks={10} step={10} onChange={this.handleSlide} value={this.state.slideVal}/>
+        <Slider ticks={10} step={10} onChange={this.handleSlide} value={this.state.slideVal} />
         <p>Value: {this.state.slideVal}</p>
 
         <h3>Value adjuster</h3>
@@ -241,7 +240,7 @@ export default class FormSection extends Component {
         />
 
         <h3>DatePicker</h3>
-        <DatePicker value={this.state.date} onChange={this.handleDate}/>
+        <DatePicker onChange={this.handleDate} />
         <p>Selected date: {new Date(this.state.date).toDateString()}</p>
 
         <h3>LikeDislike</h3>
@@ -253,7 +252,7 @@ export default class FormSection extends Component {
             {this.state.liked === null ? 'None' : null}
           </strong>
         </p>
-        <LikeDislike onChange={this.likeChanged}/>
+        <LikeDislike onChange={this.likeChanged} />
 
         <h3>EmailMultiInput</h3>
         <p>Enter multiple email addresses with a tagging interface.</p>
@@ -261,7 +260,7 @@ export default class FormSection extends Component {
 
         <h3>SelectableInput</h3>
         <p>A read-only textarea who's contents are selected on click. It's size is dictated by it's contents using a hidden div. Will fire it's <code>onAction</code> prop when the user copies any of the text within the textarea.</p>
-        <SelectableInput value="Highlight me by clicking. If you copy text, you'll be alerted" onAction={this.handleCopy}/>
+        <SelectableInput value="Highlight me by clicking. If you copy text, you'll be alerted" onAction={this.handleCopy} />
 
         <h3>FormInput</h3>
         <p>Just a cute little animating input. Gracefully handles having a value passed in as well:</p>
@@ -338,25 +337,25 @@ export default class FormSection extends Component {
 
         <h3>Progress</h3>
         <p><code>hueChange</code> makes the bar change colour according to it's value:</p>
-        <Progress min={0} max={100} value={25} hueChange/>
-        <br/>
-        <Progress min={0} max={100} value={50} hueChange/>
-        <br/>
-        <Progress min={0} max={100} value={75} hueChange/>
+        <Progress min={0} max={100} value={25} hueChange />
+        <br />
+        <Progress min={0} max={100} value={50} hueChange />
+        <br />
+        <Progress min={0} max={100} value={75} hueChange />
         <p>Without <code>hueChange:</code></p>
-        <Progress min={0} max={100} value={75}/>
-        <br/>
-        <Progress min={0} max={100} value={50}/>
-        <br/>
-        <Progress min={0} max={100} value={25}/>
+        <Progress min={0} max={100} value={75} />
+        <br />
+        <Progress min={0} max={100} value={50} />
+        <br />
+        <Progress min={0} max={100} value={25} />
         <p>Changing the value will animate the bar. <button onClick={this.handleProgressChange}>Change value</button></p>
-        <Progress min={0} max={100} hueChange value={this.state.progressVal}/>
+        <Progress min={0} max={100} hueChange value={this.state.progressVal} />
 
         <p>Also there's a white version for use on non-white backgrounds:</p>
         <Panel type="success">
-          <Progress min={0} max={100} white value={this.state.progressVal}/>
+          <Progress min={0} max={100} white value={this.state.progressVal} />
         </Panel>
-        <br/>
+        <br />
       </Section>
     );
   }

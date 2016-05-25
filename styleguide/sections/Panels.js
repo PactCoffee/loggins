@@ -13,12 +13,12 @@ export default class Panels extends Component {
         <Panel>
           <p>This is a <strong>rounded</strong> (and the default) panel</p>
         </Panel>
-        <br/>
+        <br />
 
         <Panel squared>
           <p>This is a <strong>squared</strong> panel</p>
         </Panel>
-        <br/>
+        <br />
 
         <div className={styles.grid}>
 
@@ -41,7 +41,7 @@ export default class Panels extends Component {
                 <li><a className="listActive" href="#">or this</a></li>
                 <li>
                   <a className="listActive" href="#">
-                    <Icon className={m.mrs} name="coffee"/>
+                    <Icon className={m.mrs} name="coffee" />
                   and this
                   </a>
                 </li>

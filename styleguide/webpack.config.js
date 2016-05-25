@@ -14,14 +14,6 @@ module.exports = {
     publicPath: '/public/',
   },
   module: {
-    preLoaders: [
-      {
-        test: /\.js$/,
-        loader: 'eslint',
-        include: [__dirname, path.join(__dirname, '../components')],
-        exclude: [path.join(__dirname, '../', 'node_modules')],
-      },
-    ],
     loaders: [
       {
         test: /\.(woff|woff2|gif|png|jpe?g)$/,
@@ -35,14 +27,16 @@ module.exports = {
         loader: 'raw-loader!svgo-loader?useConfig=svgoConfig',
       }, {
         test: /\.js|jsx$/,
-        loaders: ['babel-loader'],
+        loader: 'babel-loader',
         include: [
           path.join(__dirname, '../', 'components'),
           path.join(__dirname, '../', 'globals'),
           path.join(__dirname, '../', 'util'),
           path.join(__dirname, '../', 'styleguide'),
-          path.join(__dirname, '../', 'node_modules', 'react-maskedinput'),
         ],
+        query: {
+          presets: ["es2015", "react", "stage-1"],
+        }
       }, {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&importLoaders=1&localIdentName=[name]-[local]-[hash:base64:5]!postcss-loader'),
@@ -84,7 +78,9 @@ module.exports = {
     new ExtractTextPlugin('bundle.css', {
       allChunks: true,
     }),
-    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: { warnings: false }
+    }),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.DedupePlugin(),
   ],

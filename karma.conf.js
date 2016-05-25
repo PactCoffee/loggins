@@ -1,5 +1,5 @@
 /* eslint no-var: 0, babel/object-shorthand: 0, vars-on-top: 0 */
-require('babel/register');
+require('babel-core/register');
 
 var webpack = require('webpack');
 var path = require('path');
@@ -69,8 +69,11 @@ module.exports = function(config) {
       module: {
         loaders: [{
           test: /\.js$/,
-          loader: 'babel?cacheDirectory',
-          exclude: /node_modules/
+          loader: 'babel-loader',
+          exclude: /node_modules/,
+          query: {
+            presets: ["es2015", "react", "stage-1"],
+          }
         }, {
           test: /\.css$/,
           loader: 'css-loader/locals?modules'

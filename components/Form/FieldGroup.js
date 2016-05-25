@@ -1,9 +1,9 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
 
 import Panel from '../Panel/Panel';
 import css from './Form.css';
 
-export default class FieldGroup {
+export default class FieldGroup extends Component {
   render() {
     const { title, children, className } = this.props;
     return (

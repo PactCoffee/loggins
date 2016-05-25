@@ -1,12 +1,12 @@
 import React from 'react';
-import { Router } from 'react-router';
-import { createHashHistory } from 'history';
+import ReactDOM from 'react-dom';
+import { Router, hashHistory } from 'react-router';
 
 import routes from './routes';
 
-React.render(
+ReactDOM.render(
   <Router
-    history={createHashHistory()}
+    history={hashHistory}
     children={routes}
   />,
   document.getElementById('outlet'));

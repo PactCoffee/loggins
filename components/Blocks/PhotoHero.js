@@ -1,8 +1,8 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
 
 import styles from './PhotoHero.css';
 
-export default class PhotoHero {
+export default class PhotoHero extends Component {
   render() {
     const { src, children } = this.props;
     return (
@@ -10,7 +10,7 @@ export default class PhotoHero {
         className={styles.root}
         style={{ backgroundImage: `url(${src})` }}
       >
-        <div className={styles.cover}/>
+        <div className={styles.cover} />
         {children}
       </div>
     );

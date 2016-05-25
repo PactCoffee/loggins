@@ -99,33 +99,33 @@ export default class Styleguide extends React.Component {
     return (
       <div className={css.root}>
         <div className={css.heading}>
-            <Logo className={css.logo} size="small" type="horizontal"/>
-            <h1>
-              <a href="https://github.com/PactCoffee/loggins">Loggins</a>
-            </h1>
+          <Logo className={css.logo} size="small" type="horizontal" />
+          <h1>
+            <a href="https://github.com/PactCoffee/loggins">Loggins</a>
+          </h1>
         </div>
 
-        <Nav/>
+        <Nav />
 
         <div className={css.container}>
           <TransitionMotion styles={this.getStyles()}
-            willEnter={this.willEnter}
-            willLeave={this.willLeave}
+                            willEnter={this.willEnter}
+                            willLeave={this.willLeave}
           >
             {interpolatedcss =>
               <div className={css.animator}>
                 {Object.keys(interpolatedcss).map((key, i) => {
-                  const { child, opacity, x } = interpolatedcss[key];
-                  return (
-                    <div key={i} style={{
-                      opacity,
-                      transform: `translate3d(${x}%, 0,0)`,
-                    }}
-                    >
-                      {child}
-                    </div>
-                  );
-                })}
+                   const { child, opacity, x } = interpolatedcss[key];
+                   return (
+                           <div key={i} style={{
+                               opacity,
+                                                transform: `translate3d(${x}%, 0,0)`,
+                             }}
+                           >
+                             {child}
+                           </div>
+                   );
+                 })}
               </div>
             }
           </TransitionMotion>

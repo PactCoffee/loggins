@@ -27,11 +27,13 @@ export default class DatePicker extends Component {
     super(props);
     this.renderDay = this.renderDay.bind(this);
   }
+
   renderDay(day) {
     return (
       <span>{day.getDate()}</span>
     );
   }
+
   render() {
     return (
       <div className={s.root}>
@@ -49,9 +51,5 @@ export default class DatePicker extends Component {
 }
 
 DatePicker.propTypes = {
-  value: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-  ]),
   onChange: PropTypes.func.isRequired,
 };

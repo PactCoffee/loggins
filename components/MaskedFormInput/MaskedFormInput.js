@@ -11,7 +11,7 @@ export default class MaskedFormInput extends Component {
   }
   render() {
     return (
-      <SharedFormInput ref="focusable" masked {...this.props}/>
+      <SharedFormInput ref="focusable" masked {...this.props} />
     );
   }
 }
