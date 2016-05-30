@@ -1,5 +1,6 @@
 import React, { PropTypes, Component, Children } from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 
 import { ownerDocument } from '../HoverCard/positionUtils';
 
@@ -37,7 +38,9 @@ export default class Portal extends Component {
 
   renderPortal(props) {
     this.portal = ReactDOM.render(
-      Children.only(props.children),
+      <Provider store={this.context.store}>
+        {Children.only(props.children)}
+      </Provider>,
       this.node
     );
   }
@@ -49,4 +52,8 @@ export default class Portal extends Component {
 
 Portal.propTypes = {
   container: PropTypes.any,
+};
+
+Portal.contextTypes = {
+  store: PropTypes.object,
 };
