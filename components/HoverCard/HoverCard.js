@@ -1,4 +1,5 @@
-import React, { Component, PropTypes, findDOMNode } from 'react';
+import React, { Component, PropTypes } from 'react';
+import ReactDOM from 'react-dom';
 
 import { ownerDocument, calcOverlayPosition } from './positionUtils';
 import { mountable } from '../../util/customPropTypes';
@@ -50,7 +51,7 @@ export default class HoverCard extends Component {
 
   clickListener(e) {
     const { outsideClickClose } = this.props;
-    const clickedOutside = !findDOMNode(this.refs.self).contains(e.target);
+    const clickedOutside = !ReactDOM.findDOMNode(this.refs.self).contains(e.target);
 
     if (outsideClickClose && clickedOutside) {
       this.props.onRequestClose(e);
@@ -76,9 +77,9 @@ export default class HoverCard extends Component {
     }
 
     const { placement } = this.props;
-    const hoverCard = findDOMNode(this.refs.self);
-    const target = findDOMNode(this.props.anchor);
-    const container = findDOMNode(this.props.container) || ownerDocument(this).body;
+    const hoverCard = ReactDOM.findDOMNode(this.refs.self);
+    const target = ReactDOM.findDOMNode(this.props.anchor);
+    const container = ReactDOM.findDOMNode(this.props.container) || ownerDocument(this).body;
 
     this.setState({
       placement,
