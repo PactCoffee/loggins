@@ -15,7 +15,7 @@
     "lint": "eslint ./components",
     "test": "eslint ./components && karma start --single-run && npm run build",
     "preversion": "npm test",
-    "postinstall": "npm run build"
+    "heroku-postbuild": "npm run build"
   },
   "files": [
     "components",
