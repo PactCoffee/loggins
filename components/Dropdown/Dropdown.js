@@ -1,4 +1,5 @@
-import React, { findDOMNode, Component, cloneElement, PropTypes } from 'react';
+import React, { Component, cloneElement, PropTypes } from 'react';
+import ReactDOM from 'react-dom';
 
 import HoverCard from '../HoverCard/HoverCard';
 
@@ -25,7 +26,7 @@ export default class Dropdown extends Component {
 
   handleCloseRequest(e) {
     if (e.keyCode ||
-        (e.target && !findDOMNode(this.refs.trigger).contains(e.target))) {
+        (e.target && !ReactDOM.findDOMNode(this.refs.trigger).contains(e.target))) {
       this.hide();
     }
   }

@@ -1,4 +1,6 @@
-import React, { Component, PropTypes, findDOMNode } from 'react';
+import React, { Component, PropTypes } from 'react';
+import ReactDOM from 'react-dom';
+
 import { uniqueId } from 'lodash/utility';
 
 // import MaskedInput from 'react-maskedinput/src/index.jsx';
@@ -21,10 +23,10 @@ export default class SharedFormInput extends Component {
   }
 
   focus() {
-    return findDOMNode(this.refs.focusable).focus();
+    return ReactDOM.findDOMNode(this.refs.focusable).focus();
   }
   blur() {
-    return findDOMNode(this.refs.focusable).blur();
+    return ReactDOM.findDOMNode(this.refs.focusable).blur();
   }
 
 
