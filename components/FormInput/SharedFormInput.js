@@ -55,6 +55,7 @@ export default class SharedFormInput extends Component {
 
   render() {
     const {
+      type,
       placeholder,
       borderless,
       required,
@@ -109,6 +110,7 @@ export default class SharedFormInput extends Component {
           {masked ?
             <MaskedInput
               {...remainingProps}
+              type={type}
               onFocus={this.handleFocus}
               onBlur={this.handleBlur}
               className={css.input}
@@ -120,17 +122,32 @@ export default class SharedFormInput extends Component {
               ref="focusable"
             />
             :
-            <input
-              {...remainingProps}
-              placeholder={placeholder}
-              onFocus={this.handleFocus}
-              onBlur={this.handleBlur}
-              className={css.input}
-              onChange={this.handleChange}
-              value={value}
-              id={id}
-              ref="focusable"
-            />
+              type === 'textarea' ?
+                <textarea
+                  {...remainingProps}
+                  type={type}
+                  placeholder={placeholder}
+                  onFocus={this.handleFocus}
+                  onBlur={this.handleBlur}
+                  className={css.input}
+                  onChange={this.handleChange}
+                  value={value}
+                  id={id}
+                  ref="focusable"
+                />
+              :
+              <input
+                {...remainingProps}
+                type={type}
+                placeholder={placeholder}
+                onFocus={this.handleFocus}
+                onBlur={this.handleBlur}
+                className={css.input}
+                onChange={this.handleChange}
+                value={value}
+                id={id}
+                ref="focusable"
+              />
           }
         </div>
         <span className={messageCSS}>
