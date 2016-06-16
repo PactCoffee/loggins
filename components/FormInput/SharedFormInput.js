@@ -51,7 +51,9 @@ export default class SharedFormInput extends Component {
     if (transform) {
       value = transform(value);
     }
-    onChange(value);
+    if (typeof onChange === 'function') {
+      onChange(value, e);
+    }
   }
 
   render() {
@@ -166,7 +168,7 @@ SharedFormInput.propTypes = {
   // Only required for masked
   pattern: PropTypes.string,
 
-  onChange: PropTypes.func.isRequired,
+  onChange: PropTypes.func,
   onFocus: PropTypes.func,
   onBlur: PropTypes.func,
 
@@ -182,7 +184,7 @@ SharedFormInput.propTypes = {
   labelOutside: PropTypes.bool,
 
   // If set, will display underneath the input
-  error: PropTypes.string,
+  error: PropTypes.any,
 };
 
 SharedFormInput.defaultProps = {

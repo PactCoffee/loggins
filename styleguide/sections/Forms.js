@@ -182,6 +182,7 @@ export default class FormSection extends Component {
           name="example"
           onChange={this.handleRadio}
           value={this.state.radioVal}
+          selectedValue={this.state.radioVal}
         >
           {radio => (
             <span>
