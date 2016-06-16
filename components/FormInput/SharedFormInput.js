@@ -107,35 +107,34 @@ export default class SharedFormInput extends Component {
           <label htmlFor={id} className={css.label}>
             {label}{required ? '*' : null}
           </label>
-          {masked ?
-            <MaskedInput
-              {...remainingProps}
-              type={type}
-              onFocus={this.handleFocus}
-              onBlur={this.handleBlur}
-              className={css.input}
-              onChange={this.handleChange}
-              value={value}
-              id={id}
-              mask={pattern}
-              placeholder={placeholder}
-              ref="focusable"
-            />
-            :
-              type === 'textarea' ?
-                <textarea
-                  {...remainingProps}
-                  type={type}
-                  placeholder={placeholder}
-                  onFocus={this.handleFocus}
-                  onBlur={this.handleBlur}
-                  className={css.input}
-                  onChange={this.handleChange}
-                  value={value}
-                  id={id}
-                  ref="focusable"
-                />
-              :
+          {
+            if (masked) {
+              <MaskedInput
+                {...remainingProps}
+                type={type}
+                onFocus={this.handleFocus}
+                onBlur={this.handleBlur}
+                className={css.input}
+                onChange={this.handleChange}
+                value={value}
+                id={id}
+                mask={pattern}
+                placeholder={placeholder}
+                ref="focusable"
+              />
+            } else if ( type === 'textarea' ) {
+              <textarea
+                {...remainingProps}
+                placeholder={placeholder}
+                onFocus={this.handleFocus}
+                onBlur={this.handleBlur}
+                className={css.input}
+                onChange={this.handleChange}
+                value={value}
+                id={id}
+                ref="focusable"
+              />
+            } else {
               <input
                 {...remainingProps}
                 type={type}
@@ -148,6 +147,7 @@ export default class SharedFormInput extends Component {
                 id={id}
                 ref="focusable"
               />
+            }
           }
         </div>
         <span className={messageCSS}>
@@ -168,6 +168,7 @@ SharedFormInput.propTypes = {
   onFocus: PropTypes.func,
   onBlur: PropTypes.func,
 
+  type: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
 
