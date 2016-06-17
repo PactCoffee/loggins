@@ -30,7 +30,10 @@ export default class Radio extends Component {
           checked={isChecked}
           name={name}
           value={value}
-          onChange={(e) => onChange(this.props.value, e)}
+          onChange={(e) => {
+            console.log(e, this.props.value, this);
+            onChange(this.props.value, e);
+          }}
         />
         <label htmlFor={id}>
           {children ? children : value}
