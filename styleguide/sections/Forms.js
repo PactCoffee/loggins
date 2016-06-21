@@ -182,6 +182,7 @@ export default class FormSection extends Component {
           name="example"
           onChange={this.handleRadio}
           value={this.state.radioVal}
+          selectedValue={this.state.radioVal}
         >
           {radio => (
             <span>
@@ -295,7 +296,7 @@ export default class FormSection extends Component {
           error="Something bad happened" label="Error example"
         />
 
-        Has second variant where the label and placeholder are separate:
+        <p>Has second variant where the label and placeholder are separate:</p>
         <FormInput
           placeholder="e.g. Home"
           type="text"
@@ -304,6 +305,16 @@ export default class FormSection extends Component {
           error={this.state.error}
           label="Name"
         />
+
+        <h3>Text area</h3>
+        <FormInput
+          type="textarea"
+          onChange={this.handleTextChange}
+          value={this.state.text}
+          error={this.state.error}
+          label="Tell us a story"
+        />
+
 
         <h3>FormInput... Zorro Style (Masked)</h3>
         <MaskedFormInput

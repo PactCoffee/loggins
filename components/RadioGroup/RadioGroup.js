@@ -23,10 +23,10 @@ import css from './Radio.css';
 export default class RadioGroup extends Component {
   render() {
     const {
-      value,
       className,
       onChange,
       children,
+      selectedValue,
       name,
     } = this.props;
     return (
@@ -34,8 +34,9 @@ export default class RadioGroup extends Component {
         {children && children(props =>
           <Radio
             name={name}
-            selectedValue={value}
-            onChange={onChange} {...props}
+            onChange={onChange}
+            selectedValue={selectedValue}
+            {...props}
           />
         )}
       </div>
@@ -51,4 +52,5 @@ RadioGroup.propTypes = {
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   className: PropTypes.string,
   giant: PropTypes.bool,
+  selectedValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };

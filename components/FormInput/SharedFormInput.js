@@ -1,3 +1,4 @@
+/* eslint no-nested-ternary: "off" */
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 
@@ -50,11 +51,14 @@ export default class SharedFormInput extends Component {
     if (transform) {
       value = transform(value);
     }
-    onChange(value);
+    if (typeof onChange === 'function') {
+      onChange(value, e);
+    }
   }
 
   render() {
     const {
+      type,
       placeholder,
       borderless,
       required,
@@ -106,31 +110,48 @@ export default class SharedFormInput extends Component {
           <label htmlFor={id} className={css.label}>
             {label}{required ? '*' : null}
           </label>
-          {masked ?
-            <MaskedInput
-              {...remainingProps}
-              onFocus={this.handleFocus}
-              onBlur={this.handleBlur}
-              className={css.input}
-              onChange={this.handleChange}
-              value={value}
-              id={id}
-              mask={pattern}
-              placeholder={placeholder}
-              ref="focusable"
-            />
+          {
+            masked ?
+              <MaskedInput
+                {...remainingProps}
+                type={type}
+                onFocus={this.handleFocus}
+                onBlur={this.handleBlur}
+                className={css.input}
+                onChange={this.handleChange}
+                value={value}
+                id={id}
+                mask={pattern}
+                placeholder={placeholder}
+                ref="focusable"
+              />
             :
-            <input
-              {...remainingProps}
-              placeholder={placeholder}
-              onFocus={this.handleFocus}
-              onBlur={this.handleBlur}
-              className={css.input}
-              onChange={this.handleChange}
-              value={value}
-              id={id}
-              ref="focusable"
-            />
+              type === 'textarea' ?
+                <textarea
+                  {...remainingProps}
+                  type={type}
+                  placeholder={placeholder}
+                  onFocus={this.handleFocus}
+                  onBlur={this.handleBlur}
+                  className={css.input}
+                  onChange={this.handleChange}
+                  value={value}
+                  id={id}
+                  ref="focusable"
+                />
+              :
+                <input
+                  {...remainingProps}
+                  type={type}
+                  placeholder={placeholder}
+                  onFocus={this.handleFocus}
+                  onBlur={this.handleBlur}
+                  className={css.input}
+                  onChange={this.handleChange}
+                  value={value}
+                  id={id}
+                  ref="focusable"
+                />
           }
         </div>
         <span className={messageCSS}>
@@ -147,10 +168,11 @@ SharedFormInput.propTypes = {
   // Only required for masked
   pattern: PropTypes.string,
 
-  onChange: PropTypes.func.isRequired,
+  onChange: PropTypes.func,
   onFocus: PropTypes.func,
   onBlur: PropTypes.func,
 
+  type: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
 
@@ -162,7 +184,7 @@ SharedFormInput.propTypes = {
   labelOutside: PropTypes.bool,
 
   // If set, will display underneath the input
-  error: PropTypes.string,
+  error: PropTypes.any,
 };
 
 SharedFormInput.defaultProps = {
