@@ -75,6 +75,6 @@
   border-color: var(--color-action);
 }
 .radio input:checked + label:after {
-  transform: scale(0.75);
+  transform: scale(0.5);
   opacity: 1;
 }
