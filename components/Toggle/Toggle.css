@@ -28,7 +28,6 @@
   content: 'Yes';
   text-transform: uppercase;
   color: var(--color-white);
-  line-height: 1.9rem;
   transition: all 200ms var(--easeoutcubic);
   transform: translateX(-150%) scale(0.5);
   opacity: 0;
@@ -40,7 +39,7 @@
   content: 'No';
   text-transform: uppercase;
   color: var(--color-white);
-  line-height: 1.9rem;
+
   transition: all 200ms var(--easeoutcubic);
 }
 

@@ -9,7 +9,7 @@
 }
 
 .label {
-  color: var(--color-grey-light);
+  color: var(--color-black);
   padding: 0.75em;
   display: block;
   cursor: text;
@@ -22,6 +22,10 @@
   padding: 0.5em;
   border: none;
   width: 100%;
+}
+
+input:-ms-input-placeholder {
+  color: var(--color-grey-light);
 }
 
 .input:focus {
@@ -88,7 +92,6 @@
   table-layout: fixed;
 }
 .labelInside .label {
-  color: var(--color-blue-darker);
   vertical-align: middle;
   display: table-cell;
   padding: 0.5em;
