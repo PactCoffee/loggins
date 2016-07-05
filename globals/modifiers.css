@@ -152,6 +152,7 @@
 .italic {font-style: italic;}
 .strike {text-decoration: line-through;}
 .code {font-family: monospace;}
+.underline {text-decoration: underline;}
 
 /* Text styles */
 .upcase {text-transform: uppercase;}
