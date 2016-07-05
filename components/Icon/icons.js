@@ -73,4 +73,5 @@ export default {
   aeropress: cleanupSvg(require('./icons/aeropress.svg')),
   cafetiere: cleanupSvg(require('./icons/cafetiere.svg')),
   wholebean: cleanupSvg(require('./icons/wholebean.svg')),
+  bag: cleanupSvg(require('./icons/bag.svg')),
 };
