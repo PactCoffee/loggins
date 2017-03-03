@@ -74,4 +74,5 @@ export default {
   cafetiere: cleanupSvg(require('./icons/cafetiere.svg')),
   wholebean: cleanupSvg(require('./icons/wholebean.svg')),
   bag: cleanupSvg(require('./icons/bag.svg')),
+  batchBrew: cleanupSvg(require('./icons/batchbrew.svg')),
 };
