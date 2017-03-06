@@ -9,18 +9,22 @@ export default class SelectableInput extends Component {
   }
 
   componentDidMount() {
+    const actionType = this.props.actionType || 'copy';
+
     if (this.props.onAction) {
       ReactDOM
         .findDOMNode(this.refs.selectable)
-        .addEventListener('copy', this.props.onAction);
+        .addEventListener(actionType, this.props.onAction);
     }
   }
 
   componentWillUnmount() {
+    const actionType = this.props.actionType || 'copy';
+
     if (this.props.onAction) {
       ReactDOM
         .findDOMNode(this.refs.selectable)
-        .removeEventListener('copy', this.props.onAction);
+        .removeEventListener(actionType, this.props.onAction);
     }
   }
 
@@ -46,4 +50,5 @@ SelectableInput.propTypes = {
   value: PropTypes.string.isRequired,
   className: PropTypes.string,
   onAction: PropTypes.func,
+  actionType: PropTypes.string,
 };
