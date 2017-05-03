@@ -1,6 +1,6 @@
 {
   "name": "@pactcoffee/loggins",
-  "version": "12.2.6",
+  "version": "12.2.7",
   "description": "Pact's component library",
   "main": "components/index.js",
   "license": "MIT",
