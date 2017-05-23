@@ -21,6 +21,27 @@ export default class SharedFormInput extends Component {
       focus: false,
       id: uniqueId('forminput'),
     };
+
+    this.listener = null;
+  }
+
+  componentDidMount() {
+    this.listener = setInterval(this.watchInputs, 20);
+  }
+
+  watchInputs() {
+    const input = ReactDOM.findDOMNode(this.refs.focusable);
+    const e = document.createEvent('HTMLEvents');
+
+    if (!input || this.previousInputValue === input.value) {
+      return clearInterval(this.listener);
+    }
+
+    this.previousInputValue = input.value;
+
+    e.initEvent('input', true, true);
+
+    input.dispatchEvent(e);
   }
 
   focus() {
@@ -29,7 +50,6 @@ export default class SharedFormInput extends Component {
   blur() {
     return ReactDOM.findDOMNode(this.refs.focusable).blur();
   }
-
 
   handleFocus() {
     const { onFocus } = this.props;
