@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import TagInput from 'react-tagsinput';
-import { backspace, tab, enter, del, comma } from '../../util/keyCodes';
+import { BACKSPACE, TAB, ENTER, DEL, COMMA, SPACE } from '../../util/keyCodes';
 
 import s from './EmailMultiInput.css';
 
@@ -55,8 +55,8 @@ export default class EmailMultiInput extends Component {
           value={this.props.emails}
           placeholder={this.props.placeholder}
           validate={this.validateEmail}
-          addKeys={[tab, enter, comma]}
-          removeKeys={[backspace, del]}
+          addKeys={[TAB, ENTER, COMMA, SPACE]}
+          removeKeys={[BACKSPACE, DEL]}
           onChange={this.handleChange}
         />
       </div>

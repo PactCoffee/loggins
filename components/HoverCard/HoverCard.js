@@ -3,11 +3,9 @@ import ReactDOM from 'react-dom';
 
 import { ownerDocument, calcOverlayPosition } from './positionUtils';
 import { mountable } from '../../util/customPropTypes';
-import keyCodes from '../../util/keyCodes';
+import { ESC } from '../../util/keyCodes';
 import Portal from '../Portal/Portal';
 import s from './HoverCard.css';
-
-const ESC = keyCodes.esc;
 
 export default class HoverCard extends Component {
 
