@@ -26,10 +26,10 @@ export default class SharedFormInput extends Component {
   }
 
   componentDidMount() {
-    this.listener = setInterval(this.watchInputs, 20);
+    this.listener = setInterval(this.watchInput, 20);
   }
 
-  watchInputs() {
+  watchInput() {
     if (!this.refs || !this.refs.focusable) {
       return clearInterval(this.listener);
     }
