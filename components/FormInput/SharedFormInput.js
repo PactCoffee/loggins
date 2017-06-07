@@ -30,6 +30,10 @@ export default class SharedFormInput extends Component {
   }
 
   watchInputs() {
+    if (!this.refs || !this.refs.focusable) {
+      return clearInterval(this.listener);
+    }
+
     const input = ReactDOM.findDOMNode(this.refs.focusable);
     const e = document.createEvent('HTMLEvents');
 
