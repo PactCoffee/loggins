@@ -16,29 +16,32 @@ export default class SharedFormInput extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleFocus = this.handleFocus.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
+    this.watchInput = this.watchInput.bind(this);
 
     this.state = {
       focus: false,
       id: uniqueId('forminput'),
     };
 
-    this.listener = null;
+    this.watchIntervalId = null;
   }
 
   componentDidMount() {
-    this.listener = setInterval(this.watchInput, 20);
+    this.watchIntervalId = setInterval(this.watchInput, 20);
+  }
+
+  componentWillUnmount() {
+    if (this.watchIntervalId) {
+      clearInterval(this.watchIntervalId);
+    }
   }
 
   watchInput() {
-    if (!this.refs || !this.refs.focusable) {
-      return clearInterval(this.listener);
-    }
-
     const input = ReactDOM.findDOMNode(this.refs.focusable);
     const e = document.createEvent('HTMLEvents');
 
     if (!input || this.previousInputValue === input.value) {
-      return clearInterval(this.listener);
+      return clearInterval(this.watchIntervalId);
     }
 
     this.previousInputValue = input.value;
