@@ -83,4 +83,5 @@ export default {
   pod: cleanupSvg(require('./icons/pod.svg')),
   stovetop: cleanupSvg(require('./icons/stovetop.svg')),
   wholebean: cleanupSvg(require('./icons/wholebean.svg')),
+  roaster: cleanupSvg(require('./icons/roaster.svg')),
 };
