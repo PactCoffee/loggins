@@ -65,7 +65,8 @@
 .pod_long,
 .pod_short,
 .pod_mixed,
-.globe {
+.globe,
+.roaster {
   fill: currentColor;
 }
 
