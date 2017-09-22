@@ -49,7 +49,7 @@ Publishing a new version
 1. Pull down latest master. Then on master,
 1. `npm version [major|minor|patch]` (see below for which one to use)
 1. npm will automatically check to make sure the build succeeds and all tests pass
-1. `git push origin master && git push origin master --tags`
+1. `git push upstream master && git push upstream master --tags`
 1. `npm publish`
 
 When to use what:
