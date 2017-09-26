@@ -20,6 +20,11 @@ export default class Panels extends Component {
         </Panel>
         <br />
 
+        <Panel squaredOnMobile>
+          <p>This is responsive and will be full width on mobile</p>
+        </Panel>
+        <br />
+
         <div className={styles.grid}>
 
           <div className={styles.quarter}>

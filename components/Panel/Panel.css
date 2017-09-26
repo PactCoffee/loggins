@@ -4,13 +4,22 @@
   composes: bs br from '../../globals/modifiers.css';
 }
 
-.squared {
+.squared, .squaredOnMobile {
   border-color: var(--color-grey-lightest);
   border-radius: 0;
   border-style: solid;
   border-width: 1px 0;
   box-shadow: none;
 }
+
+@media (min-width: 37.5rem) {
+  .squaredOnMobile {
+    border-radius: 8px;
+    border: 0;
+    box-shadow: var(--shadow);
+  } 
+}
+
 
 .zeroPadding {
   padding: 0;
