@@ -21,7 +21,7 @@ export default class Panels extends Component {
         <br />
 
         <Panel squaredOnMobile>
-          <p>This is responsive and will be full width on mobile</p>
+          <p>This is a <strong>responsive</strong> panel. It has rounded corners on full screen and square corners on mobile</p>
         </Panel>
         <br />
 
