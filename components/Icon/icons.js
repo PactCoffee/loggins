@@ -84,4 +84,10 @@ export default {
   stovetop: cleanupSvg(require('./icons/stovetop.svg')),
   wholebean: cleanupSvg(require('./icons/wholebean.svg')),
   roaster: cleanupSvg(require('./icons/roaster.svg')),
+
+  // Payment
+  mastercard: cleanupSvg(require('./icons/mastercard.svg')),
+  americanExpress: cleanupSvg(require('./icons/american-express.svg')),
+  stripe: cleanupSvg(require('./icons/stripe.svg')),
+  visa: cleanupSvg(require('./icons/visa.svg')),
 };
