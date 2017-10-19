@@ -101,6 +101,7 @@
 .mam { margin:        var(--size-medium);}
 .mal { margin:        var(--size-large);}
 .maxl { margin:       var(--size-larger);}
+.ma { margin: 0 auto; }
 
 /* Foreground coloured-in */
 .fgPrimary {  color: var(--color-primary);}
