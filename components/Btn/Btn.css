@@ -73,7 +73,7 @@
   font-family: var(--font-brandon);
   font-size: 0.9em;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .condensed {
@@ -84,7 +84,7 @@
 
 .tiny {
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.65em;
   padding: 0.35em 0.65em;
 }
